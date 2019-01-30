@@ -1,4 +1,4 @@
-FROM node AS base
+FROM node AS build
 
 # actual building process
 COPY . /app

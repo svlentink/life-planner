@@ -1,0 +1,44 @@
+
+knowledge: # step04; the knowledge needed for the various goals
+# wait, this is an activity, gaining knowledge!
+
+activities: # step 04; connects focus to goals, by showing the steps to take
+
+planning: # step 05; shedule the activities into your weekly routine
+
+# this step should be exported to .ics
+
+
+focus_deprecated: # step 02; foundation for goals
+  - name: faith
+    desc: Based on the holy scripture, not on the interpretation of people of it.
+  - name: knowledge
+    desc: Try to gain more understanding in every (recurring) aspect of life.
+  - name: family
+    desc: Children are a blessing, don't see it any other way.
+  - name: career
+    desc: If works feels like a chore, a radical change is required.
+  - name: sports
+    desc: Excercise has more impact on the mind than body.
+
+# Per goal;
+# - What knowledge to gain?
+# - What to master?
+# - What to maintain?
+goals: # step 03; the product of focus points in life
+  - name: mental health
+    parent: health
+  - name:
+
+habits:
+  meditate:
+    desc: Meditate daily
+    low: 10 # 10sec as a low bar
+    ideal: 300 # 5min as desired length
+    goalid: focus # parent object
+  pushups:
+    desc: Pushups to the max # only count once a week, to avoid demotivation
+    low: 5 #sec
+    high: 120 # 2min
+    goalid: todo
+

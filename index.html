@@ -1,0 +1,142 @@
+<html>
+<head>
+  <title>Life Planner</title>
+<!-- webpack
+  <script src="yaml.min.js"></script>
+  <script src="shared.js"></script>
+  <script src="values/values.js"></script>
+  <script src="personas/personas.js"></script>
+  <script src="routines/routines.js"></script>
+  <script src="tmm/tmm.js"></script>
+  <script src="editor/editor.js"></script>
+-->
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="values/values.css">
+  <link rel="stylesheet" href="personas/personas.css">
+  <link rel="stylesheet" href="personas/layout2.css">
+  <link rel="stylesheet" href="routines/routines.css">
+  <link rel="stylesheet" href="tmm/tmm.css">
+  <link rel="stylesheet" href="editor/editor.css">
+  <link rel="stylesheet" href="print.css">
+<!--
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href='#vision'>Vision board</a></li>
+    <li><a href='#habits'>Habits and routines</a></li>
+    <li><a href='#time-management-matrix'>Time management matrix</a></li>
+    <li><a href='#edit'>edit</a></li>
+    <li id='hideinfobtn'><span>Hide &#9432;</span></li>
+  </ul>
+</nav>
+
+<h1 id='vision'>Vision board</h1>
+<section class='info'>
+  This vision board visualizes the multiple personas/identities/roles you have on the blue sky.
+  For each persona you are able to set goals.
+  <br/>
+  As a foundations, the earth beneath our feet, we have our strenghts, values and weaknesses.
+  We also use this space to define activities which we allow ourself when in need of some slacking.
+  These slacking activities should idealy be short and finite.
+  <br/>
+  Goals should be positive. When we say 'I cannot eat suger' (negative),
+  we still identify ourself with someone who eats sugar.
+  If you say
+  'I am an athlete, therefore I do not eat sugar' (positive),
+  it's easier to abstain from sugar.
+  Something can start as a difficult goal and develop into a
+  <a href='https://youtu.be/6MBaFL7sCb8'>passion</a>,
+  just like your first piano class was hard.
+  <br/>
+  Before creating this vision board,
+  we advice some basic understanding of
+  <a href='https://www.simplypsychology.org/maslow.html'>Maslow's hierachy</a><!--
+  Aristotle about happiness, first meet physical needs
+  -->,
+  <a href='https://www.youtube.com/watch?v=axrywDP9Ii0'>Sapolsky's research on dopamine</a>,
+  <a href=''>growth mindset</a>,
+  <a href='http://faculty.georgetown.edu/blattnew/intro/gs290.html'>Nietzsche, The Gay Science, §290</a>,
+  <a href='https://academyofideas.com/2017/07/psychology-of-self-deception/'>Human, All Too Human</a>
+</section>
+<section id='personas'></section>
+<section id='foundation'></section>
+
+<h1 id='habits'>Habits and routines</h1>
+<section class='info'>
+  The goals we have should be worked on by activities we incorporate in our routines.
+  Working on them is most easy when it becomes a habit
+  (which is a
+  <a href='https://zapier.com/blog/daily-routines/'>cue + routine + reward</a>).
+  When we want stronger abs (reward), we can create a habit of sitting on a fitness ball.
+  The science on willpower
+  (<a href='https://en.wikipedia.org/wiki/Ego_depletion'>ego depletion</a>)
+  learns us that it takes more willpower
+  to go to the gym than actually doing the excersizes there.
+  Having this knowledge, we set a low-bar on our activities when forming a new habit.
+  When you aim for doing pushups or reading in the morning,
+  it is good to allow for just one pushup/sentence (low-bar),
+  which creates the pattern of getting into the position/grabbing a book.
+  For this reason it is good to have a resting day (just like major religions have),
+  getting you familiar with picking up the routine when you have skipped a day.
+  <br/>
+  In the data, we define activities, which we give a priority (MoSCoW)
+  and specify if it
+  <a href='https://youtu.be/1EHZAQmw2JA'>provides</a> <!-- P.O.D. (Play, Others, Downtime) -->
+  (<span data-energize='true'>fuels</span>)
+  or drains
+  (<span data-energize='false'>burns</span>) your
+  <a href='https://en.wikipedia.org/wiki/Energy_(psychological)'>mental energy</a>.
+  <br/>
+  This section should be
+  <a href='http://www.artofmanliness.com/2012/08/05/weekly-plan/'>revised</a>
+  every week.
+</section>
+<section id='routines'></section>
+<section>
+  <button id='icalbtn'>Export to calendar</button>
+</section>
+
+<h1 id='time-management-matrix'>Time management matrix</h1>
+<section class='info'>
+  The
+  <a href='https://www.developgoodhabits.com/eisenhower-matrix'>Eisenhower matrix</a>
+  provides us with an easy way of visualizing our backlog.
+  The
+  <a href='https://bulletjournal.com/'>bullet journal</a>
+  urges us to distinct the items into what we
+  <i>want</i>, <i>should</i> or <i>need</i> to do.
+  
+  It is not part of the print layout since it should be revised daily.
+</section>
+<section id='tmm'></section>
+
+<h1 id='edit'>Editor</h1>
+<section class='info'>
+  Everything seen above is rendered based on the data stored in
+  <a href='example.yml'>this YAML</a> file.
+  You can use this file as an example to create your own.
+  To render your data, simply paste it into the textarea below.
+  <br/>
+  For more advanced users, we recommend using git for version control,
+  which enables you to load your YAML from an URL
+  (e.g. <a href='https://github.com/svlentink/www/tree/master/lent.ink/projects/life-planner/example.yml'>raw.githubusercontent.com</a>).
+</section>
+<section id='editor'>
+<input id='inputurl' style='width:600px;' value='example.yml'/>
+<button id='loadYAMLbtn'>load YAML</button>
+<hr/>
+<button id='renderbtn'>Render textarea and save to <code>localStorage</code></button>
+<textarea id='input'></textarea>
+</section>
+
+<script src="bundled.js"></script>
+
+</body>
+</html>

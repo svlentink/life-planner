@@ -1,0 +1,76 @@
+#routines {
+  
+}
+
+.routine .trigger:after {
+  content:' => ';
+}
+
+.routine {
+  width:80%;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding:5px;
+}
+
+.routine .totaltime {
+  border-top:1px solid;
+}
+.routine .totaltime:after {
+  content:' min';
+}
+.routine .totaltime, .routine .action .time {
+  min-width: 40px;
+  display: inline-block;
+}
+.routine-action-time, routine-action-title, .routine-action-desc {
+//  display: block;
+//  float: left;
+}
+.routine .action .title {
+//  text-transform:uppercase;
+}
+.routine .action .desc {
+  font-style:italic;
+  color:gray;
+  font-size:75%;
+  margin-left:5px;
+}
+.routine .actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top:10px;
+}
+.routine .trigger {
+  font-size:125%;
+}
+.routine .id:after {
+  content:'-routine';
+}
+
+[data-moscow="must"] .title {
+  font-weight: bold;
+  text-transform:uppercase;
+}
+[data-moscow="should"] .title {
+  text-transform:uppercase;
+}
+[data-moscow="could"] .title {
+}
+[data-moscow="would"] .title, [data-moscow="wont"] .title {
+  color: gray;
+}
+
+#unplannedactivities {
+  color: gray;
+}
+
+[data-energize="false"]:before {
+  content: '\1F525';
+}
+[data-energize="true"]:before {
+  content: '\26FD';
+}

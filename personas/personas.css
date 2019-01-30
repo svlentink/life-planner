@@ -1,0 +1,82 @@
+#personas, .persona, #personas:after, .persona > div {
+  background-color: SkyBlue;
+}
+#personas {
+  overflow:hidden;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:-10px;
+  position:relative;
+  z-index: 9990;
+}
+#personas:before {
+  border-left: 3px dashed;
+  content:"";
+  margin: 0 auto; /* this centers the line to the full width specified */
+  margin-top:50px;
+  position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+  left: 0;
+  right: 0;
+  width:0;
+  height:95%;
+//  z-index:-1;
+//  z-index: 9993;
+}
+#personas:after {
+  content:'\00C6C3'; /* as html: &#xC6C3; */
+  text-align:center;
+  font-size:50px;
+  width:100%;
+  z-index:9995;
+}
+
+.personas .title, .personas .desc, .personas img, .persona-info, .goals {
+  display:block;
+}
+.persona-info .title {
+  font-size: 150%;
+}
+.personas .goal .title {
+  font-size: 125%;
+}
+.personas .desc {
+  font-size: 85%;
+}
+.persona {
+  border:2px solid;
+  padding:2px;
+  border-radius:5px;
+  margin-top: 20px;
+  max-width:375px;
+  position:relative;
+//  z-index: 9995;
+}
+
+.persona:after {
+  border-top: 2px dashed;
+  content:"";
+  top:50%;bottom:0;
+  margin: 0 auto; /* this centers the line to the full width specified */
+  position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+  right: 0;
+  left: -20px;
+  width: 420px;
+  z-index: -1;
+}
+
+.goal {
+  border-top:1px solid gray;
+  border-left:1px solid gray;
+  border-radius: 3px;
+  margin-top:1%;
+}
+.goal .title {
+  font-size:125%;
+}
+
+.goals {
+  display:flex;
+  flex-direction:column;
+}

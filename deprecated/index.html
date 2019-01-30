@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bigrocks</title>
+    <!--
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    -->
+    <script src="http://lent.ink/d3.v3.min.js"></script>
+    <script src="http://cdn.lent.ink/js/SVL.min.js"></script>
+    <script src="model.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h2>Correlation visualisation tool</h2>
+    <span class="help">
+      This tool was designed to graph my personal "Big Rocks"
+    </span>
+    <section>
+      <div id="d3out"></div>
+      <script src="d3magic.js"></script>
+    </section>
+    <section><!-- INPUT -->
+      <article><!-- GOALS -->
+        <div class="goal-list"></div>
+        <div class="goal-add">
+          <span class="help">
+            Names can only be used once.
+            You can select one from the graph above
+            or just enter a new name.
+          </span>
+          <input type="text" id="name_inp" placeholder="name">
+          <textarea id="desc_inp" placeholder="description" rows='5'></textarea>
+          <span class="help">
+            The links can be specified from A to B or B to A or both.
+            It is important that they are comma separated, without spaces!
+          </span>
+          <input type="text" id="links_inp" placeholder="comma,separated,links">
+          <button onclick="saveForm()">+</button>
+          <button onclick="delGoal()" style='float:right;'>X</button>
+        </div>
+      </article>
+      <article><!-- EVENTS -->
+        <button onclick="exportJSON()" style='float:right;'>EXPORT</button>
+        <button onclick="importJSON()">IMPORT</button>
+        <textarea id="json_inp" placeholder="{example:{links:['a','b']}, a:{}, b{desc:'text'}}"></textarea>
+      </article>
+    </section>
+    <section><!-- VISUAL -->
+      <article><!-- GOALS tree -->
+
+      </article>
+      <article><!-- Week circle -->
+
+      </article>
+      <article><!-- Per day overview -->
+
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+intelligence:
+  - naturalist: # (nature smart
+    - daily_news
+  - logical_mathematical: # (number/reasoning smart)
+  - existential: # (life smart)
+    - spiritual:
+  - interpersonal: # (people smart)
+  - intra_personal: # (self smart)
+  - spatial: # (picture smart)
+
+math: kahn acadami and workbooks
+udacity (machine learning)
+
+
+evening: reading
+
+
+# Data which isn't used (yet);
+intelligence:
+  desc: 9 types of intelligence
+  url: http://fundersandfounders.com/9-types-of-intelligence/
+  data:
+    naturalist: Naturalist intelligence designates the human ability to discriminate among living things (plants, animals) as well as sensitivity to other features of the natural world (clouds, rock configurations). This ability was clearly of value in our evolutionary past as hunters, gatherers, and farmers; it continues to be central in such roles as botanist or chef. It is also speculated that much of our consumer society exploits the naturalist intelligences, which can be mobilized in the discrimination among cars, sneakers, kinds of makeup, and the like.
+    musical: Musical intelligence is the capacity to discern pitch, rhythm, timbre, and tone. This intelligence enables us to recognize, create, reproduce, and reflect on music, as demonstrated by composers, conductors, musicians, vocalist, and sensitive listeners. Interestingly, there is often an affective connection between music and the emotions; and mathematical and musical intelligences may share common thinking processes. Young adults with this kind of intelligence are usually singing or drumming to themselves. They are usually quite aware of sounds others may miss.
+    logical-mathematical: Logical-mathematical intelligence is the ability to calculate, quantify, consider propositions and hypotheses, and carry out complete mathematical operations. It enables us to perceive relationships and connections and to use abstract, symbolic thought; sequential reasoning skills; and inductive and deductive thinking patterns. Logical intelligence is usually well developed in mathematicians, scientists, and detectives. Young adults with lots of logical intelligence are interested in patterns, categories, and relationships. They are drawn to arithmetic problems, strategy games and experiments.
+    existential: Sensitivity and capacity to tackle deep questions about human existence, such as the meaning of life, why we die, and how did we get here.
+    interpersonal: Interpersonal intelligence is the ability to understand and interact effectively with others. It involves effective verbal and nonverbal communication, the ability to note distinctions among others, sensitivity to the moods and temperaments of others, and the ability to entertain multiple perspectives. Teachers, social workers, actors, and politicians all exhibit interpersonal intelligence. Young adults with this kind of intelligence are leaders among their peers, are good at communicating, and seem to understand others’ feelings and motives.
+    bodily-kinesthetic: Bodily kinesthetic intelligence is the capacity to manipulate objects and use a variety of physical skills. This intelligence also involves a sense of timing and the perfection of skills through mind–body union. Athletes, dancers, surgeons, and crafts people exhibit well-developed bodily kinesthetic intelligence.
+    linguistic: Linguistic intelligence is the ability to think in words and to use language to express and appreciate complex meanings. Linguistic intelligence allows us to understand the order and meaning of words and to apply meta-linguistic skills to reflect on our use of language. Linguistic intelligence is the most widely shared human competence and is evident in poets, novelists, journalists, and effective public speakers. Young adults with this kind of intelligence enjoy writing, reading, telling stories or doing crossword puzzles.
+    intra-personal: Intra-personal intelligence is the capacity to understand oneself and one’s thoughts and feelings, and to use such knowledge in planning and directioning one’s life. Intra-personal intelligence involves not only an appreciation of the self, but also of the human condition. It is evident in psychologist, spiritual leaders, and philosophers. These young adults may be shy. They are very aware of their own feelings and are self-motivated.
+    spatial: Spatial intelligence is the ability to think in three dimensions. Core capacities include mental imagery, spatial reasoning, image manipulation, graphic and artistic skills, and an active imagination. Sailors, pilots, sculptors, painters, and architects all exhibit spatial intelligence. Young adults with this kind of intelligence may be fascinated with mazes or jigsaw puzzles, or spend free time drawing or daydreaming.
+
+status: # NOT USED!
+  idea:
+    desc: Jotted down as an inspiration
+    shape: hidden
+  maintaining:
+    desc: Reached goal(s) and now maintaing this level of proficiency.
+    shape: round
+  deprecated:
+    desc: Not relevant anymore.
+    shape: hidden
+  infeasible:
+    desc: Not able to achieve.
+    shape: hidden
+  done:
+    desc: Achieved.
+    shape: hidden
+  progressing:
+    desc: Work in progress.
+    shape: square
+  slacking:
+    desc: Needs more priority, please change perception/approach and attitude.
+    shape: square
+

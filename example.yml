@@ -1,0 +1,402 @@
+
+# establish a base, what are we working with?
+foundation:
+  # Values are abstract goals, ideals
+  values: # step 01; foundation for focus in life
+    desc: Provide meaning in life, proud, dreams and satisfaction
+    data:
+      altruistic:
+        desc: Love people, use stuff.
+        img:  https://pixel.nymag.com/imgs/daily/science/2015/09/16/16-altruism.w710.h473.jpg
+      minimalism:
+        desc: Find contentment outside of ownership.
+        img:  https://media.treehugger.com/assets/images/2017/05/minimalist_desk.jpg.860x0_q70_crop-scale.jpg
+      simplicity:
+        desc: Simplicity is the ultimate sophistication. -Leonardo Da Vinci
+        img:  http://www.melbournecoach.com.au/wp-content/uploads/2014/05/Effectiveness_vs_Simplicity.jpg #simplicity+effectiveness
+      kaizen:
+        desc: Continuous improvement.
+        img:  http://help.bizagi.com/bizagi-paas/en/continuousimprovement.png
+      health:
+        desc: Unhealty mind or body develops when one does not invest.
+        img:  http://thevitalspirit.net/wp-content/uploads/2013/12/Mind-Body-Spirit-Wellness12.jpg
+      freedom: {}
+      originality:
+        desc: No one can make you feel inferior without your consent. - Elanor Roosevelt
+      happiness: {}
+      stability: {}
+      authentic: {}
+      aesthetics: {}
+      #erudite: {}
+      #gregarious: {}
+      #meritocracy: {}
+  strengths:
+    desc: Innate (developed) talents or yet to explore strengths
+    data:
+      energetic:
+        desc: Full of energy, lively
+      analytic:
+        desc: lorem ipsum
+  weaks: # pitfalls
+    desc: Struggle and difficulty, costs more energy and willpower (pitfalls)
+    data:
+      communication:
+        desc: I tend to hide in the comfort of protocols over communication
+  # for the following three, see: https://play.google.com/store/apps/details?id=co.feliperivera.lifestrategy
+  #opportunities:
+  #obstables:
+  #skills:
+  slacking:
+    desc: Activities that are short and I allow myself as a distracion
+    data:
+      pushups:
+        desc: Pushups or handstand
+      guitar:
+        desc: Playing a song or two
+      reading:
+        desc: Always have a book around, no articles
+      clean:
+        desc: Organize and cleaning provides a better workspace
+      water:
+        desc: Drink more water
+
+
+# When you doubt if a persona fits you,
+# just hit the title in Google image search.
+# For example; 'healthy person' is different from 'athlete'
+# Persona, identity, role
+personas:
+  desc: The multiple sides you have.
+  data:
+    - title: Healthy person
+      desc: Mentally and physically fit
+      img: http://thevitalspirit.net/wp-content/uploads/2013/12/Mind-Body-Spirit-Wellness12.jpg
+      goals:
+        rested:
+          title: Well rested
+          desc: Sleep well and take moments off
+          img: https://metrouk2.files.wordpress.com/2018/02/sleeping-at-work.png
+          intelligences:
+            - intra-personal
+        focus:
+          title: Mental clarity 
+          desc: Focus and concentration through propper diet, sleep and meditation
+          img: https://pbs.twimg.com/media/DHCbXMAXkAAcd_e.jpg
+        dietbook:
+          title: Write diet book
+          desc: The chocolate diet
+          img: http://s3.india.com/wp-content/uploads/2017/07/chocolates.jpg
+    - title: Athlete
+      desc: stamina, balance, strength, flexibility and coordination
+      notes: goal physiques; Joe Manganiello, Wolverine, Joe Wicks, David Gandy
+      img: https://www.greatestphysiques.com/wp-content/uploads/2017/06/Joe-Wicks.09.jpg
+      goals:
+        muscleup:
+          title: Muscle-up
+          desc: Muscle-up in rings and on bar
+          img: https://i2.wp.com/workoutlabs.com/wp-content/uploads/watermarked/Muscle_Up.png
+          intelligences:
+            - bodily-kinesthetic
+        split:
+          title: Split
+          desc: General flexibility
+          status: progressing
+          img: https://www.yogajournal.com/.image/t_share/MTQ2MTgwNjczODI3MjUxNzQ0/wheel-yoga-pose-alexandria-crow.jpg
+          intelligences:
+            - bodily-kinesthetic
+        yogateacher:
+          status: idea
+        minutehandstand:
+          status: idea
+    #career: also check out: http://allgroanup.com/careerish/the-lure-of-comfortable/
+    - title: Developer
+      desc: If working feels like a chore, a radical change is required.
+      img: https://mentorphiledotcom.files.wordpress.com/2018/05/entrepreneur-definition-characteristics.jpg
+      goals:
+        golang:
+          title: Go language
+          status: idea
+    #music:
+    - title: Musician
+      desc: todo
+      img: https://i.ytimg.com/vi/QCbkwW6wwBk/maxresdefault.jpg #jason upton
+      goals:
+        songs:
+          title: 10x songs
+          desc: Being able to play 10 songs without paper
+          status: progressing
+          img: https://www.wikihow.com/images/thumb/3/3c/Memorize-Sheet-Music-Step-3.jpg/aid193377-v4-728px-Memorize-Sheet-Music-Step-3.jpg
+        musictheory:
+          title: Music theory
+          desc: Confident to teach music theory
+          status: idea
+        strumming:
+          title: 10x strumming
+          desc: Master 10 strumming patterns
+          status: idea
+        piano:
+          title: Chords on piano
+          desc: Being able to play piano from chords
+          status: idea
+        vocal:
+          title: Confidence with singing
+          desc: Regain confidence over voice through training it
+          status: idea
+    #faith:
+    - title: Believer
+      desc: Based on the holy scripture, not on the interpretation of people of it.
+      img: http://www.jewishjewels.org/wp-content/uploads/2012/02/Yeshua-Torah-jj.jpg
+      goals:
+        scriptures:
+          title: Holy scriptures
+          desc: Daily source of values
+          img: https://www.evangelicalsforsocialaction.org/wp-content/uploads/2016/01/quran-bible-torah-1024x394.jpg
+    #family:
+    - title: Family
+      desc: Children are a blessing, don't see it any other way.
+      img: https://www.iaspaper.net/wp-content/uploads/2017/01/Family-300x233.jpg
+      goals:
+        datenite:
+          title: Date night
+          desc: Quality time together
+          img: https://www.babble.com/wp-content/uploads/2015/08/ThinkstockPhotos-478406944.jpg
+    #read:
+    - title: Reader
+      desc: lorem ipsum
+      img: https://previews.123rf.com/images/rido/rido1112/rido111200014/11742894-smiling-relaxed-man-reading-a-book-lying-on-sofa.jpg
+      img2: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuwD62zN922S8wrgfH1srk6hI3z_Dagn7T0uy2-r2W6a5b9jWmiA
+      img3: http://www.bemedialiterate.com/uploads/1/7/2/2/1722523/8910572_orig.jpg
+    - title: Socialite
+      desc: As iron sharpens iron, so one person sharpens another.
+      img: https://www.gevme.com/blog/wp-content/uploads/2017/02/wsi-imageoptim-GEVME-promoting-networking-event-success-2-1200x800.jpeg
+      goals:
+        social:
+          title: Weekly social
+          desc: One social gathering p/w
+          img: https://previews.123rf.com/images/standrets/standrets1709/standrets170904022/86815964-group-of-creative-friends-sitting-at-wooden-table-people-having-fun-while-playing-board-game.jpg
+        meetnew:
+          title: Meet new people
+          desc: One new social event p/m
+          img: https://assets.entrepreneur.com/content/3x2/2000/20160328065249-shutterstock-387029653.jpeg?
+        dance:
+          title: Dancing
+          img: http://themetapicture.com/media/funny-gif-dancing-man-pixel-retro.gif
+          status: progressing
+          desc: coordination, rithm
+    - title: Philomath
+      desc: Inquisitive
+      img: http://www.curiousgeorge.com/~/media/sites/cg/new%20design%20images/resources/george-laying.png
+      goals:
+        spanish:
+          title: Spanish B1
+          status: progressing
+          img: https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1280px-Flag_of_Spain.svg.png
+          desc: Being able to read and speak Spanish
+          intelligences:
+            - linguistic
+
+
+# Recurring activities
+# Make the things that enrich you your hobby/passion/job
+# ideas:
+# balancing-ball; Sitting on a fitnessball behind desk at work (stimulating core)
+# biking: We in the Netherlands bike a lot, which allows us to skip leg day
+activities:
+  portfolio_management:
+    interval: weekly
+    duration: 60 #min
+    desc: Finances
+    moscow: would
+    energize: false # costs/burns mental energy
+  tidy:
+    interval: daily
+    duration: 15
+    energize: true # the result makes me feel good
+    desc: digitally (e.g. notes) and physically (e.g. desk)
+    moscow: should
+  prototype:
+    interval: weekly
+    time: 240
+    moscow: should
+    desc: Work out prototypes that could lead to a startup
+    energize: true # hobby
+  plan:
+    interval: daily
+    duration: 10
+    moscow: must
+    desc: on weekdays; plan day. In weekend; update long-term planning
+    energize: false # requires prefrontal cortex
+  shower:
+    interval: daily
+    duration: 20
+    moscow: must
+    desc: drink water, wc, shower, shave, teeth
+    energize: true # feeling refreshed afterward
+  news:
+    interval: daily
+    moscow: would
+    desc: Daily news
+    energize: false
+    time: 7
+  pushups:
+    interval: daily
+    time: 2
+    desc: pushups without counting
+    moscow: must
+    energize: true # physical exercize relaxes the mind
+  stretch:
+    interval: daily
+    time: 6
+    desc: Stretching
+    moscow: would
+    energize: true
+  dress:
+    interval: daily
+    duration: 1
+    desc: After stretching, put cloths on #stretching is done in underwear
+    moscow: must
+    energize: false
+  meditate:
+    interval: daily
+    time: 5
+    desc: headspace
+    moscow: should
+    energize: true
+  address_power:
+    interval: daily
+    time: 5
+    desc: See benjamin franklin diary
+    moscow: should
+    energize: false
+  guitar:
+    interval: weekly
+    time: 30
+    desc: Just play
+    moscow: could
+    energize: true # enjoyable activity
+  dental:
+    interval: daily
+    desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
+    time: 5
+    moscow: must
+    energize: false
+  dishwasher:
+    interval: daily
+    time: 1
+    moscow: must
+    energize: false
+  food2fridge:
+    interval: daily
+    desc: from freezer to fridge
+    time: 1
+    moscow: should
+    energize: false
+  pack:
+    interval: daily
+    desc: bag and clothing
+    time: 2
+    moscow: should
+    energize: false
+  read:
+    interval: daily
+    desc: Book, no articles/screens
+    time: 30
+    moscow: should
+    energize: true # dependant on the content
+  core:
+    interval: daily
+    time: 8
+    desc: 5m plank and squats
+    moscow: should
+    energize: true
+  audiobook:
+    interval: daily
+    desc: learn spanish during commute
+    time: 15
+    moscow: would
+    energize: false # requires active listening
+  day-review:
+    interval: daily
+    time: 5
+    moscow: would
+    desc: What did I do good? bad? stuck in loops?
+    energize: false
+  email:
+    interval: daily
+    time: 10
+    moscow: should
+    energize: false
+
+
+# trigger, cue or anchor is the action that triggers the routine
+# cue + routine + reward = habit
+routines:
+  mourning_ritual:
+    trigger: alarm
+    actions:
+      - shower
+      - pushups
+      - stretch
+      - dress
+      - meditate
+      - address_power
+      - plan
+  bedtime:
+    trigger: go to bed
+    actions:
+      - dental
+      - tidy
+      - dishwasher
+      - food2fridge
+      - pack
+      - read
+      - core
+  bike-commute:
+    trigger: work
+    actions:
+      - audiobook
+  train-commute:
+    trigger: education
+    actions:
+      - read
+  early-dental:
+    trigger: 8o clock
+    actions:
+      - dental
+
+# You can use 'prio' with a score of 1-4
+# or use the format below it
+timemanagementmatrix:
+  - title: mail relay
+    prio: 4
+  - title: layer 4 proxy
+    prio: 3
+  - title: study overview
+    prio: 1
+  - title: wipe old laptops
+    prio: 4
+  - title: sheets to postgres
+    prio: 4
+  - title: hugo blog
+    prio: 4
+  - title: new glasses
+    prio: 2
+  - title: plan studies
+    prio: 1
+  - title: data backup strategy
+    prio: 2
+  - title: clean drawers
+    prio: 2
+tmm: # https://blog.teamwork.com/time-management-matrix/
+  important:
+    urgent:
+      - manage this
+    non-urgent:
+      - focus on this
+  unimportant:
+    urgent:
+      - delegate this
+    non-urgent:
+      - avoid this
+
+

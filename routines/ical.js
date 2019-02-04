@@ -10,12 +10,20 @@ import ical from 'ical-generator';
     prodId: {company: 'lent.ink', product: 'Life-Planner'},
     name: 'exported-routines'
   })
-
-  glob.saveIcal = function(events) {
-    for (var i in events){
-      var ev = events[i]
-      cal.createEvent(ev)
+  
+  glob.getIcal = function () {
+    if (! cal.length()) {
+      var events = glob.getEvents()
+      for (var i in events){
+        var ev = events[i]
+        cal.createEvent(ev)
+      }
     }
+    return cal
+  }
+
+  glob.saveIcal2File = function() {
+    var cal = glob.getIcal()
     var filename = 'routines.ical'
     saveToFile(cal.toString(), filename)
   }

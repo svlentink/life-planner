@@ -4,7 +4,8 @@ module.exports = {
   mode: "none",
   entry: [
     './editor/editor.js',
-    './ical/ical.js',
+    './routines/ical.js',
+    './routines/calendar.js',
     './personas/personas.js',
     './routines/routines.js',
     './tmm/tmm.js',

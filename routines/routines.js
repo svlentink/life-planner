@@ -77,18 +77,23 @@
     unused.setAttribute('id','unplannedactivities')
     unused.innerText = 'Unplanned activities: ' + unusedacts.toString().replace(/,/g,' ')
     cont.appendChild(unused)
+    
+    glob.showCalendar(glob.getEvents())
   }
   
   function eventsAsIcal(){
-    if (! (glob.data && glob.data.routines) ) return console.log('no routines found')
-    if (! glob.data.activities) return console.log('no activities found')
-
-    var events = getEvents(glob.data.routines, glob.data.activities)
-    glob.saveIcal(events)
+    glob.saveIcal2File()
   }
   document.querySelector('#icalbtn').addEventListener('click',eventsAsIcal)
   
-  function getEvents(routines, activities){
+  glob.getEvents = function() {
+    if (! (glob.data && glob.data.routines) ) return console.log('no routines found')
+    if (! glob.data.activities) return console.log('no activities found')
+    var events = createEvents(glob.data.routines, glob.data.activities)
+    return events
+  }
+  
+  function createEvents(routines, activities){
     var events = []
     
     var days = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa']
@@ -104,6 +109,15 @@
             parseInt(start.time.split(':')[1]) + (extraMinutes || 0)
           )
       }
+    }
+    
+    function Ical2FullcalendarDays(arr){
+      //https://fullcalendar.io/docs/v4/recurring-events
+      var result = []
+      for(var i=0; i< days.length;i++)
+        if (arr.includes(days[i]))
+          result.push(i)
+      return result
     }
 
     for(var key in routines){
@@ -143,16 +157,21 @@
             start: getFirstOccurrence(),
             end: getFirstOccurrence(totaltime),
             summary: title,
+            title: title,
             description: desc.join('\n'),
             category: 'routine',
             //location: 'planet earth',
             //organizer: 'Some One <mail@some.one>',
-            url: 'http://lent.ink/projects/life-planner',
+            //url: 'http://lent.ink/projects/life-planner',
             repeating: {
               freq: 'DAILY',
               byDay: start.days,
               count: start.days.length * 2 //two weeks
-            }
+            },
+            daysOfWeek: Ical2FullcalendarDays(start.days),
+            startRecur: getFirstOccurrence(),
+            startTime: getFirstOccurrence().toTimeString().substr(0,5),
+            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5)
           }
           events.push(event)
         }

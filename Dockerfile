@@ -1,9 +1,10 @@
 FROM node AS build
 
 # actual building process
-COPY . /app
 WORKDIR /app
+COPY package.json /app/
 RUN npm install -g
+COPY . /app
 RUN npm run build
 
 # the remaining code is used in github.com/svlentink/www

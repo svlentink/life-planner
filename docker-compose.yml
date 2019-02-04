@@ -1,0 +1,14 @@
+version: '3'
+services:
+  data:
+    build: .
+    volumes:
+      - lpvol:/data/webroot/lent.ink/projects/life-planner
+  cdn:
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    volumes:
+      - lpvol:/usr/share/nginx/html/lp:ro
+volumes:
+  lpvol: {}

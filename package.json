@@ -8,6 +8,7 @@
     "webpack": "*",
     "webpack-cli": "*",
     "ical-generator": "*",
-    "yamljs" : "*", "fs":"*"
+    "yamljs" : "*", "fs":"*",
+    "fullcalendar": ">=4.0.0-alpha.4"
   }
 }

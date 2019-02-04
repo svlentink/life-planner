@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="personas/personas.css">
   <link rel="stylesheet" href="personas/layout2.css">
   <link rel="stylesheet" href="routines/routines.css">
+  <link rel="stylesheet" href="routines/calendar.css">
   <link rel="stylesheet" href="tmm/tmm.css">
   <link rel="stylesheet" href="editor/editor.css">
   <link rel="stylesheet" href="print.css">
+  <link href='node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
+  <link href='node_modules/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
 <!--
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -100,22 +103,36 @@
 </section>
 <section id='routines'></section>
 <section>
-  <button id='icalbtn'>Export to calendar</button>
+  <div id='calendar'></div>
+  <button id='icalbtn'>Export to calendar (.ical)</button>
+  (this export will contain the list of activities part of the routine)
 </section>
 
 <h1 id='time-management-matrix'>Time management matrix</h1>
 <section class='info'>
   The
   <a href='https://www.developgoodhabits.com/eisenhower-matrix'>Eisenhower matrix</a>
-  provides us with an easy way of visualizing our backlog.
+  provides us with an easy way of visualizing our personal backlog.
   The
   <a href='https://bulletjournal.com/'>bullet journal</a>
   urges us to distinct the items into what we
   <i>want</i>, <i>should</i> or <i>need</i> to do.
-  
+
   It is not part of the print layout since it should be revised daily.
 </section>
 <section id='tmm'></section>
+<section class='info'>
+  For work/study/projects one should have a different system,
+  such as a <i>Product Backlog</i> used in Scrum or Kanban.
+  <br/>
+  For coding projects one could have the backlog items
+  (as markdown files/open issues)
+  inside the Git project, containing developer notes
+  and use a link to it on the Project Planning board.
+  This allows you to keep everything of the project;
+  requested features, documentation, diagrams etc.
+  inside the Git project, except for the (centralized) planning.
+</section>
 
 <h1 id='edit'>Editor</h1>
 <section class='info'>
@@ -126,7 +143,7 @@
   <br/>
   For more advanced users, we recommend using git for version control,
   which enables you to load your YAML from an URL
-  (e.g. <a href='https://github.com/svlentink/www/tree/master/lent.ink/projects/life-planner/example.yml'>raw.githubusercontent.com</a>).
+  (e.g. <a href='https://github.com/svlentink/life-planner/tree/master/example.yml'>raw.githubusercontent.com</a>).
 </section>
 <section id='editor'>
 <input id='inputurl' style='width:600px;' value='example.yml'/>

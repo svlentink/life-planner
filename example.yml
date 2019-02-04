@@ -27,21 +27,27 @@ foundation:
       stability: {}
       authentic: {}
       aesthetics: {}
-      #erudite: {}
-      #gregarious: {}
+      erudite: {}
+      utilitarianism: {}
+      gregarious:
+        desc: People are designed socially
       #meritocracy: {}
   strengths:
     desc: Innate (developed) talents or yet to explore strengths
     data:
       energetic:
-        desc: Full of energy, lively
+        desc: Full of energy
+      philomath:
+        desc: Hunger for learning
       analytic:
-        desc: lorem ipsum
+        desc: Structured
   weaks: # pitfalls
     desc: Struggle and difficulty, costs more energy and willpower (pitfalls)
     data:
       communication:
         desc: I tend to hide in the comfort of protocols over communication
+      planning:
+        desc: Learning to be better at this through this tool
   # for the following three, see: https://play.google.com/store/apps/details?id=co.feliperivera.lifestrategy
   #opportunities:
   #obstables:
@@ -59,6 +65,8 @@ foundation:
         desc: Organize and cleaning provides a better workspace
       water:
         desc: Drink more water
+      polish:
+        desc: polish shoes
 
 
 # When you doubt if a persona fits you,
@@ -107,18 +115,13 @@ personas:
         yogateacher:
           status: idea
         minutehandstand:
-          status: idea
+          title: One minute handstand
+          desc: Handstand acrobatics
+          img: https://hiekim.de/wp-content/uploads/2014/12/Hie-Kim-Yoga-About-hollowback-Handstand.jpg
     #career: also check out: http://allgroanup.com/careerish/the-lure-of-comfortable/
-    - title: Developer
-      desc: If working feels like a chore, a radical change is required.
-      img: https://mentorphiledotcom.files.wordpress.com/2018/05/entrepreneur-definition-characteristics.jpg
-      goals:
-        golang:
-          title: Go language
-          status: idea
     #music:
     - title: Musician
-      desc: todo
+      desc: Music from the soul
       img: https://i.ytimg.com/vi/QCbkwW6wwBk/maxresdefault.jpg #jason upton
       goals:
         songs:
@@ -162,10 +165,19 @@ personas:
           img: https://www.babble.com/wp-content/uploads/2015/08/ThinkstockPhotos-478406944.jpg
     #read:
     - title: Reader
-      desc: lorem ipsum
+      desc: Make reading a hobby
       img: https://previews.123rf.com/images/rido/rido1112/rido111200014/11742894-smiling-relaxed-man-reading-a-book-lying-on-sofa.jpg
       img2: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuwD62zN922S8wrgfH1srk6hI3z_Dagn7T0uy2-r2W6a5b9jWmiA
       img3: http://www.bemedialiterate.com/uploads/1/7/2/2/1722523/8910572_orig.jpg
+    #organize:
+    - title: Organized and minimalist
+      img: https://www.thesecretboard.co.za/wp-content/uploads/2016/05/My-Top-Ten-Organization-Tips.jpg
+      goals:
+        finance:
+          title: finacially secure
+          desc: Wealth distribution
+          status: processing
+          img: https://media.istockphoto.com/vectors/money-growth-concept-vector-illustration-of-coins-stacks-with-green-vector-id852175196
     - title: Socialite
       desc: As iron sharpens iron, so one person sharpens another.
       img: https://www.gevme.com/blog/wp-content/uploads/2017/02/wsi-imageoptim-GEVME-promoting-networking-event-success-2-1200x800.jpeg
@@ -179,12 +191,10 @@ personas:
           desc: One new social event p/m
           img: https://assets.entrepreneur.com/content/3x2/2000/20160328065249-shutterstock-387029653.jpeg?
         dance:
-          title: Dancing
-          img: http://themetapicture.com/media/funny-gif-dancing-man-pixel-retro.gif
-          status: progressing
+          status: idea
           desc: coordination, rithm
     - title: Philomath
-      desc: Inquisitive
+      desc: Inquisitive, epistemophilia
       img: http://www.curiousgeorge.com/~/media/sites/cg/new%20design%20images/resources/george-laying.png
       goals:
         spanish:
@@ -201,12 +211,13 @@ personas:
 # ideas:
 # balancing-ball; Sitting on a fitnessball behind desk at work (stimulating core)
 # biking: We in the Netherlands bike a lot, which allows us to skip leg day
+# moscow can be either: must, should, could or wont
 activities:
   portfolio_management:
     interval: weekly
     duration: 60 #min
     desc: Finances
-    moscow: would
+    moscow: should
     energize: false # costs/burns mental energy
   tidy:
     interval: daily
@@ -228,14 +239,14 @@ activities:
     energize: false # requires prefrontal cortex
   shower:
     interval: daily
-    duration: 20
+    duration: 25
     moscow: must
-    desc: drink water, wc, shower, shave, teeth
+    desc: drink water, wc, cold shower, shave, teeth
     energize: true # feeling refreshed afterward
   news:
     interval: daily
-    moscow: would
-    desc: Daily news
+    moscow: could
+    desc: Daily news and hackernews
     energize: false
     time: 7
   pushups:
@@ -248,7 +259,7 @@ activities:
     interval: daily
     time: 6
     desc: Stretching
-    moscow: would
+    moscow: could
     energize: true
   dress:
     interval: daily
@@ -264,7 +275,7 @@ activities:
     energize: true
   address_power:
     interval: daily
-    time: 5
+    time: 10
     desc: See benjamin franklin diary
     moscow: should
     energize: false
@@ -313,25 +324,62 @@ activities:
     interval: daily
     desc: learn spanish during commute
     time: 15
-    moscow: would
+    moscow: could
     energize: false # requires active listening
   day-review:
     interval: daily
     time: 5
-    moscow: would
+    moscow: should
     desc: What did I do good? bad? stuck in loops?
     energize: false
-  email:
+  message:
     interval: daily
-    time: 10
+    desc: Email, linkedin, text
+    time: 5
     moscow: should
     energize: false
+  cook:
+    interval: daily
+    time: 20
+    moscow: should
+    energize: true
+    desc: Food in slow cooker
+  sprint:
+    interval: daily
+    time: 3
+    moscow: could
+    energize: true
+    desc: One minute sprint http://youtu.be/SHN-4ve81TY
+  graditute:
+    desc: todo
+  band_rehearsal:
+    interval: weekly
+    time: 120
+    energize: true
+    desc: Jamming
+    moscow: must
+  bike_15:
+    interval: weekly
+    time: 15
+    energize: true
+    desc: bike
 
 
 # trigger, cue or anchor is the action that triggers the routine
 # cue + routine + reward = habit
 routines:
+  band_rehearsal:
+    start:
+      - days: [tu]
+        time: 19:15
+    actions:
+      - bike_15
+      - band_rehearsal
+      - bike_15
   mourning_ritual:
+    start:
+      - days: daily
+        time: 05:30
     trigger: alarm
     actions:
       - shower
@@ -340,26 +388,69 @@ routines:
       - dress
       - meditate
       - address_power
+      - message
       - plan
+      - cook
+  lunch:
+    start:
+      - days: mo,tu,we,th,fr
+        time: 12:30
+    trigger: lunch
+    actions:
+      - message
   bedtime:
+    start:
+      - days: [mo,we,th,su]
+        time: 21:00
+      - days: [th, fr, sa]
+        time: 22:00
     trigger: go to bed
     actions:
       - dental
       - tidy
-      - dishwasher
-      - food2fridge
       - pack
+      - food2fridge
+      - dishwasher
+      - day-review
       - read
       - core
   bike-commute:
+    start:
+      - days: [mo,th]
+        time: 7:00
+      - days: [mo, th]
+        time: 16:00
     trigger: work
     actions:
       - audiobook
   train-commute:
+    start:
+      - days: [th, we, fr]
+        time: 6:30
+      - days: [th, we, fr]
+        time: 18:30
     trigger: education
     actions:
       - read
+  pre-dinner:
+    start:
+      - days: [mo,tu,we,th,fr]
+        time: 17:45
+    trigger: dinner
+    actions:
+      - message
+  post-dinner:
+    start:
+      - days: daily
+        time: 18:45
+    trigger: dinner
+    actions:
+      - news
+      - guitar
   early-dental:
+    start:
+      - days: daily
+        time: 20:00
     trigger: 8o clock
     actions:
       - dental

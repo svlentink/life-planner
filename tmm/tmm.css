@@ -1,6 +1,10 @@
 #tmm table {
   margin:0 auto;
 }
+#tmm h3 {
+  margin-bottom:0;
+  text-decoration:overline;
+}
 
 .tmm td {
   padding:10px;
@@ -20,11 +24,6 @@
   list-style-type: none;
   margin:0;
   padding:0;
-}
-
-.tmm h3 {
-  margin-bottom:0;
-  text-decoration:overline;
 }
 
 .tmm li:before {

@@ -77,8 +77,6 @@
     unused.setAttribute('id','unplannedactivities')
     unused.innerText = 'Unplanned activities: ' + unusedacts.toString().replace(/,/g,' ')
     cont.appendChild(unused)
-    
-    glob.showCalendar(glob.getEvents())
   }
   
   function eventsAsIcal(){

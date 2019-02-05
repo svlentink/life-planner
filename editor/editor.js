@@ -10,7 +10,8 @@ import YAML from 'yamljs';
     glob.renderpersonas('personas', data.personas.data)
     glob.renderfoundation('foundation', data.foundation)
     glob.renderroutines('routines', data.routines, data.activities)
-    glob.rendertmm('tmm', [data.tmm, data.timemanagementmatrix])
+    glob.showCalendar(glob.getEvents())
+    glob.rendertmms('tmm', data.tmms)
   }
   
   function loadURL() {

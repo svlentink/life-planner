@@ -11,7 +11,7 @@ import ical from 'ical-generator';
     name: 'exported-routines'
   })
   
-  glob.getIcal = function () {
+  function getIcal() {
     if (! cal.length()) {
       var events = glob.getEvents()
       for (var i in events){
@@ -23,7 +23,7 @@ import ical from 'ical-generator';
   }
 
   glob.saveIcal2File = function() {
-    var cal = glob.getIcal()
+    var cal = getIcal()
     var filename = 'routines.ical'
     saveToFile(cal.toString(), filename)
   }

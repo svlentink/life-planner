@@ -32,13 +32,24 @@
     return result
   }
   
-  glob.rendertmm = function(elemid, inparr) {
-    var items = tmmToOneFormat(inparr)
+  
+  glob.rendertmms = function(elemid, tmms) {
     var cont = document.getElementById(elemid) //container
+    cont.innerHTML = '' //reset
+    for (var key in tmms){
+      var val = tmms[key]
+      var h = document.createElement('h3')
+      h.innerText = key
+      var table = rendertmm(val)
+      cont.appendChild(h)
+      cont.appendChild(table)
+    }
+  }
+  
+  function rendertmm(inparr) {
+    var items = tmmToOneFormat(inparr)
     var table = document.createElement('table')
     table.setAttribute('class','tmm')
-    cont.innerHTML = '' //reset
-    cont.appendChild(table)
     
     var th = document.createElement('tr')
     th.innerHTML = '<th/><th>urgent</th><th>not urgent</th>'
@@ -69,12 +80,14 @@
     var row2 = document.createElement('tr')
     table.appendChild(row2)
     var row2t = document.createElement('th')
-    row2t.innerText = 'not important'
+    row2t.innerHTML = 'not&nbsp;important'
     row2.appendChild(row2t)
     var prio3elem = arrAsElem(items['3'])
     row2.appendChild(prio3elem)
     var prio4elem = arrAsElem(items['4'])
     row2.appendChild(prio4elem)
+    
+    return table
   }
 
 }(typeof window !== 'undefined' ? window : global))

@@ -18,5 +18,9 @@ module.exports = {
   },
   node: {
     fs: 'empty'
+  },
+  optimization: {
+    minimize: true
   }
 };
+

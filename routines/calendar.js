@@ -15,6 +15,7 @@ import { Calendar } from 'fullcalendar';
         right: 'agendaWeek,agendaDay,listWeek'
       },
       defaultView: 'agendaWeek',
+      firstDay: 1,
       navLinks: true, // can click day/week names to navigate views
       eventLimit: true, // allow "more" link when too many events
       events: events

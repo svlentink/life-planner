@@ -67,4 +67,5 @@ nav li a, nav li span {
   border-top-left-radius: 30px 15px;
   padding:5px;
   background-color:yellow;
+  display:none;
 }

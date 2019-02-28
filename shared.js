@@ -15,11 +15,11 @@
     return elem
   }
   
-  function hideinfo() {
+  function showinfo() {
     var infos = document.getElementsByClassName('info')
     for (var i in infos)
-      infos[i].setAttribute('style','display:none;')
+      infos[i].setAttribute('style','display:block;')
   }
-  document.querySelector('#hideinfobtn').addEventListener('click',hideinfo)
+  document.querySelector('#showinfobtn').addEventListener('click',showinfo)
 
 }(typeof window !== 'undefined' ? window : global))

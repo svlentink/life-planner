@@ -40,14 +40,20 @@
       var val = tmms[key]
       var h = document.createElement('h3')
       h.innerText = key
-      var table = rendertmm(val)
+      var data = rendertmm(val)
       cont.appendChild(h)
-      cont.appendChild(table)
+      cont.appendChild(data)
     }
   }
   
-  function rendertmm(inparr) {
-    var items = tmmToOneFormat(inparr)
+  function rendertmm(input) {
+    if (typeof input === 'string') {
+      var a = document.createAttribute('a')
+      a.setAttribute('href',input)
+      a.innerText = input
+      return a
+    }
+    var items = tmmToOneFormat(input)
     var table = document.createElement('table')
     table.setAttribute('class','tmm')
     

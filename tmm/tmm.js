@@ -48,7 +48,7 @@
   
   function rendertmm(input) {
     if (typeof input === 'string') {
-      var a = document.createAttribute('a')
+      var a = document.createElement('a')
       a.setAttribute('href',input)
       a.innerText = input
       return a

@@ -571,5 +571,7 @@ tmms:
           - review paper
         non-urgent:
           - avoid this
+  # the following two show that you can link
+  # to external planning tools
   work-planning: https://blog.lent.ink/post/open-source-erp
-  family-board: https://trello.com
+  family-board: https://trello.com/this-is-an-external-planning-tool

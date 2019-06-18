@@ -3,6 +3,16 @@
 This page explains how to use
 [this life-planner](https://lent.ink/projects/life-planner/).
 
+### Self psychology
+
+We initially focussed on the end goal picture,
+but we should not only look at what we want or strive to become,
+but who we are.
+Psychoanalysis on one self is as important,
+enstablishing your baseline and come to terms with your current self.
+Know your inner feelings, desires and weaknesses,
+address and acknowledge them.
+
 ### YAML
 
 The data for the life planner is stored in YAML,
@@ -37,6 +47,7 @@ Search for `personas:` in the example.
 
 When we have addressed our generic values,
 we also define the values per role we have.
+What's important to you?
 
 For example, when it comes to work (role = employee),
 it could be:
@@ -52,7 +63,27 @@ it could be:
 
 Search for `TODO THIS NOT NOT IMPLEMENTED YET` in the example.
 
-NOTE: this values aspect fits in the lower right of the ACT matrix.
+NOTE: the values aspect fits in the lower right of the ACT matrix.
+
+### TODO fearsetting template
+
+What internal stuff (in your head) is getting in the way,
+holding you down? (fear, anger, sadness)
+
+NOTE: this aspect fits in the lower left of the ACT matrix.
 
 ### TODO
+
+What behaviors are detremental? (drugs, tv, no sleep)
+
+NOTE: this aspect fits in the upper left of the ACT matrix.
+
+
+### Behaviors
+
+
+NOTE: this aspect fits in the upper right of the ACT matrix.
+
+
+
 

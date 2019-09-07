@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>https://codepen.io/dbpas/pen/LGudb</title>
+<style>
+ul {
+    position: relative;
+    top: 200px; left: 200px; /*for example purposes only*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    position: absolute;
+    background-color:orange;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+    <li>&#50883;</li>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+    <li>Item 7</li>
+    <li>Item 8</li>
+</ul>
+
+
+<script>
+var radius = '10em', //distance from center
+    elements = document.querySelectorAll('li:not(:first-child)'),
+    slice = 180 / elements.length,
+    start = -180 + slice/2;
+
+elements.forEach(function(elem,i) {
+    var rotate = slice * i + start,
+        rotateReverse = rotate * -1,
+        transform = 'rotate(' + 
+          rotate + 'deg) translate(' + 
+          radius + ') rotate(' + 
+          rotateReverse + 'deg)';
+  elem.style.transform = transform
+});
+
+</script>
+</body>
+</html>
+

@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - lpvol:/data/webroot/lent.ink/projects/life-planner
+    command: [""]
   cdn:
     image: nginx:alpine
     ports:

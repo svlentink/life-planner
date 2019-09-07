@@ -1,19 +1,15 @@
 const path = require('path');
 
-module.exports = {
-  mode: "none",
+module.exports = [{
+  mode: "production",
   entry: [
+    './shared.js',
     './editor/editor.js',
-    './routines/ical.js',
-    './routines/calendar.js',
     './personas/personas.js',
-    './routines/routines.js',
-    './tmm/tmm.js',
-    './values/values.js',
-    './shared.js'
+    './values/values.js'
   ],
   output: {
-    filename: 'bundled.js',
+    filename: 'bundled01.js',
     path: __dirname
   },
   node: {
@@ -22,5 +18,24 @@ module.exports = {
   optimization: {
     minimize: true
   }
-};
+},
+{
+  mode: "production",
+  entry: [
+    './routines/ical.js',
+    './routines/calendar.js',
+    './routines/routines.js',
+    './tmm/tmm.js'
+  ],
+  output: {
+    filename: 'bundled02.js',
+    path: __dirname
+  },
+  node: {
+    fs: 'empty'
+  },
+  optimization: {
+    minimize: true
+  }
+}];
 

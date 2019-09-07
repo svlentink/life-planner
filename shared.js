@@ -21,5 +21,25 @@
       infos[i].setAttribute('style','display:block;')
   }
   document.querySelector('#showinfobtn').addEventListener('click',showinfo)
+  
+  glob.orchestrator = function(){
+    console.log('Orchestrator called')
+    if (! glob.data) return console.log('window.data not loaded yet, waiting for YAML.load')
+
+    if (! glob.renderpersonas) return console.log('renderpersonas not loaded yet')
+    glob.renderpersonas('personas', glob.data.personas.data)
+
+    if (! glob.renderfoundation) return console.log('renderfoundation not loaded yet')
+    glob.renderfoundation('foundation', glob.data.foundation)
+
+    if (! glob.renderroutines) return console.log('renderroutines not loaded yet')
+    glob.renderroutines('routines', glob.data.routines, glob.data.activities)
+
+    if (! glob.showCalendar) return console.log('showCalendar not loaded yet')
+    glob.showCalendar(glob.getEvents())
+
+    if (! glob.rendertmms) return console.log('rendertmms not loaded yet')
+    glob.rendertmms('tmm', glob.data.tmms)
+  }
 
 }(typeof window !== 'undefined' ? window : global))

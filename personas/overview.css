@@ -1,0 +1,35 @@
+:root {
+  --radius-roles-overview: 350px;
+}
+
+#rolesview .persona .goals {
+  display:none;
+}
+#rolesview .persona .persona-info .desc {
+  display:none;
+}
+
+#rolesview {
+  position: relative;
+  top: var(--radius-roles-overview);
+  left: var(--radius-roles-overview);
+  min-height: var(--radius-roles-overview);
+}
+#rolesview .persona {
+  position: absolute;
+}
+
+#rolesview .persona .persona-info .title {
+  font-size:75%;
+  float:left;
+}
+
+#rolesview img {
+  width:75px;
+  height:75px;
+  border-radius: 37px;
+}
+
+#rolesviewcontainer {
+  background-color: SkyBlue;
+}

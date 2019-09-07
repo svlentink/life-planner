@@ -51,5 +51,24 @@
       cont.appendChild(elem)
     }
   }
+  
+  glob.renderrolesview = function(elemid, personas) {
+    glob.renderpersonas(elemid, personas)
+    //https://codepen.io/dbpas/pen/LGudb
+    var radius = 'var(--radius-roles-overview)', //distance from center
+      elements = document.querySelectorAll('#'+elemid+' .persona'),
+      slice = 180 / elements.length,
+      start = -180 + slice/2;
+
+    elements.forEach(function(elem,i) {
+        var rotate = slice * i + start,
+            rotateReverse = rotate * -1,
+            transform = 'rotate(' + 
+              rotate + 'deg) translate(' + 
+              radius + ') rotate(' + 
+              rotateReverse + 'deg)';
+      elem.style.transform = transform
+    })
+  }
 
 }(typeof window !== 'undefined' ? window : global))

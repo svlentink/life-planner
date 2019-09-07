@@ -1,4 +1,4 @@
-#personas, .persona, #personas:after, .persona > div {
+#personas, #personas .persona, #personas:after, #personas .persona > div {
   background-color: SkyBlue;
 }
 #personas {
@@ -44,7 +44,7 @@
 .personas .desc {
   font-size: 85%;
 }
-.persona {
+#personas .persona {
   border:2px solid;
   padding:2px;
   border-radius:5px;
@@ -54,7 +54,7 @@
 //  z-index: 9995;
 }
 
-.persona:after {
+#personas .persona:after {
   border-top: 2px dashed;
   content:"";
   top:50%;bottom:0;

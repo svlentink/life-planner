@@ -26,6 +26,9 @@
     console.log('Orchestrator called')
     if (! glob.data) return console.log('window.data not loaded yet, waiting for YAML.load')
 
+    if (! glob.renderrolesview) return console.log('renderrolesview not loaded yet')
+    glob.renderrolesview('personas', glob.data.personas.data)
+
     if (! glob.renderpersonas) return console.log('renderpersonas not loaded yet')
     glob.renderpersonas('personas', glob.data.personas.data)
 

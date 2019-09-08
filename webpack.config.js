@@ -25,6 +25,7 @@ module.exports = [{
     './routines/ical.js',
     './routines/calendar.js',
     './routines/routines.js',
+    './routines/graph.js',
     './tmm/tmm.js'
   ],
   output: {

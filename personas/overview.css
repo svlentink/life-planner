@@ -50,11 +50,22 @@
   margin-top:-50px;
 }
 
+#rolesviewcontainer:before {
+  content:'\002600';
+  margin-top:-5%;
+  color:gold;
+  font-size:500%;
+  float:right;
+  
+}
+
 #overviewfoundation {
   border-top: 8px solid Sienna;
   border-radius: 50% 50% 50% 50%/10% 10% 100% 100%;
   background-color: LawnGreen;
-  height: 120px;
+  height: 80px;
   margin-top: -20px;
   text-align:center;
+  font-size:150%;
+  padding-top:25px;
 }

@@ -5,6 +5,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "chart.js": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "ical-generator": "*",

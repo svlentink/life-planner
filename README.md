@@ -39,3 +39,67 @@ followed by things that give you energy
 and end with energy drainers.
 Plan cognitive intensive (brainpower) tasks in the morning,
 the repetitive tasks later.
+
+## Habits model
+
+We have a persona/identity/role,
+which has goals defined.
+For each goal we define activities which we put in routines,
+forming habits.
+
+```
+Role   -> Goal              -> activity           -> routine
+
+Parent -> Spend time \w kid -> read bedtime story -> incorporate in bedtime routine
+                            -> do DIY project     -> weekend
+```
+
+### duration calculation
+
+For each goal we can calculate how much time you spend on it by
+looking at the duration of the activity and the frequency it occures per week.
+
+
+## Relation with psychology
+
+### Relation to ACT
+
+Who do you want to be as a person in that role
+and can you be that person in your current environment in that role?
+E.g. does your work allow you to be the type of employee you want to be?
+Does your spouse enables you the partner you wish to be?
+
+#### ACT matrix
+
+```
+             Sensory Experience
+  destructive        |
+  patterns and       |
+   addictions        |       Habits
+                _____|_____
+<-----Away-----|Me Noticing|----Toward----->
+                ¯¯¯¯¯|¯¯¯¯¯
+ unwanted thoughts   |       Values
+   and feelings      |
+                     |
+              Mental Experience
+
+
+```
+
+Acceptance and Commitment Therapy (ACT) helps us move *towards* what we want.
+We are in the center observing,
+seeing (sensory) the things that drive us *away* from what we want;
+avoiding hard tasks and *destructive* patterns.
+On the other side we have the constructive patterns, our *habits*.
+
+The outward is controlled from the inward, our mental state and experiences.
+Inner *thoughts* and feelings
+such as
+fear of regret, doubt, confusion and anxiety,
+are causing us to be inactive or do destructive behavior.
+E.g. procrastination can be a form of stress relief.
+
+Our values help us to determine what/who is important to us.
+This translates into goals, where we work by setting constructive habits.
+

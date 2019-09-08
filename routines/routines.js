@@ -91,7 +91,47 @@
     return events
   }
   
-  function createEvents(routines, activities){
+  function getMetrics(personas, activities, routines){
+    function deprecated_getOccurrences(activity, routines){
+      const result = []
+      for (const ri in routines)
+        if (routines[ri].actions &&
+            routines[ai].actions.contains(activity))
+        //some activities are multiple times under actions
+        var activitycount = routines[ai].actions.filter((x) => x == activity)
+      return result
+    }
+    const result = {}
+    const events = createEvents(routines,activities,1)
+    personas.forEach((p) => {
+      result[p['title']] = {}
+      var goals = result[p['title']]
+      if (p.goals) for (const gi in p.goals) {
+        goals[gi] = {}
+        var goal = goals[gi]
+        for (const ai in activities) if (activities[ai].goals &&
+                                         activities[ai].goals.includes(gi)){
+          const d = activities[ai].time || activities[ai].duration
+          const occurrences = []
+          events.forEach((e) => {
+            e.routine_actions.forEach((a) => {
+              if (a == ai) e.daysOfWeek.forEach((d) => {
+                const str = 'On ' + d + 'th day of week at ' + e.startTime
+                occurrences.push(str)
+              })
+            })
+          })
+          goals[gi][ai] = {duration : d, occurs: occurrences}
+        }
+      }
+    })
+    return result
+  }
+  glob.testfunc = function() {
+    getMetrics(glob.data.personas.data, glob.data.activities, glob.data.routines)
+  }
+  
+  function createEvents(routines, activities, amountofweeks = 2){
     var events = []
     
     var days = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa']
@@ -164,12 +204,13 @@
             repeating: {
               freq: 'DAILY',
               byDay: start.days,
-              count: start.days.length * 2 //two weeks
+              count: start.days.length * amountofweeks
             },
             daysOfWeek: Ical2FullcalendarDays(start.days),
             startRecur: getFirstOccurrence(),
             startTime: getFirstOccurrence().toTimeString().substr(0,5),
-            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5)
+            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5),
+            routine_actions: routine.actions || []
           }
           events.push(event)
         }

@@ -41,6 +41,9 @@
     if (! glob.showCalendar) return console.log('showCalendar not loaded yet')
     glob.showCalendar(glob.getEvents())
 
+    if (! glob.renderGraph) return console.log('renderGraph not loaded yet')
+    glob.renderGraph(glob.data.personas.data, glob.data.activities, glob.data.routines)
+
     if (! glob.rendertmms) return console.log('rendertmms not loaded yet')
     glob.rendertmms('tmm', glob.data.tmms)
   }

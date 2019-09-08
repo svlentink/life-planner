@@ -32,6 +32,8 @@ foundation:
       gregarious:
         desc: People are designed socially
       #meritocracy: {}
+      law of jante: {}
+      openness: {}
   strengths:
     desc: Innate (developed) talents or yet to explore strengths
     data:
@@ -41,6 +43,10 @@ foundation:
         desc: Hunger for learning
       analytic:
         desc: Structured
+      conscientious: {}
+      adaptable: {}
+      strategic: {}
+      decisiveness: {}
   weaks: # pitfalls
     desc: Struggle and difficulty, costs more energy and willpower (pitfalls)
     data:
@@ -67,12 +73,17 @@ foundation:
         desc: Drink more water
       polish:
         desc: polish shoes
+      duolingo:
+        desc: Learn a language
+      piano:
+        desc: Practice
 
 
 # When you doubt if a persona fits you,
 # just hit the title in Google image search.
 # For example; 'healthy person' is different from 'athlete'
 # Persona, identity, role
+# If we set the status of a goal to idea or done, it's not displayed.
 personas:
   desc: The multiple sides you have.
   data:
@@ -83,7 +94,7 @@ personas:
         rested:
           title: Well rested
           desc: Sleep well and take moments off
-          img: https://metrouk2.files.wordpress.com/2018/02/sleeping-at-work.png
+          img: https://www.readersdigest.ca/wp-content/uploads/sites/14/2018/04/good-sleep-guide-1.jpg
           intelligences:
             - intra-personal
         focus:
@@ -94,6 +105,7 @@ personas:
           title: Write diet book
           desc: The chocolate diet
           img: http://s3.india.com/wp-content/uploads/2017/07/chocolates.jpg
+          img2: http://blog.virtahealth.com/wp-content/uploads/2018/04/Calorie-Types-1.jpg
     - title: Athlete
       desc: stamina, balance, strength, flexibility and coordination
       notes: goal physiques; Joe Manganiello, Wolverine, Joe Wicks, David Gandy
@@ -103,6 +115,14 @@ personas:
           title: Muscle-up
           desc: Muscle-up in rings and on bar
           img: https://i2.wp.com/workoutlabs.com/wp-content/uploads/watermarked/Muscle_Up.png
+          status: done
+          intelligences:
+            - bodily-kinesthetic
+        frontlever:
+          title: Front lever
+          desc: in rings and on bar
+          img: https://www.manvsweight.com/wp-content/uploads/2017/02/front-lever.png
+          status: progressing
           intelligences:
             - bodily-kinesthetic
         split:
@@ -113,12 +133,31 @@ personas:
           intelligences:
             - bodily-kinesthetic
         yogateacher:
-          status: idea
+          status: progressing
+          title: Yoga teacher
+          desc: Being able to instruct people
+          img: https://draxe.com/wp-content/uploads/2019/04/kundalini-yoga-facebook.jpg
         minutehandstand:
           title: One minute handstand
           desc: Handstand acrobatics
           img: https://hiekim.de/wp-content/uploads/2014/12/Hie-Kim-Yoga-About-hollowback-Handstand.jpg
+        marathon:
+          title: Half marathon
+          desc: Run a half marathon every quarter
     #career: also check out: http://allgroanup.com/careerish/the-lure-of-comfortable/
+    #music:
+    - title: IT professional
+      desc: If working feels like a chore, a radical change is required.
+      img: https://mentorphiledotcom.files.wordpress.com/2018/05/entrepreneur-definition-characteristics.jpg
+      goals:
+        golang:
+          title: Go language
+          desc: Go programmer
+          img: https://www.cuelogic.com/wp-content/uploads/2017/06/go_lang1.png
+        prototype:
+          title: Prototyping
+          desc: Fun and potential startup
+          img: https://revpart.com/wp-content/uploads/2016/05/Prototyping-copy-e1464356645610.jpg
     #music:
     - title: Musician
       desc: Music from the soul
@@ -140,10 +179,13 @@ personas:
         piano:
           title: Chords on piano
           desc: Being able to play piano from chords
-          status: idea
+          img: https://www.mnmusicteachers.com/sites/default/files/styles/program_hero_image/public/images/1330-655-piano.jpg
+#          status: idea
         vocal:
           title: Confidence with singing
           desc: Regain confidence over voice through training it
+          ing2: https://mucdn.musical-u.com/wp-content/uploads/2014/09/Sing-like-a-rocker.png
+          img: https://improvesingingonline.com/wp-content/uploads/2018/02/singing-voice-improvement.jpg
           status: idea
     #faith:
     - title: Believer
@@ -160,22 +202,20 @@ personas:
       img: https://www.iaspaper.net/wp-content/uploads/2017/01/Family-300x233.jpg
       goals:
         datenite:
-          title: Date night
-          desc: Quality time together
+          title: Quality time
+          desc: Date night, museum etc.
           img: https://www.babble.com/wp-content/uploads/2015/08/ThinkstockPhotos-478406944.jpg
-    #read:
-    - title: Reader
-      desc: Make reading a hobby
-      img: https://previews.123rf.com/images/rido/rido1112/rido111200014/11742894-smiling-relaxed-man-reading-a-book-lying-on-sofa.jpg
-      img2: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuwD62zN922S8wrgfH1srk6hI3z_Dagn7T0uy2-r2W6a5b9jWmiA
-      img3: http://www.bemedialiterate.com/uploads/1/7/2/2/1722523/8910572_orig.jpg
     #organize:
-    - title: Organized and minimalist
-      img: https://www.thesecretboard.co.za/wp-content/uploads/2016/05/My-Top-Ten-Organization-Tips.jpg
+    - title: Minimalist
+      img: https://i.ytimg.com/vi/jrf_dMnatW0/maxresdefault.jpg
       goals:
+        organized:
+          title: Organized
+          desc: Never be the bus factor
+          img: https://www.thesecretboard.co.za/wp-content/uploads/2016/05/My-Top-Ten-Organization-Tips.jpg
         finance:
           title: finacially secure
-          desc: Wealth distribution
+          desc: Digital wealth distribution
           status: processing
           img: https://media.istockphoto.com/vectors/money-growth-concept-vector-illustration-of-coins-stacks-with-green-vector-id852175196
     - title: Socialite
@@ -193,9 +233,14 @@ personas:
         dance:
           status: idea
           desc: coordination, rithm
+        museum:
+          title: Weekly museum
+          desc: Acquire knowlegde while with family/friends
+          img: https://www.museumkaart.nl/Portals/0/favicon.ico
     - title: Philomath
       desc: Inquisitive, epistemophilia
       img: http://www.curiousgeorge.com/~/media/sites/cg/new%20design%20images/resources/george-laying.png
+      img2: https://greatperformersacademy.com/images/images/Articles_images/tips-that-will-make-you-fast-learner.jpg
       goals:
         spanish:
           title: Spanish B1
@@ -204,6 +249,20 @@ personas:
           desc: Being able to read and speak Spanish
           intelligences:
             - linguistic
+        physics:
+          status: idea
+        reader:
+          title: Become a reader
+          desc: Make reading a hobby
+          img: https://previews.123rf.com/images/rido/rido1112/rido111200014/11742894-smiling-relaxed-man-reading-a-book-lying-on-sofa.jpg
+          img2: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuwD62zN922S8wrgfH1srk6hI3z_Dagn7T0uy2-r2W6a5b9jWmiA
+          img3: http://www.bemedialiterate.com/uploads/1/7/2/2/1722523/8910572_orig.jpg
+        stats:
+          title: Statistics and prob.
+          desc: Foundation for data science
+          img: https://thumbs.dreamstime.com/b/make-math-fun-education-cartoon-making-would-be-breakthrough-64826876.jpg
+          intelligences:
+            - logical-mathematical
 
 
 # Recurring activities
@@ -219,24 +278,32 @@ activities:
     desc: Finances
     moscow: should
     energize: false # costs/burns mental energy
+    goals:
+      - finance
   tidy:
     interval: daily
     duration: 15
     energize: true # the result makes me feel good
     desc: digitally (e.g. notes) and physically (e.g. desk)
     moscow: should
+    goals:
+      - organized
   prototype:
     interval: weekly
     time: 240
     moscow: should
     desc: Work out prototypes that could lead to a startup
     energize: true # hobby
+    goals:
+      - prototype
   plan:
     interval: daily
     duration: 10
     moscow: must
     desc: on weekdays; plan day. In weekend; update long-term planning
     energize: false # requires prefrontal cortex
+    goals:
+      - organized
   shower:
     interval: daily
     duration: 25
@@ -255,16 +322,20 @@ activities:
     desc: pushups without counting
     moscow: must
     energize: true # physical exercize relaxes the mind
+    goals:
+      - frontlever
   stretch:
     interval: daily
     time: 6
     desc: Stretching
     moscow: could
     energize: true
+    goals:
+      - yogateacher
   dress:
     interval: daily
     duration: 1
-    desc: After stretching, put cloths on #stretching is done in underwear
+    desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
     moscow: must
     energize: false
   meditate:
@@ -273,18 +344,24 @@ activities:
     desc: headspace
     moscow: should
     energize: true
+    goals:
+      - rested
   address_power:
     interval: daily
     time: 10
     desc: See benjamin franklin diary
     moscow: should
     energize: false
+    goals:
+      - scriptures
   guitar:
     interval: weekly
     time: 30
     desc: Just play
     moscow: could
     energize: true # enjoyable activity
+    goals:
+      - songs
   dental:
     interval: daily
     desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
@@ -296,30 +373,40 @@ activities:
     time: 1
     moscow: must
     energize: false
+    goals:
+      -organized
   food2fridge:
     interval: daily
     desc: from freezer to fridge
     time: 1
     moscow: should
     energize: false
+    goals:
+      -organized
   pack:
     interval: daily
     desc: bag and clothing
     time: 2
     moscow: should
     energize: false
+    goals:
+      - organized
   read:
     interval: daily
     desc: Book, no articles/screens
-    time: 30
+    time: 20
     moscow: should
     energize: true # dependant on the content
+    goals:
+      - reader
   core:
     interval: daily
     time: 8
     desc: 5m plank and squats
     moscow: should
     energize: true
+    goals:
+      - frontlever
   audiobook:
     interval: daily
     desc: learn spanish during commute
@@ -330,11 +417,11 @@ activities:
     interval: daily
     time: 5
     moscow: should
-    desc: What did I do good? bad? stuck in loops?
+    desc: What did I do good? bad? stuck in loops? Helicopter overview.
     energize: false
   message:
     interval: daily
-    desc: Email, linkedin, text
+    desc: Email, linkedin, whatsapp, fb
     time: 5
     moscow: should
     energize: false
@@ -350,6 +437,8 @@ activities:
     moscow: could
     energize: true
     desc: One minute sprint http://youtu.be/SHN-4ve81TY
+    goals:
+      - marathon
   gratitude:
     desc: todo
   band_rehearsal:
@@ -363,6 +452,11 @@ activities:
     time: 15
     energize: true
     desc: bike
+  to_train:
+    interval: daily
+    time: 15
+    energize: true
+    desc: Bike/walk from/to train
   lunch:
     interval: daily
     moscow: should
@@ -379,7 +473,7 @@ activities:
     interval: weekly
     moscow: should
     energize: false
-    desc: uva.nl
+    desc: os3.nl
     time: 120
   homework:
     interval: weekly
@@ -397,7 +491,40 @@ activities:
     moscow: should
     energize: true
     time: 30
-
+  run:
+    interval: weekly
+    moscow: should
+    energize: true
+    time: 60
+    goals:
+      - marathon
+  water:
+    interval: daily
+    moscow: must
+    energize: true
+    time: 1
+  psychoanalysis:
+    desc: self psychology
+    moscow: should
+    energize: false
+    time: 30
+    interval: weekly
+  yoga:
+    moscow: could
+    energize: true
+    time: 5
+    interval: daily
+    goals:
+      - yogateacher
+  museum:
+    moscow: could
+    desc: Visit museum
+    energize: true
+    time: 240
+    interval: weekly
+    goals:
+      - museum
+      - datenite
 
 
 # trigger, cue or anchor is the action that triggers the routine
@@ -411,18 +538,43 @@ routines:
       - bike_15
       - band_rehearsal
       - bike_15
+  run:
+    start:
+      - days: [sa]
+        time: 06:15
+    actions:
+      - run
+  portfolio_management:
+    start:
+      - days: [su]
+        time: 08:00
+    actions:
+      - portfolio_management
+  saturday:
+    start:
+      - days: [sa]
+        time: 9:00
+    actions:
+      - prototype
+      - lunch
+      - museum
   mourning_ritual:
     start:
-      - days: daily
+      - days: weekdays
         time: 05:30
+      - days: [sa]
+        time: 07:30
+      - days: [su]
+        time: 06:30
     trigger: alarm
     actions:
-      - shower
       - pushups
       - stretch
+      - water
+      - address_power
+      - shower
       - dress
       - meditate
-      - address_power
       - message
       - plan
 #      - cook
@@ -464,6 +616,7 @@ routines:
       - day-review
       - read
       - core
+      - water
   bike-commute:
 #    start:
 #      - days: [mo,th]

@@ -31,7 +31,8 @@ import Chart from 'chart.js';
       labels: labels,
       datasets: [{
         data: values,
-        backgroundColor: colors
+        backgroundColor: colors,
+        yAxisID: 'minutes per week'
       }]
     }
 

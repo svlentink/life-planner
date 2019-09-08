@@ -51,7 +51,7 @@ nav li a, nav li span {
   text-decoration: none;
 }
 
-[data-status="idea"] {
+[data-status="idea"], [data-status="done"] {
   display:none;
 }
 

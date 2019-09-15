@@ -21,7 +21,7 @@
     }
   }
   
-  glob.renderfoundation = function(elemid, data) {
+  glob.renderlists = function(elemid, data, classname = 'foundation') {
     var cont = document.getElementById(elemid)
     cont.innerHTML = '' //reset
     for (var key in data){
@@ -33,7 +33,7 @@
       desc.innerText = data[key].desc || 'No_description_found'
   
       var fl = document.createElement('article')
-      fl.setAttribute('class', 'foundation')
+      fl.setAttribute('class', classname)
       fl.appendChild(title)
       fl.appendChild(desc)
   

@@ -32,8 +32,9 @@
     if (! glob.renderpersonas) return console.log('renderpersonas not loaded yet')
     glob.renderpersonas('personas', glob.data.personas.data)
 
-    if (! glob.renderfoundation) return console.log('renderfoundation not loaded yet')
-    glob.renderfoundation('foundation', glob.data.foundation)
+    if (! glob.renderlists) return console.log('renderlists not loaded yet')
+    glob.renderlists('foundation', glob.data.foundation)
+    glob.renderlists('lifelists', glob.data.lifelists, 'lifelist')
 
     if (! glob.renderroutines) return console.log('renderroutines not loaded yet')
     glob.renderroutines('routines', glob.data.routines, glob.data.activities)

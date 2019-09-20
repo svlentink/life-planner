@@ -752,4 +752,23 @@ lifelists:
         desc: Should I leave (social) group X?
       abroad:
         desc: Do I fear leaving behind more than losing out on the opportunity to explore?
+      hobby:
+        desc: Do I need a (new) hobby?
+      education:
+        desc: Am I as educated as I am intelligent? Did I achieve what is possible for me?
+# https://www.reddit.com/r/JordanPeterson/comments/64fkob/what_are_the_six_things_that_jordan_says_if_you/
+      heared:
+        desc: Do you have a circle of friends, including at least one or two people that you can really talk to?
+      loved:
+        desc: Do you have a close, intimate, romantic relationship?
+      direction:
+        desc: Do you have a meaningful job, or educational path, or serious personal interest (or some combination thereof)?
+      stability:
+        desc: Have you avoided problems with drugs or alcohol?
+      outlook_hope:
+        desc: Do you have a realistic, meaningful plan for the future?
+      body:
+        desc: Are you in good physical health?
+      basis:
+        desc: Do you have at least a necessary minimum of economic resources?
 

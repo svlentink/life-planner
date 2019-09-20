@@ -34,7 +34,7 @@
 
     if (! glob.renderlists) return console.log('renderlists not loaded yet')
     glob.renderlists('foundation', glob.data.foundation)
-    glob.renderlists('lifelists', glob.data.lifelists, 'lifelist')
+    glob.renderlists('lifelists', glob.data.lifelists)
 
     if (! glob.renderroutines) return console.log('renderroutines not loaded yet')
     glob.renderroutines('routines', glob.data.routines, glob.data.activities)

@@ -21,7 +21,7 @@
     }
   }
   
-  glob.renderlists = function(elemid, data, classname = 'foundation') {
+  glob.renderlists = function(elemid, data, classname = 'list') {
     var cont = document.getElementById(elemid)
     cont.innerHTML = '' //reset
     for (var key in data){

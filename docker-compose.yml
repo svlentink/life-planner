@@ -1,15 +1,8 @@
 version: '3'
 services:
-  data:
-    build: .
-    volumes:
-      - lpvol:/data/webroot/lent.ink/projects/life-planner
-    command: [""]
   cdn:
-    image: nginx:alpine
+    build:
+      dockerfile: develop.Dockerfile
+      context: .
     ports:
       - 8080:80
-    volumes:
-      - lpvol:/usr/share/nginx/html/lp:ro
-volumes:
-  lpvol: {}

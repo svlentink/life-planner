@@ -31,8 +31,10 @@
     var usedactivities = []
     for (var key in routines){
       var obj = routines[key]
+      obj.title = key
       var rcont = document.createElement('article')
       rcont.setAttribute('class', 'routine')
+      glob.addDataAttributes(rcont,obj)
       
       var tr = document.createElement('span')
       tr.setAttribute('class','trigger')
@@ -122,7 +124,7 @@
       var routine = routines[key]
       if (routine.start){
         var title = key
-        if (routine.trigger) title += ' <= ' + routine.trigger
+        //if (routine.trigger) title += ' <= ' + routine.trigger
 
         var desc = []
         if (routine.desc) desc.push(routine.desc)

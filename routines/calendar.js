@@ -11,14 +11,21 @@ import { Calendar } from 'fullcalendar';
     var params = {
       header: {
         left: 'prev,next today',
-        center: 'title',
+        //center: 'title',
         right: 'agendaWeek,agendaDay,listWeek'
       },
       defaultView: 'agendaWeek',
       firstDay: 1,
       navLinks: true, // can click day/week names to navigate views
       eventLimit: true, // allow "more" link when too many events
-      events: events
+      events: events,
+      eventClick: function(info) {
+        info.jsEvent.preventDefault()
+        const id = info.event.title
+        for (const r of document.querySelectorAll('.routine'))
+          r.style.display = 'none'
+        document.querySelector('.routine[data-title="'+id+'"]').style.display = 'block'
+      }
     }
     
     var calendar = new Calendar(div, params)

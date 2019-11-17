@@ -74,7 +74,7 @@ NOTE: this aspect fits in the lower left of the ACT matrix.
 
 ### TODO
 
-What behaviors are detremental? (drugs, tv, no sleep)
+What behaviors are detremental? (drugs, tv, not enough sleep)
 
 NOTE: this aspect fits in the upper left of the ACT matrix.
 

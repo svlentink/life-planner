@@ -539,7 +539,7 @@ routines:
       - prototype
       - lunch
       - museum
-  mourning_ritual:
+  morning_ritual:
     start:
       - days: weekdays
         time: 05:30

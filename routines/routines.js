@@ -93,6 +93,21 @@
     return events
   }
   
+  glob.setSelectedEvent = function(id,start) { // TODO
+  /*
+  When an calendar item is selected,
+  we can set feedback data, to reflect on it.
+  */
+    for (const r of document.querySelectorAll('.routine'))
+      r.style.display = 'none'
+    document.querySelector('.routine[data-title="'+id+'"]').style.display = 'block'
+    var obj = { ...glob.data.routines[id] }
+    obj['datetime'] = start
+    glob.selectedEvent = obj
+    console.log(obj)
+    return obj
+  }
+  
   function createEvents(routines, activities, amountofweeks = 2){
     var events = []
     

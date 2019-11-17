@@ -22,9 +22,8 @@ import { Calendar } from 'fullcalendar';
       eventClick: function(info) {
         info.jsEvent.preventDefault()
         const id = info.event.title
-        for (const r of document.querySelectorAll('.routine'))
-          r.style.display = 'none'
-        document.querySelector('.routine[data-title="'+id+'"]').style.display = 'block'
+        const st = info.event.start
+        glob.setSelectedEvent(id,st)
       }
     }
     

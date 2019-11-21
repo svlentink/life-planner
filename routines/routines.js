@@ -102,7 +102,12 @@
       r.style.display = 'none'
     document.querySelector('.routine[data-title="'+id+'"]').style.display = 'block'
     var obj = { ...glob.data.routines[id] }
-    obj['datetime'] = start
+    obj['start'] = start
+    for (var i of glob.getEvents())
+      if (i.title && i.title === id)
+        obj['activities'] = i.activities
+    if (obj.activities && obj.actions)
+      delete obj['actions']
     glob.selectedEvent = obj
     console.log(obj)
     return obj
@@ -142,12 +147,14 @@
         //if (routine.trigger) title += ' <= ' + routine.trigger
 
         var desc = []
+        var acts = []
         if (routine.desc) desc.push(routine.desc)
         var totaltime = 0
         if (routine.actions) for (var j in routine.actions) {
           var action = routine.actions[j]
           if (activities[action]){
             var act = activities[action]
+            acts.push(act)
             var time = (act.time || act.duration || 0)
             totaltime += time
             var row = time + ' '
@@ -187,7 +194,8 @@
             startRecur: getFirstOccurrence(),
             startTime: getFirstOccurrence().toTimeString().substr(0,5),
             endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5),
-            routine_actions: routine.actions || []
+            routine_actions: routine.actions || [],
+            activities: acts
           }
           events.push(event)
         }

@@ -135,7 +135,10 @@
   }
   
   function showReviewItem(obj){
-    if (! glob.DEVMODE) return console.log('you can use DEVMODE=true')
+    if (localStorage.getItem('DEVMODE') != 1)
+      return console.log('you can use localStorage.setItem("DEVMODE",1)')
+    else
+      console.log("DEVMODE enabled via localStorage")
     getResetReviewItem()
     var cont = document.querySelector('#reviewroutineitem')
     if (obj.start - Date.now() > 0) // item in future
@@ -144,8 +147,15 @@
       cont.style.display = 'block'
     cont.setAttribute('title',JSON.stringify(obj))
     document.querySelector('#routineitemstart').innerText = obj.start.toString()
-    
   }
+  
+  function saveReviewItem(){
+    var item = getResetReviewItem()
+    var arr = JSON.parse(localStorage.getItem('reviewedevents') || '[]')
+    arr.push(item)
+    localStorage.setItem('reviewedevents',JSON.stringify(arr))
+  }
+  document.querySelector('#storereview').onclick = saveReviewItem
   
   function createEvents(routines, activities, amountofweeks = 3){
     var events = []

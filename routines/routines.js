@@ -108,12 +108,46 @@
         obj['activities'] = i.activities
     if (obj.activities && obj.actions)
       delete obj['actions']
-    glob.selectedEvent = obj
-    console.log(obj)
+    showReviewItem(obj)
     return obj
   }
   
-  function createEvents(routines, activities, amountofweeks = 2){
+  function getResetReviewItem(){
+    var cont = document.querySelector('#reviewroutineitem')
+    cont.style.display = 'none'
+    var result = JSON.parse(cont.getAttribute('title') || '{}')
+    result.reviewed = new Date()
+    var s = document.querySelector('#routineitemspent')
+    var d = document.querySelector('#routineitemdeviate')
+    var e = document.querySelector('#routineitemeffectiveness')
+    var c = document.querySelector('#routineitemcomment')
+    result.spent = s.value
+    result.deviate = d.value
+    result.effectiveness = e.value
+    result.comment = c.value
+    s.value = ''
+    d.value = 0
+    e.value = 3
+    e.nextElementSibling.innerText = 3
+    c.value = ''
+    console.log(result)
+    return result
+  }
+  
+  function showReviewItem(obj){
+    if (! glob.DEVMODE) return console.log('you can use DEVMODE=true')
+    getResetReviewItem()
+    var cont = document.querySelector('#reviewroutineitem')
+    if (obj.start - Date.now() > 0) // item in future
+      cont.style.display = 'none'
+    else
+      cont.style.display = 'block'
+    cont.setAttribute('title',JSON.stringify(obj))
+    document.querySelector('#routineitemstart').innerText = obj.start.toString()
+    
+  }
+  
+  function createEvents(routines, activities, amountofweeks = 3){
     var events = []
     
     var days = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa']
@@ -124,7 +158,7 @@
           return new Date(
             (new Date()).getFullYear(),
             (new Date()).getMonth(),
-            (new Date()).getDate() + ((new Date()).getDay() - d),
+            (new Date()).getDate() + ((new Date()).getDay() - d -7),
             parseInt(start.time.split(':')[0]),
             parseInt(start.time.split(':')[1]) + (extraMinutes || 0)
           )

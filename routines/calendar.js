@@ -27,6 +27,7 @@ import { Calendar } from 'fullcalendar';
       }
     }
     
+    div.innerHTML = ''
     var calendar = new Calendar(div, params)
     calendar.render()
   }

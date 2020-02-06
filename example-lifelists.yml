@@ -1,0 +1,60 @@
+
+slacking:
+  desc: Activities that are short and I allow myself as a distracion
+  data:
+    pushups:
+      desc: Pushups or handstand
+    guitar:
+      desc: Playing a song or two
+    reading:
+      desc: Always have a book around, no articles
+    clean:
+      desc: Organize and cleaning provides a better workspace
+    water:
+      desc: Drink more water
+    polish:
+      desc: polish shoes
+    duolingo:
+      desc: Learn a language
+    piano:
+      desc: Practice
+ponder:
+  desc: Questions to contemplate on (during sleep, driving, hike etc.)
+  data:
+    reference:
+      desc: https://www.forbes.com/sites/remyblumenfeld/2019/08/03/eureka-moments-how-you-can-have-more-of-them/ 
+    career:
+      desc: Stability vs. challenge, growth vs. ease, money vs. personal values
+    relationship_x:
+      desc: Should I go through with this person?
+    holiday:
+      desc: Where to go next?
+    house:
+      desc: Renovate current or buy new one?
+    parent:
+      desc: What do I want my children to remember of me, to be proud of?
+    business:
+      desc: Broaden scope or narrow expertise?
+    leave:
+      desc: Should I leave (social) group X?
+    abroad:
+      desc: Do I fear leaving behind more than losing out on the opportunity to explore?
+    hobby:
+      desc: Do I need a (new) hobby?
+    education:
+      desc: Am I as educated as I am intelligent? Did I achieve what is possible for me?
+# https://www.reddit.com/r/JordanPeterson/comments/64fkob/what_are_the_six_things_that_jordan_says_if_you/
+    heared:
+      desc: Do you have a circle of friends, including at least one or two people that you can really talk to?
+    loved:
+      desc: Do you have a close, intimate, romantic relationship?
+    direction:
+      desc: Do you have a meaningful job, or educational path, or serious personal interest (or some combination thereof)?
+    stability:
+      desc: Have you avoided problems with drugs or alcohol?
+    outlook_hope:
+      desc: Do you have a realistic, meaningful plan for the future?
+    body:
+      desc: Are you in good physical health?
+    basis:
+      desc: Do you have at least a necessary minimum of economic resources?

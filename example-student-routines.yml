@@ -1,0 +1,136 @@
+# trigger, cue or anchor is the action that triggers the routine
+# cue + routine + reward = habit
+
+band_rehearsal:
+  start:
+    - days: [tu]
+      time: 19:15
+  actions:
+    - bike_15
+    - band_rehearsal
+    - bike_15
+run:
+  start:
+    - days: [sa]
+      time: 06:15
+  actions:
+    - run
+portfolio_management:
+  start:
+    - days: [su]
+      time: 08:00
+  actions:
+    - portfolio_management
+saturday:
+  start:
+    - days: [sa]
+      time: 9:00
+  actions:
+    - prototype
+    - lunch
+    - museum
+morning_ritual:
+  start:
+    - days: weekdays
+      time: 05:30
+    - days: [sa]
+      time: 07:30
+    - days: [su]
+      time: 06:30
+  trigger: alarm
+  actions:
+    - pushups
+    - stretch
+    - water
+    - address_power
+    - shower
+    - dress
+    - meditate
+    - message
+    - plan
+#      - cook
+lunch:
+  start:
+    - days: [mo,tu,we,th,fr]
+      time: 12:00
+  trigger: lunch
+  actions:
+    - lunch
+    - message
+lecture:
+  start:
+    - days: [tu,fr]
+      time: 09:30
+  actions:
+    - prepare-lecture
+    - lecture
+labs:
+  start:
+    - days: [tu,fr]
+      time: 13:00
+  actions:
+    - homework
+    - homework
+bedtime:
+  start:
+    - days: [mo,we,th,su]
+      time: 21:00
+    - days: [tu, fr, sa]
+      time: 22:00
+  trigger: go to bed
+  actions:
+    - dental
+    - tidy
+    - pack
+    - food2fridge
+    - dishwasher
+    - day-review
+    - read
+    - core
+    - water
+bike-commute:
+#    start:
+#      - days: [mo,th]
+#        time: 7:00
+#      - days: [mo, th]
+#        time: 16:00
+  trigger: work
+  actions:
+    - audiobook
+train-commute:
+  start:
+    - days: [tu, fr]
+      time: 6:30
+    - days: [tu, fr]
+      time: 18:30
+    - days: [mo,we,th]
+      time: 07:00
+    - days: [mo,we,th]
+      time: 16:30
+  actions:
+    - read
+    - read
+dinner:
+  start:
+    - days: [mo,we,th,sa,su]
+      time: 17:45
+  actions:
+    - message
+    - dinner
+    - news
+    - guitar
+early-dental:
+  start:
+    - days: daily
+      time: 20:00
+  trigger: 8h watch alarm
+  actions:
+    - dental
+work:
+  start:
+    - days: [mo,we,th]
+      time: 08:00
+    - days: [mo,we,th]
+      time: 12:30
+  actions:
+    - work

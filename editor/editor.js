@@ -41,29 +41,30 @@ import YAML from 'yamljs';
         let obj = YAML.parse(txt)
         glob.data = obj
         if (callback) callback(glob.data)
+        console.log('Loaded from blobstorage')
+      })
+    } else {
+      window.location.hash = url
+      YAML.load(url,
+      function(obj) {
+        console.log('YAML.load callback',url)
+        glob.data = obj
+        for (var key in glob.data) {
+          void function(key){ // IIFE to perserve variables during looping
+            var val = glob.data[key]
+            if (typeof val === 'string' && val.substr(-2,2).toLowerCase() === 'ml') {
+              console.log('Loading',key,'from',val)
+              YAML.load(val, (data) => {
+                glob.data[key] = data
+                if (callback) callback(glob.data)
+                console.log('Loaded',key,'from',val)
+              })
+            }
+          }(key)
+        }
+        if (callback) callback(glob.data)
       })
     }
-    else window.location.hash = url
-
-    YAML.load(url,
-    function(obj) {
-      console.log('YAML.load callback',url)
-      glob.data = obj
-      for (var key in glob.data) {
-        void function(key){ // IIFE to perserve variables during looping
-          var val = glob.data[key]
-          if (typeof val === 'string' && val.substr(-2,2).toLowerCase() === 'ml') {
-            console.log('Loading',key,'from',val)
-            YAML.load(val, (data) => {
-              glob.data[key] = data
-              if (callback) callback(glob.data)
-              console.log('Loaded',key,'from',val)
-            })
-          }
-        }(key)
-      }
-      if (callback) callback(glob.data)
-    })
   }
   document.querySelector('#loadYAMLbtn').addEventListener('click',() => loadURL(glob.orchestrator))
   

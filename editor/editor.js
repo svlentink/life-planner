@@ -3,10 +3,48 @@ import YAML from 'yamljs';
 
 (function (glob) { // IIFE pattern
   'use strict';
+  let blob_url = "https://blobstorage.lentink.consulting/yaml"
+  let blob_login_url = "https://blobstorage.lentink.consulting/?redirect=" +
+                       encodeURIComponent('https://lent.ink/projects/life-planner/#blobstorage')
+
+  function loadBlob(callback) {
+    let url = blob_url + '_test_if_logged_in'
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText === 'ERROR please login first')
+          return window.location = blob_login_url
+        fetchBlob(callback)
+      }
+    };
+    xhttp.open("GET", url, true)
+    xhttp.withCredentials = true
+    xhttp.send()
+  }
+  function fetchBlob(callback) {
+    let url = blob_url
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        callback(this.responseText)
+      }
+    };
+    xhttp.open("GET", url, true)
+    xhttp.withCredentials = true
+    xhttp.send()
+  }
 
   function loadURL(callback) {
-    var url = document.querySelector('#inputurl').value
-    window.location.hash = '#' + url
+    let url = document.querySelector('#inputurl').value
+    if (window.location.hash === '#blobstorage') {
+      loadBlob((txt) => {
+        let obj = YAML.parse(txt)
+        glob.data = obj
+        if (callback) callback(glob.data)
+      })
+    }
+    else window.location.hash = url
+
     YAML.load(url,
     function(obj) {
       console.log('YAML.load callback',url)
@@ -31,12 +69,29 @@ import YAML from 'yamljs';
   
   function loadinput(callback) {
     var yamlinp = document.querySelector('#input').value
-    glob.localStorage.setItem('yaml',yamlinp)
-    console.log('Saved to localstorage')
+    if (window.location.hash === '#blobstorage'){
+      let url = blob_url
+      var xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log('Saved to blobstorage')
+        }
+      };
+      xhttp.open("POST", url, true)
+      xhttp.withCredentials = true
+      xhttp.send(yamlinp)
+    } else {
+      glob.localStorage.setItem('yaml',yamlinp)
+      console.log('Saved to localstorage')
+    }
     glob.data = YAML.parse(yamlinp)
     if (callback) callback(glob.data)
   }
-  document.querySelector('#renderbtn').addEventListener('click',() => loadinput(glob.orchestrator))
+  document.querySelector('#renderbtnlocalstorage').addEventListener('click',() => loadinput(glob.orchestrator))
+  document.querySelector('#renderbtnblobstorage').addEventListener('click',() => {
+    window.location.hash = '#blobstorage'
+    loadinput(glob.orchestrator)
+  })
   
   function init(){
     console.log('Start loading page from YAML')
@@ -45,9 +100,12 @@ import YAML from 'yamljs';
       console.log('Found url in hash of url, using it to load yaml')
       document.querySelector('#inputurl').value = hash.substr(1)
       loadURL(glob.orchestrator)
+    } else if(hash && hash === '#blobstorage'){
+      loadURL(glob.orchestrator)
     } else if (glob.localStorage.getItem('yaml')) {
       console.log('Found content in localstorage, using it')
       document.querySelector('#input').value = glob.localStorage.getItem('yaml')
+      //window.location.hash = 'localstorage'
       loadinput(glob.orchestrator)
     } else loadURL(glob.orchestrator) // use default value in inputfield
   }

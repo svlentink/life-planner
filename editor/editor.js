@@ -38,6 +38,7 @@ import YAML from 'yamljs';
     let url = document.querySelector('#inputurl').value
     if (window.location.hash === '#blobstorage') {
       loadBlob((txt) => {
+        document.querySelector('#input').innerText = txt
         let obj = YAML.parse(txt)
         glob.data = obj
         if (callback) callback(glob.data)

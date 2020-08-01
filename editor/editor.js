@@ -94,6 +94,11 @@ import YAML from 'yamljs';
     window.location.hash = '#blobstorage'
     loadinput(glob.orchestrator)
   })
+  document.querySelector('#loadbtnblobstorage').addEventListener('click',() => {
+    let loc = window.location
+    let href = loc.origin + loc.pathname + '#blobstorage'
+    window.open(href)
+  })
   
   function init(){
     console.log('Start loading page from YAML')

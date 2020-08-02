@@ -8,8 +8,8 @@
     "chart.js": "*",
     "webpack": "*",
     "webpack-cli": "*",
-    "ical-generator": "*",
-    "yamljs" : "*", "fs":"*",
+    "ical-generator": "*", "fs":"*",
+    "yamljs" : "*",
     "fullcalendar": "4.0.0-alpha.4"
   }
 }

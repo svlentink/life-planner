@@ -3,8 +3,8 @@ import YAML from 'yamljs';
 
 (function (glob) { // IIFE pattern
   'use strict';
-  let blob_url = "https://blobstorage.lentink.consulting/yaml"
-  let blob_login_url = "https://blobstorage.lentink.consulting/?redirect=" +
+  let blob_url = "https://blob.huil.bid/yaml"
+  let blob_login_url = "https://blob.huil.bid/?redirect=" +
                        encodeURIComponent('https://lent.ink/projects/life-planner/#blobstorage')
 
   function loadBlob(callback) {

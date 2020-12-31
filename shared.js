@@ -49,4 +49,18 @@
     glob.rendertmms('tmm', glob.data.tmms)
   }
 
+/*                      
+ * Allow custom CSS to be loaded
+ */
+function loadCss(){
+        let url = (new URLSearchParams(window.location.search)).get('css')
+        if (! url) return
+        let link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.type = 'text/css'
+        link.href = href
+        document.getElementsByTagName('HEAD')[0].appendChild(link)
+}     
+loadCss()
+
 }(typeof window !== 'undefined' ? window : global))

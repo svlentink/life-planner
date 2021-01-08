@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Life Planner</title>
+  <script src="../shared.js"></script>
+  <script src="editor.js"></script>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<h1 id='edit'>Editor</h1>
+<section class='info'>
+  Everything seen above is rendered based on the data stored in
+  <a href='example.yml'>this YAML</a> file.
+  You can use this file as an example to create your own.
+  To render your data, simply paste it into the textarea below.
+  <br/>
+  For more advanced users, we recommend using git for version control,
+  which enables you to load your YAML from an URL
+  (e.g. <a href='https://github.com/svlentink/life-planner/tree/master/example.yml'>raw.githubusercontent.com</a>).
+</section>
+<section id='editor'>
+<!--
+<input id='inputurl' style='width:600px;' value='example.yml'/>
+<button id='loadYAMLbtn'>load YAML</button>
+<hr/>
+-->
+<button id='renderbtnlocalstorage'>Save textarea below in browser (<code>localStorage</code>)</button>
+<br/>
+<button id='renderbtnblobstorage'>Save textarea below on server (facebook login)</button>
+FIXME the following btn needs to be on the main index when no hash is found.
+<button id='loadbtnblobstorage'>load from server</button>
+<textarea id='input'></textarea>
+</section>
+
+</body>
+</html>

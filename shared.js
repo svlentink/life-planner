@@ -52,7 +52,7 @@
 /*                      
  * Allow custom CSS to be loaded
  */
-function loadCss(){
+function loadCss(){ //already
         let url = (new URLSearchParams(window.location.search)).get('css')
         if (! url) return
         let link = document.createElement('link')

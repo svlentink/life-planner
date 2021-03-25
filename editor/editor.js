@@ -35,7 +35,7 @@ import YAML from 'yamljs';
     xhttp.send()
   }
 
-  function loadURL(callback) {
+  function loadURL(callback) { //already
     if (window.location.hash === '#blobstorage') {
       console.log('Loading YAML from blobstorage service')
       loadBlob((txt) => {

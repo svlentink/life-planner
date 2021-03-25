@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<!--
+<link rel='stylesheet' type='text/css' href='style.css'/>
+-->
+</head>
+<body>
+
+<div></div>
+<script type="module">
+    import { render } from './main.js'
+    
+let obj = {
+  "type": "css",
+  "val": "style.css",
+  "items": [
+    {
+      "type": "title",
+      "val": "Life Dashboard"
+    },
+    {
+      "type": "desc",
+      "val": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "tabs",
+      "val": {
+        "pageone": [
+          {
+            "type": "title",
+            "val": "test1"
+          }
+        ],
+        "pagetwo": [
+          {
+            "type": "title",
+            "val": "test2"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+    render('div',obj)
+</script>
+</body>
+</html>

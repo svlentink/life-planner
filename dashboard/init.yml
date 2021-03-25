@@ -1,0 +1,28 @@
+
+
+type: css
+val: https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
+items:
+- type: title
+  val: Life Dashboard
+- type: desc
+  val: Lorem ipsum dolor sit amet
+- type: tabs
+  val:
+    pageone:
+    - type: title
+      val: test1
+    pagetwo:
+    - type: title
+      val: test2
+
+
+type: page
+title: Life Dashboard
+desc: Lorem ispum
+val:
+- type: css
+  val: http://google.com/style.css
+- type: tab
+  title: a
+  items:

@@ -20,7 +20,8 @@
     for (var i in infos)
       infos[i].setAttribute('style','display:block;')
   }
-  document.querySelector('#showinfobtn').addEventListener('click',showinfo)
+  let showinfobtn = document.querySelector('#showinfobtn')
+  if (showinfobtn) showinfobtn.addEventListener('click',showinfo)
   
   glob.orchestrator = function(){
     console.log('Orchestrator called')

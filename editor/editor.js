@@ -107,12 +107,15 @@ import YAML from 'yamljs';
   init()
 
   //document.querySelector('#loadYAMLbtn').addEventListener('click',() => loadURL(glob.orchestrator))
-  document.querySelector('#renderbtnlocalstorage').addEventListener('click',() => loadinput(/*glob.orchestrator*/))
-  document.querySelector('#renderbtnblobstorage').addEventListener('click',() => {
+  let renderbtnlocalstorage = document.querySelector('#renderbtnlocalstorage')
+  if (renderbtnlocalstorage) renderbtnlocalstorage.addEventListener('click',() => loadinput(/*glob.orchestrator*/))
+  let renderbtnblobstorage = document.querySelector('#renderbtnblobstorage')
+  if (renderbtnblobstorage) renderbtnblobstorage.addEventListener('click',() => {
     window.location.hash = 'blobstorage'
     loadinput(/*glob.orchestrator*/)
   })
-  document.querySelector('#loadbtnblobstorage').addEventListener('click',() => {
+  let loadbsnblobstorage = document.querySelector('#loadbtnblobstorage')
+  if (loadbsnblobstorage) loadbsnblobstorage.addEventListener('click',() => {
     let loc = window.location
     let href = loc.origin + loc.pathname + '#blobstorage'
     window.open(href)

@@ -3,7 +3,7 @@ FROM node AS build
 # actual building process
 WORKDIR /app
 COPY package.json /app/
-RUN npm install -g
+RUN npm install
 COPY . /app
 RUN npm run build
 

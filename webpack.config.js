@@ -12,11 +12,23 @@ module.exports = [{
     filename: 'bundled01.js',
     path: __dirname
   },
-  node: {
-    fs: 'empty'
-  },
   optimization: {
     minimize: true
+  },
+  resolve: {
+    fallback: {
+      fs: false
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        resolve: {
+          fullySpecified: false
+        }
+      }
+    ]
   }
 },
 {
@@ -32,11 +44,27 @@ module.exports = [{
     filename: 'bundled02.js',
     path: __dirname
   },
-  node: {
-    fs: 'empty'
+  resolve: {
+    fallback: {
+      fs: false
+    }
   },
   optimization: {
     minimize: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        resolve: {
+          fullySpecified: false
+        }
+      }
+    ]
   }
+//  test: /\.m?js/,
+//  resolve: {
+//    fullySpecified: false
+//  }
 }];
 

@@ -1,6 +1,35 @@
 const path = require('path');
 
-module.exports = [{
+module.exports = [
+{
+  mode: "production",
+  entry: [
+    './dashboard/main.js'
+  ],
+  output: {
+    filename: 'bundled_dashboard.js',
+    path: __dirname
+  },
+  optimization: {
+    minimize: true
+  },
+  resolve: {
+    fallback: {
+      fs: false
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        resolve: {
+          fullySpecified: false
+        }
+      }
+    ]
+  }
+},
+{
   mode: "production",
   entry: [
     './shared.js',

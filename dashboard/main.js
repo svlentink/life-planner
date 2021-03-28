@@ -1,5 +1,6 @@
 /* @license GPLv3 */
-import YAML from 'yamljs'
+import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
+const YAML = window.npm['yamljs'].default
 
 function loadURL(url, callback=console.log){
 	YAML.load(url, (data) => {
@@ -109,8 +110,16 @@ const types = {
 				btn.setAttribute("data-activetab",'')
 			}
 			nav.appendChild(btn)
-			let page = { type: 'page', val: id, items: v }
-			render(cont, page, c.headersize+1)
+			let data
+			if (typeof v === 'string') //requires loading from URL
+				data = v
+			else {
+				if(typeof v === 'object')
+					data = { type: 'page', val: id, items: v }
+				else
+					data = types.error('Unexpected type as tab: ' + typeof v)
+			}
+			render(cont, data, c.headersize+1)
 		}
 		return cont
 	},
@@ -128,7 +137,7 @@ function render(output_container, content, headersize=1){
 		if (content.substr(0,4).toLowerCase() === 'http')
 			return loadURL(content, data => { render(output_container, data, headersize) })
 		else
-			res = types.error('An URL was expected, pointing to YAML (or JSON)')
+			res = types.error('An URL was expected, starting with http and pointing to YAML (or JSON)')
 	}
 
 	if (typeof(output_container) === 'string'){

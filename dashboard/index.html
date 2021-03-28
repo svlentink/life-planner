@@ -9,9 +9,15 @@
 <body>
 
 <div></div>
-<script type="module">
+<!--
+<script src='https://cdn.lent.ink/js/npm/chart.js.js'></script>
+<script src='https://cdn.lent.ink/js/npm/fullcalendar-v4.js'></script>
+<script src='https://cdn.lent.ink/js/npm/ical-generator.js'></script>
+<script src='https://cdn.lent.ink/js/npm/yamljs.js'></script>
+-->
+<script type='module'>
     import { render } from './main.js'
-    
+
 let obj = {
   "type": "css",
   "val": "style.css",
@@ -43,6 +49,8 @@ let obj = {
     }
   ]
 }
+
+obj = './init.yml'
 
     render('div',obj)
 </script>

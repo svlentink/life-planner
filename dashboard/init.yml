@@ -17,12 +17,12 @@ items:
       val: test2
 
 
-type: page
-title: Life Dashboard
-desc: Lorem ispum
-val:
-- type: css
-  val: http://google.com/style.css
-- type: tab
-  title: a
-  items:
+#type: page
+#title: Life Dashboard
+#desc: Lorem ispum
+#val:
+#- type: css
+#  val: http://google.com/style.css
+#- type: tab
+#  title: a
+#  items:

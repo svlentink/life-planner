@@ -232,7 +232,7 @@
             repeating: {
               freq: 'DAILY',
               byDay: start.days,
-              count: start.days.length * amountofweeks
+              /*count: start.days.length * amountofweeks*/
             },
             daysOfWeek: Ical2FullcalendarDays(start.days),
             startRecur: getFirstOccurrence(),

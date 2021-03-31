@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="print.css">
   <link href='node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
   <link href='node_modules/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <link href='https://lent.ink/projects/life-planner/node_modules/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
 <!--
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -190,9 +191,15 @@
   (e.g. <a href='https://github.com/svlentink/life-planner/tree/master/example.yml'>raw.githubusercontent.com</a>).
 </section>
 
+<script type='module'>
+  import { init } from './editor.js'
+  init()
+</script>
+
+<!--
 <script src="bundled01.js"></script>
 <script src="bundled02.js"></script>
-<script>window.orchestrator()</script>
+-->
 
 </body>
 </html>

@@ -9,50 +9,16 @@
 <body>
 
 <div></div>
-<!--
+
 <script src='https://cdn.lent.ink/js/npm/chart.js.js'></script>
 <script src='https://cdn.lent.ink/js/npm/fullcalendar-v4.js'></script>
 <script src='https://cdn.lent.ink/js/npm/ical-generator.js'></script>
 <script src='https://cdn.lent.ink/js/npm/yamljs.js'></script>
--->
+<!-- -->
 <script type='module'>
     import { render } from './main.js'
-
-let obj = {
-  "type": "css",
-  "val": "style.css",
-  "items": [
-    {
-      "type": "title",
-      "val": "Life Dashboard"
-    },
-    {
-      "type": "desc",
-      "val": "Lorem ipsum dolor sit amet"
-    },
-    {
-      "type": "tabs",
-      "val": {
-        "pageone": [
-          {
-            "type": "title",
-            "val": "test1"
-          }
-        ],
-        "pagetwo": [
-          {
-            "type": "title",
-            "val": "test2"
-          }
-        ]
-      }
-    }
-  ]
-}
-
-obj = './init.yml'
-
-    render('div',obj)
+    let url = 'https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/init.yml'
+    render('div',url)
 </script>
 </body>
 </html>

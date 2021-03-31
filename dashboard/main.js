@@ -1,4 +1,7 @@
 /* @license GPLv3 */
+import { renderlists } from './mods/renderlists.js'
+import { rendertmms } from './mods/tmm.js'
+
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
@@ -50,10 +53,6 @@ const types = {
 		elem.innerHTML = '#' + id + ' { @import ' + c.val + '; }'
 		cont.appendChild(elem)
 		return cont
-	},
-	page: c => {
-		let elem = document.createElement('section')
-		return elem
 	},
 	title: c => {
 		let size = c.headersize
@@ -124,8 +123,8 @@ const types = {
 		return cont
 	},
 	page: c => {
-		let cont = document.createElement('div')
-		cont.className = 'page'
+		let cont = document.createElement('section')
+		cont.className = 'page tabcontent'
 		cont.id = c.val
 		return cont
 	}

@@ -1,13 +1,15 @@
-//import $ from 'jquery';
-import { Calendar } from 'fullcalendar';
+/* @license GPLv3 */
+import * as hack from 'https://cdn.lent.ink/js/npm/fullcalendar-v4.js'
+const Calendar = window.npm['fullcalendar-v4'].Calendar
 
-(function (glob) { // IIFE pattern
-  'use strict';
-  
-  glob.showCalendar = function(events) {
+/**
+ * The callback is triggered on clicking an item in the calendar
+ */
+function renderCalendar(events, target='#calendar',callback=console.log) {
+    let div = target
+    if (typeof target === 'string')
+        div = document.querySelector(target)
     
-    var div = document.querySelector('#calendar');
-
     var params = {
       header: {
         left: 'prev,next today',
@@ -23,14 +25,13 @@ import { Calendar } from 'fullcalendar';
         info.jsEvent.preventDefault()
         const id = info.event.title
         const st = info.event.start
-        glob.setSelectedEvent(id,st)
+        callback(id,st)
       }
     }
     
     div.innerHTML = ''
     var calendar = new Calendar(div, params)
     calendar.render()
-  }
+}
 
-}(typeof window !== 'undefined' ? window : global))
-
+export { renderCalendar }

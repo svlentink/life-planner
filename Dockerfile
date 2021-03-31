@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json /app/
 RUN npm install
 COPY . /app
-RUN npm run build
+#RUN npm run build
 
 # the remaining code is used in github.com/svlentink/www
 ARG WEBPATH=lent.ink/projects/life-planner

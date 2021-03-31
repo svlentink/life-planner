@@ -1,5 +1,6 @@
 /* @license GPLv3 */
 import { saveIcal2File } from './dashboard/mods/ical-generator.js'
+import { addDataAttributes } from './dataattr.js'
 
 function renderroutines(elemid, routines, activities) {
   var cont = document.getElementById(elemid) //container
@@ -8,7 +9,7 @@ function renderroutines(elemid, routines, activities) {
   function actionElem(act){
     var acont = document.createElement('li')
     acont.setAttribute('class', 'action')
-    //acont = glob.addDataAttributes(acont,act)
+    acont = addDataAttributes(acont,act)
     
     var time = document.createElement('span')
     time.setAttribute('class', 'time')
@@ -33,7 +34,7 @@ function renderroutines(elemid, routines, activities) {
     obj.title = key
     var rcont = document.createElement('article')
     rcont.setAttribute('class', 'routine')
-    //glob.addDataAttributes(rcont,obj)
+    addDataAttributes(rcont,obj)
     
     var tr = document.createElement('span')
     tr.setAttribute('class','trigger')

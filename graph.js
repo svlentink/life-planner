@@ -1,4 +1,5 @@
 import { getEvents } from './routines.js'
+import { addDataAttributes } from './dataattr.js'
 import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
 const Chart = window.npm['chart.js'].default.Chart
 
@@ -7,7 +8,7 @@ var ctx = document.getElementById('timepergoal');
 
 function renderGraph(personas, activities, routines){
   var raw = getMetrics(personas,activities,routines)
-  //glob.addDataAttributes(ctx,raw)
+  addDataAttributes(ctx,raw)
 
   const labels = [],
         colors = [],

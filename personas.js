@@ -1,9 +1,10 @@
 /* @license GPLv3 */
+import { addDataAttributes } from './dataattr.js'
 
 function createElem(clss,obj){
   var div = document.createElement("div")
   div.setAttribute('class',clss)
-  //div = glob.addDataAttributes(div,obj)
+  div = addDataAttributes(div,obj)
   
   var title = document.createElement('span')
   title.innerText = obj['title'] || 'No_title_found'

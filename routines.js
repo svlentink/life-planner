@@ -13,6 +13,7 @@ function renderroutines(elemid, routines, activities) {
     
     var time = document.createElement('span')
     time.setAttribute('class', 'time')
+    // FIXME the following doesn't work anymore
     time.innerText = act['time'] || act['duration'] || 0
     timetotal += parseInt(time.innerText || 0)
     acont.appendChild(time)
@@ -197,11 +198,15 @@ function createEvents(routines, activities, amountofweeks = 3){
       if (routine.desc) desc.push(routine.desc)
       var totaltime = 0
       if (routine.actions) for (var j in routine.actions) {
-        var action = routine.actions[j]
+        let action_line = routine.actions[j]
+        let action_arr = action_line.split(' ')
+        if(action_arr.length !== 2) continue
+        var action = action_arr[1]
+        let act_duration = Number(action_arr[0])
         if (activities[action]){
           var act = activities[action]
           acts.push(act)
-          var time = (act.time || act.duration || 0)
+          var time = act_duration //(act.time || act.duration || 0)
           totaltime += time
           var row = time + ' '
           row += action

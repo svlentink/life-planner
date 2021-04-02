@@ -1,7 +1,9 @@
 /* @license GPLv3 */
 import * as hack from 'https://cdn.lent.ink/js/npm/ical-generator.js'
 const ical = window.npm['ical-generator'].default
+
 import { saveToFile } from 'https://cdn.lent.ink/js/mod/storage.js'
+
 
 var cal = ical({
     domain: 'lent.ink',
@@ -20,8 +22,9 @@ function getIcal(events) {
 }
 
 function saveIcal2File(events, filename='routines.ical') {
-    var cal = getIcal(events)
-    saveToFile(cal.toString(), filename)
+    let cal = getIcal(events)
+    let calstr = cal.toString()
+    saveToFile(calstr, filename)
 }
 
 export { saveIcal2File }

@@ -1,0 +1,131 @@
+
+type: packlist
+data:
+- non physical items:
+  - tips
+    - During packing, two laundry bins, one for what to wear/pack on me, one for the backpack.
+    - always put some clothing in your hand luggage for when luggage get lost
+    - everything that can leak, put it in a separate plastic bag
+    - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
+  - up front:
+    - book vaccination
+    - order medications
+    - arrange (work) visa
+    - plan what cloths you'll pack and thus need to be clean
+    - maximum weight luggage?
+    - copy paspoort, without sofi nr
+    - health insurance
+    #- travel insurance
+  - last minute:
+    - both main and backup bank card PIN known
+    - both bank cards activated for destination country
+    - name written on bags
+    - cut nails, trim nose/ear hair, monobrow
+    - photo of passport available online (for when robbed)
+    - Google maps offline map
+    - download needed apps
+    - online check in
+    - download reservation/visa/boarding pass to all devices
+    #- parking ticket
+    - get other currency
+    - backup of data on devices
+    - backup of 2FA keys
+
+- on me:
+  - hidden-pouch:
+    - passport
+    #- medical passport
+    - second bank card
+    - money
+    
+  - backpack (dry-weight 1.2kg):
+    - laptop (comined weight 4kg):
+      - plastic bag (water protection):
+        - work laptop
+        - private laptop
+      - USB C laptop/phone charger
+    - main:
+      - plastic bag:
+        - underwear 5x
+        - sockers 5x
+        - jeans
+        - sport shorts
+        - sport T-shirt
+        - regular T-shirt 2x
+        #- swimming goggles
+      - toiletry bag:
+        - dental floss
+        - tooth brush
+        - tooth paste
+        - cotton swabs
+        - condoms
+        - covid test
+        #- comb
+        #- hair gel / wax / cream / oil
+        #- tongue scraper
+        #- miswak
+        - beard trimmer + charger
+        - razor
+        #- aftershave
+        #- shaving cream
+        #- alum
+        #- epilator
+        #- soap
+        #- shampoo
+        #- conditioner
+        - body lotion
+        #- petroleum jelly prior
+        #- after sun
+        #- sunscreen
+        - deo
+        - mirror
+        #- lip balm
+        #- (nail) brush
+        - nail clipper
+      - plastic bag:
+        - wash cloth
+        - towel
+      - plastic bag:
+        - sandals or flip flops
+      - selfie stick
+    - front:
+      - nuts
+      - dark chocolate
+      - packing cube with electronics:
+        - USB otg
+        - powerbank / batteries
+        - mifi/ranpberrypi/orangepi
+        - bank/work authentication device (RSA token)
+        - travel power adapter
+        - power strip
+        - micro USB to USB C adapter
+        - USB C cable
+        - Sp02 meter (covid)
+        - headset
+        - memory card + adaptor = USB stick
+      - inflatable neck cussion
+      - book
+      - pen
+      - permanent marker
+      - notepad
+    - sides:
+      - water bottle with clip
+      - umbrella
+    
+  - jacket / jeans:
+    - face mask
+    - tissues
+    - keys
+    - earplugs in keychain
+    - phone
+    - chewing gum
+    - wallet:
+      - money
+      - student card for discount museums
+      - health insurance card
+      - bank card
+      - public transit card
+      - drivers license
+      - license plate registration card
+      - small change money for toilet/shower
+

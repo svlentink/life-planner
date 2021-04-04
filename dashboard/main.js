@@ -1,6 +1,8 @@
 /* @license GPLv3 */
 import { renderlists } from './mods/renderlists.js'
 import { rendertmms } from './mods/tmm.js'
+import { AbstractElem } from './mods/abstractelem.js'
+import { Packlist } from './mods/packlist.js'
 
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
@@ -24,6 +26,14 @@ function loadStylesheet(url){
 }
 
 const types = {
+	personas: (obj) => {
+		let elem = new AbstractElem(obj.data)
+		return elem.get_elem()
+	},
+	packlist: (obj) => {
+		let elem = new Packlist(obj.data)
+		return elem.get_elem()
+	},
 	error: (err,obj) => {
 		let msg = err
 		if (obj)
@@ -99,7 +109,7 @@ const types = {
 			btn.setAttribute('data-id',id)
 			btn.onclick = () => {
 				cont.childNodes.forEach(p => {
-					if(p.className === 'page')
+					if(p.className.indexOf('tabcontent') !== -1)
 						p.style.display = 'none'
 				})
 				document.querySelector('#'+id).style.display = 'block'
@@ -110,14 +120,11 @@ const types = {
 			}
 			nav.appendChild(btn)
 			let data
-			if (typeof v === 'string') //requires loading from URL
-				data = v
-			else {
-				if(typeof v === 'object')
-					data = { type: 'page', val: id, items: v }
-				else
-					data = types.error('Unexpected type as tab: ' + typeof v)
-			}
+			if(Array.isArray(v))
+				data = { type: 'page', val: id, items: v }
+			else
+				data = { type: 'desc', val: 'ERROR tab pages should contain a list, not type ' + typeof v }
+			
 			render(cont, data, c.headersize+1)
 		}
 		return cont
@@ -133,7 +140,7 @@ const types = {
 function render(output_container, content, headersize=1){
 	let out, res
 	if (typeof content === 'string'){
-		if (content.substr(0,4).toLowerCase() === 'http')
+		if (content.substr(0,4) === 'http' || content.endsWith('.yml') || content.endsWith('.yaml'))
 			return loadURL(content, data => { render(output_container, data, headersize) })
 		else
 			res = types.error('An URL was expected, starting with http and pointing to YAML (or JSON)')

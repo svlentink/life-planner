@@ -1,7 +1,7 @@
 
 
 type: css
-val: https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
+val: ./style.css?https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
 items:
 - type: title
   val: Life Dashboard
@@ -12,9 +12,11 @@ items:
     pageone:
     - type: title
       val: test1
-    pagetwo:
-    - type: title
-      val: test2
+    personas:
+    - 'https://dev.lent.ink/preview/gits/pp/lp/personas-test.yml?_c9_id=livepreview0&_c9_host=https://dev.lent.ink'
+    packlist:
+    - 'https://dev.lent.ink/preview/gits/pp/packlist.yml?_c9_id=livepreview0&_c9_host=https://dev.lent.ink'
+    packlist:
 
 
 #type: page

@@ -2,14 +2,36 @@
 import { AbstractElem } from './abstractelem.js'
 
 class Persona extends AbstractElem {
-  fields(){
+  children(){
     return [ 'title', 'desc', 'img' ]
   }
-  get_class(){ return 'persona-info' }
+  //get_class(){ return 'persona-info' }
+  get_class(){ return "persona" }
+  elem_details(key){
+    let elems = {
+      container: {
+        type: 'div',
+        attributes: attr,
+      },
+      goals: {
+        type: 'div',
+        attributes: {
+          'class': key
+        }
+      }
+    }
+    if (key in elems) return elems[key]
+    return super.elem_details(key)
+  }
 }
 
 class Personas extends AbstractElem {
   get_id(){ return "personas" }
+  elem_details(key){
+    if (key === 'goals') return {
+      type: 
+    }
+  }
 }
 
 class Goals extends AbstractElem {

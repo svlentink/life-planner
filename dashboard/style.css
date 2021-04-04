@@ -32,3 +32,23 @@ nav [data-activetab] {
     border:1px solid black;
     border-bottom:0;
 }
+
+fieldset {
+    margin:20px;
+}
+fieldset:nth-child(even) fieldset fieldset fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset,
+fieldset:nth-child(even) fieldset,
+fieldset:nth-child(odd) {
+  background: whitesmoke;
+}
+fieldset:nth-child(odd) fieldset fieldset fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset,
+fieldset:nth-child(odd) fieldset,
+fieldset:nth-child(even) {
+  background: white;
+}

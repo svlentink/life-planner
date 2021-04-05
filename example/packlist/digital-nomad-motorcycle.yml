@@ -5,210 +5,83 @@ data:
   - tips
     - everything that can leak, put it in a separate plastic bag
     - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
-    - traveling long and often? consider bringing a webstone and plunger along
-  - up front:
-    - book vaccination
-    - order medications
-    - arrange (work) visa
-    - plan what cloths you'll pack and thus need to be clean
-    - maximum weight luggage?
-    - copy paspoort, without sofi nr
-    - health insurance
-    #- travel insurance
-  - last minute:
-    - both main and backup bank card PIN known
-    - both bank cards activated for destination country
-    - name written on bags
-    - cut nails, trim nose/ear hair, monobrow
-    - photo of passport available online (for when robbed)
-    - Google maps offline map
-    - download needed apps
-    - online check in
-    - download reservation/visa/boarding pass to all devices
-    #- parking ticket
-    - get other currency
-    - backup of data on devices
-    - backup of 2FA keys
+    - traveling long and often? consider bringing a wetstone and plunger along
+    - Practice living out of your suitcase for a week before you leave; missed anything?
+  - up front: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/up-front.yml
+  - last minute: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/last-minute.yml
+
 
 - on me:
-  - hidden-pouch:
-    - passport
-    #- medical passport
-    - second bank card
-    - money
-    
-  - backpack (dry-weight 1.2kg):
-    - laptop (comined weight 4kg):
-      - plastic bag (water protection):
-        - work laptop
-        - private laptop
-      - USB C laptop/phone charger
-    - main:
-      - plastic bag:
-        - underwear 5x
-        - sockers 5x
-        - jeans
-        - sport shorts
-        - sport T-shirt
-        - regular T-shirt 2x
-        #- swimming goggles
-      - toiletry bag:
-        - dental floss
-        - tooth brush + charger
-        - tooth paste
-        - cotton swabs
-        - condoms
-        - covid test
-        #- comb
-        #- hair gel / wax / cream / oil
-        #- tongue scraper
-        #- miswak
-        - beard trimmer + charger
-        - razor
-        #- aftershave
-        #- shaving cream
-        #- alum
-        #- epilator
-        #- soap
-        #- shampoo
-        #- conditioner
-        - body lotion
-        #- petroleum jelly prior
-        #- after sun
-        #- sunscreen
-        - deo
-        - mirror
-        #- lip balm
-        #- (nail) brush
-        - nail clipper
-      - meds bag:
-        #- glucose
-        #- throat pastilles
-        #- (prescription) medications + papers
-        #- ORS
-        #- after bite gel/snake bite kit
-        #- vaccination
-        #- anti mosquito (DEET)
-        #- tampons
-        #- Salt (and broth)
-        - vitamins:
-        - D
-        - B12
+    hidden-pouch: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/hidden-pouch.yml
+    backpack (dry-weight 1.2kg):
+      laptop compartment (comined weight 4kg): https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/laptop-compartment.yml
+      main:
       - plastic bag:
         - wash cloth
         - towel
-      - plastic bag:
-        - sandals or flip flops
-      - selfie stick
-    - front:
-      - nuts
-      - dark chocolate
-      - packing cube with electronics:
-        - USB otg
-        - powerbank / batteries
-        - mifi/ranpberrypi/orangepi
-        - bank/work authentication device (RSA token)
-        - travel power adapter
-        - power strip
-        - micro USB to USB C adapter
-        - USB C cable
-        - Sp02 meter (covid)
-        - headset
-        - memory card + adaptor = USB stick
-      - inflatable neck cussion
+      sides:
+      - water bottle with clip
+      - umbrella
+      glasses compartment: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/glasses.yml
+    
+    jacket / jeans: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/jacket.yml
+
+- motorcycle (NT650V):
+    clothes:
+    - safety army boots (serve as hiking shoes)
+    - safety gloves
+    - safety jeans
+    - safety jacket
+    - buff
+    - helmet
+    - earplugs
+    saddle bag:
+    - plastic bag:
       - book
       - pen
       - permanent marker
       - notepad
-    - sides:
-      - water bottle with clip
-      - umbrella
-    
-  - jacket / jeans:
+    - dirty laundry
+    - winter lining motor gear
+    - groceries / thermo bag:
+      - nuts
+      - dark chocolate
+      - water
+    - instrument (ukulele)
+    - second pair motorcycle gloves
+    - bag with miscellaneous:
+      - clothes line
+      - washing powder
+      - detergent
+    locked front storage: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/glasses.yml
+    left front storage:
+    - helmet lock
+    - disk brake lock
+    L pannier (18L):
+    - plastic bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/clothes.yml
+    - plastic bag:
+      - sandals or flip flops
+      - running shoes
+    R pannier (16.7L):
+    - toiletry bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/toiletries.yml
+    - plastic bag:
+        packing cube with electronics: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/electronics.yml
+    tank bag:
+    - water bottle
     - face mask
-    - tissues
-    - keys
-    - earplugs in keychain
-    - phone
-    - chewing gum
-    - wallet:
-      - money
-      - student card for discount museums
-      - health insurance card
-      - bank card
-      - public transit card
-      - drivers license
-      - license plate registration card
-      - small change money for toilet/shower
-
-- motorcycle:
-  saddle bag:
-  - dirty laundry
-  - clothes line
-  - winter lining motor gear
-  - groceries
-  - instrument (ukulele)
-  locked front storage:
-  - sun glasses
-  - glasses
-  - glasses wipes
-  left front storage:
-  - helmet lock
-  - disk brake lock
-  L pannier:
-  - clothes
-  R pannier:
-  - toiletry
-  tank bag:
-  - face mask
-  - flashlight
-  - action cam
-  - toilet paper
-  - clean wipes
-  - matches
-  - bluetooth speaker
-  under saddle:
-  - thermo blanket
-  - first aid kit
-    - sterile gauze
-    - adhesive tape
-    - adhesive bandages in several sizes
-    #- elastic bandage
-    #- soap
-    - desinfectant/alcohol wipes/ethyl alcohol/antiseptic wipes/antiseptic solution/hydrogen peroxide
-    #- antibiotic cream (triple-antibiotic ointment)
-    - pain killers; acetaminophen (Paracetamol) / aspirin(makes your blood thinner!) and ibuprofen 
-    - tweezers (tick remover)
-    - sharp scissors
-    #- safety pins
-    #- disposable instant cold packs
-    #- thermometer
-    #- plastic gloves (at least 2 pairs)
-    #- mouthpiece for administering CPR
-  - tools
-  #- emergency cash (for when card fails at gasstation)
-
-
-
-- when camping:
-  additionals:
-	- garbage bags
-	- chair
-	- dishcloth
-	- padlock for tent or bag
-  sleeping:
-  - pajamas
-	- sleeping bag liner
-	- duvet
-	- sleeping bag
-	- sleeping liner
-	- blanket
-	- pillow
-	- pillow sleeve
-	- mattress / sleeping mat
-	- air mattress / repair kit / pomp
-	- hammock / rope
-	- mattress topper
-
-
+    #- flashlight
+    - action cam
+    - toilet paper
+    - clean wipes
+    - matches
+    - selfie stick
+    - camera tripod
+    - travel towel / sarong
+    - steripen / waterfilter pen
+    under saddle:
+    - thermo blanket
+    - first aid kit: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/firstaid.yml
+    - tools:
+      - multitool with can opener
+    #- emergency cash (for when card fails at gasstation)
 

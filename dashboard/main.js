@@ -50,7 +50,7 @@ const types = {
 		let link = document.createElement('link')
 		link.rel = 'stylesheet'
 		link.type = 'text/css'
-		link.href = c.val
+		link.href = c.data
 		cont.append(link)
 		return cont
 		document.getElementsByTagName('HEAD')[0].appendChild(link)
@@ -60,7 +60,7 @@ const types = {
 		cont.id = id
 		
 		let elem = document.createElement('style')
-		elem.innerHTML = '#' + id + ' { @import ' + c.val + '; }'
+		elem.innerHTML = '#' + id + ' { @import ' + c.data + '; }'
 		cont.appendChild(elem)
 		return cont
 	},
@@ -68,21 +68,21 @@ const types = {
 		let size = c.headersize
 		if (size > 7) size = 7
 		let elem = document.createElement('h' + size)
-		elem.innerText = c.val
+		elem.innerText = c.data
 		return elem
 	},
 	desc: c => {
 		let elem = document.createElement('span')
-		elem.innerText = c.val
+		elem.innerText = c.data
 		return elem
 	},
 	unknown: c => {
 		let t, msg
-		if ('val' in c && typeof c.val === 'string')
-			t = c.val
+		if ('data' in c && typeof c.data === 'string')
+			t = c.data
 		else {
 			t = 'span'
-			msg = "ERROR unknown type has no 'val' with type string"
+			msg = "ERROR unknown type has no 'data' with type string"
 		}
 		let elem = document.createElement(t)
 		if (msg) elem.innerText = msg
@@ -94,15 +94,15 @@ const types = {
 		// https://css-tricks.com/functional-css-tabs-revisited/
 		let cont = document.createElement('div')
 		let nav = document.createElement('nav')
-		if (! 'val' in c || typeof c.val !== 'object') {
-			cont.innerText = 'ERROR tabs should hold an object in its val'
+		if (! 'data' in c || typeof c.data !== 'object') {
+			cont.innerText = 'ERROR tabs should hold an object in its field named data'
 			return cont
 		}
 		cont.appendChild(nav)
 		loadStylesheet('tabs.css')
 		
-		for (let k in c.val){
-			let v = c.val[k]
+		for (let k in c.data){
+			let v = c.data[k]
 			let btn = document.createElement('button')
 			btn.innerText = k
 			let id = getRandomId()
@@ -121,9 +121,9 @@ const types = {
 			nav.appendChild(btn)
 			let data
 			if(Array.isArray(v))
-				data = { type: 'page', val: id, items: v }
+				data = { type: 'page', data: id, items: v }
 			else
-				data = { type: 'desc', val: 'ERROR tab pages should contain a list, not type ' + typeof v }
+				data = { type: 'desc', data: 'ERROR tab pages should contain a list, not type ' + typeof v }
 			
 			render(cont, data, c.headersize+1)
 		}
@@ -132,7 +132,7 @@ const types = {
 	page: c => {
 		let cont = document.createElement('section')
 		cont.className = 'page tabcontent'
-		cont.id = c.val
+		cont.id = c.data
 		return cont
 	}
 }

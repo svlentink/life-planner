@@ -1,0 +1,39 @@
+
+
+type: css
+data: ./style.css
+items:
+- type: title
+  data: Example Dashboard
+- type: desc
+  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml
+- type: tabs
+  data:
+    first tab:
+    - type: title
+      data: test title
+    - type: desc
+      data: description item
+    packlist-dm-motorcycle:
+    - type: title
+      data: Packing list digital nomad by motorcycle
+    - https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/digital-nomad-motorcycle.yml
+    packlist-dm-fly:
+    - type: title
+      data: Packing list digital nomad by flight
+    - https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/digital-nomad-flying.yml
+    packing lists:
+    - type: tabs
+      data:
+        motorcycle:
+        - type: title
+          data: Packing list digital nomad by motorcycle
+        - type: tabs
+          data:
+            tab inside:
+            - https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/digital-nomad-motorcycle.yml
+        personas:
+        - type: title
+          data: Personas
+        - https://cdn.lent.ink/lp/personas-test.yml
+      

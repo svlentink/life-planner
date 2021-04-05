@@ -1,4 +1,7 @@
 
+import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
+const YAML = window.npm['yamljs'].default
+
 class AbstractElem {
   constructor(obj){
     if (! obj) return console.error('ERROR nothing provided ', obj)
@@ -10,7 +13,7 @@ class AbstractElem {
     if (typeof obj === 'object' && ! Array.isArray(obj))
       for (var key in obj){
         var val = obj[key]
-        var attr = 'data-' + key.toLocaleLowerCase() //https://www.w3schools.com/tags/att_global_data.asp
+        var attr = 'data-' + key.toLocaleLowerCase().replace(/[^a-zA-Z0-9]*/g,'') //https://www.w3schools.com/tags/att_global_data.asp
         if (typeof val === 'string' ||
           typeof val === 'number' ||
           typeof val === 'boolean') elem.setAttribute(attr, val)
@@ -112,6 +115,29 @@ class AbstractElem {
       },
     }
     if (key in elems) return elems[key]
+
+    let val = this.get_val(key)
+    if (typeof val === 'string')
+      for (let ext of ['.yml', '.yaml', '.json'])
+        if(val.endsWith(ext) && val.indexOf('/') !== -1){
+          let b64 = window.btoa(val).split('=')[0]
+          console.debug('Loading from URL ', val)
+          YAML.load(val, (data) => {
+            let target = document.querySelector('[data-src=' + b64 + ']')
+            let res = {}
+            res[key] = data
+        		let loaded = this.generate_child(res)
+        		target.replaceWith(loaded)
+        	})
+        	return {
+        	  type: 'span',
+        	  innerText: 'Loading from ' + val,
+        	  attributes: {
+        	    'data-src': b64,
+        	  },
+        	}
+        }
+
     return {
       type: 'span',
       innerText: 'ERROR unknown key: ' + key,

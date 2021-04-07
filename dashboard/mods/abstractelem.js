@@ -7,7 +7,7 @@ const YAML = window.npm['yamljs'].default
 function is_yaml_url(str){
   if (typeof str === 'string' &&
       str.indexOf('/') !== -1 &&
-      str.indexOf(' ' === -1))
+      str.indexOf(' ') === -1)
     for (let ext of ['.yml', '.yaml', '.json'])
       if(str.endsWith(ext)) return true
   return false
@@ -17,7 +17,7 @@ function load_elem_from_URL(url){
 	console.debug('Loading from',url)
 	let data = YAML.load(url)
   let msg = 'Failed loading '+url
-	data = data || { type: 'title', data: msg, innerText: msg  }
+	data = data || { type: 'blockquote', data: msg, innerText: msg  }
 	return data
 }
 
@@ -48,7 +48,6 @@ class ElemLogic {
   }
   render_elem(type='stringify'){
     let details = this.elem_details(type)
-    //console.debug(details)
     let elem = document.createElement(details.type.toString())
     delete details.type
 
@@ -136,13 +135,8 @@ class ElemLogic {
   }
   elem_details(key){
     let val = this.get_val(key)
-    if (is_yaml_url(val)){
-      let data = load_elem_from_URL(val)
-      let res = {}
-      res[key] = data
-		  let loaded = this.generate_child(res)
-      return loaded
-    }
+    if (is_yaml_url(val))
+      return load_elem_from_URL(val)
 /*
     if (is_yaml_url(val)){
       let b64 = window.btoa(val).split('=')[0]

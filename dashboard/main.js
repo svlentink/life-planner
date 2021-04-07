@@ -34,6 +34,11 @@ const types = {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
 	},
+	blockquote: (c) => {
+		let elem = document.createElement('blockquote')
+		elem.innerText = c.data
+		return elem
+	},
 	error: (err,obj) => {
 		let msg = err
 		if (obj)

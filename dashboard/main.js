@@ -1,17 +1,13 @@
 /* @license GPLv3 */
 import { renderlists } from './mods/renderlists.js'
 import { rendertmms } from './mods/tmm.js'
-import { AbstractElem } from './mods/abstractelem.js'
-import { Packlist } from './mods/packlist.js'
+import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
+import { Nestedlist } from './mods/nestedlist.js'
+import { Roles, Personas } from './mods/personas.js'
 
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
-function loadURL(url, callback=console.log){
-	YAML.load(url, (data) => {
-		callback(data)
-	})
-}
 
 function getRandomId(){
 	// ids cannot start with a number
@@ -27,11 +23,15 @@ function loadStylesheet(url){
 
 const types = {
 	personas: (obj) => {
-		let elem = new AbstractElem(obj.data)
+		let elem = new Personas(obj.data)
 		return elem.get_elem()
 	},
-	packlist: (obj) => {
-		let elem = new Packlist(obj.data)
+	roles: (obj) => {
+		let elem = new Roles(obj.data)
+		return elem.get_elem()
+	},
+	nestedlist: (obj) => {
+		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
 	},
 	error: (err,obj) => {
@@ -65,7 +65,7 @@ const types = {
 		return cont
 	},
 	title: c => {
-		let size = c.headersize
+		let size = c.headersize || 1
 		if (size > 7) size = 7
 		let elem = document.createElement('h' + size)
 		elem.innerText = c.data
@@ -140,8 +140,10 @@ const types = {
 function render(output_container, content, headersize=1){
 	let out, res
 	if (typeof content === 'string'){
-		if (content.substr(0,4) === 'http' || content.endsWith('.yml') || content.endsWith('.yaml'))
-			return loadURL(content, data => { render(output_container, data, headersize) })
+		if (is_yaml_url(content)){
+			let data = load_elem_from_URL(content)
+			return render(output_container, data, headersize)
+		}
 		else
 			res = types.error('An URL was expected, starting with http and pointing to YAML (or JSON)')
 	}

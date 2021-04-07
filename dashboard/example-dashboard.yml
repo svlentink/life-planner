@@ -14,6 +14,16 @@ items:
       data: test title
     - type: desc
       data: description item
+    personas:
+    - type: title
+      data: Personas
+    - type: personas
+      data: https://dev.lent.ink/preview/gits/pp/lp/personas-test.yml
+    roles:
+    - type: title
+      data: Roles
+    - type: roles
+      data: https://dev.lent.ink/preview/gits/pp/lp/personas-test.yml
     packlist-dm-motorcycle:
     - type: title
       data: Packing list digital nomad by motorcycle

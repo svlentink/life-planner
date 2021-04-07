@@ -2,10 +2,36 @@
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
-class AbstractElem {
-  constructor(obj){
+
+//matches './src.yml' or 'https://example.com/src.yaml'
+function is_yaml_url(str){
+  if (typeof str === 'string' &&
+      str.indexOf('/') !== -1 &&
+      str.indexOf(' ' === -1))
+    for (let ext of ['.yml', '.yaml', '.json'])
+      if(str.endsWith(ext)) return true
+  return false
+}
+
+function load_elem_from_URL(url){
+	console.debug('Loading from',url)
+	let data = YAML.load(url)
+  let msg = 'Failed loading '+url
+	data = data || { type: 'title', data: msg, innerText: msg  }
+	return data
+}
+
+class ElemLogic {
+  constructor(obj,key=undefined){
     if (! obj) return console.error('ERROR nothing provided ', obj)
-    this.raw = obj
+    this.key = key
+    if (is_yaml_url(obj))
+      this.raw = load_elem_from_URL(obj)
+    else
+      this.raw = obj
+  }
+  load_object(){
+    
   }
   // everything that is a string will be added as data attribute
   addDataAttributes(elem) {
@@ -39,34 +65,47 @@ class AbstractElem {
     this.addDataAttributes(elem)
     return elem
   }
-  generate_list(){
+  generate_from_list(){
     let result = []
     for (let i of this.raw)
       result.push( this.gen_list_item(i) )
     return result
   }
-  get_child_type(){
-    return AbstractElem
-  }
   gen_list_item(i){
-    let child_type = this.get_child_type()
-    let child = new child_type(i)
-    return child.get_elem()
+    return this.generate_child(i)
   }
-  generate_dict(){
+  generate_from_dict(){
     let result = []
-    for (let k in this.raw){
-      let v = this.raw[k]
-      let elem = this.gen_dict_item(k, v)
-      result.push(elem)
+    let order = this.order_of_children()
+    let already = []
+    let objkeys = Object.keys(this.raw)
+    
+    let keys
+    if (order.length) keys = order
+    else keys = objkeys
+    for (let k of keys){
+      if (! k in this.raw) continue
+      let elem = this.gen_dict_item(k, this.raw[k])
+      result.push( elem )
+      already.push(k)
+    }
+    if (order.length === 0) return result
+
+    let unknowns = {}
+    for (let k of objkeys){
+      if (already.includes(k)) continue
+      //let elem = this.gen_dict_item(k, this.raw[k])
+      unknowns[k] = this.raw[k]
+    }
+    if (Object.keys(unknowns).length){
+      let unknown_container = this.generate_child(unknowns,'unknown_children')
+      result.push(unknown_container)
     }
     return result
   }
   gen_dict_item(k,v){
-    if (v && typeof v === 'object'){ // null is also an object
-      let child = new Dict(k,v)
-      return child.get_elem(v)
-    }
+    if (v && typeof v === 'object') // null is also an object
+      return this.generate_child(v,k)
     return this.render_elem(k)
   }
   get_elem(){
@@ -74,9 +113,9 @@ class AbstractElem {
       return this.render_elem('stringify')
     let cont = this.render_elem('container')
     let elems
-    if (Array.isArray(this.raw)) elems = this.generate_list()
+    if (Array.isArray(this.raw)) elems = this.generate_from_list()
     else {
-      if (this.raw && typeof this.raw === 'object') elems = this.generate_dict()
+      if (this.raw && typeof this.raw === 'object') elems = this.generate_from_dict()
       else elems = [ this.render_elem('stringify') ]
     }
     for (let elem of elems)
@@ -84,8 +123,71 @@ class AbstractElem {
 
     return cont
   }
+  get_val(key){
+    if (typeof this.raw !== 'object')
+      return this.raw
+    if (key in this.raw) return this.raw[key]
+    return this.default_value(key)
+  }
+  generate_child(obj, key=''){
+    let child_type = this.get_child_type(key)
+    let child = new child_type(obj,key)
+    return child.get_elem()
+  }
+  elem_details(key){
+    let val = this.get_val(key)
+    if (is_yaml_url(val)){
+      let data = load_elem_from_URL(val)
+      let res = {}
+      res[key] = data
+		  let loaded = this.generate_child(res)
+      return loaded
+    }
+/*
+    if (is_yaml_url(val)){
+      let b64 = window.btoa(val).split('=')[0]
+      console.debug('Loading from URL ', val)
+      YAML.load(val, (data) => {
+        let target = document.querySelector('[data-src=' + b64 + ']')
+        let res = {}
+        res[key] = data
+    		let loaded = this.generate_child(res)
+    		target.replaceWith(loaded)
+    	})
+    	return {
+    	  type: 'span',
+    	  innerText: 'Loading from ' + val,
+    	  attributes: {
+    	    'data-src': b64,
+    	  },
+    	}
+    }
+*/
+    return {
+      type: 'span',
+      innerText: 'ERROR unknown key: ' + key,
+      attributes: {
+        'data-err': 'unknown key',
+        'data-key': key,
+        'class': 'error',
+      }
+    }
+  }
+}
+
+class AbstractElem extends ElemLogic {
+  get_child_type(key=''){
+    return AbstractElem
+  }
   elem_details(key){
     let elems = {
+      unknown_children: {
+        type: 'div',
+        attributes: {
+          class: 'unknownchildren',
+          'data-warn': 'unknown children in dict'
+        }
+      },
       stringify: {
         type: 'blockquote',
         attributes: {
@@ -95,7 +197,7 @@ class AbstractElem {
       },
       container: {
         type: 'div',
-        attributes: this.default_attributes(key),
+        attributes: {'class': this.container_classname(key)},
       },
       title: {
         type: 'span',
@@ -114,39 +216,18 @@ class AbstractElem {
         },
       },
     }
+    if (this.key)
+      elems.container = {
+        type: 'fieldset',
+        attributes: {'class': this.container_classname(key)},
+        innerHTML: '<legend>' + this.key + '</legend>'
+      }
     if (key in elems) return elems[key]
-
-    let val = this.get_val(key)
-    if (typeof val === 'string')
-      for (let ext of ['.yml', '.yaml', '.json'])
-        if(val.endsWith(ext) && val.indexOf('/') !== -1){
-          let b64 = window.btoa(val).split('=')[0]
-          console.debug('Loading from URL ', val)
-          YAML.load(val, (data) => {
-            let target = document.querySelector('[data-src=' + b64 + ']')
-            let res = {}
-            res[key] = data
-        		let loaded = this.generate_child(res)
-        		target.replaceWith(loaded)
-        	})
-        	return {
-        	  type: 'span',
-        	  innerText: 'Loading from ' + val,
-        	  attributes: {
-        	    'data-src': b64,
-        	  },
-        	}
-        }
-
-    return {
-      type: 'span',
-      innerText: 'ERROR unknown key: ' + key,
-    }
+    return super.elem_details(key)
   }
   default_attributes(key){
     return {
-      'class': this.get_class(key),
-      'id': this.get_id(),
+      'class': key,
     }
   }
   default_value(key){
@@ -158,38 +239,8 @@ class AbstractElem {
     if (key in keys) return keys[key]
     return "ERROR no default value found"
   }
-  get_val(key){
-    if (typeof this.raw !== 'object')
-      return this.raw
-    if (key in this.raw) return this.raw[key]
-    return this.default_value(key)
-  }
-  fields(){ return [] }
-  get_id(){ return '' }
-  get_class(inp=''){ return inp }
-  generate_child(obj){
-    let child_type = this.get_child_type()
-    let child = new child_type(obj)
-    return child.get_elem()
-  }
+  order_of_children(){ return [] }
+  container_classname(inp=''){ return inp }
 }
 
-class Dict extends AbstractElem {
-  constructor(key,val){
-    super(val)
-    this.key = key
-  }
-  elem_details(key){
-    let elems = {
-      container: {
-        type: 'fieldset',
-        attributes: {},
-        innerHTML: '<legend>' + this.key + '</legend>'
-      },
-    }
-    if (key in elems) return elems[key]
-    return super.elem_details(key)
-  }
-}
-
-export { AbstractElem }
+export { AbstractElem, load_elem_from_URL, is_yaml_url }

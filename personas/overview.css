@@ -3,44 +3,48 @@
   --radius-roles-overview-outer: 370px;
 }
 
-#rolesview .persona .goals {
-  display:none;
-}
-#rolesview .persona .persona-info .desc {
+.roles .unknown_children,
+.roles .desc,
+.roles .persona .goals {
   display:none;
 }
 
-#rolesview {
+
+.rolesoverview {
+  width:800px;
+  margin: 0 auto;  
+
   position: relative;
   top: var(--radius-roles-overview);
   left: var(--radius-roles-overview-outer);
   min-height: var(--radius-roles-overview);
 }
-#rolesview .persona {
+.roles .persona {
   position: absolute;
   max-width:150px;
 }
 
-#rolesview .persona .persona-info .title {
+.roles .persona .title {
   font-size:75%;
   float:left;
 //  overflow:hidden;
   white-space: nowrap;
 }
 
-#rolesview img {
+.roles img {
   width:75px;
   height:75px;
   border-radius: 37px;
 }
 
-#rolesviewcontainer {
+.rolesoverview {
   background-color: SkyBlue;
+  background-position: 100px 5px; 
   border-radius: var(--radius-roles-overview-outer) var(--radius-roles-overview-outer) 0 0;
 //  padding-bottom:50px;
 }
 
-#rolesviewcontainer:after {
+.roles .persona:last-child:after {
   content:'\00C6C3'; /* as html: &#xC6C3; */
   text-align:center;
   font-size:100px;
@@ -50,7 +54,7 @@
   margin-top:-50px;
 }
 
-#rolesviewcontainer:before {
+.rolesoverview:before {
   content:'\002600';
   margin-top:-5%;
   color:gold;
@@ -59,12 +63,12 @@
   
 }
 
-#overviewfoundation {
+.roles:after {
   border-top: 8px solid Sienna;
   border-radius: 50% 50% 50% 50%/10% 10% 100% 100%;
   background-color: LawnGreen;
   height: 80px;
-  margin-top: -20px;
+  margin-top: 120px;
   text-align:center;
   font-size:150%;
   padding-top:25px;

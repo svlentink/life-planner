@@ -7,7 +7,6 @@
 
 portfolio_management:
   interval: weekly
-  duration: 60 #min
   desc: Finances
   moscow: should
   energize: false # costs/burns mental energy
@@ -15,7 +14,6 @@ portfolio_management:
     - finance
 tidy:
   interval: daily
-  duration: 15
   energize: true # the result makes me feel good
   desc: digitally (e.g. notes) and physically (e.g. desk)
   moscow: should
@@ -23,7 +21,6 @@ tidy:
     - organized
 prototype:
   interval: weekly
-  time: 240
   moscow: should
   desc: Work out prototypes that could lead to a startup
   energize: true # hobby
@@ -31,7 +28,6 @@ prototype:
     - prototype
 plan:
   interval: daily
-  duration: 10
   moscow: must
   desc: on weekdays; plan day. In weekend; update long-term planning
   energize: false # requires prefrontal cortex
@@ -39,7 +35,6 @@ plan:
     - organized
 shower:
   interval: daily
-  duration: 25
   moscow: must
   desc: drink water, wc, cold shower, shave, teeth
   energize: true # feeling refreshed afterward
@@ -48,10 +43,8 @@ news:
   moscow: could
   desc: Daily news and hackernews
   energize: false
-  time: 7
 pushups:
   interval: daily
-  time: 2
   desc: pushups without counting
   moscow: must
   energize: true # physical exercize relaxes the mind
@@ -59,7 +52,6 @@ pushups:
     - frontlever
 stretch:
   interval: daily
-  time: 6
   desc: Stretching
   moscow: could
   energize: true
@@ -67,13 +59,11 @@ stretch:
     - yogateacher
 dress:
   interval: daily
-  duration: 1
   desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
   moscow: must
   energize: false
 meditate:
   interval: daily
-  time: 5
   desc: headspace
   moscow: should
   energize: true
@@ -81,7 +71,6 @@ meditate:
     - rested
 address_power:
   interval: daily
-  time: 10
   desc: See benjamin franklin diary
   moscow: should
   energize: false
@@ -89,7 +78,6 @@ address_power:
     - scriptures
 guitar:
   interval: weekly
-  time: 30
   desc: Just play
   moscow: could
   energize: true # enjoyable activity
@@ -98,12 +86,10 @@ guitar:
 dental:
   interval: daily
   desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
-  time: 5
   moscow: must
   energize: false
 dishwasher:
   interval: daily
-  time: 1
   moscow: must
   energize: false
   goals:
@@ -111,7 +97,6 @@ dishwasher:
 food2fridge:
   interval: daily
   desc: from freezer to fridge
-  time: 1
   moscow: should
   energize: false
   goals:
@@ -119,7 +104,6 @@ food2fridge:
 pack:
   interval: daily
   desc: bag and clothing
-  time: 2
   moscow: should
   energize: false
   goals:
@@ -127,14 +111,12 @@ pack:
 read:
   interval: daily
   desc: Book, no articles/screens
-  time: 20
   moscow: should
   energize: true # dependant on the content
   goals:
     - reader
 core:
   interval: daily
-  time: 8
   desc: 5m plank and squats
   moscow: should
   energize: true
@@ -143,19 +125,16 @@ core:
 audiobook:
   interval: daily
   desc: learn spanish during commute
-  time: 15
   moscow: could
   energize: false # requires active listening
 day-review:
   interval: daily
-  time: 5
   moscow: should
   desc: What did I do good? bad? stuck in loops? Helicopter overview.
   energize: false
 message:
   interval: daily
   desc: Email, linkedin, whatsapp, fb
-  time: 5
   moscow: should
   energize: false
 cook:
@@ -176,13 +155,11 @@ gratitude:
   desc: todo
 band_rehearsal:
   interval: weekly
-  time: 120
   energize: true
   desc: Jamming
   moscow: must
-bike_15:
+bike:
   interval: weekly
-  time: 15
   energize: true
   desc: bike
 to_train:
@@ -195,47 +172,38 @@ lunch:
   moscow: should
   energize: true
   desc: Eating lunch
-  time: 25
 prepare-lecture:
   interval: weekly
   moscow: could
   energize: false
   desc: Prepare lecture
-  time: 30
 lecture:
   interval: weekly
   moscow: should
   energize: false
   desc: os3.nl
-  time: 120
 homework:
   interval: weekly
   moscow: must
   energize: false
-  desc: time bloks of two hours
-  time: 120
 work:
   interval: daily
   moscow: must
   energize: false
-  time: 240
 dinner:
   interval: daily
   moscow: should
   energize: true
-  time: 30
 run:
   interval: weekly
   moscow: should
   energize: true
-  time: 60
   goals:
     - marathon
 water:
   interval: daily
   moscow: must
   energize: true
-  time: 1
 psychoanalysis:
   desc: self psychology
   moscow: should
@@ -253,7 +221,6 @@ museum:
   moscow: could
   desc: Visit museum
   energize: true
-  time: 240
   interval: weekly
   goals:
     - museum

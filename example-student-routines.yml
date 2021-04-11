@@ -6,29 +6,29 @@ band_rehearsal:
     - days: [tu]
       time: 19:15
   actions:
-    - bike_15
-    - band_rehearsal
-    - bike_15
+    - 15 bike
+    - 120 band_rehearsal
+    - 15 bike
 run:
   start:
     - days: [sa]
       time: 06:15
   actions:
-    - run
+    - 60 run
 portfolio_management:
   start:
     - days: [su]
       time: 08:00
   actions:
-    - portfolio_management
+    - 60 portfolio_management
 saturday:
   start:
     - days: [sa]
       time: 9:00
   actions:
-    - prototype
-    - lunch
-    - museum
+    - 240 prototype
+    - 25 lunch
+    - 240 museum
 morning_ritual:
   start:
     - days: weekdays
@@ -39,15 +39,15 @@ morning_ritual:
       time: 06:30
   trigger: alarm
   actions:
-    - pushups
-    - stretch
-    - water
-    - address_power
-    - shower
-    - dress
-    - meditate
-    - message
-    - plan
+    - 2 pushups
+    - 6 stretch
+    - 1 water
+    - 10 address_power
+    - 25 shower
+    - 1 dress
+    - 5 meditate
+    - 5 message
+    - 10 plan
 #      - cook
 lunch:
   start:
@@ -55,22 +55,21 @@ lunch:
       time: 12:00
   trigger: lunch
   actions:
-    - lunch
-    - message
+    - 25 lunch
+    - 5 message
 lecture:
   start:
     - days: [tu,fr]
       time: 09:30
   actions:
-    - prepare-lecture
-    - lecture
+    - 30 prepare-lecture
+    - 120 lecture
 labs:
   start:
     - days: [tu,fr]
       time: 13:00
   actions:
-    - homework
-    - homework
+    - 240 homework
 bedtime:
   start:
     - days: [mo,we,th,su]
@@ -79,15 +78,15 @@ bedtime:
       time: 22:00
   trigger: go to bed
   actions:
-    - dental
-    - tidy
-    - pack
-    - food2fridge
-    - dishwasher
-    - day-review
-    - read
-    - core
-    - water
+    - 5 dental
+    - 15 tidy
+    - 2 pack
+    - 1 food2fridge
+    - 1 dishwasher
+    - 5 day-review
+    - 20 read
+    - 8 core
+    - 1 water
 bike-commute:
 #    start:
 #      - days: [mo,th]
@@ -96,7 +95,7 @@ bike-commute:
 #        time: 16:00
   trigger: work
   actions:
-    - audiobook
+    - 15 audiobook
 train-commute:
   start:
     - days: [tu, fr]
@@ -108,24 +107,23 @@ train-commute:
     - days: [mo,we,th]
       time: 16:30
   actions:
-    - read
-    - read
+    - 45 read
 dinner:
   start:
     - days: [mo,we,th,sa,su]
       time: 17:45
   actions:
-    - message
-    - dinner
-    - news
-    - guitar
+    - 5 message
+    - 30 dinner
+    - 7 news
+    - 30 guitar
 early-dental:
   start:
     - days: daily
       time: 20:00
   trigger: 8h watch alarm
   actions:
-    - dental
+    - 5 dental
 work:
   start:
     - days: [mo,we,th]
@@ -133,4 +131,4 @@ work:
     - days: [mo,we,th]
       time: 12:30
   actions:
-    - work
+    - 240 work

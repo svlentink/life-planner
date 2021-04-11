@@ -79,9 +79,8 @@ class ElemLogic {
     let already = []
     let objkeys = Object.keys(this.raw)
     
-    let keys
+    let keys = objkeys
     if (order.length) keys = order
-    else keys = objkeys
     for (let k of keys){
       if (! k in this.raw) continue
       let elem = this.gen_dict_item(k, this.raw[k])
@@ -191,7 +190,7 @@ class AbstractElem extends ElemLogic {
       },
       container: {
         type: 'div',
-        attributes: {'class': this.container_classname(key)},
+        attributes: {'class': key + ' ' + this.container_classname(key)},
       },
       title: {
         type: 'span',
@@ -213,7 +212,7 @@ class AbstractElem extends ElemLogic {
     if (this.key)
       elems.container = {
         type: 'fieldset',
-        attributes: {'class': this.container_classname(key)},
+        attributes: {'class': this.key + ' ' + this.container_classname(key)},
         innerHTML: '<legend>' + this.key + '</legend>'
       }
     if (key in elems) return elems[key]
@@ -221,7 +220,7 @@ class AbstractElem extends ElemLogic {
   }
   default_attributes(key){
     return {
-      'class': key,
+      'class': key || this.container_classname(),
     }
   }
   default_value(key){

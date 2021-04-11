@@ -1,12 +1,21 @@
-#routines {
-  
+
+.routines {
+  width:800px;
+  margin: 0 auto;
 }
 
-.routine .trigger:after {
+.routines .routine .unknown_children {
+  display:none;
+}
+.routines .routine legend {
+  display:none;
+}
+
+.routines .routine .trigger:after {
   content:' => ';
 }
 
-.routine {
+.routines .routine {
   width:80%;
   border: 1px solid;
   border-radius: 5px;
@@ -15,67 +24,78 @@
   padding:5px;
 }
 
-#reviewroutineitem {
+.routines .reviewroutineitem {
   border:1px solid;
   background-color: SkyBlue;
 }
 
-.routine .totaltime {
+.routines .routine .actions {
+  border:0;
+}
+.routines .routine .totaltime {
   border-top:1px solid;
 }
-.routine .totaltime:after {
-  content:' min';
+.routines .routine .totaltime:before {
+  content:'min: ';
 }
-.routine .totaltime, .routine .action .time {
+.routine .totaltime,
+.routines .routine .action span,
+.routines .routine .action code {
+  margin-left:10px;
+}
+.routines .routine .totaltime,
+.routines .routine .action code {
+  text-align:right;
+  display:inline-block;
+  min-width:70px;
+  width:70px;
+}
+
+.routines .routine .action {
   min-width: 40px;
-  display: inline-block;
+  display: block;
 }
-.routine-action-time, routine-action-title, .routine-action-desc {
-//  display: block;
-//  float: left;
-}
-.routine .action .title {
-//  text-transform:uppercase;
-}
-.routine .action .desc {
+
+.routines .routine .action .desc {
   font-style:italic;
   color:gray;
   font-size:75%;
   margin-left:5px;
 }
-.routine .actions {
+.routines .routine .actions {
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-top:10px;
 }
-.routine .trigger {
+.routines .routine .trigger {
   font-size:125%;
 }
-.routine .id:after {
+.routines .routine .id:after {
   content:'-routine';
 }
 
-[data-moscow="must"] .title {
+.routines [data-moscow="must"] .title {
   font-weight: bold;
   text-transform:uppercase;
 }
-[data-moscow="should"] .title {
+.routines [data-moscow="should"] .title {
   text-transform:uppercase;
 }
-[data-moscow="could"] .title {
+.routines [data-moscow="could"] .title {
 }
-[data-moscow="would"] .title, [data-moscow="wont"] .title {
+.routines [data-moscow="would"] .title,
+.routines [data-moscow="wont"] .title {
   color: gray;
 }
 
-#unplannedactivities {
+.routines .unplannedactivities {
   color: gray;
 }
 
-[data-energize="false"]:before {
+.routines [data-energize="false"]:before {
   content: '\1F525';
 }
-[data-energize="true"]:before {
+.routines [data-energize="true"]:before {
   content: '\26FD';
 }

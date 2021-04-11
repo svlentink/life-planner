@@ -5,6 +5,14 @@ data: ./style.css
 items:
 - type: title
   data: Example Dashboard
+- type: css
+  data: ../routines/routines.css
+- type: css
+  data: ../personas/personas.css
+- type: css
+  data: ../personas/overview.css
+- type: css
+  data: https://cdn.lent.ink/js/npm/node_modules/fullcalendar/dist/fullcalendar.css
 - type: desc
   data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml
 - type: tabs
@@ -14,16 +22,40 @@ items:
       data: test title
     - type: desc
       data: description item
+    calendar:
+    - type: title
+      data: Habits and routines
+    - type: calendar
+      data: https://dev.lent.ink/preview/gits/pp/lp/routines.yml
+    lifelists:
+    - type: title
+      data: Life lists
+    - type: nestedlist
+      data: https://dev.lent.ink/preview/gits/pp/lp/lifelists.yml
+    tmm:
+    - type: title
+      data: Tmm
+    - type: timemangementmatrix
+      data: https://dev.lent.ink/preview/gits/pp/lp/tmatrices.yml
     personas:
     - type: title
       data: Personas
     - type: personas
-      data: https://dev.lent.ink/preview/gits/pp/lp/personas-test.yml
+      data: https://dev.lent.ink/preview/gits/pp/lp/personas.yml
+    - type: foundation
+      data: https://dev.lent.ink/preview/gits/pp/lp/foundation.yml
     roles:
     - type: title
       data: Roles
     - type: roles
-      data: https://dev.lent.ink/preview/gits/pp/lp/personas-test.yml
+      data: https://dev.lent.ink/preview/gits/pp/lp/personas.yml
+    - type: foundation
+      data: core identity
+    routines:
+    - type: title
+      data: Routines
+    - type: routines
+      data: ../example-student-routines.yml
     packlist-dm-motorcycle:
     - type: title
       data: Packing list digital nomad by motorcycle

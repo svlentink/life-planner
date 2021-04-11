@@ -4,6 +4,8 @@ import { rendertmms } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
 import { Nestedlist } from './mods/nestedlist.js'
 import { Roles, Personas } from './mods/personas.js'
+import { Routines } from './mods/routines.js'
+import { renderCalendar } from './mods/calendar.js'
 
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
@@ -22,6 +24,13 @@ function loadStylesheet(url){
 }
 
 const types = {
+	calendar: (obj) => {
+		let routines = new Routines(obj.data)
+		let events = routines.get_events()
+		let cont = document.createElement('div')
+		let elem = renderCalendar(events, cont, console.log)
+		return cont
+	},
 	personas: (obj) => {
 		let elem = new Personas(obj.data)
 		return elem.get_elem()
@@ -30,7 +39,15 @@ const types = {
 		let elem = new Roles(obj.data)
 		return elem.get_elem()
 	},
+	routines: (obj) => {
+		let elem = new Routines(obj.data)
+		return elem.get_elem()
+	},
 	nestedlist: (obj) => {
+		let elem = new Nestedlist(obj.data)
+		return elem.get_elem()
+	},
+	timemangementmatrix: (obj) => {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
 	},
@@ -89,8 +106,13 @@ const types = {
 			t = 'span'
 			msg = "ERROR unknown type has no 'data' with type string"
 		}
-		let elem = document.createElement(t)
-		if (msg) elem.innerText = msg
+		let elem = document.createElement('span')
+		try {
+			elem = document.createElement(t)
+			if (msg) elem.innerText = msg
+		} catch (e) {
+			elem.innerText = e
+		}
 		return elem
 	},
 	tabs: c => {

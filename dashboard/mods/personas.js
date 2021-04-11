@@ -51,11 +51,12 @@ class Goal extends AbstractElem {
 }
 
 class Roles extends Personas {
+  container_classname(){ return 'roles' }
   get_elem(){
     //https://codepen.io/dbpas/pen/LGudb
-    let main = super.get_elem(),
+    let roles = super.get_elem(),
         radius = 'var(--radius-roles-overview)', //distance from center
-        elements = main.children,
+        elements = roles.children,
         slice = 180 / elements.length,
         start = -180 + slice/2;
 
@@ -70,7 +71,13 @@ class Roles extends Personas {
 
       elem.style.transform = transform
     }
-    return main
+    
+    let cont = document.createElement('div')
+    cont.setAttribute('class','rolesoverview')
+    cont.appendChild(roles)
+    //let found = document.createElement('div')
+    
+    return cont
   }
 }
 

@@ -24,7 +24,7 @@ class Routine extends AbstractElem {
     return super.default_value(key)
   }
   container_classname(){ return "routine" }
-  elem_details(key){
+  elem_details(key){ console.log('routine',this)
     let val = this.get_val(key)
     if (key === 'title') val = this.key
     if (['trigger','title','totaltime'].includes(key))
@@ -163,6 +163,7 @@ class Action extends AbstractElem {
     }
   }
 }
+
 
 console.debug('FIXME unplannedactivities and fuel vs burn indicator in UI')
 

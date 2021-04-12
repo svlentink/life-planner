@@ -1,74 +1,64 @@
 # You can use 'prio' with a score of 1-4
 # or use the format below it
 
-personal:
-  timemanagementmatrix:
-    - title: hugo blog
-      prio: 4
-    - title: new glasses
-      prio: 2
-  tmm: # https://blog.teamwork.com/time-management-matrix/
-    important:
-      urgent:
-        - manage this
-        - call doctor
-      non-urgent:
-        - focus on this
-    unimportant:
-      urgent:
-        - delegate this
-      non-urgent:
-        - avoid this
+personal: # https://blog.teamwork.com/time-management-matrix/
+  important:
+    urgent:
+      - manage this
+      - call doctor
+    non-urgent:
+      - focus on this
+      - new glasses
+  unimportant:
+    urgent:
+      - delegate this
+    non-urgent:
+      - avoid this
 clean_and_oranize:
-  tmm:
-    important:
-      urgent:
-        - clean up mail
-        - clean drawers
-      non-urgent:
-        - clean up dropbox
-        - laptop backup
-        - phone backup
-        - contacts and mail backup
-    unimportant:
-      urgent:
-        - check expiration date food pantry
-      non-urgent:
-        - organize bookmarks
-        - clean outside garbage bin
+  important:
+    urgent:
+      - clean up mail
+      - clean drawers
+    non-urgent:
+      - clean up dropbox
+      - laptop backup
+      - phone backup
+      - contacts and mail backup
+  unimportant:
+    urgent:
+      - check expiration date food pantry
+    non-urgent:
+      - organize bookmarks
+      - clean outside garbage bin
 business:
-  timemanagementmatrix:
-    - title: mail relay
-      prio: 4
-    - title: layer 4 proxy
-      prio: 3
-    - title: wipe old laptops
-      prio: 4
-    - title: sheets to postgres
-      prio: 4
-    - title: hugo blog
-      prio: 4
-    - title: data backup strategy
-      prio: 2
-study:
-  timemanagementmatrix:
-    - title: study overview
-      prio: 1
-    - title: plan studies
-      prio: 2
-  tmm: # https://blog.teamwork.com/time-management-matrix/
-    important:
-      urgent:
-        - manage this
-      non-urgent:
-        - focus on this
-        - process lab feedback
-    unimportant:
-      urgent:
-        - delegate this
-        - review paper
-      non-urgent:
-        - avoid this
+  important:
+    urgent:
+      - data backup strategy
+    non-urgent:
+      - hugo blog
+  unimportant:
+    urgent:
+      - layer 4 proxy
+    non-urgent:
+      - mail relay
+      - wipe old laptops
+      - sheets to postgres
+study: # https://blog.teamwork.com/time-management-matrix/
+  important:
+    urgent:
+      - manage this
+      - study overview
+    non-urgent:
+      - focus on this
+      - process lab feedback
+      - plan studies
+  unimportant:
+    urgent:
+      - delegate this
+      - review paper
+    non-urgent:
+      - avoid this
+
 # the following two show that you can link
 # to external planning tools
 work-planning: https://blog.lent.ink/post/open-source-erp

@@ -1,4 +1,39 @@
 /* @license GPLv3 */
+import { AbstractElem } from './abstractelem.js'
+
+class TmmRow extends AbstractElem {
+  container_classname(){ return 'tmmrow' }
+  get_child_type() { return TmmBucket }
+}
+class TmmBucket extends AbstractElem {
+  container_classname(){ return 'tmmbucket' }
+}
+
+class TimeManagementMatrix extends AbstractElem {
+  container_classname(){ return 'timemanagementmatrix' }
+  get_child_type(){ return TmmRow }
+  constructor(inp,key){
+    let important = inp.important || {}
+    let unimportant = inp.unimportant || {}
+    let res = [
+      [
+        important.urgent || [],
+        important['non-urgent'] || [],
+      ],
+      [
+        unimportant.urgent || [],
+        unimportant['non-urgent'] || [],
+      ]
+    ]
+    super(res,key)
+  }
+
+}
+class TimeManagementMatrices extends AbstractElem {
+  container_classname(){ return 'timemanagementmatrices' }
+  get_child_type(){ return TimeManagementMatrix }
+}
+
 
 
 function tmmToOneFormat(inp) {
@@ -95,4 +130,4 @@ function rendertmm(input) {
   return table
 }
 
-export { rendertmms }
+export { TimeManagementMatrices }

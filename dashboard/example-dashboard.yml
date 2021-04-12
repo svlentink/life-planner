@@ -12,6 +12,8 @@ items:
 - type: css
   data: ../personas/overview.css
 - type: css
+  data: ../tmm/tmm.css
+- type: css
   data: https://cdn.lent.ink/js/npm/node_modules/fullcalendar/dist/fullcalendar.css
 - type: desc
   data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml
@@ -35,7 +37,7 @@ items:
     tmm:
     - type: title
       data: Tmm
-    - type: timemangementmatrix
+    - type: timemangementmatrices
       data: https://dev.lent.ink/preview/gits/pp/lp/tmatrices.yml
     personas:
     - type: title

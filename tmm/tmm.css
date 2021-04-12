@@ -33,3 +33,66 @@
 .tmm li:hover:before {
     content: "\2611";
 }
+
+
+.timemanagementmatrix .tmmrow {
+  min-width: 95%;
+  padding:1px;
+  display:block;
+  overflow:hidden;
+  border-top:1px solid;
+  border-bottom: 1px solid;
+}
+.timemanagementmatrix .tmmrow .tmmbucket {
+  max-width:49%;
+  width:49%;
+  float:left;
+  overflow-wrap: anywhere;
+  border-left:1px solid;
+  border-right:1px solid;
+}
+
+.timemanagementmatrix fieldset {
+  min-height:100px;
+  padding:3px;
+  margin:2px;
+  float:left;
+  width: 45%;
+  max-width:45%;
+  overflow:hidden;
+  overflow-wrap: anywhere;
+}
+.timemanagementmatrix fieldset > * {
+/*  overflow-wrap: break-word;*/
+}
+.timemanagementmatrix fieldset legend {
+  display:none;
+}
+.timemanagementmatrix fieldset:before {
+  display: block;
+  font-weight:bold;
+  text-align:center;
+}
+.timemanagementmatrix .tmmrow:before {
+  transform:rotate(-90deg);
+  max-width: 25px;
+  margin-top:50px;
+  position: absolute;
+  float:left;
+}
+.timemaangementmatrix .prio2:before,
+.timemanagementmatrix .prio4:before {
+  float:right;
+}
+.timemanagementmatrix .tmmrow:nth-of-type(1):before {
+  content: 'important';
+}
+.timemanagementmatrix .tmmrow:nth-of-type(2):before {
+  content: 'unimportant';
+}
+.timemanagementmatrix .tmmrow:nth-of-type(1) .tmmbucket:nth-of-type(1):before {
+  content: 'urgent';
+}
+.timemanagementmatrix .tmmrow:nth-of-type(1) .tmmbucket:nth-of-type(2):before {
+  content: 'non-urgent';
+}

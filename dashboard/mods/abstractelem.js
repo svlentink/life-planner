@@ -44,7 +44,8 @@ class ElemLogic {
           typeof val === 'number' ||
           typeof val === 'boolean') elem.setAttribute(attr, val)
       }
-    elem.setAttribute('title',JSON.stringify(obj, null, 2))
+//FIXME
+//    elem.setAttribute('title',JSON.stringify(obj, null, 2))
   }
   render_elem(type='stringify'){
     let details = this.elem_details(type)

@@ -1,9 +1,9 @@
 /* @license GPLv3 */
 import { renderlists } from './mods/renderlists.js'
-import { rendertmms } from './mods/tmm.js'
+import { TimeManagementMatrices } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
 import { Nestedlist } from './mods/nestedlist.js'
-import { Roles, Personas } from './mods/personas.js'
+import { RolesView, PersonasView } from './mods/personas.js'
 import { Routines } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
 
@@ -31,12 +31,16 @@ const types = {
 		let elem = renderCalendar(events, cont, console.log)
 		return cont
 	},
+	timemangementmatrices: (obj) => {
+		let elem = new TimeManagementMatrices(obj.data)
+		return elem.get_elem()
+	},
 	personas: (obj) => {
-		let elem = new Personas(obj.data)
+		let elem = new PersonasView(obj.data)
 		return elem.get_elem()
 	},
 	roles: (obj) => {
-		let elem = new Roles(obj.data)
+		let elem = new RolesView(obj.data)
 		return elem.get_elem()
 	},
 	routines: (obj) => {

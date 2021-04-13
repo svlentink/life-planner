@@ -80,4 +80,64 @@ items:
         - type: title
           data: Personas
         - https://cdn.lent.ink/lp/personas-test.yml
-      
+    itinerary:
+    - type: route
+      data:
+      - th afternoon:
+        #- Stationsplein 1, 1012AB Amsterdam, Netherlands
+        - Lelystad, Netherlands #Stadhuisplein 51, 8232ZZ Lelystad, Netherlands
+        - Terneuzen, Netherlands
+      - fr morning 1:
+        - Terneuzen, Netherlands
+        - Koninginnehaven, 4522 PW, Netherlands
+        - Timmermansweg, IJzendijke, Netherlands
+        - Smokkelweg, IJzendijke, Netherlands
+        - Clara Verheyenstraat, Sint-Laureins, Belgium
+        - Bellekensstraat, Sint-Laureins, Belgium
+        - Kruipuit, 9991, Belgium
+        - Pittemsesteenweg 45, 8700 Tielt, Belgium
+      - fr morning 2:
+        - Pittemsesteenweg 45, 8700 Tielt, Belgium
+        - 8980 Zonnebeke, Belgium
+        - Hillestraat, Heuvelland, Belgium
+        - Hillestraete, Bailleul, France
+        - Groene Straete, Bailleul, France
+        - Beurse Straete, Bailleul, France
+        - La Main Bleue, Bailleul, France
+        - Rue de l'Haeghe Doorne, 59270 Méteren, France
+        - Rue de la Passerelle Épinette, 62350 Busnes, France
+        - Valhuon, France
+        - Amiens, France
+        - Maison du Parc, 95450 Théméricourt, France
+      - fr afternoon:
+        - Maison du Parc, 95450 Théméricourt, France
+        - Tours, France
+    itinerary2:
+    - type: route
+      data:
+      - th afternoon:
+        #- Stationsplein 1, 1012AB Amsterdam, Netherlands
+        - Lelystad, Netherlands #Stadhuisplein 51, 8232ZZ Lelystad, Netherlands
+        - Terneuzen, Netherlands
+      - fr (6h17m):
+        - Terneuzen, Netherlands
+        - Rode Sluis, 4575 NE, Netherlands
+        - 59150 Rue de Beaulieu, 59150 Wattrelos, France
+        - Tours, France
+      - fr optional (1h):
+        - Tours, France
+        - Châtellerault, 86100, France
+      - fr optional (1h22m):
+        - Tours, France
+        - Poitiers, France
+      - sa:
+        - Châtellerault, 86100, France
+        - 64122 Urrugne, France
+        - Crta. Gi-636 Km. 13 - Gasolinera, 20280 Hondarribia, Gipuzkoa, Spain
+        - Bilbao, Spain
+      - su:
+        - Bilbao, Spain
+        - Cáceres, Spain
+
+
+

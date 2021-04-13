@@ -5,18 +5,34 @@ class Itinerary extends AbstractElem {
 	
 }
 
-class RouteDesc extends AbstractElem {
-	to_google_maps_link(){
+class RouteList extends AbstractElem {
+	get_elem(){
+	    let elem = super.get_elem()
+	    let a = this.get_maps_link()
+	    elem.appendChild(a)
+	    return elem
+	}
+	to_google_maps_url(){
 		let list = this.raw
-		let res = 'https://www.google.com/maps/dir/'
+		console.log(list)
+		let url = 'https://www.google.com/maps/dir/'
 		for (let i of list)
-			res += i.replace(/\ /g, '+') + '/'
-		return res
+			url += i.replace(/\ /g, '+') + '/'
+		return url
+	}
+	get_maps_link(){
+		let a = document.createElement('a')
+		a.href = this.to_google_maps_url()
+		a.innerText = 'Google Maps'
+		return a
 	}
 }
 
-Gondel+15+41,+8243+BP+Lelystad,+Nederland/Terneuzen/Faro,+Portugal/
+class RouteSection extends AbstractElem {
+	get_child_type(){ return RouteList }
+}
+class RouteDesc extends AbstractElem {
+	get_child_type(){ return RouteSection }
+}
 
-- Stadhuisplein 51, 8232ZZ Lelystad, Netherlands
-- Stationsplein 1, 1012AB Amsterdam, Netherlands
-- Terneuzen, Netherlands
+export { RouteDesc }

@@ -6,6 +6,7 @@ import { Nestedlist } from './mods/nestedlist.js'
 import { RolesView, PersonasView } from './mods/personas.js'
 import { Routines } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
+import { RouteDesc } from './mods/route.js'
 
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
@@ -24,6 +25,10 @@ function loadStylesheet(url){
 }
 
 const types = {
+	route: (obj) => {
+		let elem = new RouteDesc(obj.data)
+		return elem.get_elem()
+	},
 	calendar: (obj) => {
 		let routines = new Routines(obj.data)
 		let events = routines.get_events()

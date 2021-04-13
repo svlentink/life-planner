@@ -10,10 +10,14 @@ class TmmRow extends AbstractElem {
     return super.elem_details(key)
   }
 }
-class TmmBucket extends AbstractElem {
+class TmmBucket extends TmmRow {
   elem_details(key){
     if (key === 'container') return {
       type: 'td',
+    }
+    if (key === 'stringify') return {
+      type: 'li',
+      innerText: this.raw,
     }
     return super.elem_details(key)
   }

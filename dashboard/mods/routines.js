@@ -1,5 +1,7 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.js'
+import { saveIcal2File } from './ical-generator.js'
+
 
 class Routine extends AbstractElem {
   order_of_children(){
@@ -24,7 +26,7 @@ class Routine extends AbstractElem {
     return super.default_value(key)
   }
   container_classname(){ return "routine" }
-  elem_details(key){ console.log('routine',this)
+  elem_details(key){
     let val = this.get_val(key)
     if (key === 'title') val = this.key
     if (['trigger','title','totaltime'].includes(key))
@@ -134,6 +136,21 @@ class Routines extends AbstractElem {
       }
     }
     return events
+  }
+  get_export_btn(){
+    let btn = document.createElement('button')
+    btn.innerText = 'Export to calender (.ics)'
+    btn.onclick = () => {
+      let events = this.get_events()
+      saveIcal2File(events)
+    }
+    return btn
+  }
+  get_elem(){
+    let elem = super.get_elem()
+    let btn = this.get_export_btn()
+    elem.appendChild(btn)
+    return elem
   }
 }
 

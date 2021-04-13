@@ -1,12 +1,4 @@
 /* @license GPLv3 */
-import { saveIcal2File } from './dashboard/mods/ical-generator.js'
-
-
-function eventsAsIcal(){
-  saveIcal2File(getEvents())
-}
-document.querySelector('#icalbtn').addEventListener('click',eventsAsIcal)
-
 
 function setSelectedEvent(id,start) { // FIXME
 /*

@@ -1,4 +1,10 @@
 
+
+.route .destination {
+content: '&#x1F4CD;';
+}
+
+
 body {
   width:100%;
   margin:0;

@@ -28,7 +28,7 @@ items:
     - type: title
       data: Habits and routines
     - type: calendar
-      data: https://dev.lent.ink/preview/gits/pp/lp/routines.yml
+      data: https://dev.lent.ink/preview/gits/pp/lp/routines-digital-nomad.yml
     lifelists:
     - type: title
       data: Life lists
@@ -80,7 +80,9 @@ items:
         - type: title
           data: Personas
         - https://cdn.lent.ink/lp/personas-test.yml
-    itinerary:
+    itinerary-old:
+    - type: desc
+      data: When micro-managing the route, you quickly add 50% to the travel time.
     - type: route
       data:
       - th afternoon:
@@ -116,24 +118,17 @@ items:
     - type: route
       data:
       - th afternoon:
-        #- Stationsplein 1, 1012AB Amsterdam, Netherlands
-        - Lelystad, Netherlands #Stadhuisplein 51, 8232ZZ Lelystad, Netherlands
+        - Lelystad, Netherlands
         - Terneuzen, Netherlands
-      - fr (6h17m):
+      - fr (7h19m) or stop at Chat (-1h) or Tours (-1h20m):
         - Terneuzen, Netherlands
         - Rode Sluis, 4575 NE, Netherlands
         - 59150 Rue de Beaulieu, 59150 Wattrelos, France
-        - Tours, France
-      - fr optional (1h):
-        - Tours, France
-        - Châtellerault, 86100, France
-      - fr optional (1h22m):
-        - Tours, France
         - Poitiers, France
       - sa:
         - Châtellerault, 86100, France
-        - 64122 Urrugne, France
-        - Crta. Gi-636 Km. 13 - Gasolinera, 20280 Hondarribia, Gipuzkoa, Spain
+        - 3590 Route Nationale 10, 64122 Urrugne, France
+        - Gasolinera, 20280 Hondarribia, Gipuzkoa, Spain
         - Bilbao, Spain
       - su:
         - Bilbao, Spain

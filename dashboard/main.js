@@ -8,9 +8,10 @@ import { Routines } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
 
-import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
+import * as yamlhack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
+//import * as icalhack from 'https://cdn.lent.ink/js/npm/ical.js.js'
 
 function getRandomId(){
 	// ids cannot start with a number
@@ -33,7 +34,7 @@ const types = {
 		let routines = new Routines(obj.data)
 		let events = routines.get_events()
 		let cont = document.createElement('div')
-		let elem = renderCalendar(events, cont, console.log)
+		renderCalendar(events, cont, console.log)
 		return cont
 	},
 	timemangementmatrices: (obj) => {

@@ -39,7 +39,7 @@ function renderIcalCalendar(elem, url, callback){
 }
 
 function renderFullCalendar(elem, events, callback, plugins=[ timeGridPlugin ]){
-  let calendar = new Calendar(elem, {
+  let params = {
     plugins: plugins,
     initialView: 'timeGridWeek',
     events: events,
@@ -49,8 +49,13 @@ function renderFullCalendar(elem, events, callback, plugins=[ timeGridPlugin ]){
       const st = info.event.start
       callback(id, st, info)
     },
-  })
+  }
+  let calendar = new Calendar(elem, params)
   calendar.render()
+  window.setInterval(() => {
+    console.debug('rendered calendar',params,calendar)
+    calendar.render()
+  }, 1000)
 }
 
 export { renderCalendar }

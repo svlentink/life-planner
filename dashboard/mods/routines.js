@@ -47,7 +47,7 @@ class Routines extends AbstractElem {
     var events = []
     
     var days = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa']
-    function getFirstOccurrence(extraMinutes){
+    function getFirstOccurrence(extraMinutes=0){
       for (var d = (new Date()).getDay(); d <= 14; d++){
         var day = days[d%7]
         if (start.days.indexOf(day) !== -1)
@@ -56,7 +56,7 @@ class Routines extends AbstractElem {
             (new Date()).getMonth(),
             (new Date()).getDate() + ((new Date()).getDay() - d -7),
             parseInt(start.time.split(':')[0]),
-            parseInt(start.time.split(':')[1]) + (extraMinutes || 0)
+            parseInt(start.time.split(':')[1]) + extraMinutes
           )
       }
     }
@@ -79,13 +79,13 @@ class Routines extends AbstractElem {
         var desc = []
         //var acts = []
         if (routine.desc) desc.push(routine.desc)
-        var totaltime = 0
+        let totaltime = 0
         if (routine.actions) for (var j in routine.actions) {
-          let action_line = routine.actions[j]
+          let action_line = String( routine.actions[j] || '123 example' )
           let action_arr = action_line.split(' ')
           if(action_arr.length !== 2) continue
-          var action = action_arr[1]
-          let act_duration = Number(action_arr[0])
+          let action = action_arr[1]
+          let act_duration = Number(action_arr[0]) || 1
           //if (activities[action]){
             //var act = activities[action]
             //acts.push(act)
@@ -99,7 +99,7 @@ class Routines extends AbstractElem {
           //  desc.push('0  ' + action)
           //}
         }
-        
+
         for (var s in routine.start){
           var start = routine.start[s]
           if (typeof start.days === 'string'){
@@ -108,14 +108,13 @@ class Routines extends AbstractElem {
             else // daily
               start.days = days
           }
-          
-          var event = {
-            start: getFirstOccurrence(),
-            end: getFirstOccurrence(totaltime),
+
+          let fields_ical_generator = {
+            start: getFirstOccurrence(), //.toISOString().split('.')[0],
+            end: getFirstOccurrence(totaltime), //.toISOString().split('.')[0],
             summary: title,
-            title: title,
             description: desc.join('\n'),
-            category: 'routine',
+            //category: 'routine',
             //location: 'planet earth',
             //organizer: 'Some One <mail@some.one>',
             //url: 'http://lent.ink/projects/life-planner',
@@ -124,13 +123,17 @@ class Routines extends AbstractElem {
               byDay: start.days,
               /*count: start.days.length * amountofweeks*/
             },
+            routine_actions: routine.actions || [],
+            //activities: acts,
+          }
+          let fields_fullcalendar = {
+            title: title,
             daysOfWeek: Ical2FullcalendarDays(start.days),
             startRecur: getFirstOccurrence(),
             startTime: getFirstOccurrence().toTimeString().substr(0,5),
             endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5),
-            routine_actions: routine.actions || [],
-            //activities: acts
           }
+          let event = Object.assign({}, fields_fullcalendar, fields_ical_generator)
           events.push(event)
         }
       }

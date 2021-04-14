@@ -14,7 +14,6 @@ class RouteList extends AbstractElem {
 	}
 	to_google_maps_url(){
 		let list = this.raw
-		console.log(list)
 		let url = 'https://www.google.com/maps/dir/'
 		for (let i of list)
 			url += i.replace(/\ /g, '+') + '/'
@@ -24,6 +23,7 @@ class RouteList extends AbstractElem {
 		let a = document.createElement('a')
 		a.href = this.to_google_maps_url()
 		a.innerText = 'Google Maps'
+		a.target = '_blank'
 		return a
 	}
 }

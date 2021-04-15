@@ -6,7 +6,6 @@ const YAML = window.npm['yamljs'].default
 //matches './src.yml' or 'https://example.com/src.yaml'
 function is_yaml_url(str){
   if (typeof str === 'string' &&
-      str.indexOf('/') !== -1 &&
       str.indexOf(' ') === -1)
     for (let ext of ['.yml', '.yaml', '.json'])
       if(str.endsWith(ext)) return true
@@ -14,7 +13,12 @@ function is_yaml_url(str){
 }
 
 function load_elem_from_URL(url){
-	console.debug('Loading from',url)
+  if (window.YAMLbaseURLs && url[0] === '$')
+    for (let k in window.YAMLbaseURLs)
+      if (url.startsWith('$'+k))
+        url = url.replace('$'+k, window.YAMLbaseURLs[k])
+  if (url[0] === '$') console.warn('Probably an URL with a baseurl that has no match',url)
+	//console.debug('Loading from',url)
 	let data = YAML.load(url)
   let msg = 'Failed loading '+url
 	data = data || { type: 'blockquote', data: msg, innerText: msg  }
@@ -105,6 +109,10 @@ class ElemLogic {
   gen_dict_item(k,v){
     if (v && typeof v === 'object') // null is also an object
       return this.generate_child(v,k)
+    if (is_yaml_url(v)){
+      let loaded = load_elem_from_URL(v)
+      return this.generate_child(loaded,k)
+    }
     return this.render_elem(k)
   }
   get_elem(){
@@ -114,7 +122,7 @@ class ElemLogic {
     let elems
     if (Array.isArray(this.raw)) elems = this.generate_from_list()
     else {
-      if (this.raw && typeof this.raw === 'object') elems = this.generate_from_dict()
+      if (this.raw) elems = this.generate_from_dict()
       else elems = [ this.render_elem('stringify') ]
     }
     for (let elem of elems)
@@ -134,9 +142,9 @@ class ElemLogic {
     return child.get_elem()
   }
   elem_details(key){
-    let val = this.get_val(key)
-    if (is_yaml_url(val))
-      return load_elem_from_URL(val)
+//    let val = this.get_val(key)
+//    if (is_yaml_url(val))
+//      return load_elem_from_URL(val)
 /*
     if (is_yaml_url(val)){
       let b64 = window.btoa(val).split('=')[0]

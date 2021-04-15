@@ -1,0 +1,34 @@
+body {
+    background-color:whitesmoke;
+}
+.tabcontent {
+    all:unset;
+    margin-top:0;
+    padding:1px;
+    display: none;
+    background-color:white;
+}
+
+nav {
+    all:unset;
+}
+
+nav button {
+    all:unset;
+    padding:5px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    margin-left:5px;
+    margin-bottom:0;
+    outline: none;
+    cursor: pointer;
+}
+nav button:focus {outline:0;}
+nav [data-activetab] {
+    color:black;
+    background-color: white;
+    border:1px solid black;
+    border-bottom:0;
+}

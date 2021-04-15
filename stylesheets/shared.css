@@ -1,10 +1,5 @@
 
 
-.route .destination {
-content: '&#x1F4CD;';
-}
-
-
 body {
   width:100%;
   margin:0;
@@ -18,10 +13,6 @@ img {
 //  max-height:70%;
   max-width:70%;
   align-self: center;
-}
-
-h1 {
-  margin-top:100px;
 }
 
 #testdiv:before {
@@ -61,8 +52,9 @@ nav li a, nav li span {
   display:none;
 }
 
+/*
 .info:before {
-  content: '\24D8'; /* http://www.evotech.net/articles/testjsentities.html */
+  content: '\24D8'; /* http://www.evotech.net/articles/testjsentities.html 
   font-size:150%;
   display:block;
   margin-top: -5px;
@@ -75,3 +67,4 @@ nav li a, nav li span {
   background-color:yellow;
   display:none;
 }
+*/

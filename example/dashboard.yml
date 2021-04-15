@@ -1,0 +1,87 @@
+- type: baseurl
+  data: PERSONAL_DIR=https://dev.lent.ink/preview/gits/pp/lp
+- type: baseurl
+  data: PACKLIST_DIR=https://raw.githubusercontent.com/svlentink/life-planner/example/packlist
+- type: baseurl
+  data: PACKLIST_DIR=https://dev.lent.ink/preview/gits/life-planner/example/packlist
+- type: title
+  data: Example Dashboard
+- ./stylesheets/all.yml
+- type: desc
+  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml
+- type: tabs
+  data:
+    first tab:
+    - type: title
+      data: test title
+    - type: desc
+      data: description item
+    calendar:
+    - type: title
+      data: Habits and routines
+    - type: calendar
+      data: $PERSONAL_DIR/routines-digital-nomad.yml
+    - type: routines
+      data: $PERSONAL_DIR/routines-digital-nomad.yml
+    lifelists:
+    - type: title
+      data: Life lists
+    - type: nestedlist
+      data: $PERSONAL_DIR/lifelists.yml
+    tmm:
+    - type: title
+      data: Tmm
+    - type: timemangementmatrices
+      data: $PERSONAL_DIR/tmatrices.yml
+    personas:
+    - type: title
+      data: Personas
+    - type: personas
+      data: $PERSONAL_DIR/personas.yml
+    - type: foundation
+      data: $PERSONAL_DIR/foundation.yml
+    roles:
+    - type: title
+      data: Roles
+    - type: roles
+      data: $PERSONAL_DIR/personas.yml
+    - type: foundation
+      data: core identity
+    routines:
+    - type: title
+      data: Routines
+    - type: routines
+      data: ./example-student-routines.yml
+    packlist-dm-motorcycle:
+    - type: title
+      data: Packing list digital nomad by motorcycle
+    - $PACKLIST_DIR/digital-nomad-motorcycle.yml
+    packlist-dm-fly:
+    - type: title
+      data: Packing list digital nomad by flight
+    - $PACKLIST_DIR/digital-nomad-flying.yml
+    packing lists:
+    - type: tabs
+      data:
+        motorcycle:
+        - type: title
+          data: Packing list digital nomad by motorcycle
+        - type: tabs
+          data:
+            tab inside:
+            - $PACKLIST_DIR/digital-nomad-motorcycle.yml
+        personas:
+        - type: title
+          data: Personas
+        - $PERSONAL_DIR/personas-test.yml
+    itinerary-old:
+    - type: desc
+      data: When micro-managing the route, you quickly add 50% to the travel time.
+    - type: route
+      data: ./example/roadtrips/avoiding-borders.yml
+    itinerary2:
+    - type: route
+      data: ./example/roadtrips/nl-spain.yml
+
+
+

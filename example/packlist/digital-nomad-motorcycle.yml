@@ -7,14 +7,14 @@ data:
     - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
     - traveling long and often? consider bringing a wetstone, smoke alarm and plunger along
     - Practice living out of your suitcase for a week before you leave; missed anything?
-  - up front: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/up-front.yml
-  - last minute: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/last-minute.yml
+  - up front: $PACKLIST_DIR/sublist/up-front.yml
+  - last minute: $PACKLIST_DIR/sublist/last-minute.yml
 
 
 - on me:
-    hidden-pouch: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/hidden-pouch.yml
+    hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
     backpack (dry-weight 1.2kg):
-      laptop compartment (comined weight 4kg): https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/laptop-compartment.yml
+      laptop compartment (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
       main:
       - plastic bag:
         - wash cloth
@@ -22,9 +22,9 @@ data:
       sides:
       - water bottle with clip
       - umbrella
-      glasses compartment: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/glasses.yml
+      glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
     
-    jacket / jeans: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/jacket.yml
+    jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 
 - motorcycle (NT650V):
     clothes:
@@ -53,19 +53,19 @@ data:
       - clothes line
       - washing powder
       - detergent
-    locked front storage: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/glasses.yml
+    locked front storage: $PACKLIST_DIR/sublist/glasses.yml
     left front storage:
     - helmet lock
     - disk brake lock
     L pannier (18L):
-    - plastic bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/clothes.yml
+    - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
     - plastic bag:
       - sandals or flip flops
       - running shoes
     R pannier (16.7L):
-    - toiletry bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/toiletries.yml
+    - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
     - plastic bag:
-        packing cube with electronics: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/electronics.yml
+        packing cube with electronics: $PACKLIST_DIR/sublist/electronics.yml
     tank bag:
     - water bottle
     - face mask
@@ -80,8 +80,11 @@ data:
     - steripen / waterfilter pen
     under saddle:
     - thermo blanket
-    - first aid kit: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/firstaid.yml
+    - first aid kit: $PACKLIST_DIR/sublist/firstaid.yml
     - tools:
       - multitool with can opener
+      - zip ties
+      - measuring tape
+      
     #- emergency cash (for when card fails at gasstation)
 

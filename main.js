@@ -26,6 +26,27 @@ function loadStylesheet(url){
 }
 
 const types = {
+	baseurl: c => {
+		let elem = document.createElement('span')
+		if (typeof c.data !== 'string'){
+			elem.innerText = 'ERROR baseurl should contain type string in its data field'
+			return elem
+		}
+		let arr = c.data.split('=')
+		if (arr.length !== 2){
+			elem.innerText = 'ERROR baseurl should be SOMEID=https://raw.githubusercontent.com/foo/bar'
+			return elem
+		}
+		if (! window.YAMLbaseURLs) window.YAMLbaseURLs = {}
+		let id = arr[0]
+		let val = arr[1]
+		window.YAMLbaseURLs[id] = val
+		
+		elem.style.display = 'none'
+		elem.setAttribute('class','baseurlloaded')
+		elem.innerText = 'At this point in the document the baseurl was loaded ' + c.data
+		return elem
+	},
 	route: (obj) => {
 		let elem = new RouteDesc(obj.data)
 		return elem.get_elem()
@@ -71,7 +92,7 @@ const types = {
 		if (obj)
 			msg += JSON.stringify(obj)
 		let elem = document.createElement('span')
-		elem.innerText = msg
+		elem.innerText = 'ERROR ' + msg
 		return elem
 	},
 	/** create scoped css */
@@ -158,7 +179,7 @@ const types = {
 			nav.appendChild(btn)
 			let data
 			if(Array.isArray(v))
-				data = { type: 'page', data: id, items: v }
+				data = { type: 'page', id: id, data: v }
 			else
 				data = { type: 'desc', data: 'ERROR tab pages should contain a list, not type ' + typeof v }
 			
@@ -169,44 +190,65 @@ const types = {
 	page: c => {
 		let cont = document.createElement('section')
 		cont.className = 'page tabcontent'
-		cont.id = c.data
+		cont.id = c.id
+		render(cont, c.data, c.headersize)
 		return cont
 	}
 }
 
 function render(output_container, content, headersize=1){
-	let out, res
+	let res
 	if (typeof content === 'string'){
 		if (is_yaml_url(content)){
-			let data = load_elem_from_URL(content)
-			return render(output_container, data, headersize)
+			try {
+				let data = load_elem_from_URL(content)
+				return render(output_container, data, headersize)
+			} catch (e) {
+				res = types.error('loading ' +content,e)
+			}
 		}
 		else
-			res = types.error('An URL was expected, starting with http and pointing to YAML (or JSON)')
+			res = types.error('an URL was expected, starting with http and pointing to YAML (or JSON)')
+	}
+	
+	if (Array.isArray(content)){
+		for (let i of content)
+			render(output_container, i, headersize)
+		return
+	}
+	
+	if (typeof content !== 'object')
+		res = types.error('provided input not a string, array or object', content)
+
+	if(!res){
+		if (! 'type' in content) res = types.error('type missing',content)
+		else {
+			if (content.type in types){
+				content.headersize = headersize
+				try {
+					res = types[content.type](content)
+				} catch (e) {
+					console.error(e)
+					res = types.error('creating ' + content.type, content)
+				}
+/*
+				if (res) {
+					if ('items' in content)
+						for (let i of content.items)
+							render(res, i, headersize)
+				} 
+				else res = types.error('Missing element',content)
+*/
+			} else res = types.unknown(content)
+		}
 	}
 
+	let out
 	if (typeof(output_container) === 'string'){
 		out = document.querySelector(output_container)
 		if (!out) return console.error('DOM element not found')
 	} else out = output_container
-
-	if(!res){
-		if (! 'type' in content) res = types.error('Type missing',content)
-		else {
-			if (content.type in types){
-				content.headersize = headersize
-				res = types[content.type](content)
-				if (res) {
-					if ('items' in content)
-						for (let i of content.items)
-							render(res,i, content.type === 'page' ? headersize+1 : headersize)
-				} 
-				else res = types.error('Missing element',content)
-			} else res = types.unknown(content)
-		}
-	}
-	if(res) out.appendChild(res)
-	else console.error('unexpected',content)
+	out.appendChild(res)
 }
 
 export { render }

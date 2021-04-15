@@ -8,23 +8,23 @@ data:
     - everything that can leak, put it in a separate plastic bag
     - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
     - Practice living out of your suitcase for a week before you leave; missed anything?
-  - up front: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/up-front.yml
-  - last minute: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/last-minute.yml
+  - up front: $PACKLIST_DIR/sublist/up-front.yml
+  - last minute: $PACKLIST_DIR/sublist/last-minute.yml
 
 - on me:
-  - hidden-pouch: https://raw.githubusercontent.com/svlentink/example/packlist/sublist/hidden-pouch.yml
+  - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
   - backpack (dry-weight 1.2kg):
-    - laptop (comined weight 4kg): https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/laptop-compartment.yml
+    - laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
     - main:
-      - plastic bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/clothes.yml
-      - toiletry bag: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/toiletries.yml
+      - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
+      - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
       - plastic bag:
         - sandals or flip flops
       - selfie stick
     - front:
       - nuts
       - dark chocolate
-      - packing cube with electronics: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/electronics.yml
+      - packing cube with electronics: $PACKLIST_DIR/sublist/electronics.yml
       - inflatable neck cussion
       - book
       - pen
@@ -33,7 +33,7 @@ data:
     - sides:
       - water bottle with clip
       - umbrella
-    - glasses compartment: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/glasses.yml
+    - glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
     
-  - jacket / jeans: https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/jacket.yml
+  - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 

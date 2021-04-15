@@ -1,0 +1,24 @@
+
+.routedesc .routesection .routelist .stringify {
+  margin:1px;
+}
+.routedesc .routesection .routelist a {
+  display:block;
+  margin-left: 40px;
+  margin-top:10px;
+}
+.routedesc .routesection .routelist .stringify:before {
+  content:'\23C0'; /* \1F80B \1F847\21E3 \233D \25CB \25EF \2B58 \1F9CD \1F938 \2B6D';*/
+  font-size: 175%;
+  min-width:40px;
+  display:inline-block;
+  text-align:center;
+  margin-top:-1%;
+  margin-bottom:-1%;
+}
+.routedesc .routesection .routelist .stringify:first-of-type:before {
+content: '\2B58';
+}
+.routedesc .routesection .routelist .stringify:last-of-type:before {
+content: '\1F4CD';
+}

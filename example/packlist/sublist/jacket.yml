@@ -5,4 +5,4 @@
 - earplugs in keychain
 - phone
 - chewing gum
-- metal card wallet (thus RFID blocking): https://raw.githubusercontent.com/svlentink/life-planner/example/packlist/sublist/wallet.yml
+- metal card wallet (thus RFID blocking): $PACKLIST_DIR/sublist/wallet.yml

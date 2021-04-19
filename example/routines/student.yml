@@ -48,7 +48,7 @@ morning_ritual:
     - 5 meditate
     - 5 message
     - 10 plan
-#      - cook
+#      - 20 cook
 lunch:
   start:
     - days: [mo,tu,we,th,fr]

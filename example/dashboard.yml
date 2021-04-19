@@ -20,9 +20,9 @@
     - type: title
       data: Habits and routines
     - type: calendar
-      data: $PERSONAL_DIR/routines-digital-nomad.yml
+      data: ./example/routines/digital-nomad.yml
     - type: routines
-      data: $PERSONAL_DIR/routines-digital-nomad.yml
+      data: ./example/routines/digital-nomad.yml
     lifelists:
     - type: title
       data: Life lists
@@ -50,8 +50,10 @@
     routines:
     - type: title
       data: Routines
+    - type: calendar
+      data: ./example/routines/student.yml
     - type: routines
-      data: ./example-student-routines.yml
+      data: ./example/routines/student.yml
     packlist-dm-motorcycle:
     - type: title
       data: Packing list digital nomad by motorcycle

@@ -36,18 +36,23 @@ plan:
 shower:
   interval: daily
   moscow: must
-  desc: drink water, wc, cold shower, shave, teeth
+  desc: wc, cold shower, shave, dental
   energize: true # feeling refreshed afterward
 news:
   interval: daily
   moscow: could
   desc: Daily news and hackernews
   energize: false
+squads:
+  interval: daily
+  moscow: should
+  energize: true
+  desc: Meditate while wallsquad
 pushups:
   interval: daily
   desc: pushups without counting
   moscow: must
-  energize: true # physical exercize relaxes the mind
+  energize: true # physical exercise relaxes the mind
   goals:
     - frontlever
 stretch:
@@ -101,13 +106,6 @@ food2fridge:
   energize: false
   goals:
     -organized
-pack:
-  interval: daily
-  desc: bag and clothing
-  moscow: should
-  energize: false
-  goals:
-    - organized
 read:
   interval: daily
   desc: Book, no articles/screens
@@ -117,7 +115,7 @@ read:
     - reader
 core:
   interval: daily
-  desc: 5m plank and squats
+  desc: 5m plank
   moscow: should
   energize: true
   goals:
@@ -139,10 +137,9 @@ message:
   energize: false
 cook:
   interval: daily
-  time: 20
   moscow: should
   energize: true
-  desc: Food in slow cooker
+  desc: Food in slow cooker, quick wok or oven dish
 sprint:
   interval: daily
   time: 3
@@ -152,40 +149,25 @@ sprint:
   goals:
     - marathon
 gratitude:
-  desc: todo
-band_rehearsal:
-  interval: weekly
+  interval: daily
+  moscow: could
   energize: true
-  desc: Jamming
-  moscow: must
+  goals:
+    - focus
+solarium:
+  interval: daily
+  energize: true
+  moscow: could #during winter: wont
+  desc: during the winter months
 bike:
   interval: weekly
   energize: true
   desc: bike
-to_train:
-  interval: daily
-  time: 15
-  energize: true
-  desc: Bike/walk from/to train
 lunch:
   interval: daily
   moscow: should
   energize: true
-  desc: Eating lunch
-prepare-lecture:
-  interval: weekly
-  moscow: could
-  energize: false
-  desc: Prepare lecture
-lecture:
-  interval: weekly
-  moscow: should
-  energize: false
-  desc: os3.nl
-homework:
-  interval: weekly
-  moscow: must
-  energize: false
+  desc: Walking and eating
 work:
   interval: daily
   moscow: must
@@ -217,6 +199,65 @@ yoga:
   interval: daily
   goals:
     - yogateacher
+alarm:
+  moscow: must
+  desc: smartwatch, 3min later phone downstairs
+  interval: daily
+  energize: false
+wake_up:
+  moscow: must
+  desc: Actually wake up, drink water, urgent msgs, toilet
+  interval: daily
+  energize: false
+dream_diary:
+  moscow: could
+  desc: Part of lucid dreaming exercize
+  time: 2
+  interval: daily
+  energize: true
+walk:
+  moscow: could
+  desc: Walk through nature (with podcast)
+  interval: daily
+  energize: true
+blog:
+  moscow: could
+  desc: Write, proof read or publish
+  interval: daily
+  energize: false
+hourlypushups:
+  moscow: should
+  desc: During working hours, 20 pushups per hour
+  interval: daily
+  energize: true
+photography:
+  moscow: should
+  desc: Practice with phone camera
+  time: 3
+  interval: daily
+  energize: false
+handstand:
+  moscow: could
+  desc: Practice handstand
+  time: 1
+  interval: daily
+  energize: true
+
+
+drive:
+  moscow: must
+  interval: weekly
+  energize: false
+walk:
+  moscow: should
+  interval: daily
+  energize: true
+gasstation:
+  moscow: must
+  energize: true
+
+
+# Before Covid lockdown
 museum:
   moscow: could
   desc: Visit museum
@@ -225,4 +266,46 @@ museum:
   goals:
     - museum
     - datenite
+pack:
+  interval: daily
+  desc: bag and clothing
+  moscow: should
+  energize: false
+  goals:
+    - organized
+to_train:
+  interval: daily
+  energize: true
+  desc: Bike/walk from/to train
+
+# Student days
+prepare-lecture:
+  interval: weekly
+  moscow: could
+  energize: false
+  desc: Prepare lecture
+lecture:
+  interval: weekly
+  moscow: should
+  energize: false
+homework:
+  interval: weekly
+  moscow: must
+  energize: false
+lilist:
+  moscow: should
+  desc: check off item
+  energize: false
+  interval: weekly  
+ds:
+  interval: weekly
+  time: 90
+  moscow: should
+  energize: false
+  desc: Data Science
+band_rehearsal:
+  interval: weekly
+  energize: true
+  desc: Jamming
+  moscow: must
 

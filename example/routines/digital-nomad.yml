@@ -1,0 +1,96 @@
+# trigger, cue or anchor is the action that triggers the routine
+# cue + routine + reward = habit
+
+morning_drive:
+  start:
+    - days: [sa,su]
+      time: 08:00
+  actions:
+  - 60 drive
+  - 15 gasstation
+  - 60 drive
+  - 15 walk
+  - 60 drive
+  - 15 gasstation
+  - 60 drive
+
+afternoon_drive:
+  start:
+    - days: [sa,su]
+      time: 13:30
+  actions:
+  - 60 drive
+  - 15 gasstation
+  - 60 drive
+  - 15 walk
+  - 60 drive
+  - 15 gasstation
+
+work:
+  start:
+    - days: [mo,tu,we,th,fr]
+      time: 13:00
+    - days: [mo,tu,we,th,fr]
+      time: 08:00
+  actions:
+    - 110 work
+    - 20 professional_learning
+    - 110 work
+
+# Since lockdown life:
+# (also sitting on balancing ball behind desk
+# and an hour break instead of 30min)
+hourlypushups:
+  start:
+  - days: [mo,tu,we,th,fr]
+    time: 08:00
+  - days: [mo,tu,we,th,fr]
+    time: 09:00
+  - days: [mo,tu,we,th,fr]
+    time: 10:00
+  - days: [mo,tu,we,th,fr]
+    time: 11:00
+  - days: [mo,tu,we,th,fr]
+    time: 12:00
+  - days: [mo,tu,we,th,fr]
+    time: 13:00
+  - days: [mo,tu,we,th,fr]
+    time: 14:00
+  - days: [mo,tu,we,th,fr]
+    time: 15:00
+  - days: [mo,tu,we,th,fr]
+    time: 16:00
+  - days: [mo,tu,we,th,fr]
+    time: 17:00
+  actions:
+  - 1 pushups
+
+lunch:
+  start:
+  - days: [mo,tu,we,th,fr]
+    time: 12:00
+  trigger: lunch
+  actions:
+    - 30 lunchwalk
+    - 2 handstand
+    - 5 message
+
+morning_ritual:
+  start:
+    - days: [mo,tu,we,th,fr]
+      time: 07:00
+    - days: [sa,su]
+      time: 07:00
+  actions:
+    - 1 pushups
+    - 7 squads
+    - 1 pushups
+    - 10 address_power
+    - 1 pushups
+    - 25 shower
+#   - 5 solarium
+    - 2 stretch
+    - 1 dress
+    - 5 meditate
+#   - 5 message
+    - 10 plan

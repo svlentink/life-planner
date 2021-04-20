@@ -1,6 +1,6 @@
 /* @license GPLv3 */
-import * as hack from 'https://cdn.lent.ink/js/npm/fullcalendar-v4.js'
-const Calendar = window.npm['fullcalendar-v4'].Calendar
+import * as hack from 'https://cdn.lent.ink/js/npm/fullcalendar.js'
+const Calendar = window.npm['fullcalendar'].Calendar
 
 /**
  * The callback is triggered on clicking an item in the calendar

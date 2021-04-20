@@ -1,10 +1,10 @@
-.personas,
-.personas .persona,
-.personas:after,
-.personas .persona > div {
+.personasview .personas,
+.personasview .personas .persona,
+.personasview .personas:after,
+.personasview .personas .persona > div {
   background-color: SkyBlue;
 }
-.personas {
+.personasview .personas {
   width:800px;
   margin: 0 auto;
 
@@ -17,7 +17,7 @@
   position:relative;
   z-index: 9990;
 }
-.personas:before {
+.personasview .personas:before {
   border-left: 3px dashed;
   content:"";
   margin: 0 auto; /* this centers the line to the full width specified */
@@ -30,7 +30,7 @@
 //  z-index:-1;
 //  z-index: 9993;
 }
-.personas:after {
+.personasview .personas:after {
   content:'\00C6C3'; /* as html: &#xC6C3; */
   text-align:center;
   font-size:50px;
@@ -38,23 +38,23 @@
   z-index:9995;
 }
 
-.personas .title,
-.personas .desc,
-.personas img,
-.persona-info,
-.goals {
+.personasview .personas .title,
+.personasview .personas .desc,
+.personasview .personas img,
+.personasview .persona-info,
+.personasview .goals {
   display:block;
 }
-.persona-info .title {
+.personasview .persona-info .title {
   font-size: 150%;
 }
-.personas .goal .title {
+.personasview .personas .goal .title {
   font-size: 125%;
 }
-.personas .desc {
+.personasview .personas .desc {
   font-size: 85%;
 }
-.personas .persona {
+.personasview .personas .persona {
   border:2px solid;
   padding:2px;
   border-radius:5px;
@@ -64,7 +64,7 @@
 //  z-index: 9995;
 }
 
-.personas .persona:after {
+.personasview .personas .persona:after {
   border-top: 2px dashed;
   content:"";
   top:50%;bottom:0;
@@ -76,21 +76,21 @@
   z-index: -1;
 }
 
-.personas .goals .goal {
+.personasview .personas .goals .goal {
   border-top:1px solid gray;
   border-left:1px solid gray;
   border-radius: 3px;
   margin-top:1%;
 }
-.personas .goals .goal .title {
+.personasview .personas .goals .goal .title {
   font-size:125%;
 }
 
-.personas .goals {
+.personasview .personas .goals {
   display:flex;
   flex-direction:column;
 }
-.personas img {
+.personasview .personas img {
 //  max-height:70%;
   max-width:70%;
   align-self: center;

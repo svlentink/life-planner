@@ -45,8 +45,6 @@
       data: Roles
     - type: roles
       data: $PERSONAL_DIR/personas.yml
-    - type: foundation
-      data: core identity
     routines:
     - type: title
       data: Routines

@@ -2,7 +2,7 @@
 import { renderlists } from './mods/renderlists.js'
 import { TimeManagementMatrices } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
-import { Nestedlist } from './mods/nestedlist.js'
+import { Nestedlist, Foundation } from './mods/nestedlist.js'
 import { RolesView, PersonasView } from './mods/personas.js'
 import { Routines } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
@@ -76,6 +76,10 @@ const types = {
 	},
 	nestedlist: (obj) => {
 		let elem = new Nestedlist(obj.data)
+		return elem.get_elem()
+	},
+	foundation: obj => {
+		let elem = new Foundation(obj.data)
 		return elem.get_elem()
 	},
 	timemangementmatrix: (obj) => {

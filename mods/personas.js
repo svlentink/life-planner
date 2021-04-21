@@ -51,7 +51,6 @@ class Goal extends AbstractElem {
 }
 
 
-console.log('fixme')
 class PersonasView {
   container_classname(){ return 'personasview' }
   constructor(personas, foundation={}){
@@ -96,7 +95,6 @@ class RolesView extends PersonasView {
     outer.setAttribute('class','container rolesoverview')
     outer.appendChild(cont)
     let foundation = cont.children[1]
-    console.log(foundation)
     outer.appendChild(foundation)
     return outer
   }

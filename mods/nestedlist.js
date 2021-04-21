@@ -8,4 +8,8 @@ class Nestedlist extends AbstractElem {
   }
 }
 
-export { Nestedlist }
+class Foundation extends Nestedlist {
+  get_class() { return "foundation" }
+}
+
+export { Nestedlist, Foundation }

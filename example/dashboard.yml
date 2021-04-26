@@ -52,36 +52,30 @@
       data: ./example/routines/student.yml
     - type: routines
       data: ./example/routines/student.yml
-    packlist-dm-motorcycle:
-    - type: title
-      data: Packing list digital nomad by motorcycle
-    - $PACKLIST_DIR/digital-nomad-motorcycle.yml
-    packlist-dm-fly:
-    - type: title
-      data: Packing list digital nomad by flight
-    - $PACKLIST_DIR/digital-nomad-flying.yml
     packing lists:
     - type: tabs
       data:
         motorcycle:
         - type: title
           data: Packing list digital nomad by motorcycle
-        - type: tabs
-          data:
-            tab inside:
-            - $PACKLIST_DIR/digital-nomad-motorcycle.yml
-        personas:
+        - $PACKLIST_DIR/digital-nomad-motorcycle.yml
+        flight:
         - type: title
-          data: Personas
-        - $PERSONAL_DIR/personas-test.yml
-    itinerary-old:
-    - type: desc
-      data: When micro-managing the route, you quickly add 50% to the travel time.
-    - type: route
-      data: ./example/roadtrips/avoiding-borders.yml
-    itinerary2:
-    - type: route
-      data: ./example/roadtrips/nl-spain.yml
-
+          data: Packing list digital nomad by flight
+        - $PACKLIST_DIR/digital-nomad-flying.yml
+    itineraries-viaje:
+    - type: tabs
+      data:
+        old:
+        - type: desc
+          data: When micro-managing the route, you quickly add 50% to the travel time.
+        - type: route
+          data: ./example/roadtrips/avoiding-borders.yml
+        Bilbao-V1:
+        - type: route
+          data: ./example/roadtrips/nl-spain.yml
+        Bilbao-V2:
+        - type: route
+          data: ./example/roadtrips/nl-bordeaux.yml
 
 

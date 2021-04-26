@@ -5,7 +5,6 @@
 - cut nails, trim nose/ear hair, monobrow
 - Google maps offline map
 - download needed apps
-#- online check in
 - download to all devices:
   - boat / ferry ticket
   - itinerary
@@ -16,8 +15,7 @@
     - passport
     - drivers license
     - health card
-#- parking ticket
-- get other currency
+- foreign currency
 - backup of data on devices
 - backup of 2FA keys
 - charge:
@@ -28,3 +26,6 @@
   - phone
   - headphones
 
+- skipped:
+  - parking ticket
+  - online check in

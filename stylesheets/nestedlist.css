@@ -19,3 +19,7 @@ fieldset:nth-child(odd) fieldset,
 fieldset:nth-child(even) {
   background: white;
 }
+
+fieldset .skipped {
+  opacity: .3;
+}

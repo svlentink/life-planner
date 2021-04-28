@@ -1,4 +1,9 @@
 
+
+section01:
+- USB C laptop/phone chargers
+
+section02:
 - ereader
 
 - USB otg
@@ -7,22 +12,19 @@
 - USB light
 - USB to ethernet (2x)
 - USB charger 2A (2x)
-
-- powerbank / batteries
-- mifi/ranpberrypi/orangepi
-- bank/work authentication device (RSA token)
 - headset
 - smartwatch charger
 - ethernet cable
 - kensington laptop lock
-- dupont cables
 
+section03:
+- bank/work authentication device (RSA token)
+- powerbank / batteries
+- mifi/ranpberrypi/orangepi
+- dupont cables
 - tin box (small items and magnetic shielding):
   - micro USB to USB C adapter
   - memory card + adaptor = USB stick
   - extra simcard
-  - simcard pin/needle for switch'
+  - simcard pin/needle for switch
   - usb wifi adapter
-
-- skipped:
-  - bluetooth speaker

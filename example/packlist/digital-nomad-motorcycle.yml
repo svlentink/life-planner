@@ -18,7 +18,6 @@ data:
       main:
       - intentionally half empty for groceries and saving weight
       - spare plastic groceries bag
-      - motorcycle safety jeans
       front:
       - covid self tests
       - plastic box:
@@ -38,39 +37,47 @@ data:
     jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 
 - motorcycle (NT650V):
-    clothes:
+    clothes of that day:
+    - socks
+    - underwear
+    - long sleeve
+    - jeans
     - safety army boots (serve as hiking shoes)
-    - safety gloves
-    - safety jeans
-    - safety jacket
+    - motorcycle over jeans with winter lining
+    - safety jacket with winter lining
+    - (winter) safety gloves
+    - earplugs
     - buff
     - helmet
-    - earplugs
-    saddle bag:
-    - front:
-      - plastic bag:
-        - running/walking shoes
-      - packing cube with miscellaneous:
-        - clothes line
-        - washing powder
-        - detergent
-        - travel power adapter
-        - power strip (compatible with France socket)
-        - bar clamp (12cm)
-    - main:
-      - tupperware box:
-        - book
-        - pen
-        - permanent marker
-        - notebook
+    - glasses
+    saddle bag (60L baggage roll weekend):
+    - packing cube: $PACKLIST_DIR/sublist/clothes.yml
+    - instrument (ukulele)
+    - tissues
+    - plastic bag:
+      - running/walking shoes
+    - packing cube with miscellaneous:
+      - clothes line
+      - washing powder
+      - detergent
+      - travel power adapter
+      - power strip (compatible with France socket)
+      - bar clamp (12cm)
+    - tupperware box:
+      - book
+      - pen
+      - permanent marker
+      - notebook
+      - zip ties
+    - plastic bag:
       - dirty laundry
+    - plastic bag:
       - winter lining motor gear
-      - thermo bag (groceries):
-        - nuts
-        - dark chocolate
-        - water
-      - skipped:
-        - instrument (ukulele)
+    - thermo bag (groceries):
+      - nuts
+      - dark chocolate
+      - water bottle
+      - canned fish/meat
     locked front storage: $PACKLIST_DIR/sublist/glasses.yml
     left front storage:
     - helmet lock
@@ -79,7 +86,9 @@ data:
     - spare rubber O rings
     - zip ties
     L pannier (18L):
-    - 8L bag: $PACKLIST_DIR/sublist/clothes.yml
+    - bluetooth speaker
+    - plastic bag:
+      - motorcycle
     - plastic bag:
       - sandals or flip flops
     - second pair motorcycle gloves
@@ -87,7 +96,9 @@ data:
     - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
     - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
     tank bag:
-    - water bottle
+    - spare plastic bag
+    - chewing gum
+    - 2x 0.5L water (easy access and weight distribution)
     - face mask
     - toilet paper / tissues
     - clean wipes
@@ -98,15 +109,21 @@ data:
       - bluetooth shutter remote
       - selfie stick
       - camera tripod
+      - extra action cam mounting pad
+      - wrist strap for camera
     - skipped:
       - steripen / waterfilter pen
       - flashlight
     under saddle:
-    - thermo blanket
+    - sealed copy of passport
     - first aid kit: $PACKLIST_DIR/sublist/firstaid.yml
     - tools:
       - multitool with can opener
       - zip ties
       - measuring tape
+      - Tamiya connected usb charger
+      - extra wires
+      - toolset
+      - adjustable spanner
     #- emergency cash (for when card fails at gasstation)
 

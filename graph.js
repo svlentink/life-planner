@@ -1,7 +1,7 @@
 import { getEvents } from './routines.js'
 import { addDataAttributes } from './dataattr.js'
 import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
-const Chart = window.npm['chart.js'].default.Chart
+const Chart = window.npm['chart.js'].Chart
 
 
 var ctx = document.getElementById('timepergoal');

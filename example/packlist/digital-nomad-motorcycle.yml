@@ -14,7 +14,10 @@ data:
 - on me:
     hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
     backpack (dry-weight 1.2kg):
-      laptop compartment (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
+      laptop compartment (comined weight 4kg):
+      - plastic bag (water protection):
+        - work laptop
+        - private laptop
       main:
       - intentionally half empty for groceries and saving weight
       - spare plastic groceries bag
@@ -45,6 +48,7 @@ data:
     - safety army boots (serve as hiking shoes)
     - motorcycle over jeans with winter lining
     - safety jacket with winter lining
+    - reflective vest (some countries require you to bring one)
     - (winter) safety gloves
     - earplugs
     - buff
@@ -63,6 +67,7 @@ data:
       - travel power adapter
       - power strip (compatible with France socket)
       - bar clamp (12cm)
+      - wetstone
     - tupperware box:
       - book
       - pen

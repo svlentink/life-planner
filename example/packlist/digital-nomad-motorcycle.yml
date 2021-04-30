@@ -32,7 +32,6 @@ data:
       sides:
       - carabiners
       - water bottle with clip
-      - umbrella
       - shoulder strap:
         - action cam
       glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
@@ -55,9 +54,11 @@ data:
     - helmet
     - glasses
     saddle bag (60L baggage roll weekend):
-    - packing cube: $PACKLIST_DIR/sublist/clothes.yml
+    - spare attachment/lashing strap
+    - mesh wash bag: $PACKLIST_DIR/sublist/clothes.yml
     - instrument (ukulele)
     - tissues
+    - umbrella
     - plastic bag:
       - running/walking shoes
     - packing cube with miscellaneous:
@@ -68,6 +69,7 @@ data:
       - power strip (compatible with France socket)
       - bar clamp (12cm)
       - wetstone
+      - plectrum
     - tupperware box:
       - book
       - pen

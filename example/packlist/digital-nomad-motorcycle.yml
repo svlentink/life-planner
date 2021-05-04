@@ -70,6 +70,8 @@ data:
       - bar clamp (12cm)
       - wetstone
       - plectrum
+      - plastic case:
+        - matches
     - tupperware box:
       - book
       - pen
@@ -94,6 +96,7 @@ data:
     - zip ties
     L pannier (18L):
     - bluetooth speaker
+    - bag of nuts (lunch)
     - plastic bag:
       - motorcycle
     - plastic bag:
@@ -102,6 +105,7 @@ data:
     R pannier (16.7L):
     - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
     - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
+    - bag of nuts (lunch)
     tank bag:
     - spare plastic bag
     - chewing gum
@@ -110,8 +114,8 @@ data:
     - toilet paper / tissues
     - clean wipes
     - travel towel / sarong
-    - plastic case:
-      - matches
+    - plastic bag:
+      - chocolate (boost when fatigue)
     - side zipper:
       - bluetooth shutter remote
       - selfie stick

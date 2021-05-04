@@ -1,6 +1,6 @@
 /* @license GPLv3 */
 import * as hack from 'https://cdn.lent.ink/js/npm/ical-generator.js'
-const ical = window.npm['ical-generator'].default
+const ical = window.npm['ical-generator'].default.default
 
 import { saveToFile } from 'https://cdn.lent.ink/js/mod/storage.js'
 

@@ -9,23 +9,37 @@ class RouteList extends AbstractElem {
 	container_classname(){ return 'routelist' }
 	get_elem(){
 	    let elem = super.get_elem()
-	    let a = this.get_maps_link()
-	    elem.appendChild(a)
+	    let as = this.get_maps_links()
+	    for (let a of as)
+	      elem.appendChild(a)
 	    return elem
 	}
-	to_google_maps_url(){
+	to_google_maps_urls(){
 		let list = this.raw
 		let url = 'https://www.google.com/maps/dir/'
-		for (let i of list)
-			url += i.replace(/\ /g, '+') + '/'
-		return url
+		let to_url = ""
+		let from_url = ""
+		for (let i of list){
+			let add = i.replace(/\ /g, '+') + '/'
+			to_url += add
+			from_url = add + from_url
+		}
+		return [
+			url + to_url, 
+			url + from_url
+		]
 	}
-	get_maps_link(){
+	get_maps_links(){
+		let links = this.to_google_maps_urls()
 		let a = document.createElement('a')
-		a.href = this.to_google_maps_url()
+		a.href = links[0]
 		a.innerText = 'This Route on Google Maps'
 		a.target = '_blank'
-		return a
+		let b = document.createElement('a')
+		b.href = links[1]
+		b.innerText = 'Return trip on Google Maps'
+		b.target = '_blank'
+		return [a, b]
 	}
 }
 

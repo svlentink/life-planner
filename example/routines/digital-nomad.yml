@@ -1,30 +1,21 @@
 # trigger, cue or anchor is the action that triggers the routine
 # cue + routine + reward = habit
 
-morning_drive:
+drive:
   start:
     - days: [sa,su]
-      time: 08:00
-  actions:
-  - 60 drive
-  - 15 gasstation
-  - 60 drive
-  - 15 walk
-  - 60 drive
-  - 15 gasstation
-  - 60 drive
-
-afternoon_drive:
-  start:
+      time: 06:25
     - days: [sa,su]
-      time: 13:30
+      time: 12:55
   actions:
-  - 60 drive
-  - 15 gasstation
-  - 60 drive
+  - 5 gasstation
+  - 75 drive
   - 15 walk
-  - 60 drive
+  - 75 drive
   - 15 gasstation
+  - 75 drive
+  - 15 walk
+  - 75 drive
 
 work:
   start:
@@ -78,8 +69,6 @@ lunch:
 morning_ritual:
   start:
     - days: [mo,tu,we,th,fr]
-      time: 07:00
-    - days: [sa,su]
       time: 07:00
   actions:
     - 1 pushups

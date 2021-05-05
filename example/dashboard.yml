@@ -77,5 +77,8 @@
         Bilbao-V2:
         - type: route
           data: ./example/roadtrips/nl-bordeaux.yml
+        small border crossings:
+        - type: route
+          data: ./example/roadtrips/border-crossings.yml
 
 

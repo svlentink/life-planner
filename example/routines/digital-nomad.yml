@@ -2,11 +2,7 @@
 # cue + routine + reward = habit
 
 drive:
-  start:
-    - days: [sa,su]
-      time: 06:25
-    - days: [sa,su]
-      time: 12:55
+  start: {}
   actions:
   - 5 gasstation
   - 75 drive
@@ -17,16 +13,29 @@ drive:
   - 15 walk
   - 75 drive
 
+roadtrip:
+  start:
+  - days: [sa,su]
+    time: 08:00
+  - days: [sa,su]
+    time: 14:00
+  actions:
+  - 90 drive
+  - 60 sightseeing
+  - 90 drive
+
+
 work:
   start:
-    - days: [mo,tu,we,th,fr]
-      time: 13:00
-    - days: [mo,tu,we,th,fr]
-      time: 08:00
+  - days: [mo,tu,we,th,fr]
+    time: 13:00
+  - days: [mo,tu,we,th,fr]
+    time: 08:00
   actions:
-    - 110 work
-    - 20 professional_learning
-    - 110 work
+  - 110 work
+  - 20 professional_learning
+  - 110 work
+
 
 # Since lockdown life:
 # (also sitting on balancing ball behind desk
@@ -62,14 +71,16 @@ lunch:
     time: 12:00
   trigger: lunch
   actions:
-    - 30 lunchwalk
-    - 2 handstand
-    - 5 message
+  - 15 walk
+  - 10 shopping
+  - 15 walk
+  - 2 handstand
+  - 5 message
 
 morning_ritual:
   start:
-    - days: [mo,tu,we,th,fr]
-      time: 07:00
+  - days: [mo,tu,we,th,fr]
+    time: 07:00
   actions:
     - 1 pushups
     - 7 squads
@@ -83,3 +94,37 @@ morning_ritual:
     - 5 meditate
 #   - 5 message
     - 10 plan
+
+
+workout:
+  start:
+  - days: [mo,th]
+    time: 17:00
+  actions:
+  - 20 run
+  - 20 calisthenics
+  - 20 run
+  - 20 recover
+  - 10 shower
+
+laudry:
+  start:
+  - days: [fr]
+    time: 6:05
+  actions:
+  - 3 laundry
+  - 250 wait
+  - 15 hang
+
+plan_roadtrip:
+  start:
+  - days: [th]
+    time: 17:00
+  actions:
+  - 20 breadth_search
+  - 20 depth_search
+  - 20 map_layout
+  - 15 finalize_to_visit_list
+  - 15 finalize_day_planning_as_blog_post
+
+

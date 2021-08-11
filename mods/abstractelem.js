@@ -2,6 +2,11 @@
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
+import * as hack2 from 'https://cdn.lent.ink/js/npm/exif.js'
+import * as hack3 from 'https://cdn.lent.ink/js/npm/exifreader.js'
+import * as hack4 from 'https://cdn.lent.ink/js/npm/exif-js.js'
+const ExifImage = window.npm['exif'].default
+//new ExifImage({image: 'https://cdn.lent.ink/img/face.jpg'},console.log)
 
 //matches './src.yml' or 'https://example.com/src.yaml'
 function is_yaml_url(str){

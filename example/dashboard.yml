@@ -63,6 +63,10 @@
         - type: title
           data: Packing list digital nomad by flight
         - $PACKLIST_DIR/digital-nomad-flying.yml
+        motorcycle old:
+        - type: title
+          data: Packing list digital nomad by NT650V (first trip)
+        - $PACKLIST_DIR/digital-nomad-motorcycle-nt650v.yml
     itineraries-viaje:
     - type: tabs
       data:

@@ -22,65 +22,64 @@ data:
       - intentionally empty for groceries and saving weight
       - spare plastic groceries bag
       - hat
-      - bag of nuts (lunch)
       front (ready for day trip):
+      - covid self tests
+      - plastic box:
+        - Sp02 meter (covid)
+        - extra pair AAA batteries
       - pen case (avoid leaking when in rain):
         - pen
-        - waterproof marker
       - tissues
       - face mask
       - selfie stick
+      - water bottles
       - power bank
       - usb cable phone
+      - usb cable action cam
       - chewing gum
       - sunscreen
       sides:
       - carabiners
       - water bottle with clip
       glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
+    
     jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 
-- motorcycle (including 2x 35L givi hard cases):
+- motorcycle (NT650V):
     clothes of that day: $PACKLIST_DIR/sublist/motorcycle/outfit.yml
     saddle bag (60L baggage roll weekend):
     - spare attachment/lashing strap
-    - umbrella
+    - mesh wash bag: $PACKLIST_DIR/sublist/clothes.yml
     - instrument (ukulele)
-    - second helmet
-    - second pair motorcycle (winter) gloves
-    - bag of nuts (lunch)
-    - plastic bag:
-      - book
-      - notebook
     - tissues
+    - umbrella
+    - plastic bag:
+      - running/walking shoes
     - $PACKLIST_DIR/sublist/miscellaneous.yml
+    - tupperware box:
+      - book
+      - pen
+      - permanent marker
+      - notebook
+      - zip ties
     - plastic bag:
       - dirty laundry
+    - plastic bag:
+      - winter lining motor gear
     - $PACKLIST_DIR/sublist/thermo-bag.yml
-    - 2x 1.5L water
-    - plastic bag:
-      - motorcycle cover
-    handlebar bag with phone case: $PACKLIST_DIR/sublist/motorcycle/front.yml
-    L removable case (35L):
-    - plastic bag:
-      - winter lining motor gear (held together with kidney belt)
-    - plastic bag:
-      - bluetooth headphones
-    - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
+    locked front storage: $PACKLIST_DIR/sublist/glasses.yml
+    left front storage: $PACKLIST_DIR/sublist/motorcycle/front.yml
+    L pannier (18L):
+    - bluetooth speaker
+    - bag of nuts (lunch)
     - bag:
       - motorcycle safety jeans
       - sandals or flip flops
-    - spare glasses case: $PACKLIST_DIR/sublist/glasses.yml
-    R removable case (35L):
+      - second pair motorcycle gloves
+    R pannier (16.7L):
     - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
     - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
-    - plastic bag:
-      - running/walking shoes
-    - tupperware box:
-      - zip ties
-    - laptop sleeve:
-      - plastic bag:
-        - laptop
+    - bag of nuts (lunch)
     tank bag: $PACKLIST_DIR/sublist/motorcycle/tankbag.yml
     under saddle: $PACKLIST_DIR/sublist/motorcycle/under-saddle.yml
 

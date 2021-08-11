@@ -45,12 +45,30 @@
   - N-121-A, Spain
   - Salamanca, Spain
 
-- france-spain02:
+- france-spain02 (did not work, there was police before the entrance of the dirt road):
   - Bordeaux, France
   - 43.31996,-1.683118
   - 43.299351, -1.674887
   - N-121-A, Spain
   - Salamanca, Spain
+
+- france-spain02 (actually used):
+  - Bordeaux, France
+  - 43.300666, -1.693911
+  - 43.284388, -1.710676
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+- france-spain02 (next time):
+  - Bordeaux, France
+  - 43.310403, -1.684497
+  - 43.311544, -1.683551
+  - 43.310455, -1.681468
+  - 43.299351, -1.674887
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+
 
 - france-spain03:
   - Bordeaux, France

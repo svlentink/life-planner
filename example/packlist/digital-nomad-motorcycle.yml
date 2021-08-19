@@ -29,7 +29,7 @@ data:
         - waterproof marker
       - tissues
       - face mask
-      - selfie stick
+      - selfie stick/tripod with bluetooth remote
       - power bank
       - usb cable phone
       - chewing gum
@@ -60,24 +60,26 @@ data:
     - 2x 1.5L water
     - plastic bag:
       - motorcycle cover
+    - long steel wire (to lock bag or jacket to motorcycle)
+    - $PACKLIST_DIR/sublist/undies.yml
     handlebar bag with phone case: $PACKLIST_DIR/sublist/motorcycle/front.yml
-    L removable case (35L):
+    L removable case, which I leave on during short stays (35L):
+    - $PACKLIST_DIR/sublist/swim-gear.yml
     - plastic bag:
       - winter lining motor gear (held together with kidney belt)
-    - plastic bag:
-      - bluetooth headphones
-    - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
-    - bag:
       - motorcycle safety jeans
+    - plastic bag:
+      - bluetooth headphones in case
+    - bag:
       - sandals or flip flops
     - spare glasses case: $PACKLIST_DIR/sublist/glasses.yml
-    R removable case (35L):
-    - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
-    - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
     - plastic bag:
       - running/walking shoes
-    - tupperware box:
-      - zip ties
+    - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
+    R removable case (35L):
+    - $PACKLIST_DIR/sublist/toiletries.yml
+    - USB C (work) laptop/phone charger
+    - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
     - laptop sleeve:
       - plastic bag:
         - laptop

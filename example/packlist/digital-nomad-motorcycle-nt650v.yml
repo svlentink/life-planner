@@ -50,6 +50,8 @@ data:
     saddle bag (60L baggage roll weekend):
     - spare attachment/lashing strap
     - mesh wash bag: $PACKLIST_DIR/sublist/clothes.yml
+    - $PACKLIST_DIR/sublist/undies.yml
+    - $PACKLIST_DIR/sublist/swim-gear.yml
     - instrument (ukulele)
     - tissues
     - umbrella
@@ -77,8 +79,9 @@ data:
       - sandals or flip flops
       - second pair motorcycle gloves
     R pannier (16.7L):
-    - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
+    - $PACKLIST_DIR/sublist/toiletries.yml
     - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
+    - USB C (work) laptop/phone charger
     - bag of nuts (lunch)
     tank bag: $PACKLIST_DIR/sublist/motorcycle/tankbag.yml
     under saddle: $PACKLIST_DIR/sublist/motorcycle/under-saddle.yml

@@ -1,15 +1,7 @@
 
 type: nestedlist
 data:
-- non physical items:
-  - tips:
-    - everything that can leak, put it in a separate plastic bag
-    - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
-    - traveling long and often? consider bringing a wetstone, smoke alarm and plunger along
-    - Practice living out of your suitcase for a week before you leave; missed anything?
-  - up front: $PACKLIST_DIR/sublist/up-front.yml
-  - last minute: $PACKLIST_DIR/sublist/last-minute.yml
-
+- $PACKLIST_DIR/sublist/non-physical.yml
 
 - on me:
     hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml

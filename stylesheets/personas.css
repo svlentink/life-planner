@@ -1,8 +1,16 @@
 .personasview .personas,
 .personasview .personas .persona,
 .personasview .personas:after,
-.personasview .personas .persona > div {
+.personasview .personas .persona > div{
   background-color: SkyBlue;
+}
+.personasview .personas .persona > fieldset,
+.personasview .personas .persona > fieldset > fieldset,
+.personasview .personas .persona > fieldset > fieldset > fieldset,
+.personasview .personas .persona > fieldset > fieldset > fieldset > fieldset {
+  background-color: inherit;
+  margin:0;
+  border:0;
 }
 .personasview .personas {
   width:800px;
@@ -44,6 +52,18 @@
 .personasview .persona-info,
 .personasview .goals {
   display:block;
+  margin:0;
+  padding:0;
+  border:none;
+}
+.personasview .goals legend {
+  display:none;
+}
+.personasview .goals .goal {
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 1%;
 }
 .personasview .persona-info .title {
   font-size: 150%;
@@ -91,7 +111,6 @@
   flex-direction:column;
 }
 .personasview .personas img {
-//  max-height:70%;
-  max-width:70%;
+  max-width:22%;
   align-self: center;
 }

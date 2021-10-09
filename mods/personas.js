@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.js'
+import { AbstractElem, Hide } from './abstractelem.js'
 
 class Persona extends AbstractElem {
   order_of_children(){
@@ -48,12 +48,20 @@ class Goal extends AbstractElem {
     return [ 'title', 'desc', 'img', 'status', 'intelligences' ]
   }
   container_classname(){ return 'goal' }
+  get_child_type(key){
+    return Hide
+    if (key === 'intelligences') return Hide
+    return super.get_child_type(key)
+  }
   elem_details(key){
     if (key === 'intelligences')
       return {
         type: 'span',
         innerText: this.get_val(key) + "TEST FIXME",
-        attributes: this.default_attributes(key),
+        attributes: {
+          style: 'display:none;',
+          'class': key
+        }
       }
     if (key === 'status'){
       let icons = {

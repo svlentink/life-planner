@@ -23,8 +23,40 @@ class Nestedlist extends AbstractElem {
 }
 
 // FIXME, there are two Foundation classes !!
-class Foundation extends Nestedlist {
-  get_class() { return "foundation" }
+class Foundation extends AbstractElem { //Nestedlist {
+  container_classname() { return "foundation" }
+  get_child_type() { return FoundationPillar }
+}
+class FoundationPillar extends AbstractElem {
+  container_classname() { return "foundationpillar" }
+  get_child_type(key){
+    if (key === 'data') return PillarData
+    return super.get_child_type(key)
+  }
+/*
+  elem_details(key){
+    if (key === 'data') return super.elem_details('container')
+    return super.elem_details(key)
+  }
+  get_child_type() { return PillarData }
+*/
+}
+class PillarData extends Nestedlist {
+  container_classname() { return "pillardata" }
+  get_child_type() { return PillarItem }
+  /*
+  elem_details(key){
+    return {
+      type: 'div',
+      //innerText: this.get_val(key) + "TEST FIXME",
+      attributes: {
+        'class': 'pdata'
+      }
+    }
+  }//*/
+}
+class PillarItem extends Nestedlist {
+  container_classname() { return "pillaritem" }
 }
 
 export { Nestedlist, Foundation }

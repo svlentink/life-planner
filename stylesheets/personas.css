@@ -12,9 +12,6 @@
   margin:0;
   border:0;
 }
-.personasview .personas .persona .goals .goal .intelligences {
-  display:none;
-}
 .personasview .personas .persona .desc,
 .personasview .personas .persona .title {
   float: right;

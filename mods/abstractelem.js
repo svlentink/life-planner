@@ -250,4 +250,21 @@ class AbstractElem extends ElemLogic {
   container_classname(inp=''){ return inp }
 }
 
-export { AbstractElem, load_elem_from_URL, is_yaml_url }
+class Hide extends AbstractElem {
+  elem_details(key){
+    return {
+        type: 'span',
+        innerText: this.get_val(key),
+        attributes: {
+          style: "display:none;",
+          "data-key": key,
+          "data-this-key": this.key,
+          "data-this-raw": this.raw,
+          'class': 'Hide',
+          "data-value": this.get_val(key)
+        },
+      }
+  }
+}
+
+export { AbstractElem, Hide, load_elem_from_URL, is_yaml_url }

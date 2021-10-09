@@ -22,6 +22,7 @@ class Nestedlist extends AbstractElem {
   }
 }
 
+// FIXME, there are two Foundation classes !!
 class Foundation extends Nestedlist {
   get_class() { return "foundation" }
 }

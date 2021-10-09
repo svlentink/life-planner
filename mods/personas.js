@@ -45,9 +45,34 @@ class Goals extends AbstractElem {
 }
 class Goal extends AbstractElem {
   order_of_children(){
-    return [ 'title', 'desc', 'img' ]
+    return [ 'title', 'desc', 'img', 'status', 'intelligences' ]
   }
   container_classname(){ return 'goal' }
+  elem_details(key){
+    if (key === 'intelligences')
+      return {
+        type: 'span',
+        innerText: this.get_val(key) + "TEST FIXME",
+        attributes: this.default_attributes(key),
+      }
+    if (key === 'status'){
+      let icons = {
+        idea: '&#128161;',
+        progressing: '&#10227; &#x2941; &#8635;'
+      }
+      let val = this.get_val(key) in icons ? icons[this.get_val(key)] : this.get_val(key)
+      return {
+        type: 'span',
+        innerHTML: val,
+        attributes: this.default_attributes(key),
+      }
+    }
+    return super.elem_details(key)
+  }
+  default_value(key){
+    if (key === 'status') return '&iquest;?'
+    return super.default_value(key)
+  }
 }
 
 

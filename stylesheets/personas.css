@@ -12,6 +12,25 @@
   margin:0;
   border:0;
 }
+.personasview .personas .persona .goals .goal .intelligences {
+  display:none;
+}
+.personasview .personas .persona .desc,
+.personasview .personas .persona .title {
+  float: right;
+  width: 75%;
+}
+.personasview .personas .persona .title {
+  font-size: 150%;
+}
+.personasview .personas .persona .goals .goal .title {
+  font-size: 125%;
+}
+.personasview .personas .persona .goals .goal .desc,
+.personasview .personas .persona .goals .goal .title {
+  width: 75%;
+  float: left;
+}
 .personasview .personas {
   width:800px;
   margin: 0 auto;
@@ -64,6 +83,7 @@
   border-left: 1px solid gray;
   border-radius: 3px;
   margin-top: 1%;
+  padding: 0;
 }
 .personasview .persona-info .title {
   font-size: 150%;

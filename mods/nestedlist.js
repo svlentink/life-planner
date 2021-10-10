@@ -43,20 +43,31 @@ class FoundationPillar extends AbstractElem {
 }
 class PillarData extends Nestedlist {
   container_classname() { return "pillardata" }
-  get_child_type() { return PillarItem }
-  /*
+//  get_child_type() { console.log('get_child_type',arguments);return PillarItem }
   elem_details(key){
-    return {
-      type: 'div',
-      //innerText: this.get_val(key) + "TEST FIXME",
-      attributes: {
-        'class': 'pdata'
+    if (key === 'container')
+      return {
+        type: 'ul',
+        attributes: this.default_attributes(key),
       }
+    return {
+      type: 'li',
+      attributes: this.default_attributes(key),
+      innerHTML: '<span>' + key + '</span> <span>' + this.get_val(key) + '</span>',
     }
-  }//*/
+  }
 }
+/*
 class PillarItem extends Nestedlist {
   container_classname() { return "pillaritem" }
+  constructor(obj,key){
+    this.order_of_children = () => {
+      return Object.keys(obj)
+    }
+    console.log(obj,key)
+    super.constructor(obj.key)
+  }
 }
+*/
 
 export { Nestedlist, Foundation }

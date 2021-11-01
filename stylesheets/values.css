@@ -31,16 +31,16 @@
   color:gray;
 }
 
-.list li .title {
+.foundation li span:first-child {
   text-transform:lowercase;
 }
-.list li .desc {
+.foundation li span:last-child {
   font-style:italic;
   color:gray;
   font-size:75%;
   margin-left:5px;
 }
-#foundation ul {
+.foundation ul {
   list-style-type: none;
   margin: 0;
   padding: 0;

@@ -86,18 +86,18 @@ class Goal extends AbstractElem {
 
 class PersonasView {
   container_classname(){ return 'personasview' }
-  constructor(personas, foundation={}){
+  constructor(personas){ //, foundation={}){
     this.personas = personas
-    this.foundation = foundation
+//    this.foundation = foundation
   }
   get_elem(){
     let p = new Personas(this.personas)
-    let f = new Foundation(this.foundation)
+//    let f = new Foundation(this.foundation)
     
     let cont = document.createElement('div')
     cont.setAttribute('class',this.container_classname())
     cont.appendChild(p.get_elem())
-    cont.appendChild(f.get_elem())
+//    cont.appendChild(f.get_elem())
     return cont
   }
 }
@@ -127,7 +127,8 @@ class RolesView extends PersonasView {
     let outer = document.createElement('div')
     outer.setAttribute('class','container rolesoverview')
     outer.appendChild(cont)
-    let foundation = cont.children[1]
+    let foundation = cont.children[1] || document.createElement('div')
+    foundation.setAttribute('class','foundation')
     outer.appendChild(foundation)
     return outer
   }

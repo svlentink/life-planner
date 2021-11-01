@@ -28,10 +28,12 @@
   width: 75%;
   float: left;
 }
-.personasview .personas {
+.personasview .personas,
+.foundation {
   width:800px;
   margin: 0 auto;
-
+}
+.personasview .personas {
   overflow:hidden;
   display:flex;
   flex-wrap:wrap;

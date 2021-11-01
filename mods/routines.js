@@ -165,21 +165,29 @@ class Actions extends AbstractElem {
   }
 }
 class Action extends AbstractElem {
-  order_of_children(){
-    return [ 'title', 'desc']
-  }
+//  order_of_children(){
+//    return [ 'title', 'desc']
+//  }
   container_classname(){ return 'action' }
-  default_value(key){
-    if (key === 'desc')
-      console.warn('FIXME use desc of activities?!')
-    return super.default_value(key)
+//  default_value(key){
+//    if (key === 'desc')
+//      console.warn('FIXME use desc of activities?!')
+//    return super.default_value(key)
+//  }
+  get_details(){ // Action details
+    let arr = this.raw.split(' ')
+    return {
+      duration: arr.shift(),
+      title: arr.shift(),
+      ignored: arr.join(' '),
+    }
   }
   elem_details(inp){
-    let arr = this.raw.split(' ')
+    let details = this.get_details()
     return {
       type: 'div',
       attributes: this.default_attributes(),
-      innerHTML: '<code>' + arr.shift() + '</code> <span>' + arr.join(' ') + '</span>',
+      innerHTML: '<code>' + details.duration + '</code> <span>' + details.title + '</span>',
     }
   }
 }

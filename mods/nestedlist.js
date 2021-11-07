@@ -1,8 +1,9 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.js'
+import { ListItem } from './renderlists.js'
 
 class Nestedlist extends AbstractElem {
-  get_class(){ return "nestedlist" }
+  container_classname(){ return "nestedlist" }
   get_child_type(){
     return Nestedlist
   }
@@ -41,21 +42,8 @@ class FoundationPillar extends AbstractElem {
   get_child_type() { return PillarData }
 */
 }
-class PillarData extends Nestedlist {
+class PillarData extends ListItem {
   container_classname() { return "pillardata" }
-//  get_child_type() { console.log('get_child_type',arguments);return PillarItem }
-  elem_details(key){
-    if (key === 'container')
-      return {
-        type: 'ul',
-        attributes: this.default_attributes(key),
-      }
-    return {
-      type: 'li',
-      attributes: this.default_attributes(key),
-      innerHTML: '<span>' + key + '</span> <span>' + this.get_val(key) + '</span>',
-    }
-  }
 }
 /*
 class PillarItem extends Nestedlist {

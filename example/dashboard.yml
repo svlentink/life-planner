@@ -26,7 +26,7 @@
     lifelists:
     - type: title
       data: Life lists
-    - type: nestedlist
+    - type: lists
       data: $PERSONAL_DIR/lifelists.yml
     tmm:
     - type: title

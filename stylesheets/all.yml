@@ -1,7 +1,7 @@
 - type: css
   data: ./stylesheets/layout2.css
 - type: css
-  data: ./stylesheets/nestedlist.css
+  data: ./stylesheets/lists.css
 - type: css
   data: ./stylesheets/overview.css
 - type: css

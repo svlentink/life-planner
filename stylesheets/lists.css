@@ -1,5 +1,4 @@
 
-
 fieldset {
     margin:20px;
 }
@@ -24,3 +23,14 @@ fieldset .skipped {
   opacity: .3;
 }
 
+.lists .list legend {
+  font-size: 200%;
+}
+.lists .list ul li span:first-child {
+  font-weight: bold;
+  min-width:100px;
+  display: inline-block;
+}
+.lists .list ul li span:last-child {
+  font-style: italic;
+}

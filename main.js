@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { renderlists } from './mods/renderlists.js'
+import { Lists } from './mods/renderlists.js'
 import { TimeManagementMatrices } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
 import { Nestedlist, Foundation } from './mods/nestedlist.js'
@@ -72,6 +72,10 @@ const types = {
 	},
 	routines: (obj) => {
 		let elem = new Routines(obj.data)
+		return elem.get_elem()
+	},
+	lists: (obj) => {
+		let elem = new Lists(obj.data)
 		return elem.get_elem()
 	},
 	nestedlist: (obj) => {

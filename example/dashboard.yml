@@ -8,7 +8,7 @@
   data: Example Dashboard
 - ./stylesheets/all.yml
 - type: desc
-  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml
+  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example/dashboard.yml
 - type: tabs
   data:
     first tab:
@@ -16,6 +16,35 @@
       data: test title
     - type: desc
       data: description item
+    student:
+    - type: tabs
+      data:
+        roles:
+        - type: desc
+          data: Which personas shape up the life of this student.
+        - type: roles
+          data: $PERSONAL_DIR/personas.yml
+        vision:
+        - type: title
+          data: Vision/goal board
+        - ./example/writings/manual/vision-board.yml
+        - type: personas
+          data: $PERSONAL_DIR/personas.yml
+        - type: foundation
+          data: $PERSONAL_DIR/foundation.yml
+        routines:
+        - type: calendar
+          data: ./example/routines/student.yml
+        - type: routines
+          data: ./example/routines/student.yml
+        life lists:
+        - type: lists
+          data: ./example/lifelists/main.yml
+        tmms:
+        - type: title
+          data: Time management matrices
+        - type: timemangementmatrices
+          data: ./example/tmm/student.yml
     calendar:
     - type: title
       data: Habits and routines
@@ -68,13 +97,20 @@
           data: Packing list digital nomad by NT650V (first trip)
         - $PACKLIST_DIR/digital-nomad-motorcycle-nt650v.yml
     itineraries-viaje:
+    - type: desc
+      data: |
+        During the lockdown in 2020 I went flying as digital nomad.
+        This became harder in 2021 and some major border crossing were closed,
+        but small bike / pedestrian crossings remained open.
+        This enabled me to use these roads to travel with my motorcycles through
+        various countries in the EU (as a digital nomad).
     - type: tabs
       data:
-        old:
+        micro managing:
         - type: desc
           data: When micro-managing the route, you quickly add 50% to the travel time.
         - type: route
-          data: ./example/roadtrips/avoiding-borders.yml
+          data: ./example/roadtrips/micro-managing.yml
         Bilbao-V1:
         - type: route
           data: ./example/roadtrips/nl-spain.yml

@@ -27,9 +27,9 @@ roadtrip:
 
 work:
   start:
-  - days: [mo,tu,we,th,fr]
+  - days: &weekdays [mo,tu,we,th,fr]
     time: 13:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 08:00
   actions:
   - 110 work
@@ -42,32 +42,32 @@ work:
 # and an hour break instead of 30min)
 hourlypushups:
   start:
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 08:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 09:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 10:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 11:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 12:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 13:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 14:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 15:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 16:00
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 17:00
   actions:
   - 1 pushups
 
 lunch:
   start:
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 12:00
   trigger: lunch
   actions:
@@ -79,7 +79,7 @@ lunch:
 
 morning_ritual:
   start:
-  - days: [mo,tu,we,th,fr]
+  - days: *weekdays
     time: 07:00
   actions:
     - 1 pushups
@@ -118,7 +118,7 @@ laudry:
 
 plan_roadtrip:
   start:
-  - days: [th]
+  - days: [we]
     time: 17:00
   actions:
   - 20 breadth_search

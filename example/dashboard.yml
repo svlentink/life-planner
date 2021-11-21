@@ -83,6 +83,16 @@
           data: ./example/routines/student.yml
         - type: routines
           data: ./example/routines/student.yml
+        pre-covid:
+        - type: calendar
+          data: $PERSONAL_DIR/routines-pre-covid.yml
+        - type: routines
+          data: $PERSONAL_DIR/routines-pre-covid.yml
+        last:
+        - type: calendar
+          data: $PERSONAL_DIR/routines.yml
+        - type: routines
+          data: $PERSONAL_DIR/routines.yml
 
     life lists:
     - type: tabs

@@ -103,8 +103,10 @@ class Routines extends AbstractElem {
         for (var s in routine.start){
           var start = routine.start[s]
           if (typeof start.days === 'string'){
-            if (start.days.toLowerCase() === 'weekdays')
+            if (start.days.toLowerCase() === 'weekdays'){
               start.days = ['mo', 'tu', 'we', 'th', 'fr']
+              console.warn('Weekdays used, this is deprecated')
+            }
             else // daily
               start.days = days
           }

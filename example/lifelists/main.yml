@@ -6,10 +6,13 @@ slacking:
     guitar: Playing a song or two
     reading: Always have a book around, no articles
     clean: Organize and cleaning provides a better workspace
+    plan: Plan and organize tasks and events
     water: Drink more water
     polish: polish shoes
     duolingo: Learn a language
     piano: Practice
+    khan: Khan Academy
+
 
 ponder:
   desc: Questions to contemplate on (during sleep, driving, hike etc.)
@@ -33,4 +36,6 @@ ponder:
     outlook_hope: Do you have a realistic, meaningful plan for the future?
     body: Are you in good physical health?
     basis: Do you have at least a necessary minimum of economic resources?
+    friends: Which social circles?
+    hierarchy of needs: For the various part of my life, on which level am I functioning?
 

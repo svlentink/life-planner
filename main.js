@@ -7,9 +7,9 @@ import { RolesView, PersonasView } from './mods/personas.js'
 import { Routines } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
-//import * as marked from 'https://cdn.lent.ink/js/npm/marked.js' // FIXME
 
-
+import * as markedhack from 'https://cdn.lent.ink/js/npm/marked.js'
+const { parse } = window.npm['marked']
 import * as yamlhack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
@@ -143,7 +143,7 @@ const types = {
 		let elem = document.createElement('article')
 		let msg = 'ERROR failed parsing markdown.' + c.data
 		try {
-			msg = marked.parse(c.data)
+			msg = /*marked.*/parse(c.data)
 		} catch (e) {
 			msg += e
 		}

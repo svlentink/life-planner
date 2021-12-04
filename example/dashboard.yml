@@ -133,11 +133,17 @@
           data:
             motorcycle:
             - type: title
-              data: Packing list digital nomad by motorcycle
+              data: Digital nomad by motorcycle
             - $PACKLIST_DIR/digital-nomad-motorcycle.yml
+            motorcycle short term:
+            - type: desc
+              data: |
+                Digital nomad by motorcycle in the vicinity of his storage of belongings.
+                Thus able to switch clothes etc. from there every week.
+            - $PACKLIST_DIR/digital-nomad-motorcycle-short-term.yml
             flight:
             - type: title
-              data: Packing list digital nomad by flight
+              data: Digital nomad by flight
             - $PACKLIST_DIR/digital-nomad-flying.yml
             motorcycle old:
             - type: title

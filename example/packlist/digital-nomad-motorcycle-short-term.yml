@@ -1,14 +1,16 @@
 
+# This short term is usually when you are staying in the vicinity of your
+# storage box (or friend/family member) where your major belongings recide
+
 type: nestedlist
 data:
-- $PACKLIST_DIR/sublist/non-physical.yml
 
 - on me:
-    hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
     backpack (dry-weight 1.2kg):
       laptop compartment:
-      - hat
-      - to be processed paperwork/notes
+        plastic bag:
+        - work laptop
+        - private laptop
       main:
       - intentionally empty for groceries and saving weight
       - spare plastic groceries bag

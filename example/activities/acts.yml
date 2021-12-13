@@ -292,11 +292,6 @@ homework:
   interval: weekly
   moscow: must
   energize: false
-lilist:
-  moscow: should
-  desc: check off item
-  energize: false
-  interval: weekly  
 ds:
   interval: weekly
   time: 90
@@ -308,4 +303,12 @@ band_rehearsal:
   energize: true
   desc: Jamming
   moscow: must
+
+# Backup and restore every device once a month
+# to make sure all data is properly backed up
+backup:
+  interval: weekly
+  energize: false
+  desc: first sunday phone, second laptop, third server, fourth smart watch and ereader
+  moscow: should
 

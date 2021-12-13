@@ -78,21 +78,27 @@
           data: ./example/routines/digital-nomad.yml
         - type: routines
           data: ./example/routines/digital-nomad.yml
-        WorkFromHome:
-        - type: calendar
-          data: ./example/routines/student.yml
-        - type: routines
-          data: ./example/routines/student.yml
         pre-covid:
+        - type: desc
+          data: Pre-covid I already worked two days a week from home.
         - type: calendar
-          data: $PERSONAL_DIR/routines-pre-covid.yml
+          data: ./example/routines/pre-covid.yml
         - type: routines
-          data: $PERSONAL_DIR/routines-pre-covid.yml
-        last:
+          data: ./example/routines/pre-covid.yml
+        WFH-winter:
+        - type: desc
+          data: Working From Home in NL during winter
         - type: calendar
           data: $PERSONAL_DIR/routines.yml
         - type: routines
           data: $PERSONAL_DIR/routines.yml
+        WFH-sunny:
+        - type: desc
+          data: FIXME this is stil the student schedule
+        - type: calendar
+          data: ./example/routines/student.yml
+        - type: routines
+          data: ./example/routines/student.yml
 
     life lists:
     - type: tabs

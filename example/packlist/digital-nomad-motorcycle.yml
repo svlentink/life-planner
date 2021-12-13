@@ -51,7 +51,7 @@ data:
     - plastic bag:
       - sandals or flip flops
     - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
-    - plastic freezer bag:
+    - plastic freezer/seal bag:
       - bluetooth headphones in case
     - $PACKLIST_DIR/sublist/swim-gear.yml
     R removable case (35L):

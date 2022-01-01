@@ -2,11 +2,13 @@
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
+/*
 import * as hack2 from 'https://cdn.lent.ink/js/npm/exif.js'
 import * as hack3 from 'https://cdn.lent.ink/js/npm/exifreader.js'
 import * as hack4 from 'https://cdn.lent.ink/js/npm/exif-js.js'
 const ExifImage = window.npm['exif'].default
 //new ExifImage({image: 'https://cdn.lent.ink/img/face.jpg'},console.log)
+*/
 
 //matches './src.yml' or 'https://example.com/src.yaml'
 function is_yaml_url(str){
@@ -31,13 +33,15 @@ function load_elem_from_URL(url){
 }
 
 class ElemLogic {
+  load_elem(inp){
+    if (is_yaml_url(inp))
+      return load_elem_from_URL(inp)
+    return inp
+  }
   constructor(obj,key=undefined){
     if (! obj) return console.error('ERROR nothing provided ', obj)
     this.key = key
-    if (is_yaml_url(obj))
-      this.raw = load_elem_from_URL(obj)
-    else
-      this.raw = obj
+    this.raw = this.load_elem(obj)
   }
   load_object(){
     
@@ -250,6 +254,7 @@ class AbstractElem extends ElemLogic {
   container_classname(inp=''){ return inp }
 }
 
+// The following serves as an example
 class Hide extends AbstractElem {
   elem_details(key){
     return {

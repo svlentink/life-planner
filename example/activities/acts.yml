@@ -11,28 +11,28 @@ portfolio_management:
   moscow: should
   energize: false # costs/burns mental energy
   goals:
-    - finance
+  - finance
 tidy:
   interval: daily
   energize: true # the result makes me feel good
   desc: digitally (e.g. notes) and physically (e.g. desk)
   moscow: should
   goals:
-    - organized
+  - organized
 prototype:
   interval: weekly
   moscow: should
   desc: Work out prototypes that could lead to a startup
   energize: true # hobby
   goals:
-    - prototype
+  - prototype
 plan:
   interval: daily
   moscow: must
   desc: on weekdays; plan day. In weekend; update long-term planning
   energize: false # requires prefrontal cortex
   goals:
-    - organized
+  - organized
 shower:
   interval: daily
   moscow: must
@@ -61,7 +61,7 @@ stretch:
   moscow: could
   energize: true
   goals:
-    - yogateacher
+  - yogateacher
 dress:
   interval: daily
   desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
@@ -73,21 +73,21 @@ meditate:
   moscow: should
   energize: true
   goals:
-    - rested
+  - rested
 address_power:
   interval: daily
   desc: See benjamin franklin diary
   moscow: should
   energize: false
   goals:
-    - scriptures
+  - scriptures
 guitar:
   interval: weekly
   desc: Just play
   moscow: could
   energize: true # enjoyable activity
   goals:
-    - songs
+  - songs
 dental:
   interval: daily
   desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
@@ -98,28 +98,28 @@ dishwasher:
   moscow: must
   energize: false
   goals:
-    -organized
+  - organized
 food2fridge:
   interval: daily
   desc: from freezer to fridge
   moscow: should
   energize: false
   goals:
-    -organized
+  - organized
 read:
   interval: daily
   desc: Book, no articles/screens
   moscow: should
   energize: true # dependant on the content
   goals:
-    - reader
+  - reader
 core:
   interval: daily
   desc: 5m plank
   moscow: should
   energize: true
   goals:
-    - frontlever
+  - frontlever
 audiobook:
   interval: daily
   desc: learn spanish during commute
@@ -147,13 +147,13 @@ sprint:
   energize: true
   desc: One minute sprint http://youtu.be/SHN-4ve81TY
   goals:
-    - marathon
+  - marathon
 gratitude:
   interval: daily
   moscow: could
   energize: true
   goals:
-    - focus
+  - focus
 solarium:
   interval: daily
   energize: true
@@ -181,7 +181,7 @@ run:
   moscow: should
   energize: true
   goals:
-    - marathon
+  - marathon
 water:
   interval: daily
   moscow: must
@@ -198,7 +198,7 @@ yoga:
   time: 5
   interval: daily
   goals:
-    - yogateacher
+  - yogateacher
 alarm:
   moscow: must
   desc: smartwatch, 3min later phone downstairs
@@ -264,15 +264,15 @@ museum:
   energize: true
   interval: weekly
   goals:
-    - museum
-    - datenite
+  - museum
+  - datenite
 pack:
   interval: daily
   desc: bag and clothing
   moscow: should
   energize: false
   goals:
-    - organized
+  - organized
 to_train:
   interval: daily
   energize: true
@@ -294,7 +294,6 @@ homework:
   energize: false
 ds:
   interval: weekly
-  time: 90
   moscow: should
   energize: false
   desc: Data Science

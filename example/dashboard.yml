@@ -1,5 +1,9 @@
 - type: baseurl
   data: PERSONAL_DIR=https://dev.lent.ink/preview/gits/pp/lp
+- type: plannedactivities
+  data:
+    routines: $PERSONAL_DIR/routines.yml
+    activities: ./example/activities/acts.yml
 - type: baseurl
   data: PACKLIST_DIR=https://raw.githubusercontent.com/svlentink/life-planner/example/packlist
 - type: baseurl

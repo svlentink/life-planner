@@ -52,8 +52,10 @@ function renderFullCalendar(elem, events, callback, plugins=[ timeGridPlugin ]){
   }
   let calendar = new Calendar(elem, params)
   calendar.render()
+  // the set interval is an ugly hack to deal with the fact
+  // that the calendar only renders when it is actively displayed
   window.setInterval(() => {
-    console.debug('rendered calendar',params,calendar)
+    //console.debug('rendered calendar',params,calendar)
     calendar.render()
   }, 1000)
 }

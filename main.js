@@ -4,7 +4,7 @@ import { TimeManagementMatrices } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
 import { Nestedlist, Foundation } from './mods/nestedlist.js'
 import { RolesView, PersonasView } from './mods/personas.js'
-import { Routines } from './mods/routines.js'
+import { Routines, PlannedActivities } from './mods/routines.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
 
@@ -74,6 +74,10 @@ const types = {
 	},
 	routines: (obj) => {
 		let elem = new Routines(obj.data)
+		return elem.get_elem()
+	},
+	plannedactivities: (obj) => {
+		let elem = new PlannedActivities(obj.data)
 		return elem.get_elem()
 	},
 	lists: (obj) => {

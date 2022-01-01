@@ -53,7 +53,7 @@ class PillarItem extends Nestedlist {
       return Object.keys(obj)
     }
     console.log(obj,key)
-    super.constructor(obj.key)
+    super(obj.key)
   }
 }
 */

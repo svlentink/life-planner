@@ -12,19 +12,32 @@ const ExifImage = window.npm['exif'].default
 
 //matches './src.yml' or 'https://example.com/src.yaml'
 function is_yaml_url(str){
-  if (typeof str === 'string' &&
-      str.indexOf(' ') === -1)
-    for (let ext of ['.yml', '.yaml', '.json'])
-      if(str.endsWith(ext)) return true
+  if (typeof str !== 'string' ||
+      str.indexOf(' ') !== -1)
+    return false
+  let url = substitute_baseURLs(str)
+  for (let ext of ['.yml', '.yaml', '.json'])
+    if(url.endsWith(ext)) return true
   return false
 }
 
-function load_elem_from_URL(url){
+function substitute_baseURLs(url){
+  let result = url
   if (window.YAMLbaseURLs && url[0] === '$')
     for (let k in window.YAMLbaseURLs)
       if (url.startsWith('$'+k))
-        url = url.replace('$'+k, window.YAMLbaseURLs[k])
-  if (url[0] === '$') console.warn('Probably an URL with a baseurl that has no match',url)
+        result = url.replace('$'+k, window.YAMLbaseURLs[k])
+  if (result[0] === '$'){
+    if (result === url)
+      console.warn('Probably an URL with a baseurl that has no match',url)
+    else //check if we need recursive substitution
+      return substitute_baseURLs(result)
+  }
+  return result
+}
+
+function load_elem_from_URL(URL){
+  let url = substitute_baseURLs(URL)
 	//console.debug('Loading from',url)
 	let data = YAML.load(url)
   let msg = 'Failed loading '+url

@@ -23,7 +23,9 @@ Chart.register(...registerables)
 
 function renderGraph(canvas_elem, inp, title='', objvalkey='value', objlabelkey='title', chart_type='bar'){
   function get_color(i){
-    return i%2? 'SkyBlue' : 'Yellow'
+    // https://www.w3schools.com/colors/colors_groups.asp
+    let c = ['Red', 'Green', 'Blue', 'Pink', 'Purple', 'Orange', 'Yellow', 'Cyan', 'Brown', 'Grey']
+    return c[i%c.length]
   }
   const labels = [],
         colors = [],

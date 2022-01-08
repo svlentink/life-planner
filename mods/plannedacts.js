@@ -17,18 +17,23 @@ class PlannedActivities extends AbstractElem {
   get_elem(){
     let meta = this.metadata()
     let graph1 = this.render_elem('canvas')
-    renderGraph(graph1, meta.result, 'Minutes planned per week','minutes_allocated_per_week')
+    renderGraph(graph1, meta.result, 'Minutes planned p/w','minutes_allocated_per_week')
     let graph2 = this.render_elem('canvas')
-    renderGraph(graph2, meta.energy_ratio, 'Energy ratio', null, null, 'pie')
+    renderGraph(graph2, meta.energy_ratio, 'Energy ratio in min. for planned activities p/w', null, null, 'pie')
     let graph3 = this.render_elem('canvas')
-    renderGraph(graph3, meta.planned_but_not_defined, 'Planned but not defined activities')
+    renderGraph(graph3, meta.planned_but_not_defined, 'Planned but not defined activities p/w')
+    let graph4 = this.render_elem('canvas')
+    renderGraph(graph4, meta.moscow_ratio, 'MoSCoW ratio in min. for planned activities p/w', null, null, 'pie')
+
     let list = (new Lists({
       'Not planned activites': Object.keys(meta.not_planned)
     })).get_elem()
+
     let cont = this.render_elem('container')
     cont.appendChild(graph1)
     cont.appendChild(graph2)
     cont.appendChild(graph3)
+    cont.appendChild(graph4)
     cont.appendChild(list)
     return cont
   }
@@ -45,6 +50,8 @@ class PlannedActivities extends AbstractElem {
     let rts = this.routines
     let routineacts = {}
     for (const [key, routinedetails] of Object.entries(rts)) {
+      if (! Array.isArray(routinedetails.start))
+        continue
       let occurrences = 0
       for (const obj of routinedetails.start)
         occurrences += obj.days.length
@@ -66,6 +73,18 @@ class PlannedActivities extends AbstractElem {
     let times = this.acts_time_per_week()
     let fuel = 0 // activities that give cognitive fuel
     let burn = 0 // acts that burn you out
+    let moscow = {
+      must: [],
+      should: [],
+      could: [],
+      wont: [],
+    }
+    let moscow_times = {
+      must: 0,
+      should: 0,
+      could: 0,
+      wont: 0,
+    }
     for (const [key,actdetails] of Object.entries(acts)){
       if (key in times){
         actdetails['minutes_allocated_per_week'] = times[key]
@@ -76,6 +95,14 @@ class PlannedActivities extends AbstractElem {
           else
             burn += times[key]
         }
+        if ('moscow' in actdetails){
+          let val = actdetails.moscow.toLowerCase()
+          if (val in moscow){
+            moscow[val].push(key)
+            moscow_times[val] += times[key]
+          }
+          else console.warn('Activity does not specify valid moscow',key)
+        } else console.warn('Activity does not contain moscow',key)
       }
       else
         not_planned[key] = actdetails
@@ -91,7 +118,8 @@ class PlannedActivities extends AbstractElem {
       energy_ratio: {
         burning: burn,
         fueling: fuel,
-      }
+      },
+      moscow_ratio: moscow_times,
     }
   }
 }

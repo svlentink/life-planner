@@ -2,7 +2,7 @@
 # cue + routine + reward = habit
 
 drive:
-  start: {}
+  start: []
   actions:
   - 5 gasstation
   - 75 drive

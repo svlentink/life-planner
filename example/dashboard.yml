@@ -69,40 +69,31 @@
     - type: tabs
       data:
         student:
-        - type: calendar
-          data: ./example/routines/student.yml
-        - type: routines
-          data: ./example/routines/student.yml
-        - type: plannedactivities
-          data:
-            routines: $PERSONAL_DIR/routines.yml
-            activities: ./example/activities/acts.yml
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/student.yml
+        - ./example/tablayouts/routine.yml
         digital nomad:
-        - type: calendar
-          data: ./example/routines/digital-nomad.yml
-        - type: routines
-          data: ./example/routines/digital-nomad.yml
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/digital-nomad.yml
+        - ./example/tablayouts/routine.yml
         pre-covid:
         - type: desc
           data: Pre-covid I already worked two days a week from home.
-        - type: calendar
-          data: ./example/routines/pre-covid.yml
-        - type: routines
-          data: ./example/routines/pre-covid.yml
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/pre-covid.yml
+        - ./example/tablayouts/routine.yml
         WFH-winter:
         - type: desc
           data: Working From Home in NL during winter
-        - type: calendar
-          data: $PERSONAL_DIR/routines.yml
-        - type: routines
-          data: $PERSONAL_DIR/routines.yml
+        - type: baseurl
+          data: ROUTINES_FILE=$PERSONAL_DIR/routines.yml
+        - ./example/tablayouts/routine.yml
         WFH-sunny:
         - type: desc
           data: FIXME this is stil the student schedule
-        - type: calendar
-          data: ./example/routines/student.yml
-        - type: routines
-          data: ./example/routines/student.yml
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/student.yml
+        - ./example/tablayouts/routine.yml
 
     life lists:
     - type: tabs

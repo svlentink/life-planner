@@ -4,7 +4,8 @@ import { TimeManagementMatrices } from './mods/tmm.js'
 import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
 import { Nestedlist, Foundation } from './mods/nestedlist.js'
 import { RolesView, PersonasView } from './mods/personas.js'
-import { Routines, PlannedActivities } from './mods/routines.js'
+import { Routines } from './mods/routines.js'
+import { PlannedActivities } from './mods/plannedacts.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
 
@@ -49,42 +50,42 @@ const types = {
 		elem.innerText = 'At this point in the document the baseurl was loaded ' + c.data
 		return elem
 	},
-	route: (obj) => {
+	route: obj => {
 		let elem = new RouteDesc(obj.data)
 		return elem.get_elem()
 	},
-	calendar: (obj) => {
+	calendar: obj => {
 		let routines = new Routines(obj.data)
 		let events = routines.get_events()
 		let cont = document.createElement('div')
 		renderCalendar(events, cont, console.log)
 		return cont
 	},
-	timemangementmatrices: (obj) => {
+	timemangementmatrices: obj => {
 		let elem = new TimeManagementMatrices(obj.data)
 		return elem.get_elem()
 	},
-	personas: (obj) => {
+	personas: obj => {
 		let elem = new PersonasView(obj.data)
 		return elem.get_elem()
 	},
-	roles: (obj) => {
+	roles: obj => {
 		let elem = new RolesView(obj.data)
 		return elem.get_elem()
 	},
-	routines: (obj) => {
+	routines: obj => {
 		let elem = new Routines(obj.data)
 		return elem.get_elem()
 	},
-	plannedactivities: (obj) => {
+	plannedactivities: obj => {
 		let elem = new PlannedActivities(obj.data)
 		return elem.get_elem()
 	},
-	lists: (obj) => {
+	lists: obj => {
 		let elem = new Lists(obj.data)
 		return elem.get_elem()
 	},
-	nestedlist: (obj) => {
+	nestedlist: obj => {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
 	},
@@ -92,11 +93,11 @@ const types = {
 		let elem = new Foundation(obj.data)
 		return elem.get_elem()
 	},
-	timemangementmatrix: (obj) => {
+	timemangementmatrix: obj => {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
 	},
-	blockquote: (c) => {
+	blockquote: c => {
 		let elem = document.createElement('blockquote')
 		elem.innerText = c.data
 		return elem
@@ -144,6 +145,11 @@ const types = {
 		return elem
 	},
 	markdown: c => {
+		if (window.acceptMarkdownLoading === true ||
+			confirm('This page wants to load markdown which might run JS, okay?'))
+			window.acceptMarkdownLoading = true
+		else
+			return types.error('Loading Markdown not permitted', c)
 		let elem = document.createElement('article')
 		let msg = 'ERROR failed parsing markdown.' + c.data
 		try {

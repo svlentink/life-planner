@@ -9,10 +9,14 @@ class ListItem extends AbstractElem {
         type: 'ul',
         attributes: this.default_attributes(key),
       }
+    if (key === 'stringify') return {
+      type: 'li',
+      innerText: this.raw,
+    }
     return {
       type: 'li',
       attributes: this.default_attributes(key),
-      innerHTML: '<span>' + key + '</span> <span>' + this.get_val(key) + '</span>',
+      innerHTML: '<span>' + key + '</span> <span>' + this.get_val(key) + '</span>'
     }
   }
 }

@@ -1,7 +1,6 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.js'
 import { saveIcal2File } from './ical-generator.js'
-import { renderGraph } from './graph.js'
 
 
 class Routine extends AbstractElem {
@@ -195,86 +194,4 @@ class Action extends AbstractElem {
   }
 }
 
-console.debug('FIXME unplannedactivities and fuel vs burn indicator in UI')
-class PlannedActivities extends AbstractElem {
-  container_classname(){ return 'plannedactivites' }
-  constructor(obj){
-    if (! (obj && obj.routines && obj.activities))
-      return console.error('keys missing: routines, activities',obj)
-    super({})
-    this.raw = obj
-    this.routines = this.load_elem(obj.routines)
-    this.activities = this.load_elem(obj.activities)
-    this.over = this.metadata()
-    window.plannedacts = this
-    console.debug(this)
-  }
-  get_elem(){
-    let elem = this.render_elem('canvas')
-    renderGraph(elem, this.metadata().result, 'minutes_allocated_per_week')
-    return elem
-  }
-  elem_details(key){
-    if (key === 'canvas') return {
-      type: key,
-      attributes: {
-        width: '800px',
-        height: '500px'
-      }
-    }
-    return super.elem_details(key)
-  }
-  acts_time_per_week(){
-    let rts = this.routines
-    let routineacts = {}
-    for (const [key, routinedetails] of Object.entries(rts)) {
-      let occurrences = 0
-      for (const obj of routinedetails.start)
-        occurrences += obj.days.length
-      for (const act of routinedetails.actions){
-        let time = parseInt(act.split(' ')[0])
-        let actname = act.split(' ')[1]
-        if (!(actname in routineacts))
-          routineacts[actname] = 0
-        routineacts[actname] += (time * occurrences)
-      }
-    }
-    return routineacts
-  }
-  metadata(){
-    let acts = this.activities
-    let discrepancy = {}
-    let not_planned = {}
-    let result = {}
-    let times = this.acts_time_per_week()
-    let fuel = 0 // activities that give cognitive fuel
-    let burn = 0 // acts that burn you out
-    for (const [key,actdetails] of Object.entries(acts)){
-      if (key in times){
-        actdetails['minutes_allocated_per_week'] = times[key]
-        result[key] = actdetails
-        if ('energize' in actdetails){
-          if (actdetails.energize)
-            fuel += times[key]
-          else
-            burn += times[key]
-        }
-      }
-      else
-        not_planned[key] = actdetails
-    }
-    for (const [key,time] of Object.entries(times)){
-      if (!(key in result || key in not_planned))
-        discrepancy[key] = time
-    }
-    return {
-      result: result,
-      not_planned: not_planned,
-      planned_but_not_defined: discrepancy,
-      burning: burn,
-      fueling: fuel
-    }
-  }
-}
-
-export { Routines, PlannedActivities }
+export { Routines }

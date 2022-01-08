@@ -33,7 +33,7 @@ function load_elem_from_URL(url){
 }
 
 class ElemLogic {
-  load_elem(inp){
+  load_obj(inp){
     if (is_yaml_url(inp))
       return load_elem_from_URL(inp)
     return inp
@@ -41,7 +41,7 @@ class ElemLogic {
   constructor(obj,key=undefined){
     if (! obj) return console.error('ERROR nothing provided ', obj)
     this.key = key
-    this.raw = this.load_elem(obj)
+    this.raw = this.load_obj(obj)
   }
   load_object(){
     

@@ -14,14 +14,14 @@ data:
 - on me:
   - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
   - backpack (dry-weight 1.2kg):
-    - laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
-    - main:
+      laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
+      main:
       - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
       - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
       - plastic bag:
         - sandals or flip flops
       - selfie stick
-    - front:
+      front:
       - nuts
       - dark chocolate
       - packing cube with electronics: $PACKLIST_DIR/sublist/electronics.yml
@@ -30,10 +30,10 @@ data:
       - pen
       - permanent marker
       - notepad
-    - sides:
+      sides:
       - water bottle with clip
       - umbrella
-    - glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
+      glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
     
   - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 

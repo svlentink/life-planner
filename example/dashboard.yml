@@ -135,21 +135,28 @@
             motorcycle:
             - type: title
               data: Digital nomad by motorcycle
-            - $PACKLIST_DIR/digital-nomad-motorcycle.yml
+            - $PACKLIST_DIR/digital_nomad/motorcycle/default.yml
             motorcycle short term:
             - type: desc
               data: |
                 Digital nomad by motorcycle in the vicinity of his storage of belongings.
                 Thus able to switch clothes etc. from there every week.
-            - $PACKLIST_DIR/digital-nomad-motorcycle-short-term.yml
+            - $PACKLIST_DIR/digital_nomad/motorcycle/short-term.yml
             flight:
             - type: title
               data: Digital nomad by flight
-            - $PACKLIST_DIR/digital-nomad-flying.yml
+            - $PACKLIST_DIR/digital_nomad/flying/carry-on.yml
             motorcycle old:
             - type: title
               data: Packing list digital nomad by NT650V (first trip)
-            - $PACKLIST_DIR/digital-nomad-motorcycle-nt650v.yml
+            - $PACKLIST_DIR/digital_nomad/motorcycle/nt650v.yml
+            ryan-air:
+            - type: desc
+              data: |
+                40x25x20cm
+            - $PACKLIST_DIR/digital_nomad/flying/ryan-air.yml
+            car:
+            - $PACKLIST_DIR/digital_nomad/car.yml
         viaje:
         - type: title
           data: Itineraries
@@ -188,8 +195,6 @@
         my weight
         pushup count
         etc.
-
-
-
-
+    - type: csv
+      data: https://cdn.lent.ink/examples/myweight.csv
 

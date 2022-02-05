@@ -13,7 +13,6 @@ class PlannedActivities extends AbstractElem {
     this.raw = obj
     this.routines = this.load_obj(obj.routines)
     this.activities = this.load_obj(obj.activities)
-    window.plannedacts = this // FIXME debug
   }
   get_elem(){
     let meta = this.metadata()

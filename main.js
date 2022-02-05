@@ -8,6 +8,7 @@ import { Routines } from './mods/routines.js'
 import { PlannedActivities } from './mods/plannedacts.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
+import { CsvGraph } from './mods/csv.js'
 
 import * as markedhack from 'https://cdn.lent.ink/js/npm/marked.js'
 const { parse } = window.npm['marked']
@@ -60,6 +61,10 @@ const types = {
 		let cont = document.createElement('div')
 		renderCalendar(events, cont, console.log)
 		return cont
+	},
+	csv: obj => {
+		let elem = new CsvGraph(obj.data)
+		return elem.get_elem()
 	},
 	timemangementmatrices: obj => {
 		let elem = new TimeManagementMatrices(obj.data)

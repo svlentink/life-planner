@@ -1,0 +1,39 @@
+
+type: nestedlist
+data:
+- non physical items:
+  - tips:
+    - During packing, two laundry bins, one for what to wear/pack on me, one for the backpack.
+    - always put some clothing in your hand luggage for when luggage get lost
+    - everything that can leak, put it in a separate plastic bag
+    - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
+    - Practice living out of your suitcase for a week before you leave; missed anything?
+  - $PACKLIST_DIR/sublist/up-front.yml
+  - $PACKLIST_DIR/sublist/last-minute.yml
+
+- on me:
+  - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
+  - backpack (dry-weight 1.2kg):
+      laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
+      main:
+      - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
+      - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
+      - plastic bag:
+        - sandals or flip flops
+      - selfie stick
+      front:
+      - nuts
+      - dark chocolate
+      - packing cube with electronics: $PACKLIST_DIR/sublist/electronics.yml
+      - inflatable neck cussion
+      - book
+      - pen
+      - permanent marker
+      - notepad
+      sides:
+      - water bottle with clip
+      - umbrella
+      glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
+    
+  - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+

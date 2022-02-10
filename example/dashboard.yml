@@ -1,0 +1,209 @@
+- type: baseurl
+  data: PERSONAL_DIR=https://dev.lent.ink/preview/gits/pp/lp
+- type: baseurl
+  data: PACKLIST_DIR=https://raw.githubusercontent.com/svlentink/life-planner/example/packlist
+- type: baseurl
+  data: PACKLIST_DIR=./example/packlist
+- type: title
+  data: Example Dashboard
+- ./stylesheets/all.yml
+- type: desc
+  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example/dashboard.yml
+- type: tabs
+  data:
+    intro:
+    - type: title
+      data: Introduction
+    - type: desc
+      data: |
+        For historical purposes, I've created an overview of my life of when I was a part time student
+        and of my pre lockdown life (work with commuting).
+        Nowadays my life switches between 3 modes; work from home (WFH) in NL (cold climate in winter),
+        WFH in a warmer climate (thus doing sports outdoors)
+        and being a digital nomad.
+        All 5 lives are arranged differently.
+    roles:
+    - type: tabs
+      data:
+        student:
+        - type: desc
+          data: Which personas shape up the life of this student.
+        - type: roles
+          data: &personas_main ./example/personas/main.yml
+        digital nomad:
+        - type: desc
+          data: Which personas shape up the life of this person.
+        - type: roles
+          data: *personas_main
+        WorkFromHome:
+        - type: roles
+          data: *personas_main
+
+    vision:
+    - type: title
+      data: Vision/goal board
+    - type: tabs
+      data:
+        student:
+        - ./example/writings/manual/vision-board.yml
+        - type: desc
+          data: FIXME the ? question marks still need to be fixed
+        - type: personas
+          data: *personas_main
+        - type: foundation
+          data: &foundation_main ./example/foundation/main.yml
+        digital nomad:
+        - type: personas
+          data: *personas_main
+        - type: foundation
+          data: *foundation_main
+        WorkFromHome:
+        - type: personas
+          data: *personas_main
+        - type: foundation
+          data: *foundation_main
+
+    routines:
+    - type: title
+      data: Habits and routines
+    - type: tabs
+      data:
+        student:
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/student.yml
+        - ./example/tablayouts/routine.yml
+        digital nomad:
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/digital-nomad.yml
+        - ./example/tablayouts/routine.yml
+        pre-covid:
+        - type: desc
+          data: Pre-covid I already worked two days a week from home.
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/pre-covid.yml
+        - ./example/tablayouts/routine.yml
+        WFH-winter:
+        - type: desc
+          data: Working From Home in NL during winter
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/winter.yml
+        - ./example/tablayouts/routine.yml
+        WFH-sunny:
+        - type: desc
+          data: FIXME this is stil the student schedule
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/student.yml
+        - ./example/tablayouts/routine.yml
+
+    life lists:
+    - type: tabs
+      data:
+        main:
+        - type: lists
+          data: ./example/lifelists/main.yml
+        another:
+        - type: lists
+          data: ./example/lifelists/example2.yml
+
+    tmms:
+    - type: title
+      data: Time management matrices
+    - type: desc
+      data: |
+        It is not useful to cram everything in a tmm, therefor we also use:
+        work planning: https://blog.lent.ink/post/open-source-erp
+        team/family board: https://trello.com/this-is-an-external-planning-tool
+        shoppinglist.google.com
+    - type: tabs
+      data:
+        student:
+        - type: timemangementmatrices
+          data: ./example/tmm/student.yml
+        work:
+        - type: timemangementmatrices
+          data: $PERSONAL_DIR/tmatrices.yml
+
+
+
+    "___________________________________________________________" : []
+    digital nomad:
+    - type: tabs
+      data:
+        packing lists:
+        - type: tabs
+          data:
+            motorcycle:
+            - type: title
+              data: Digital nomad by motorcycle
+            - $PACKLIST_DIR/digital_nomad/motorcycle/default.yml
+            motorcycle short term:
+            - type: desc
+              data: |
+                Digital nomad by motorcycle in the vicinity of his storage of belongings.
+                Thus able to switch clothes etc. from there every week.
+            - $PACKLIST_DIR/digital_nomad/motorcycle/short-term.yml
+            flight:
+            - type: title
+              data: Digital nomad by flight
+            - $PACKLIST_DIR/digital_nomad/flying/carry-on.yml
+            motorcycle old:
+            - type: title
+              data: Packing list digital nomad by NT650V (first trip)
+            - $PACKLIST_DIR/digital_nomad/motorcycle/nt650v.yml
+            ryan-air:
+            - type: desc
+              data: |
+                40x25x20cm
+            - $PACKLIST_DIR/digital_nomad/flying/ryan-air.yml
+            car:
+            - $PACKLIST_DIR/digital_nomad/car.yml
+        viaje:
+        - type: title
+          data: Itineraries
+        - type: desc
+          data: |
+            During the lockdown in 2020 I went flying as digital nomad.
+            This became harder in 2021 and some major border crossing were closed,
+            but small bike / pedestrian crossings remained open.
+            This enabled me to use these roads to travel with my motorcycles through
+            various countries in the EU (as a digital nomad).
+        - type: tabs
+          data:
+            micro managing:
+            - type: desc
+              data: When micro-managing the route, you quickly add 50% to the travel time.
+            - type: route
+              data: ./example/roadtrips/micro-managing.yml
+            Bilbao-V1:
+            - type: route
+              data: ./example/roadtrips/nl-spain.yml
+            Bilbao-V2:
+            - type: route
+              data: ./example/roadtrips/nl-bordeaux.yml
+            small border crossings:
+            - type: route
+              data: ./example/roadtrips/border-crossings.yml
+
+    monitoring:
+    - type: title
+      data: FIXME we need more data fields
+    - type: desc
+      data: |
+        pushup count
+        hours sleep
+        etc.
+    - type: csv
+      data: https://cdn.lent.ink/examples/myweight.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/bloodoxygen.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/bloodpressure.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/fruit.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/glutebridge.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/planking.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/wallsquad.csv
+

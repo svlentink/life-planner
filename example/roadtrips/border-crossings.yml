@@ -1,0 +1,119 @@
+
+- nl-be01:
+  - Terneuzen, Netherlands
+  - Rode Sluis, 4575 NE, Netherlands
+  - Rue de Warlengrie, Estaimpuis, Belgium
+  - Poitiers, France
+
+- nl-be02:
+  - Utrecht, Netherlands
+  - Galder, Netherlands
+  - Brakken, Belgium
+  - Mons, Belgium
+
+- nl-be03:
+  - Utrecht, Netherlands
+  - Galder, Netherlands
+  - Brakken, Belgium
+  - Kortrijk, Belgium
+
+- belgium-france01:
+  - Mons, Belgium
+  - Quievrain, Belgium
+  - Paris, France
+ 
+- belgium-france02:
+  - Mons, Belgium
+  - Chemin de Barnaval, Quievrain, Belgium
+  - Chemin de Quiévrechain À Baisieux, Quiévrechain, France
+  - Paris, France
+
+- belgium-france03:
+  - Mons, Belgium
+  - Rue du Pont, Honnelles, Belgium
+  - Paris, France
+
+- belgium-france04:
+  - Kortrijk, Belgium
+  - Rue de Warlengrie, Estaimpuis, Belgium
+  - Bordeaux, France
+
+
+- france-spain01:
+  - Bordeaux, France
+  - D406, Sare, france
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+- france-spain02 (did not work, there was police before the entrance of the dirt road):
+  - Bordeaux, France
+  - 43.31996,-1.683118
+  - 43.299351, -1.674887
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+- france-spain02 (actually used):
+  - Bordeaux, France
+  - 43.300666, -1.693911
+  - 43.284388, -1.710676
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+- france-spain02 (next time):
+  - Bordeaux, France
+  - 43.310403, -1.684497
+  - 43.311544, -1.683551
+  - 43.310455, -1.681468
+  - 43.299351, -1.674887
+  - N-121-A, Spain
+  - Salamanca, Spain
+
+
+
+- france-spain03:
+  - Bordeaux, France
+  - 3590 Route Nationale 10, 64122 Urrugne, France
+  - Gasolinera, 20280 Hondarribia, Gipuzkoa, Spain
+  - Salamanca, Spain
+
+
+- fr-spain04 (+6km +35min):
+  - beziers, france
+  - 42.485766, 2.807744
+  - 42.458199, 2.837926
+  - 42.443483, 2.864728
+  - girona, spain
+
+
+- spain-portugal01:
+  - Salamanca, Spain
+  - BA-007, Badajoz, Spain
+  - Faro, Portugal
+
+- spain-portugal02:
+  - Salamanca, Spain
+  - Marco, 1, 06519 Alburquerque, Badajoz, Spain
+  - 39.173282, -7.175493
+  - Faro, Portugal
+
+- spain-portugal03:
+  - Salamanca, Spain
+  - 38.106270, -6.956933
+  - N386, Portugal
+  - Faro, Portugal
+
+- spain-portugal04:
+  - Salamanca, Spain
+  - Jola, 10515, Cáceres, Spain
+  - 39.287433, -7.243071
+  - Alegrete, Portugal
+  - Faro, Portugal
+
+- lux-fr01:
+  - antwerp, belgium
+  - 49.459480, 6.032562
+  - 49.454440, 6.035510
+  - 49.449535, 6.032987
+  - 49.449492, 6.032414
+  - 49.444796, 6.025103
+  - lyon, france

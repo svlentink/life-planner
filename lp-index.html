@@ -1,0 +1,41 @@
+
+<section id='reviewroutineitem' style='display:none;'>
+  <table>
+    <tr>
+      <td>Review routine for</td>
+      <td><span id='routineitemstart'></span></td>
+    </tr>
+    <tr>
+      <td>Actual time spent</td>
+      <td><input id='routineitemspent' placeholder='optional' type='number' min='1'/></td>
+    </tr>
+    <tr>
+      <td>Start time deviation</td>
+      <td><input id='routineitemdeviate' placeholder='-10' type='number' min='-120' max='120' /></td>
+    </tr>
+    <tr>
+      <td>Effectiveness of time spent</td>
+      <td>
+        <input id='routineitemeffectiveness' type='range' min='0' max='5' value='3' oninput="this.nextElementSibling.innerText=this.value" />
+        <span>3</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td><input id='routineitemcomment' placeholder='optional'/></td>
+    </tr>
+  </table>
+  <button id='storereview'>Store review of routine event</button>
+</section>
+
+
+<section class='info'  style='display:none;'>
+  Everything seen above is rendered based on the data stored in
+  <a href='example.yml'>this YAML</a> file.
+  You can use this file as an example to create your own.
+  To render your data, simply paste it into the textarea below.
+  <br/>
+  For more advanced users, we recommend using git for version control,
+  which enables you to load your YAML from an URL
+  (e.g. <a href='https://github.com/svlentink/life-planner/tree/master/example.yml'>raw.githubusercontent.com</a>).
+</section>

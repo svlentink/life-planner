@@ -1,0 +1,51 @@
+# establish a base, what are we working with?
+
+# Values are abstract goals, ideals
+values: # step 01; foundation for focus in life
+  desc: Provide meaning in life, proud, dreams and satisfaction
+  data:
+    altruistic: Love people, use stuff.
+    #img: https://pixel.nymag.com/imgs/daily/science/2015/09/16/16-altruism.w710.h473.jpg
+    minimalism: Find contentment outside of ownership.
+    #img: https://media.treehugger.com/assets/images/2017/05/minimalist_desk.jpg.860x0_q70_crop-scale.jpg
+    simplicity: Simplicity is the ultimate sophistication. -Leonardo Da Vinci
+    #img: http://www.melbournecoach.com.au/wp-content/uploads/2014/05/Effectiveness_vs_Simplicity.jpg #simplicity+effectiveness
+    kaizen: Continuous improvement.
+    #img: http://help.bizagi.com/bizagi-paas/en/continuousimprovement.png
+    health: Unhealty mind or body develops when one does not invest.
+    #img: http://thevitalspirit.net/wp-content/uploads/2013/12/Mind-Body-Spirit-Wellness12.jpg
+    freedom: ''
+    originality: No one can make you feel inferior without your consent. - Elanor Roosevelt
+    happiness: ''
+    stability: ''
+    authentic: ''
+    aesthetics: ''
+    erudite: ''
+    utilitarianism: ''
+    gregarious: People are designed socially
+    #meritocracy: ''
+    law of jante: ''
+    openness: ''
+    candor: Facts over political correctness
+    Na'aseh V'nishma: Doing before understanding
+    joie de vivre: ''
+strengths:
+  desc: Innate (developed) talents or yet to explore strengths
+  data:
+    energetic: Full of energy
+    philomath: Hunger for learning
+    analytic: Structured
+    conscientious: ''
+    adaptable: ''
+    strategic: ''
+    decisiveness: ''
+    grit: ''
+weaks: # pitfalls
+  desc: Struggle and difficulty, costs more energy and willpower (pitfalls)
+  data:
+    communication: I tend to hide in the comfort of protocols over communication
+    planning: Learning to be better at this through this tool
+# for the following three, see: https://play.google.com/store/apps/details?id=co.feliperivera.lifestrategy
+#opportunities:
+#obstables:
+#skills:

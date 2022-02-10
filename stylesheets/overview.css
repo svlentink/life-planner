@@ -1,0 +1,77 @@
+:root {
+  --radius-roles-overview: 350px;
+  --radius-roles-overview-outer: 370px;
+}
+
+.rolesview .unknown_children,
+.rolesview .desc,
+.rolesview .persona .goals {
+  display:none;
+}
+
+.rolesview .personas {
+  position: relative;
+  top: var(--radius-roles-overview);
+  left: var(--radius-roles-overview-outer);
+  min-height: var(--radius-roles-overview);
+}
+.rolesview .personas .persona {
+  position: absolute;
+  max-width:150px;
+}
+
+.rolesview .personas .persona .title {
+  font-size:75%;
+  float:left;
+//  overflow:hidden;
+  white-space: nowrap;
+  width:75%;
+}
+
+.rolesview .personas img {
+  width:75px;
+  height:75px;
+  border-radius: 37px;
+}
+
+.rolesoverview {
+  width:800px;
+  margin: 0 auto;
+}
+.rolesview {
+  background-color: SkyBlue;
+  background-position: 100px 5px; 
+  border-radius: var(--radius-roles-overview-outer) var(--radius-roles-overview-outer) 0 0;
+//  padding-bottom:50px;
+}
+
+.rolesview:after /*.persona:last-child:after*/ {
+  content:'\00C6C3'; /* as html: &#xC6C3; */
+  text-align:center;
+  font-size:100px;
+  width:100%;
+  z-index:9995;
+  display:block;
+  margin-top:-50px;
+}
+
+/* sun */
+.rolesview:before {
+  content:'\002600';
+  margin-top:-5%;
+  color:gold;
+  font-size:500%;
+  float:right;
+  
+}
+
+.rolesoverview .foundation {
+  border-top: 8px solid Sienna;
+  border-radius: 50% 50% 50% 50%/10% 10% 100% 100%;
+  background-color: LawnGreen;
+  height: 80px;
+  margin-top: -20px;
+  text-align:center;
+  font-size:150%;
+  padding-top:25px;
+}

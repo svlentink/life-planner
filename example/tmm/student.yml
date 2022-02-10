@@ -1,0 +1,64 @@
+
+personal: # https://blog.teamwork.com/time-management-matrix/
+  important:
+    urgent:
+      - manage this
+      - call doctor
+    non-urgent:
+      - focus on this
+      - new glasses
+  unimportant:
+    urgent:
+      - delegate this
+    non-urgent:
+      - avoid this
+
+clean_and_oranize:
+  important:
+    urgent:
+      - clean up mail
+      - clean drawers
+    non-urgent:
+      - clean up dropbox
+      - laptop backup
+      - phone backup
+      - contacts and mail backup
+  unimportant:
+    urgent:
+      - check expiration date food pantry
+    non-urgent:
+      - organize bookmarks
+      - clean outside garbage bin
+
+business:
+  important:
+    urgent:
+    - data backup strategy
+    non-urgent:
+    - hugo blog
+  unimportant:
+    urgent:
+    - layer 4 proxy
+    non-urgent:
+    - mail relay
+    - wipe old laptops
+    - sheets to postgres
+
+study: # https://blog.teamwork.com/time-management-matrix/
+  important:
+    urgent:
+    - manage this
+    - study overview
+    non-urgent:
+    - focus on this
+    - process lab feedback
+    - plan studies
+  unimportant:
+    urgent:
+    - delegate this
+    - review paper
+    non-urgent:
+    - avoid this
+
+
+

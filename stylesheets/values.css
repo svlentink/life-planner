@@ -1,0 +1,49 @@
+
+.foundation {
+  border-top-right-radius: 100% 20px;
+  border-top-left-radius:  100% 20px;
+  border: 5px solid Sienna;
+  border-left: 0;
+  border-right: 0;
+  min-height: 3%;
+  display: flex;
+  overflow:hidden;
+  background-color:LawnGreen;
+  z-index:10000;
+  position:relative;
+}
+
+.foundation > fieldset {
+  margin:5px;
+  border: 0;
+  border-left:1px solid gray;
+  padding-left:3px;
+  background-color: inherit;
+}
+
+.foundation > fieldset legend {
+  font-size:150%;
+  text-transform:uppercase;
+  display:block;
+}
+.foundation > fieldset .desc {
+  margin-left: 5px;
+  color:gray;
+}
+
+.foundation li span:first-child {
+  text-transform:lowercase;
+}
+.foundation li span:last-child {
+  font-style:italic;
+  color:gray;
+  font-size:75%;
+  margin-left:5px;
+}
+.foundation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top:10px;
+}
+

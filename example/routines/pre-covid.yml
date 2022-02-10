@@ -1,0 +1,163 @@
+# trigger, cue or anchor is the action that triggers the routine
+# cue + routine + reward = habit
+
+#  band_rehearsal:
+#    start:
+#      - days: [tu]
+#        time: 19:15
+#    actions:
+#      - 15 bike
+#      - 120 band_rehearsal
+#      - 15 bike
+run:
+  start:
+  - days: [tu,th,sa]
+    time: 07:00
+  actions:
+  - 45 run
+# one week portfolio management, the other backup (even/odd weeks) FIXME
+portfolio_management:
+  start:
+  - days: [su]
+    time: 08:00
+  actions:
+  - 60 portfolio_management
+
+saturday:
+  start:
+  - days: [sa]
+    time: 9:00
+  actions:
+  - 240 prototype
+  - 25 lunch
+  - 240 museum
+wake_up:
+  start:
+  - days: [mo,tu,we,th,fr]
+    time: 5:30
+  - days: [sa, su]
+    time: 07:00
+  trigger: alarm
+  actions:
+  - 3 alarm
+  - 10 wake_up
+  - 1 water
+morning_ritual:
+  start:
+  - days: [mo,we,th]
+    time: 5:45
+  - days: [tu,fr]
+    time: 06:45
+  - days: [sa]
+    time: 07:30
+  - days: [su]
+    time: 06:30
+  actions:
+    - 1 pushups
+    - 7 squads
+    - 1 pushups
+    - 10 address_power
+    - 1 pushups
+    - 25 shower
+#    - 5 solarium
+    - 2 stretch
+    - 1 dress
+    - 5 meditate
+#    - 5 message
+    - 10 plan
+slow_cooker:
+  start:
+  - days: [mo]
+    time: 6:45
+  actions:
+  - 20 cook
+wok:
+  start:
+  - days: [tu, fr]
+    time: 17:30
+  actions:
+  - 20 cook
+oven_dish:
+  start:
+  - days: [sa, su]
+    time: 17:00
+  actions:
+  - 20 cook
+lunch:
+  start:
+  - days: [tu,fr]
+    time: 12:00
+  - days: [mo,we,th]
+    time: 12:30
+  trigger: lunch
+  actions:
+  - 25 lunch
+  - 5 message
+bedtime:
+  start:
+  - days: [mo,tu,we,th,su]
+    time: 21:00
+  - days: [fr, sa]
+    time: 22:00
+  trigger: go to bed
+  actions:
+  - 5 dental
+  - 15 tidy
+  - 2 pack
+  - 1 food2fridge
+  - 1 dishwasher
+  - 5 day-review
+  - 3 gratitude
+  - 20 read
+  - 8 core
+  - 1 water
+#  bike-commute:
+#    start:
+#      - days: [mo,th]
+#        time: 7:00
+#      - days: [mo, th]
+#        time: 16:00
+#    trigger: work
+#    actions:
+#      - 15 audiobook
+commute-work:
+  start:
+  - days: [mo,we,th]
+    time: 07:00
+  - days: [mo,we,th]
+    time: 18:00
+  actions:
+  - 15 to_train
+  - 60 read
+  - 15 to_train
+dinner:
+  start:
+  - days: [mo,we,th]
+    time: 19:30
+  - days: [tu,fr,sa,su]
+    time: 17:45
+  actions:
+  - 5 message
+  - 30 dinner
+  - 7 news
+  - 30 guitar
+early-dental:
+  start:
+  - days: [tu,fr,sa,su]
+    time: 20:00
+  trigger: 8h watch alarm
+  actions:
+  - 5 dental
+work:
+  start:
+  - days: [mo,we,th]
+    time: 08:30
+  - days: [mo,we,th]
+    time: 13:00
+  - days: [tu,fr]
+    time: 08:00
+  - days: [tu,fr]
+    time: 12:30
+  actions:
+  - 240 work
+

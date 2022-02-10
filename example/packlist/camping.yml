@@ -1,0 +1,36 @@
+
+type: nestedlist
+data:
+- camp gear:
+  - miscellaneous:
+    - garbage bags
+    - chair
+    - dishcloth
+    - padlock for tent or bag
+    - tarp
+    - insect lamp
+  - sleeping:
+    - pajamas
+    - sleeping bag liner
+    - duvet
+    - sleeping bag
+    - sleeping liner
+    - blanket
+    - pillow
+    - pillow sleeve
+    - mattress / sleeping mat
+    - air mattress / repair kit / pomp
+    - hammock / rope
+    - mattress topper
+    - mosquito net
+  - tent:
+    - inner tent
+    - outer tent
+    - tent pegs
+    - ground cloth
+    - ropes
+    - poles
+    - brush and dustpan
+    - repair kit (seamgrip)
+
+

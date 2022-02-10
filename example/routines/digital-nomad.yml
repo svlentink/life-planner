@@ -1,0 +1,130 @@
+# trigger, cue or anchor is the action that triggers the routine
+# cue + routine + reward = habit
+
+drive:
+  start: []
+  actions:
+  - 5 gasstation
+  - 75 drive
+  - 15 walk
+  - 75 drive
+  - 15 gasstation
+  - 75 drive
+  - 15 walk
+  - 75 drive
+
+roadtrip:
+  start:
+  - days: [sa,su]
+    time: 08:00
+  - days: [sa,su]
+    time: 14:00
+  actions:
+  - 90 drive
+  - 60 sightseeing
+  - 90 drive
+
+
+work:
+  start:
+  - days: &weekdays [mo,tu,we,th,fr]
+    time: 13:00
+  - days: *weekdays
+    time: 08:00
+  actions:
+  - 110 work
+  - 20 professional_learning
+  - 110 work
+
+
+# Since lockdown life:
+# (also sitting on balancing ball behind desk
+# and an hour break instead of 30min)
+hourlypushups:
+  start:
+  - days: *weekdays
+    time: 08:00
+  - days: *weekdays
+    time: 09:00
+  - days: *weekdays
+    time: 10:00
+  - days: *weekdays
+    time: 11:00
+  - days: *weekdays
+    time: 12:00
+  - days: *weekdays
+    time: 13:00
+  - days: *weekdays
+    time: 14:00
+  - days: *weekdays
+    time: 15:00
+  - days: *weekdays
+    time: 16:00
+  - days: *weekdays
+    time: 17:00
+  actions:
+  - 1 pushups
+
+lunch:
+  start:
+  - days: *weekdays
+    time: 12:00
+  trigger: lunch
+  actions:
+  - 15 walk
+  - 10 shopping
+  - 15 walk
+  - 2 handstand
+  - 5 message
+
+morning_ritual:
+  start:
+  - days: *weekdays
+    time: 07:00
+  actions:
+    - 1 pushups
+    - 7 squads
+    - 1 pushups
+    - 10 address_power
+    - 1 pushups
+    - 25 shower
+#   - 5 solarium
+    - 2 stretch
+    - 1 dress
+    - 5 meditate
+#   - 5 message
+    - 10 plan
+
+
+workout:
+  start:
+  - days: [mo,th]
+    time: 17:00
+  actions:
+  - 20 run
+  - 20 calisthenics
+  - 20 run
+  - 20 recover
+  - 10 shower
+
+laudry:
+  start:
+  - days: [fr]
+    time: 6:05
+  actions:
+  - 3 laundry
+  - 250 wait
+  - 15 hang
+
+plan_roadtrip:
+  start:
+  - days: [we]
+    time: 17:00
+  actions:
+  - 20 breadth_search
+  - 20 depth_search
+  - 20 map_layout
+  - 15 finalize_to_visit_list
+  - 15 finalize_day_planning_as_blog_post
+
+

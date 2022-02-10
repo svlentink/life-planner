@@ -1,0 +1,36 @@
+
+fieldset {
+    margin:20px;
+}
+fieldset:nth-child(even) fieldset fieldset fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset,
+fieldset:nth-child(even) fieldset,
+fieldset:nth-child(odd) {
+  background: whitesmoke;
+}
+fieldset:nth-child(odd) fieldset fieldset fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset fieldset fieldset,
+fieldset:nth-child(odd) fieldset fieldset fieldset,
+fieldset:nth-child(even) fieldset fieldset,
+fieldset:nth-child(odd) fieldset,
+fieldset:nth-child(even) {
+  background: white;
+}
+
+fieldset .skipped {
+  opacity: .3;
+}
+
+.lists .list legend {
+  font-size: 200%;
+}
+.lists .list ul li span:first-child {
+  font-weight: bold;
+  min-width:100px;
+  display: inline-block;
+}
+.lists .list ul li span:last-child {
+  font-style: italic;
+}

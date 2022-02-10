@@ -1,0 +1,29 @@
+trunk:
+- toolbox
+- hat
+- backpack used for office and day trips (in the rare case you leave it in the car):
+    laptop compartment (comined weight 4kg):
+    - plastic bag (water protection):
+      - work laptop
+      - private laptop
+    - to be processed paperwork/notes
+    main:
+    - USB C (work) laptop/phone charger
+    - spare plastic groceries bag
+    - bag of nuts (lunch)
+    front (ready for day trip): $PACKLIST_DIR/sublist/day-trip.yml
+    sides:
+    - carabiners
+    - water bottle with clip
+    glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
+
+- plastic bag:
+  - book
+  - notebook
+- $PACKLIST_DIR/sublist/miscellaneous.yml
+
+- electronics bag:
+  - tupperware container: $PACKLIST_DIR/sublist/electronics.yml
+  - bluetooth headphones in case
+  - power strip
+

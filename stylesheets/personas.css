@@ -1,0 +1,135 @@
+.personasview .personas,
+.personasview .personas .persona,
+.personasview .personas:after,
+.personasview .personas .persona > div{
+  background-color: SkyBlue;
+}
+.personasview .personas .persona > fieldset,
+.personasview .personas .persona > fieldset > fieldset,
+.personasview .personas .persona > fieldset > fieldset > fieldset,
+.personasview .personas .persona > fieldset > fieldset > fieldset > fieldset {
+  background-color: inherit;
+  margin:0;
+  border:0;
+}
+.personasview .personas .persona .desc,
+.personasview .personas .persona .title {
+  float: right;
+  width: 75%;
+}
+.personasview .personas .persona .title {
+  font-size: 150%;
+}
+.personasview .personas .persona .goals .goal .title {
+  font-size: 125%;
+}
+.personasview .personas .persona .goals .goal .desc,
+.personasview .personas .persona .goals .goal .title {
+  width: 75%;
+  float: left;
+}
+.personasview .personas,
+.foundation {
+  width:800px;
+  margin: 0 auto;
+}
+.personasview .personas {
+  overflow:hidden;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:-10px;
+  position:relative;
+  z-index: 9990;
+}
+.personasview .personas:before {
+  border-left: 3px dashed;
+  content:"";
+  margin: 0 auto; /* this centers the line to the full width specified */
+  margin-top:50px;
+  position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+  left: 0;
+  right: 0;
+  width:0;
+  height:95%;
+//  z-index:-1;
+//  z-index: 9993;
+}
+.personasview .personas:after {
+  content:'\00C6C3'; /* as html: &#xC6C3; */
+  text-align:center;
+  font-size:50px;
+  width:100%;
+  z-index:9995;
+}
+
+.personasview .personas .title,
+.personasview .personas .desc,
+.personasview .personas img,
+.personasview .persona-info,
+.personasview .goals {
+  display:block;
+  margin:0;
+  padding:0;
+  border:none;
+}
+.personasview .goals legend {
+  display:none;
+}
+.personasview .goals .goal {
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 0;
+}
+.personasview .persona-info .title {
+  font-size: 150%;
+}
+.personasview .personas .goal .title {
+  font-size: 125%;
+}
+.personasview .personas .desc {
+  font-size: 85%;
+}
+.personasview .personas .persona {
+  border:2px solid;
+  padding:2px;
+  border-radius:5px;
+  margin-top: 20px;
+  max-width:375px;
+  position:relative;
+//  z-index: 9995;
+}
+
+.personasview .personas .persona:after {
+  border-top: 2px dashed;
+  content:"";
+  top:50%;bottom:0;
+  margin: 0 auto; /* this centers the line to the full width specified */
+  position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+  right: 0;
+  left: -20px;
+  width: 420px;
+  z-index: -1;
+}
+
+.personasview .personas .goals .goal {
+  border-top:1px solid gray;
+  border-left:1px solid gray;
+  border-radius: 3px;
+  margin-top:1%;
+}
+.personasview .personas .goals .goal .title {
+  font-size:125%;
+}
+
+.personasview .personas .goals {
+  display:flex;
+  flex-direction:column;
+}
+.personasview .personas img {
+  max-width:22%;
+  align-self: center;
+}

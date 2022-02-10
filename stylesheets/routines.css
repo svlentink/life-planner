@@ -1,0 +1,101 @@
+
+.routines {
+  width:800px;
+  margin: 0 auto;
+}
+
+.routines .routine .unknown_children {
+  display:none;
+}
+.routines .routine legend {
+  display:none;
+}
+
+.routines .routine .trigger:after {
+  content:' => ';
+}
+
+.routines .routine {
+  width:80%;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding:5px;
+}
+
+.routines .reviewroutineitem {
+  border:1px solid;
+  background-color: SkyBlue;
+}
+
+.routines .routine .actions {
+  border:0;
+}
+.routines .routine .totaltime {
+  border-top:1px solid;
+}
+.routines .routine .totaltime:before {
+  content:'min: ';
+}
+.routine .totaltime,
+.routines .routine .action span,
+.routines .routine .action code {
+  margin-left:10px;
+}
+.routines .routine .totaltime,
+.routines .routine .action code {
+  text-align:right;
+  display:inline-block;
+  min-width:70px;
+  width:70px;
+}
+
+.routines .routine .action {
+  min-width: 40px;
+  display: block;
+}
+
+.routines .routine .action .desc {
+  font-style:italic;
+  color:gray;
+  font-size:75%;
+  margin-left:5px;
+}
+.routines .routine .actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top:10px;
+}
+.routines .routine .trigger {
+  font-size:125%;
+}
+.routines .routine .id:after {
+  content:'-routine';
+}
+
+.routines [data-moscow="must"] .title {
+  font-weight: bold;
+  text-transform:uppercase;
+}
+.routines [data-moscow="should"] .title {
+  text-transform:uppercase;
+}
+.routines [data-moscow="could"] .title {
+}
+.routines [data-moscow="would"] .title,
+.routines [data-moscow="wont"] .title {
+  color: gray;
+}
+
+.routines .unplannedactivities {
+  color: gray;
+}
+
+.routines [data-energize="false"]:before {
+  content: '\1F525';
+}
+.routines [data-energize="true"]:before {
+  content: '\26FD';
+}

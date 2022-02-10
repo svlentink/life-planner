@@ -1,0 +1,313 @@
+# Recurring activities
+# Make the things that enrich you your hobby/passion/job
+# ideas:
+# balancing-ball; Sitting on a fitnessball behind desk at work (stimulating core)
+# biking: We in the Netherlands bike a lot, which allows us to skip leg day
+# moscow can be either: must, should, could or wont
+
+portfolio_management:
+  interval: weekly
+  desc: Finances
+  moscow: should
+  energize: false # costs/burns mental energy
+  goals:
+  - finance
+tidy:
+  interval: daily
+  energize: true # the result makes me feel good
+  desc: digitally (e.g. notes) and physically (e.g. desk)
+  moscow: should
+  goals:
+  - organized
+prototype:
+  interval: weekly
+  moscow: should
+  desc: Work out prototypes that could lead to a startup
+  energize: true # hobby
+  goals:
+  - prototype
+plan:
+  interval: daily
+  moscow: must
+  desc: on weekdays; plan day. In weekend; update long-term planning
+  energize: false # requires prefrontal cortex
+  goals:
+  - organized
+shower:
+  interval: daily
+  moscow: must
+  desc: wc, cold shower, shave, dental
+  energize: true # feeling refreshed afterward
+news:
+  interval: daily
+  moscow: could
+  desc: Daily news and hackernews
+  energize: false
+squads:
+  interval: daily
+  moscow: should
+  energize: true
+  desc: Meditate while wallsquad
+pushups:
+  interval: daily
+  desc: pushups without counting
+  moscow: must
+  energize: true # physical exercise relaxes the mind
+  goals:
+    - frontlever
+stretch:
+  interval: daily
+  desc: Stretching
+  moscow: could
+  energize: true
+  goals:
+  - yogateacher
+dress:
+  interval: daily
+  desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
+  moscow: must
+  energize: false
+meditate:
+  interval: daily
+  desc: headspace
+  moscow: should
+  energize: true
+  goals:
+  - rested
+address_power:
+  interval: daily
+  desc: See benjamin franklin diary
+  moscow: should
+  energize: false
+  goals:
+  - scriptures
+guitar:
+  interval: weekly
+  desc: Just play
+  moscow: could
+  energize: true # enjoyable activity
+  goals:
+  - songs
+dental:
+  interval: daily
+  desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
+  moscow: must
+  energize: false
+dishwasher:
+  interval: daily
+  moscow: must
+  energize: false
+  goals:
+  - organized
+food2fridge:
+  interval: daily
+  desc: from freezer to fridge
+  moscow: should
+  energize: false
+  goals:
+  - organized
+read:
+  interval: daily
+  desc: Book, no articles/screens
+  moscow: should
+  energize: true # dependant on the content
+  goals:
+  - reader
+core:
+  interval: daily
+  desc: 5m plank
+  moscow: should
+  energize: true
+  goals:
+  - frontlever
+audiobook:
+  interval: daily
+  desc: learn spanish during commute
+  moscow: could
+  energize: false # requires active listening
+day-review:
+  interval: daily
+  moscow: should
+  desc: What did I do good? bad? stuck in loops? Helicopter overview.
+  energize: false
+message:
+  interval: daily
+  desc: Email, linkedin, whatsapp, fb
+  moscow: should
+  energize: false
+cook:
+  interval: daily
+  moscow: should
+  energize: true
+  desc: Food in slow cooker, quick wok or oven dish
+sprint:
+  interval: daily
+  time: 3
+  moscow: could
+  energize: true
+  desc: One minute sprint http://youtu.be/SHN-4ve81TY
+  goals:
+  - marathon
+gratitude:
+  interval: daily
+  moscow: could
+  energize: true
+  goals:
+  - focus
+solarium:
+  interval: daily
+  energize: true
+  moscow: could #during winter: wont
+  desc: during the winter months
+bike:
+  interval: weekly
+  energize: true
+  desc: bike
+lunch:
+  interval: daily
+  moscow: should
+  energize: true
+  desc: Walking and eating
+work:
+  interval: daily
+  moscow: must
+  energize: false
+dinner:
+  interval: daily
+  moscow: should
+  energize: true
+run:
+  interval: weekly
+  moscow: should
+  energize: true
+  goals:
+  - marathon
+water:
+  interval: daily
+  moscow: must
+  energize: true
+psychoanalysis:
+  desc: self psychology
+  moscow: should
+  energize: false
+  time: 30
+  interval: weekly
+yoga:
+  moscow: could
+  energize: true
+  time: 5
+  interval: daily
+  goals:
+  - yogateacher
+alarm:
+  moscow: must
+  desc: smartwatch, 3min later phone downstairs
+  interval: daily
+  energize: false
+wake_up:
+  moscow: must
+  desc: Actually wake up, drink water, urgent msgs, toilet
+  interval: daily
+  energize: false
+dream_diary:
+  moscow: could
+  desc: Part of lucid dreaming exercize
+  time: 2
+  interval: daily
+  energize: true
+walk:
+  moscow: could
+  desc: Walk through nature (with podcast)
+  interval: daily
+  energize: true
+blog:
+  moscow: could
+  desc: Write, proof read or publish
+  interval: daily
+  energize: false
+hourlypushups:
+  moscow: should
+  desc: During working hours, 20 pushups per hour
+  interval: daily
+  energize: true
+photography:
+  moscow: should
+  desc: Practice with phone camera
+  time: 3
+  interval: daily
+  energize: false
+handstand:
+  moscow: could
+  desc: Practice handstand
+  time: 1
+  interval: daily
+  energize: true
+
+
+drive:
+  moscow: must
+  interval: weekly
+  energize: false
+walk:
+  moscow: should
+  interval: daily
+  energize: true
+gasstation:
+  moscow: must
+  energize: true
+
+
+# Before Covid lockdown
+museum:
+  moscow: could
+  desc: Visit museum
+  energize: true
+  interval: weekly
+  goals:
+  - museum
+  - datenite
+pack:
+  interval: daily
+  desc: bag and clothing
+  moscow: should
+  energize: false
+  goals:
+  - organized
+to_train:
+  interval: daily
+  energize: true
+  desc: Bike/walk from/to train
+
+# Student days
+prepare-lecture:
+  interval: weekly
+  moscow: could
+  energize: false
+  desc: Prepare lecture
+lecture:
+  interval: weekly
+  moscow: should
+  energize: false
+homework:
+  interval: weekly
+  moscow: must
+  energize: false
+ds:
+  interval: weekly
+  moscow: should
+  energize: false
+  desc: Data Science
+band_rehearsal:
+  interval: weekly
+  energize: true
+  desc: Jamming
+  moscow: must
+
+# Backup and restore every device once a month
+# to make sure all data is properly backed up
+backup:
+  interval: weekly
+  energize: false
+  desc: first sunday phone, second laptop, third server, fourth smart watch and ereader
+  moscow: should
+

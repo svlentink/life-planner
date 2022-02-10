@@ -5,7 +5,7 @@ import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
 
-let EXAMPLE_URL = 'https://github.com/svlentink/life-planner/tree/master/example.yml'
+let EXAMPLE_URL = './example.yml' //'https://github.com/svlentink/life-planner/tree/master/example.yml'
 let blob_url = "https://blob.huil.bid/yaml"
 let blob_login_url = "https://blob.huil.bid/?redirect=" +
                      encodeURIComponent('https://lent.ink/projects/life-planner/#blobstorage')

@@ -3,7 +3,7 @@
 - type: baseurl
   data: PACKLIST_DIR=https://raw.githubusercontent.com/svlentink/life-planner/example/packlist
 - type: baseurl
-  data: PACKLIST_DIR=https://dev.lent.ink/preview/gits/life-planner/example/packlist
+  data: PACKLIST_DIR=./example/packlist
 - type: title
   data: Example Dashboard
 - ./stylesheets/all.yml
@@ -29,15 +29,15 @@
         - type: desc
           data: Which personas shape up the life of this student.
         - type: roles
-          data: $PERSONAL_DIR/personas.yml # FIXME
+          data: &personas_main ./example/personas/main.yml
         digital nomad:
         - type: desc
           data: Which personas shape up the life of this person.
         - type: roles
-          data: $PERSONAL_DIR/personas.yml
+          data: *personas_main
         WorkFromHome:
         - type: roles
-          data: $PERSONAL_DIR/personas.yml
+          data: *personas_main
 
     vision:
     - type: title
@@ -49,19 +49,19 @@
         - type: desc
           data: FIXME the ? question marks still need to be fixed
         - type: personas
-          data: $PERSONAL_DIR/personas.yml
+          data: *personas_main
         - type: foundation
-          data: $PERSONAL_DIR/foundation.yml
+          data: &foundation_main ./example/foundation/main.yml
         digital nomad:
         - type: personas
-          data: $PERSONAL_DIR/personas.yml
+          data: *personas_main
         - type: foundation
-          data: $PERSONAL_DIR/foundation.yml
+          data: *foundation_main
         WorkFromHome:
         - type: personas
-          data: $PERSONAL_DIR/personas.yml
+          data: *personas_main
         - type: foundation
-          data: $PERSONAL_DIR/foundation.yml
+          data: *foundation_main
 
     routines:
     - type: title
@@ -86,7 +86,7 @@
         - type: desc
           data: Working From Home in NL during winter
         - type: baseurl
-          data: ROUTINES_FILE=$PERSONAL_DIR/routines.yml
+          data: ROUTINES_FILE=./example/routines/winter.yml
         - ./example/tablayouts/routine.yml
         WFH-sunny:
         - type: desc
@@ -103,7 +103,7 @@
           data: ./example/lifelists/main.yml
         another:
         - type: lists
-          data: $PERSONAL_DIR/lifelists.yml
+          data: ./example/lifelists/example2.yml
 
     tmms:
     - type: title
@@ -186,15 +186,24 @@
 
     monitoring:
     - type: title
-      data: FIXME this is not done yet, see notes below
+      data: FIXME we need more data fields
     - type: desc
       data: |
-        Time allocation in calendar per goal
-        Unplanned activities
-        The ratio between fueling tasks and energy draining ones through the day
-        my weight
         pushup count
+        hours sleep
         etc.
     - type: csv
       data: https://cdn.lent.ink/examples/myweight.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/bloodoxygen.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/bloodpressure.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/fruit.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/glutebridge.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/planking.csv
+    - type: csv
+      data: https://cdn.lent.ink/examples/wallsquad.csv
 

@@ -22,10 +22,13 @@ rear_seats:
   - spare
   folding_crate_6:
   - spare
+  on_top_of_crates:
+  - yoga mat (hides crates)
+  - guitar case
 
 behind_seat_on_ground:
   passenger_seat:
-  - guitar case
+  - passenger shoes
   driver_seat:
   - running/walking shoes
   - hiking shoes

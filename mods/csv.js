@@ -13,7 +13,7 @@ class CsvGraph extends AbstractElem {
     let line = this.raw.split('\n')[0]
     if (! this.valid_header_line(line))
       return console.error('Invalid header line for CSV',this.csv)
-    for (const key of [',',';','\t'])
+    for (const key of [',',';','\t','|'])
       if (line.indexOf(key) !== -1)
         return line.split(key)
     return console.error('no valid separator',this.url)
@@ -67,7 +67,6 @@ class CsvGraph extends AbstractElem {
     for (let j in vals){
       var num = Number(vals[j])
       let indx = this.header[parseInt(j)+1]
-      console.log(num,indx)
       result[indx] = num
     }
 
@@ -78,8 +77,8 @@ class CsvGraph extends AbstractElem {
     for (const title of this.header)
       data[title] = []
     for (const row of this.parse_lines())
-      for (const [key,val] of Object.entries(row)){ console.log(key,val,data)
-        data[key].push(val)}
+      for (const [key,val] of Object.entries(row))
+        data[key].push(val)
 
     let datekey = this.header[0]
     let dates = data[datekey]
@@ -127,6 +126,12 @@ class CsvGraph extends AbstractElem {
             },
             y: {
               display: true
+            }
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: url
             }
           }
         }

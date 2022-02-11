@@ -69,6 +69,8 @@ class CsvGraph extends AbstractElem {
       let indx = this.header[parseInt(j)+1]
       if (indx && num)
         result[indx] = num
+      else
+        console.info('Ignoring', indx, vals[j], this.url)
     }
 
     return result

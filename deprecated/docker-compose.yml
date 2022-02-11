@@ -1,8 +1,0 @@
-version: '3'
-services:
-  cdn:
-    build:
-      dockerfile: develop.Dockerfile
-      context: .
-    ports:
-      - 8080:80

@@ -67,7 +67,8 @@ class CsvGraph extends AbstractElem {
     for (let j in vals){
       var num = Number(vals[j])
       let indx = this.header[parseInt(j)+1]
-      result[indx] = num
+      if (indx && num)
+        result[indx] = num
     }
 
     return result

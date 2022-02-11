@@ -16,9 +16,15 @@
 
 <script type='module'>
     import { render } from './main.js'
-    let url = (new URLSearchParams(window.location.href)).get('dataurl') ||
-      'https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example-dashboard.yml'
-    render('div',url)
+    let url = (new URLSearchParams(window.location.search)).get('dataurl')
+    if (! url) {
+      url = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
+      if (window.location.search)
+        window.location = window.location.href + '&dataurl=' + url
+      else
+        window.location = window.location.href + '?dataurl=' + url
+    }
+    else render('div',url)
 </script>
 </body>
 </html>

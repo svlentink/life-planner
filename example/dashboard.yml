@@ -8,7 +8,7 @@
   data: Example Dashboard
 - ./stylesheets/all.yml
 - type: desc
-  data: Example dashboard loaded from https://raw.githubusercontent.com/svlentink/life-planner/master/dashboard/example/dashboard.yml
+  data: Example dashboard loaded, see URL for details
 - type: tabs
   data:
     intro:
@@ -192,18 +192,5 @@
         pushup count
         hours sleep
         etc.
-    - type: csv
-      data: https://cdn.lent.ink/examples/myweight.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/bloodoxygen.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/bloodpressure.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/fruit.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/glutebridge.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/planking.csv
-    - type: csv
-      data: https://cdn.lent.ink/examples/wallsquad.csv
+    - ./example/metrics/main.yml
 

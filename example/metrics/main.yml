@@ -1,0 +1,15 @@
+
+- type: csv
+  data: https://cdn.lent.ink/examples/myweight.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/bloodoxygen.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/bloodpressure.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/fruit.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/glutebridge.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/planking.csv
+- type: csv
+  data: https://cdn.lent.ink/examples/wallsquad.csv

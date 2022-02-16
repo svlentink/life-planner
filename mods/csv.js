@@ -1,8 +1,6 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.js'
-import { renderGraph } from './graph.js'
-import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
-const Chart = window.npm['chart.js'].Chart
+import { get_color, renderGraph } from './graph.js'
 
 
 class CsvGraph extends AbstractElem {
@@ -87,8 +85,12 @@ class CsvGraph extends AbstractElem {
     let dates = data[datekey]
     delete data[datekey]
     var datasets = []
-    for (const [key,val] of Object.entries(data))
-      datasets.push({label: key, data: val})
+    let i = 0
+    for (const [key,val] of Object.entries(data)){
+      let color = get_color(i)
+      datasets.push({label: key, data: val, borderColor: color})
+      i++
+    }
     
     return {
       labels: dates,
@@ -110,35 +112,10 @@ class CsvGraph extends AbstractElem {
     super({})
     this.url = url
     this.graph = this.render_elem('canvas')
-    this.loadURL(url, (data) => { window.csv = this
+    this.loadURL(url, (data) => {
       this.raw = data
       this.header = this.parse_header()
-      //renderGraph(this.graph, this.datasets(), 'CSV', 'x', 'y', 'line')
-      //return
-      new Chart(this.graph, {
-        type: 'line',
-        data: this.datasets(),
-        options: {
-          scales: {
-            x: {
-              type: 'time',
-              display: true,
-              time: {
-                  unit: 'day'
-              }
-            },
-            y: {
-              display: true
-            }
-          },
-          plugins: {
-            title: {
-              display: true,
-              text: url
-            }
-          }
-        }
-      })
+      renderGraph(this.graph, this.datasets(), url, 'time')
     })
   }
   get_elem(){

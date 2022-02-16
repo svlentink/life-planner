@@ -1,6 +1,6 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.js'
-import { renderGraph } from './graph.js'
+import { renderGraph, create_dataset } from './graph.js'
 import { Lists } from './renderlists.js'
 
 
@@ -16,16 +16,26 @@ class PlannedActivities extends AbstractElem {
   }
   get_elem(){
     let meta = this.metadata()
+
     let graph1 = this.render_elem('canvas')
-    renderGraph(graph1, meta.planned_acts, 'Minutes planned p/w','minutes_allocated_per_week')
+    let dataset1 = create_dataset(meta.planned_acts, 'minutes_allocated_per_week')
+    renderGraph(graph1, dataset1, 'Minutes planned p/w')
+
     let graph2 = this.render_elem('canvas')
-    renderGraph(graph2, meta.energy_ratio, 'Energy ratio in min. for planned activities p/w', null, null, 'pie')
+    let dataset2 = create_dataset(meta.energy_ratio)
+    renderGraph(graph2, dataset2, 'Energy ratio in min. for planned activities p/w', 'pie')
+
     let graph3 = this.render_elem('canvas')
-    renderGraph(graph3, meta.planned_but_not_defined, 'Planned but not defined activities p/w')
+    let dataset3 = create_dataset(meta.planned_but_not_defined)
+    renderGraph(graph3, dataset3,'Planned but not defined activities p/w')
+
     let graph4 = this.render_elem('canvas')
-    renderGraph(graph4, meta.moscow_ratio, 'MoSCoW ratio in min. for planned activities p/w', null, null, 'pie')
+    let dataset4 = create_dataset(meta.moscow_ratio)
+    renderGraph(graph4, dataset4, 'MoSCoW ratio in min. for planned activities p/w', 'pie')
+
     let graph5 = this.render_elem('canvas')
-    renderGraph(graph5, meta.planned_time_per_goal, 'Planned min. for goals p/w')
+    let dataset5 = create_dataset(meta.planned_time_per_goal)
+    renderGraph(graph5, dataset5, 'Planned min. for goals p/w')
 
     let list = (new Lists({
       'Not planned activites': Object.keys(meta.not_planned)

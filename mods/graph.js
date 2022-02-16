@@ -20,14 +20,14 @@ Chart.register(
 const registerables = window.npm['chart.js'].registerables
 Chart.register(...registerables)
 
+function get_color(i){
+  // https://www.w3schools.com/colors/colors_groups.asp
+  let c = ['Red', 'Green', 'Blue', 'Pink', 'Purple', 'Orange', 'Yellow', 'Cyan', 'Brown', 'Grey']
+  return c[i%c.length]
+}
 
-function renderGraph(canvas_elem, inp, title='', objvalkey='value', objlabelkey='title', chart_type='bar'){
-  function get_color(i){
-    // https://www.w3schools.com/colors/colors_groups.asp
-    let c = ['Red', 'Green', 'Blue', 'Pink', 'Purple', 'Orange', 'Yellow', 'Cyan', 'Brown', 'Grey']
-    return c[i%c.length]
-  }
-  const labels = [],
+function create_dataset(inp, objvalkey='value', objlabelkey='title'){
+    const labels = [],
         colors = [],
         values = []
   let i=0
@@ -48,26 +48,46 @@ function renderGraph(canvas_elem, inp, title='', objvalkey='value', objlabelkey=
         values.push(v[objvalkey])
     }
 
-  const data = {
+  return {
     labels: labels,
     datasets: [{
       data: values,
       backgroundColor: colors
     }]
   }
+}
+
+function renderGraph(canvas_elem, datasets, title='', chart_type='bar'){
+  let options = {
+    plugins: {
+      title: {
+        display: true,
+        text: title
+      }
+    }
+  }
+
+  if (chart_type === 'time'){
+    chart_type = 'line'
+    options.scales = {
+      x: {
+        type: 'time',
+        display: true,
+        time: {
+          unit: 'day'
+        }
+      },
+      y: {
+        display: true
+      }
+    }
+  }
 
   new Chart(canvas_elem, {
     type: chart_type,
-    data: data,
-    options: {
-      plugins: {
-        title: {
-          display: true,
-          text: title
-        }
-      }
-    }
+    data: datasets,
+    options: options
   })
 }
 
-export { renderGraph }
+export { renderGraph, get_color, create_dataset }

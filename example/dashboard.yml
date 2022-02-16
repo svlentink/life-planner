@@ -124,8 +124,6 @@
           data: $PERSONAL_DIR/tmatrices.yml
 
 
-
-    "___________________________________________________________" : []
     digital nomad:
     - type: tabs
       data:

@@ -7,12 +7,17 @@
 # Now I run while listening to podcasts.
 run:
   start:
+#  - days:
+#    - tu # while slowcooker
+#    - th # while oven dish
+#    time: 17:15
   - days:
-    - tu # while slowcooker
-    - th # while oven dish
-    time: 17:15
+    - mo
+    - we
+    - fr
+    time: 12:05
   actions:
-  - 45 run
+  - 35 run
 
 # one week portfolio management, the other backup (even/odd weeks) FIXME
 administrative:
@@ -84,7 +89,7 @@ oven_dish:
   - 20 cook
 lunch-walk:
   start:
-  - days: [tu,we,th,fr]
+  - days: [th]
     time: 12:05
   trigger: lunch-break
   actions: &lunchwalkitems
@@ -94,7 +99,7 @@ lunch-walk:
 # Walk to butcher for some slowcooker meat
 lunch-walk-butcher:
   start:
-  - days: [mo]
+  - days: [tu]
     time: 12:05
   actions: *lunchwalkitems
 

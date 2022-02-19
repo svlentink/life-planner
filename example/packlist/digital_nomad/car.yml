@@ -4,7 +4,6 @@ data:
 - $PACKLIST_DIR/sublist/non-physical.yml
 
 - on me:
-    hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
     jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
     clothes of that day: $PACKLIST_DIR/sublist/car/outfit.yml
 

@@ -65,8 +65,8 @@ class Goal extends AbstractElem {
       }
     if (key === 'status'){
       let icons = {
-        idea: '&#128161;',
-        progressing: '&#10227; &#x2941; &#8635;'
+        idea: '&#128161;', // ideas are hidden since they are not final, thus are not shown
+        progressing: '&#8635;', //&#10227; &#x2941;
       }
       let val = this.get_val(key) in icons ? icons[this.get_val(key)] : this.get_val(key)
       return {

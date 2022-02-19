@@ -40,7 +40,7 @@
     frontlever:
       title: Front lever
       desc: in rings and on bar
-      img: https://www.manvsweight.com/wp-content/uploads/2017/02/front-lever.png
+      img: https://cdn.shopify.com/s/files/1/1876/4703/articles/shutterstock_1687674586_1000x.jpg
       status: progressing
       intelligences:
         - bodily-kinesthetic
@@ -48,7 +48,8 @@
       title: Split
       desc: General flexibility
       status: progressing
-      img: https://www.yogajournal.com/.image/t_share/MTQ2MTgwNjczODI3MjUxNzQ0/wheel-yoga-pose-alexandria-crow.jpg
+      # image: split gymnastic
+      img: https://img.olympicchannel.com/images/image/private/t_16-9_360-203_2x/f_auto/v1538355600/primary/ozdvn6ytshokds8a8dau
       intelligences:
         - bodily-kinesthetic
     yogateacher:
@@ -63,6 +64,7 @@
     marathon:
       title: Half marathon
       desc: Run a half marathon every quarter
+      img: https://www.opaortho.com/wp-content/uploads/2019/09/best-propper-running-posture.jpg
 #career: also check out: http://allgroanup.com/careerish/the-lure-of-comfortable/
 - title: IT professional
   desc: If working feels like a chore, a radical change is required.
@@ -80,7 +82,7 @@
     data-engineer:
       title: Data engineer
       desc: Learn data science while being a data engineer
-      img: https://visionbi.nl/wp-content/uploads/2019/12/data-engineer-image.jpeg
+      img: https://www.formorrow.nl/wp-content/uploads/vacatures-voordelen-01.png
 #music:
 - title: Musician
   desc: Music from the soul
@@ -102,7 +104,7 @@
     piano:
       title: Chords on piano
       desc: Being able to play piano from chords
-      img: https://www.mnmusicteachers.com/sites/default/files/styles/program_hero_image/public/images/1330-655-piano.jpg
+      img: https://wpe.hoffmanacademy.com/wp-content/uploads/2021/02/piano-chords-768x512.jpg
 #          status: idea
     vocal:
       title: Confidence with singing
@@ -118,7 +120,7 @@
     scriptures:
       title: Holy scriptures
       desc: Daily source of values
-      img: https://www.evangelicalsforsocialaction.org/wp-content/uploads/2016/01/quran-bible-torah-1024x394.jpg
+      img: https://i.swncdn.com/media/800w/cms/CW/faith/39940-Bible-openBible-ThinkstockPhotos-628907682.1200w.tn.jpg
 #family:
 #  - title: Family
 #    desc: Children are a blessing, don't see it any other way.
@@ -136,15 +138,16 @@
     organized:
       title: Organized
       desc: Never be the bus factor
-      img: https://www.thesecretboard.co.za/wp-content/uploads/2016/05/My-Top-Ten-Organization-Tips.jpg
+      img: https://www.clio.com/wp-content/uploads/2020/07/Blog_Feature_Image-Organization-for-Lawyers-750x375.jpg
     finance:
       title: finacially secure
       desc: Digital wealth distribution/portfolio management
-      status: processing
+      status: progressing
       img: https://media.istockphoto.com/vectors/money-growth-concept-vector-illustration-of-coins-stacks-with-green-vector-id852175196
 - title: Socialite
   desc: As iron sharpens iron, so one person sharpens another.
-  img: https://www.gevme.com/blog/wp-content/uploads/2017/02/wsi-imageoptim-GEVME-promoting-networking-event-success-2-1200x800.jpeg
+  # image of a networking event
+  img: https://coda.newjobs.com/api/imagesproxy/ms/cms/content30/images/networking-pro.jpg
   goals:
     social:
       title: Weekly social
@@ -163,8 +166,8 @@
       img: https://www.museumkaart.nl/Portals/0/favicon.ico
 - title: Philomath
   desc: Inquisitive, epistemophilia
-  img: http://www.curiousgeorge.com/~/media/sites/cg/new%20design%20images/resources/george-laying.png
-#  img: https://greatperformersacademy.com/images/images/Articles_images/tips-that-will-make-you-fast-learner.jpg
+  img: https://pbskids.org/curiousgeorge/img/cg-overlay-img.jpg
+  #img: https://greatperformersacademy.com/images/images/Articles_images/tips-that-will-make-you-fast-learner.jpg
   goals:
     spanish:
       title: Spanish B1

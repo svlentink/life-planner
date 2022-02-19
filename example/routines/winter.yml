@@ -5,7 +5,7 @@
 # I've tried doing High intensity runs or interval runs
 # but motivating myself for it was too hard.
 # Now I run while listening to podcasts.
-run:
+lunch-run:
   start:
 #  - days:
 #    - tu # while slowcooker
@@ -18,6 +18,8 @@ run:
     time: 12:05
   actions:
   - 35 run
+  - 5 walk
+  - 10 shower
 
 # one week portfolio management, the other backup (even/odd weeks) FIXME
 administrative:
@@ -59,7 +61,7 @@ morning_ritual:
   - 1 pushups
   - 10 address_power
   - 1 pushups
-  - 25 shower
+  - 15 shower
   - 2 stretch
   - 1 dress
   - 5 meditate
@@ -87,6 +89,7 @@ oven_dish:
     time: 17:30
   actions:
   - 20 cook
+
 lunch-walk:
   start:
   - days: [th]
@@ -159,6 +162,7 @@ work:
     time: 08:00
   actions:
   - 240 work
+
 blog:
   start:
   - days: [mo,we]

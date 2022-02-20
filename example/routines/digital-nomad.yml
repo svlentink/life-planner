@@ -69,7 +69,7 @@ lunch:
   start:
   - days: *weekdays
     time: 12:00
-  trigger: lunch
+    trigger: lunch
   actions:
   - 15 walk
   - 10 shopping

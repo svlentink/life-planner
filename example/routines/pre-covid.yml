@@ -35,9 +35,10 @@ wake_up:
   start:
   - days: [mo,tu,we,th,fr]
     time: 5:30
+    trigger: alarm
   - days: [sa, su]
     time: 07:00
-  trigger: alarm
+    trigger: alarm
   actions:
   - 3 alarm
   - 10 wake_up
@@ -87,9 +88,10 @@ lunch:
   start:
   - days: [tu,fr]
     time: 12:00
+    trigger: lunch
   - days: [mo,we,th]
     time: 12:30
-  trigger: lunch
+    trigger: lunch
   actions:
   - 25 lunch
   - 5 message
@@ -97,9 +99,10 @@ bedtime:
   start:
   - days: [mo,tu,we,th,su]
     time: 21:00
+    trigger: tired
   - days: [fr, sa]
     time: 22:00
-  trigger: go to bed
+    trigger: tired
   actions:
   - 5 dental
   - 15 tidy
@@ -117,7 +120,7 @@ bedtime:
 #        time: 7:00
 #      - days: [mo, th]
 #        time: 16:00
-#    trigger: work
+#        trigger: work
 #    actions:
 #      - 15 audiobook
 commute-work:
@@ -145,7 +148,7 @@ early-dental:
   start:
   - days: [tu,fr,sa,su]
     time: 20:00
-  trigger: 8h watch alarm
+    trigger: 8pm watch alarm
   actions:
   - 5 dental
 work:

@@ -33,11 +33,13 @@ morning_ritual:
   start:
   - days: &weekdays [mo,tu,we,th,fr]
     time: 05:30
+    trigger: alarm
   - days: [sa]
     time: 07:30
+    trigger: alarm
   - days: [su]
     time: 06:30
-  trigger: alarm
+    trigger: alarm
   actions:
   - 2 pushups
   - 6 stretch
@@ -53,7 +55,7 @@ lunch:
   start:
   - days: *weekdays
     time: 12:00
-  trigger: lunch
+    trigger: lunch
   actions:
   - 25 lunch
   - 5 message
@@ -74,9 +76,10 @@ bedtime:
   start:
   - days: [mo,we,th,su]
     time: 21:00
+    trigger: tired
   - days: [tu, fr, sa]
     time: 22:00
-  trigger: go to bed
+    trigger: tired
   actions:
   - 5 dental
   - 15 tidy
@@ -93,7 +96,7 @@ bike-commute:
 #        time: 7:00
 #      - days: [mo, th]
 #        time: 16:00
-  trigger: work
+#        trigger: work
   actions:
   - 15 audiobook
 train-commute:
@@ -121,7 +124,7 @@ early-dental:
   start:
   - days: daily
     time: 20:00
-  trigger: 8h watch alarm
+    trigger: 8pm watch alarm
   actions:
   - 5 dental
 work:

@@ -19,12 +19,13 @@ class Persona extends AbstractElem {
           'class': key
         }
       },
+/*
       status: {
         type: 'span',
         attributes: {
           style: 'display:none;'
         }
-      },
+      },//*/
     }
     if (key in elems) return elems[key]
     return super.elem_details(key)
@@ -65,8 +66,10 @@ class Goal extends AbstractElem {
       }
     if (key === 'status'){
       let icons = {
-        idea: '&#128161;', // ideas are hidden since they are not final, thus are not shown
+        idea: 'idea &#128161;', // ideas are hidden since they are not final, thus are not shown
         progressing: '&#8635;', //&#10227; &#x2941;
+        maintaining: '&#128736;', //&#128679;
+        done: 'done', // also hidden, just like idea
       }
       let val = this.get_val(key) in icons ? icons[this.get_val(key)] : this.get_val(key)
       return {
@@ -95,7 +98,7 @@ class PersonasView {
 //    let f = new Foundation(this.foundation)
     
     let cont = document.createElement('div')
-    cont.setAttribute('class',this.container_classname())
+    cont.setAttribute('class', this.container_classname())
     cont.appendChild(p.get_elem())
 //    cont.appendChild(f.get_elem())
     return cont
@@ -113,13 +116,13 @@ class RolesView extends PersonasView {
         start = -180 + slice/2;
 
     for (let i=0;i<elements.length;i++){
-        let elem = elements[i]
-        let rotate = slice * i + start,
-            rotateReverse = rotate * -1,
-            transform = 'rotate(' +
-              rotate + 'deg) translate(' +
-              radius + ') rotate(' +
-              rotateReverse + 'deg)';
+      let elem = elements[i]
+      let rotate = slice * i + start,
+          rotateReverse = rotate * -1,
+          transform = 'rotate(' +
+            rotate + 'deg) translate(' +
+            radius + ') rotate(' +
+            rotateReverse + 'deg)';
 
       elem.style.transform = transform
     }

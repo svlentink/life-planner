@@ -23,21 +23,18 @@
         and being a digital nomad.
         All 5 lives are arranged differently.
     roles:
+    - type: desc
+      data: |
+        Which personas/identities/roles shape up the life of this person?
     - type: tabs
       data:
         student:
-        - type: desc
-          data: Which personas shape up the life of this student.
         - type: roles
-          data: &personas_main ./example/personas/main.yml
-        digital nomad:
-        - type: desc
-          data: Which personas shape up the life of this person.
+          data: &personas_student ./example/personas/student.yml
+        working:
         - type: roles
-          data: *personas_main
-        WorkFromHome:
-        - type: roles
-          data: *personas_main
+          data: &personas_work ./example/personas/work.yml
+
 
     vision:
     - type: title
@@ -46,22 +43,16 @@
       data:
         student:
         - ./example/writings/manual/vision-board.yml
-        - type: desc
-          data: FIXME the ? question marks still need to be fixed
         - type: personas
-          data: *personas_main
+          data: *personas_student
         - type: foundation
           data: &foundation_main ./example/foundation/main.yml
-        digital nomad:
+        working:
         - type: personas
-          data: *personas_main
+          data: *personas_work
         - type: foundation
           data: *foundation_main
-        WorkFromHome:
-        - type: personas
-          data: *personas_main
-        - type: foundation
-          data: *foundation_main
+
 
     routines:
     - type: title
@@ -99,6 +90,10 @@
     - type: tabs
       data:
         main:
+        - type: desc
+          data: |
+            We also use this space to define activities which we allow ourself when in need of some slacking.
+            These slacking activities should idealy be short and finite.
         - type: lists
           data: ./example/lifelists/main.yml
         another:
@@ -183,12 +178,5 @@
               data: ./example/roadtrips/border-crossings.yml
 
     monitoring:
-    - type: title
-      data: FIXME we need more data fields
-    - type: desc
-      data: |
-        pushup count
-        hours sleep
-        etc.
     - ./example/metrics/main.yml
 

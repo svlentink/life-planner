@@ -16,15 +16,15 @@
 
 <script type='module'>
     import { render } from './main.js'
-    let url = (new URLSearchParams(window.location.search)).get('dataurl')
-    if (! url) {
-      url = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
+    window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
+    if (! window.dataurl) {
+      window.dataurl = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
       if (window.location.search)
         window.location = window.location.href + '&dataurl=' + url
       else
         window.location = window.location.href + '?dataurl=' + url
     }
-    else render('div',url)
+    else render('div',window.dataurl)
 </script>
 </body>
 </html>

@@ -1,17 +1,25 @@
 - type: markdown
   data: |
-    This vision board visualizes the multiple personas/identities/roles you have on the blue sky.
+    This vision board visualizes the multiple personas/identities/roles you have (on the blue sky).
     For each persona you are able to set goals.
-    <br/>
-    As a foundations, the earth beneath our feet, we have our strenghts, values and weaknesses.
-    We also use this space to define activities which we allow ourself when in need of some slacking.
-    These slacking activities should idealy be short and finite.
-    <br/>
+
+    As a foundation (the earth beneath) we have our strenghts, values and weaknesses.
+
+    #### Goals
     Goals should be positive. When we say 'I cannot eat suger' (negative),
     we still identify ourself with someone who eats sugar.
     If you say
     'I am an athlete, therefore I do not eat sugar' (positive),
     it's easier to abstain from sugar.
+    
+    For goals we define four stages/status;
+    - idea
+    - progressing &#8635;
+    - maintaining &#128736;
+    - done
+    
+    Of which we visualize progressing &#8635; and maintaining &#128736; and hide idea and done from the overview.
+    
     Something can start as a difficult goal and develop into a
     [passion](https://youtu.be/6MBaFL7sCb8),
     just like your first piano class was hard.
@@ -23,6 +31,7 @@
     -->,
     [Sapolsky's research on dopamine](https://www.youtube.com/watch?v=axrywDP9Ii0),
     growth mindset,
-    [Nietzsche, The Gay Science, §290](http://faculty.georgetown.edu/blattnew/intro/gs290.html),
+    [Nietzsche, The Gay Science, §290](http://faculty.georgetown.edu/blattnew/intro/gs290.html)
+    and
     [Human, All Too Human](https://academyofideas.com/2017/07/psychology-of-self-deception/)
 

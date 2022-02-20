@@ -20,8 +20,17 @@
 .personasview .personas .persona .title {
   font-size: 150%;
 }
-.personasview .personas .persona .goals .goal .title {
-  font-size: 125%;
+.personasview .personas .goals .goal {
+  position: relative;
+}
+.personasview .personas .goals .goal .status {
+  position: absolute;
+  top: 0;
+  right: 25%;
+}
+.personasview .personas .goals .goal .title,
+.personasview .personas .goals .goal .status {
+  font-size:125%;
 }
 .personasview .personas .persona .goals .goal .desc,
 .personasview .personas .persona .goals .goal .title {
@@ -120,9 +129,6 @@
   border-left:1px solid gray;
   border-radius: 3px;
   margin-top:1%;
-}
-.personasview .personas .goals .goal .title {
-  font-size:125%;
 }
 
 .personasview .personas .goals {

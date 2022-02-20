@@ -150,9 +150,9 @@ const types = {
 		return elem
 	},
 	markdown: c => {
-		if (window.acceptMarkdownLoading === true ||
+		if (window.localStorage.getItem(window.dataurl) ||
 			confirm('This page wants to load markdown which might run JS, okay?'))
-			window.acceptMarkdownLoading = true
+			window.localStorage.setItem(window.dataurl, 'allow_markdown_loading')
 		else
 			return types.error('Loading Markdown not permitted', c)
 		let elem = document.createElement('article')

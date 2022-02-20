@@ -56,10 +56,12 @@ const types = {
 		return elem.get_elem()
 	},
 	calendar: obj => {
+		// FIXME this should actually be handed an .ical file not a routines file!
 		let routines = new Routines(obj.data)
 		let events = routines.get_events()
 		let cont = document.createElement('div')
-		renderCalendar(events, cont, console.log)
+		let callback = x=>{alert(x.summary + '\n' + x.description)}
+		renderCalendar(events, cont, callback)
 		return cont
 	},
 	csv: obj => {

@@ -11,10 +11,6 @@
   display:none;
 }
 
-.routines .routine .trigger:after {
-  content:' => ';
-}
-
 .routines .routine {
   width:80%;
   border: 1px solid;
@@ -68,9 +64,7 @@
   padding: 0;
   margin-top:10px;
 }
-.routines .routine .trigger {
-  font-size:125%;
-}
+
 .routines .routine .id:after {
   content:'-routine';
 }

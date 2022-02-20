@@ -5,7 +5,7 @@ const { Calendar, timeGridPlugin, iCalendarPlugin } = window.npm['fullcalendar']
 /**
  * The callback is triggered on clicking an item in the calendar
  */
-function renderCalendar(events, target='#calendar',callback=console.log) {
+function renderCalendar(events, target='#calendar',callback) {
     let div = target
     if (typeof target === 'string')
         div = document.querySelector(target)
@@ -38,16 +38,14 @@ function renderIcalCalendar(elem, url, callback){
   renderFullCalendar(elem, e, callback, p)
 }
 
-function renderFullCalendar(elem, events, callback, plugins=[ timeGridPlugin ]){
+function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.description)}, plugins=[ timeGridPlugin ]){
   let params = {
     plugins: plugins,
     initialView: 'timeGridWeek',
     events: events,
     eventClick: (info) => {
       info.jsEvent.preventDefault()
-      const id = info.event.title
-      const st = info.event.start
-      callback(id, st, info)
+      callback(info.event._def.extendedProps)
     },
   }
   let calendar = new Calendar(elem, params)

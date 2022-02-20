@@ -5,7 +5,7 @@ import { saveIcal2File } from './ical-generator.js'
 
 class Routine extends AbstractElem {
   order_of_children(){
-    return [ 'trigger', 'title', 'actions', 'totaltime']
+    return [ 'title', 'actions', 'totaltime']
   }
   get_child_type(key){
     if (key === 'actions') return Actions
@@ -21,15 +21,11 @@ class Routine extends AbstractElem {
     }
     return super.get_val(key)
   }
-  default_value(key){
-    if (key === 'trigger') return 'No_trigger_found'
-    return super.default_value(key)
-  }
   container_classname(){ return "routine" }
   elem_details(key){
     let val = this.get_val(key)
     if (key === 'title') val = this.key
-    if (['trigger','title','totaltime'].includes(key))
+    if (['title','totaltime'].includes(key))
       return {
         type: 'span',
         attributes: this.default_attributes(key),
@@ -74,7 +70,6 @@ class Routines extends AbstractElem {
       var routine = routines[key]
       if (routine.start){
         var title = key
-        //if (routine.trigger) title += ' <= ' + routine.trigger
   
         var desc = []
         //var acts = []
@@ -86,22 +81,15 @@ class Routines extends AbstractElem {
           if(action_arr.length !== 2) continue
           let action = action_arr[1]
           let act_duration = Number(action_arr[0]) || 1
-          //if (activities[action]){
-            //var act = activities[action]
-            //acts.push(act)
-            var time = act_duration //(act.time || act.duration || 0)
-            totaltime += time
-            var row = time + ' '
-            row += action
-            //if (act.desc) row += ', ' + act.desc
-            desc.push(row)
-          //} else {
-          //  desc.push('0  ' + action)
-          //}
+
+          var time = act_duration
+          totaltime += time
+          var row = time + ' '
+          row += action
+          desc.push(row)
         }
 
-        for (var s in routine.start){
-          var start = routine.start[s]
+        for (var start of routine.start){
           if (typeof start.days === 'string'){
             if (start.days.toLowerCase() === 'weekdays'){
               start.days = ['mo', 'tu', 'we', 'th', 'fr']
@@ -110,12 +98,16 @@ class Routines extends AbstractElem {
             else // daily
               start.days = days
           }
+          
+          let this_desc = desc.join('\n')
+          if (start.trigger)
+            this_desc = 'Trigger=' + start.trigger + '\n' + this_desc
 
           let fields_ical_generator = {
             start: getFirstOccurrence(), //.toISOString().split('.')[0],
             end: getFirstOccurrence(totaltime), //.toISOString().split('.')[0],
             summary: title,
-            description: desc.join('\n'),
+            description: this_desc,
             //category: 'routine',
             //location: 'planet earth',
             //organizer: 'Some One <mail@some.one>',

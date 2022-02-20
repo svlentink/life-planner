@@ -1,77 +1,54 @@
 # trigger, cue or anchor is the action that triggers the routine
 # cue + routine + reward = habit
 
-
-# I've tried doing High intensity runs or interval runs
-# but motivating myself for it was too hard.
-# Now I run while listening to podcasts.
-lunch-run:
+shower:
   start:
-#  - days:
-#    - tu # while slowcooker
-#    - th # while oven dish
-#    time: 17:15
-  - days:
-    - mo
-    - we
-    - fr
-    time: 12:05
+  - days: [tu,th,sa,su]
+    time: 07:15
+    trigger: woke_up
+  - days: [mo, we, fr]
+    time: 12:45
+    trigger: ran
   actions:
-  - 35 run
-  - 5 walk
-  - 10 shower
-
-# one week portfolio management, the other backup (even/odd weeks) FIXME
-administrative:
-  start:
-  - days: [su]
-    time: 08:00
-  actions:
-  - 20 portfolio_management
-  - 20 backup
-  - 20 bookkeeping
-saturday:
-  start:
-  - days: [sa]
-    time: 9:00
-  actions:
-  - 240 prototype
-  - 25 lunch
-  - 240 friends
-wake_up:
-  start:
-  - days: &weekdays [mo,tu,we,th,fr]
-    time: 6:30
-  - days: [sa, su]
-    time: 07:00
-  trigger: alarm
-  actions:
-  - 3 alarm
-  - 10 wake_up
-  - 1 water
-morning_ritual:
-  start:
-  - days: *weekdays
-    time: 06:45
-  - days: [sa,su]
-    time: 07:05
-  actions:
-  - 1 pushups
-  - 7 squads
-  - 1 pushups
-  - 10 address_power
-  - 1 pushups
   - 15 shower
+
+wake_up_body:
+  desc: morning ritual part 1
+  start:
+  - days: &alldays [mo,tu,we,th,fr,sa,su]
+    time: 07:00
+    trigger: alarm
+  actions:
+  - 2 snooze
+  - 1 water
+  - 1 pushups
+  - 7 wallsquad
+  - 1 pushups
   - 2 stretch
   - 1 dress
+
+wake_up_mind:
+  desc: morning ritual part 2
+  start:
+  - days:  [mo, we, fr]
+    time: 07:15
+    trigger: woke up body
+  - days: [tu,th,sa,su]
+    time: 07:30
+    trigger: showered
+  actions:
+  - 10 address_power
+  - 1 pushups
   - 5 meditate
-# - 5 message
+  #- 5 message
   - 10 plan
+
 
 slow_cooker:
   start:
   - days: [tu]
     time: 12:40
+    trigger: finished lunch walk
   actions:
   - 20 cook
 
@@ -79,12 +56,14 @@ wok:
   start:
   - days: [mo, we]
     time: 17:30
+    trigger: finished work
   actions:
   - 20 cook
-oven_dish:
+prepare_oven_dish:
   start:
-  - days: [th]  # prepare during lunch
-    time: 12:40 # put in oven after work
+  - days: [th]  # prepare during lunch time
+    time: 12:40 # but put in oven after work
+    trigger: finished lunch walk
   - days: [su]
     time: 17:30
   actions:
@@ -94,7 +73,7 @@ lunch-walk:
   start:
   - days: [th]
     time: 12:05
-  trigger: lunch-break
+    trigger: lunch time
   actions: &lunchwalkitems
   - 25 walk
   - 2 handstand
@@ -104,15 +83,17 @@ lunch-walk-butcher:
   start:
   - days: [tu]
     time: 12:05
+    trigger: lunch time
   actions: *lunchwalkitems
 
 bedtime:
   start:
   - days: [mo,tu,we,th,su]
     time: 21:00
+    trigger: tired
   - days: [fr, sa]
     time: 22:00
-  trigger: go to bed
+    trigger: tired
   actions:
   - 5 dental
   - 15 tidy
@@ -150,16 +131,18 @@ early-dental:
   start:
   - days: [mo,tu,we,th,fr,sa,su]
     time: 20:00
-  trigger: 8h watch alarm
+    trigger: watch alarm at 8pm
   actions:
   - 5 dental
 
 work:
   start:
-  - days: *weekdays
+  - days: &weekdays [mo,tu,we,th,fr]
     time: 13:00
+    trigger: lunch time over
   - days: *weekdays
     time: 08:00
+    trigger: finished morning ritual
   actions:
   - 240 work
 
@@ -206,3 +189,41 @@ cleanup:
   - 10 process_notes
   - 10 email
 
+# I've tried doing High intensity runs or interval runs
+# but motivating myself for it was too hard.
+# Now I run while listening to podcasts.
+lunch-run:
+  start:
+#  - days:
+#    - tu # while slowcooker
+#    - th # while oven dish
+#    time: 17:15
+  - days:
+    - mo
+    - we
+    - fr
+    time: 12:05
+    trigger: lunch time
+  actions:
+  - 35 run
+  - 5 walk # cooling down
+  - 10 shower
+
+# one week portfolio management, the other backup (even/odd weeks) FIXME
+administrative:
+  start:
+  - days: [su]
+    time: 08:00
+  actions:
+  - 20 portfolio_management
+  - 20 backup
+  - 20 bookkeeping
+
+saturday:
+  start:
+  - days: [sa]
+    time: 9:00
+  actions:
+  - 240 prototype
+  - 25 lunch
+  - 240 friends

@@ -24,7 +24,8 @@ class CsvGraph extends AbstractElem {
       if (val.length > 8 && ! isNaN(Number(val.substr(0,4)))) result.push(this.parse_line(val))
       else {
         if (! this.valid_header_line(val)) // header line
-          console.log('ignoring',key,val, this.url)
+          if (val.length !== 0) // not printing a warning for empty lines
+            console.warn('ignoring',key,val, this.url)
       }
     })
     result.forEach((val,key) => {
@@ -68,7 +69,7 @@ class CsvGraph extends AbstractElem {
       if (indx && num)
         result[indx] = num
       else
-        console.info('Ignoring', indx, vals[j], this.url)
+        console.warn('Ignoring', indx, vals[j], this.url)
     }
 
     return result

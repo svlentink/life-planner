@@ -19,13 +19,14 @@ wake_up_body:
     time: 07:00
     trigger: alarm
   actions:
-  - 2 snooze
+  - 1 snooze
   - 1 water
   - 1 pushups
-  - 7 wallsquad
+  - 6 wallsquad
   - 1 pushups
   - 2 stretch
   - 1 dress
+  - 2 dental_care
 
 wake_up_mind:
   desc: morning ritual part 2

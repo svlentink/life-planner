@@ -20,9 +20,9 @@
     if (! window.dataurl) {
       window.dataurl = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
       if (window.location.search)
-        window.location = window.location.href + '&dataurl=' + url
+        window.location = window.location.href + '&dataurl=' + window.dataurl
       else
-        window.location = window.location.href + '?dataurl=' + url
+        window.location = window.location.href + '?dataurl=' + window.dataurl
     }
     else render('div',window.dataurl)
 </script>

@@ -12,11 +12,14 @@ data:
   - $PACKLIST_DIR/sublist/last-minute.yml
 
 - on me:
+  - bluetooth headphones
+  - glasses
   - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
   - backpack (dry-weight 1.2kg):
       laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
       main:
       - plastic bag: $PACKLIST_DIR/sublist/clothes.yml
+      - $PACKLIST_DIR/sublist/undies.yml
       - toiletry bag: $PACKLIST_DIR/sublist/toiletries.yml
       - plastic bag:
         - sandals or flip flops
@@ -37,3 +40,9 @@ data:
     
   - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 
+- todo:
+  - nail clipper
+  - re-usable zip ties to strap jacket to bag
+  - knoopzak
+  - eye mask
+  

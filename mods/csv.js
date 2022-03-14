@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.js'
+import { AbstractElem, substitute_baseURLs } from './abstractelem.js'
 import { get_color, renderGraph } from './graph.js'
 
 
@@ -64,7 +64,13 @@ class CsvGraph extends AbstractElem {
         result = {date: date}
     var vals = line.substr(i).split(sep)
     for (let j in vals){
-      var num = Number(vals[j])
+      let item = vals[j]
+      let num
+      if (item.indexOf(':') !== -1) // convert time notation to decimal
+        num = Number(item.split(':')[0]) + (Number(item.split(':')[1]) / 60)
+      else
+        num = Number(item)
+      
       let indx = this.header[parseInt(j)+1]
       if (indx && num)
         result[indx] = num
@@ -111,12 +117,12 @@ class CsvGraph extends AbstractElem {
   container_classname(){ return 'csvgraph' }
   constructor(url){
     super({})
-    this.url = url
+    this.url = substitute_baseURLs(url)
     this.graph = this.render_elem('canvas')
-    this.loadURL(url, (data) => {
+    this.loadURL(this.url, (data) => {
       this.raw = data
       this.header = this.parse_header()
-      renderGraph(this.graph, this.datasets(), url, 'time')
+      renderGraph(this.graph, this.datasets(), this.url, 'time')
     })
   }
   get_elem(){
@@ -126,7 +132,7 @@ class CsvGraph extends AbstractElem {
     if (key === 'canvas') return {
       type: key,
       attributes: {
-        style: 'max-height:500px;border:1px solid;'
+        style: 'max-height:500px;border:1px solid;margin:5px;'
       }
     }
     return super.elem_details(key)

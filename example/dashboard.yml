@@ -178,5 +178,8 @@
               data: ./example/roadtrips/border-crossings.yml
 
     monitoring:
+    - type: baseurl
+      data: METRICS_DIR=https://cdn.lent.ink/examples
+#      data: METRICS_DIR=/preview/gits/www/cdn.lent.ink/examples
     - ./example/metrics/main.yml
 

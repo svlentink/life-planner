@@ -1,20 +1,21 @@
 
 - type: csv
-  data: https://cdn.lent.ink/examples/myweight.csv
+  data: $METRICS_DIR/myweight.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/bloodoxygen.csv
+  data: $METRICS_DIR/bloodoxygen.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/bloodpressure.csv
+  data: $METRICS_DIR/bloodpressure.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/fruit.csv
+  data: $METRICS_DIR/fruit.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/glutebridge.csv
+  data: $METRICS_DIR/glutebridge.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/planking.csv
+  data: $METRICS_DIR/planking.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/wallsquad.csv
+  data: $METRICS_DIR/wallsquad.csv
 - type: csv
-  data: https://cdn.lent.ink/examples/ran.csv
+  data: $METRICS_DIR/ran.csv
+- type: csv
+  data: $METRICS_DIR/sleep.csv
 
 #pushup count
-#hours sleep

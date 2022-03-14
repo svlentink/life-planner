@@ -285,4 +285,4 @@ class Hide extends AbstractElem {
   }
 }
 
-export { AbstractElem, Hide, load_elem_from_URL, is_yaml_url }
+export { AbstractElem, Hide, load_elem_from_URL, is_yaml_url, substitute_baseURLs }

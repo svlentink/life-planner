@@ -1,4 +1,8 @@
 
+- type: baseurl
+  data: METRICS_DIR=https://cdn.lent.ink/examples
+  #data: METRICS_DIR=/preview/gits/www/cdn.lent.ink/examples
+
 - type: csv
   data: $METRICS_DIR/myweight.csv
 - type: csv
@@ -17,5 +21,9 @@
   data: $METRICS_DIR/ran.csv
 - type: csv
   data: $METRICS_DIR/sleep.csv
+- type: csv
+  data: $METRICS_DIR/bar-muscle-up.csv
+- type: csv
+  data: $METRICS_DIR/guitar.csv
 
 #pushup count

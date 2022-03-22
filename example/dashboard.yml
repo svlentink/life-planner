@@ -178,8 +178,20 @@
               data: ./example/roadtrips/border-crossings.yml
 
     monitoring:
-    - type: baseurl
-      data: METRICS_DIR=https://cdn.lent.ink/examples
-#      data: METRICS_DIR=/preview/gits/www/cdn.lent.ink/examples
+    - type: desc
+      data: |
+        What you measure you will monitor.
+        What you monitor you are aware of.
+        Awareness is the first step.
+        Tnen we acknowledge our short comings/inefficiencies.
+        From which we can begin to improve.
+        
+        A colleague asked why I did not include my deep sleep in the graph.
+        Basically I try to measure what I want to impact directly.
+        Since I already know that not drinking alcohol and doing physical exercise helps,
+        I just try to focus on that.
+        For goals I'm working towards, like the bar-muscle-up I put a decimal value
+        for all the day that I was working on it but still wasn't able to achieve it.
+
     - ./example/metrics/main.yml
 

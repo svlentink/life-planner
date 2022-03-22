@@ -72,7 +72,7 @@ class CsvGraph extends AbstractElem {
         num = Number(item)
       
       let indx = this.header[parseInt(j)+1]
-      if (indx && num)
+      if (indx && num !== NaN)
         result[indx] = num
       else
         console.warn('Ignoring', indx, vals[j], this.url)

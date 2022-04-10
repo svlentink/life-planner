@@ -311,3 +311,8 @@ backup:
   desc: first sunday phone, second laptop, third server, fourth smart watch and ereader
   moscow: should
 
+update-resume:
+  interval: monthly
+  energize: false
+  desc: Regurally update list of activities and tools used
+  moscow: should

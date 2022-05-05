@@ -19,12 +19,15 @@
     window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
     if (! window.dataurl) {
       window.dataurl = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
+      let nextURL = window.location.href.split('#')[0]
       if (window.location.search)
-        window.location = window.location.href + '&dataurl=' + window.dataurl
+        nextURL += '&dataurl=' + window.dataurl
       else
-        window.location = window.location.href + '?dataurl=' + window.dataurl
+        nextURL += '?dataurl=' + window.dataurl
+      let nextTitle = document.querySelector('title').innerText
+      window.history.replaceState('', nextTitle, nextURL)
     }
-    else render('div',window.dataurl)
+    render('div',window.dataurl)
 </script>
 </body>
 </html>

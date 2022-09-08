@@ -15,6 +15,9 @@ data:
   - bluetooth headphones
   - glasses
   - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
+  - running belt:
+    - phone
+    - keys
   - backpack (dry-weight 1.2kg):
       laptop (comined weight 4kg): $PACKLIST_DIR/sublist/laptop-compartment.yml
       main:

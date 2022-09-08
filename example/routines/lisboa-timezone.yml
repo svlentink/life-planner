@@ -1,0 +1,14 @@
+
+work_day_start:
+  start:
+  - days: *weekdays
+    time: 07:00
+  actions:
+  - 15 message
+  - 15 plan
+  - 1 pushups
+  - 4 break
+  - 25 work_block_managerial_tasks
+  - 1 pushups
+  - 4 break
+

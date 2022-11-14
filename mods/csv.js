@@ -1,9 +1,9 @@
 /* @license GPLv3 */
-import { AbstractElem, substitute_baseURLs } from './abstractelem.js'
+import { LoadElem, substitute_baseURLs } from './abstractelem.js'
 import { get_color, renderGraph } from './graph.js'
 
 
-class CsvGraph extends AbstractElem {
+class CsvGraph extends LoadElem {
   valid_header_line(line){
     return line.substr(0,5).toLocaleLowerCase() === 'date,'
   }
@@ -104,16 +104,7 @@ class CsvGraph extends AbstractElem {
       datasets: datasets,
     }
   }
-  loadURL(url,cb) {
-    var xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-       cb(this.responseText)
-      }
-    }
-    xhttp.open("GET", url, true)
-    xhttp.send()
-  }
+
   container_classname(){ return 'csvgraph' }
   constructor(url){
     super({})

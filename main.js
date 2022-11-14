@@ -9,9 +9,8 @@ import { PlannedActivities } from './mods/plannedacts.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
 import { CsvGraph } from './mods/csv.js'
+import { Markdown } from './mods/markdown.js'
 
-import * as markedhack from 'https://cdn.lent.ink/js/npm/marked.js'
-const { parse } = window.npm['marked']
 import * as yamlhack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 
@@ -152,21 +151,8 @@ const types = {
 		return elem
 	},
 	markdown: c => {
-		if ( (! c.data.includes("<script") && ! c.data.includes("<iframe") ) ||
-			window.localStorage.getItem(window.dataurl) ||
-			confirm('This page wants to load markdown which might run JS, okay?'))
-			window.localStorage.setItem(window.dataurl, 'allow_markdown_loading')
-		else
-			return types.error('Loading Markdown not permitted', c)
-		let elem = document.createElement('article')
-		let msg = 'ERROR failed parsing markdown.' + c.data
-		try {
-			msg = /*marked.*/parse(c.data)
-		} catch (e) {
-			msg += e
-		}
-		elem.innerHTML = msg
-		return elem
+		let elem = new Markdown(c.data)
+		return elem.get_elem()
 	},
 	unknown: c => {
 		let t, msg

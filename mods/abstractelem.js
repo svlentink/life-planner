@@ -285,4 +285,17 @@ class Hide extends AbstractElem {
   }
 }
 
-export { AbstractElem, Hide, load_elem_from_URL, is_yaml_url, substitute_baseURLs }
+class LoadElem extends AbstractElem {
+  loadURL(url,cb) {
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+       cb(this.responseText)
+      }
+    }
+    xhttp.open("GET", url, true)
+    xhttp.send()
+  }
+}
+
+export { AbstractElem, LoadElem, Hide, load_elem_from_URL, is_yaml_url, substitute_baseURLs }

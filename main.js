@@ -152,7 +152,8 @@ const types = {
 		return elem
 	},
 	markdown: c => {
-		if (window.localStorage.getItem(window.dataurl) ||
+		if ( (! c.data.includes("<script") && ! c.data.includes("<iframe") ) ||
+			window.localStorage.getItem(window.dataurl) ||
 			confirm('This page wants to load markdown which might run JS, okay?'))
 			window.localStorage.setItem(window.dataurl, 'allow_markdown_loading')
 		else

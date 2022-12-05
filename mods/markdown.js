@@ -30,8 +30,7 @@ class Markdown extends LoadElem {
         this.container = this.render_elem('div')
         
         if (inp.endsWith('.md')){
-            this.url = inp
-            this.url = substitute_baseURLs(url)
+            this.url = substitute_baseURLs(inp)
             this.loadURL(this.url, (data) => {
                 this.raw = data
                 this.container.innerHTML = this.parse_markdown()

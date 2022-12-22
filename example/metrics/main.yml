@@ -4,7 +4,7 @@
   #data: METRICS_DIR=/preview/gits/www/cdn.lent.ink/examples
 
 - type: csv
-  data: $METRICS_DIR/myweight.csv
+  data: $METRICS_DIR/body-composition.csv
 - type: csv
   data: $METRICS_DIR/bloodoxygen.csv
 - type: csv

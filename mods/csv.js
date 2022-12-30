@@ -68,10 +68,14 @@ class CsvGraph extends LoadElem {
       let num
       if (item.indexOf(':') !== -1) // convert time notation to decimal
         num = Number(item.split(':')[0]) + (Number(item.split(':')[1]) / 60)
-      else
-        num = Number(item)
+      else{
+        if (item.length === 0)
+          num = NaN
+        else
+          num = Number(item)
+      }
       
-      let indx = this.header[parseInt(j)+1]
+      let indx = this.header[parseInt(j)+1] // +1 because of date at front
       if (indx && num !== NaN)
         result[indx] = num
       else
@@ -85,9 +89,10 @@ class CsvGraph extends LoadElem {
     for (const title of this.header)
       data[title] = []
     for (const row of this.parse_lines())
-      for (const [key,val] of Object.entries(row))
-        data[key].push(val)
-
+      for (const title of this.header){
+        let val = row[title]
+        data[title].push(val)
+      }
     let datekey = this.header[0]
     let dates = data[datekey]
     delete data[datekey]

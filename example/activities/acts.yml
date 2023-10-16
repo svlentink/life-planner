@@ -43,25 +43,6 @@ news:
   moscow: could
   desc: Daily news and hackernews
   energize: false
-squads:
-  interval: daily
-  moscow: should
-  energize: true
-  desc: Meditate while wallsquad
-pushups:
-  interval: daily
-  desc: pushups without counting
-  moscow: must
-  energize: true # physical exercise relaxes the mind
-  goals:
-    - frontlever
-stretch:
-  interval: daily
-  desc: Stretching
-  moscow: could
-  energize: true
-  goals:
-  - yogateacher
 dress:
   interval: daily
   desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
@@ -113,13 +94,6 @@ read:
   energize: true # dependant on the content
   goals:
   - reader
-core:
-  interval: daily
-  desc: 5m plank
-  moscow: should
-  energize: true
-  goals:
-  - frontlever
 audiobook:
   interval: daily
   desc: learn spanish during commute
@@ -140,14 +114,6 @@ cook:
   moscow: should
   energize: true
   desc: Food in slow cooker, quick wok or oven dish
-sprint:
-  interval: daily
-  time: 3
-  moscow: could
-  energize: true
-  desc: One minute sprint http://youtu.be/SHN-4ve81TY
-  goals:
-  - marathon
 gratitude:
   interval: daily
   moscow: could
@@ -176,12 +142,6 @@ dinner:
   interval: daily
   moscow: should
   energize: true
-run:
-  interval: weekly
-  moscow: should
-  energize: true
-  goals:
-  - marathon
 water:
   interval: daily
   moscow: must
@@ -192,13 +152,6 @@ psychoanalysis:
   energize: false
   time: 30
   interval: weekly
-yoga:
-  moscow: could
-  energize: true
-  time: 5
-  interval: daily
-  goals:
-  - yogateacher
 alarm:
   moscow: must
   desc: smartwatch, 3min later phone downstairs
@@ -215,43 +168,23 @@ dream_diary:
   time: 2
   interval: daily
   energize: true
-walk:
-  moscow: could
-  desc: Walk through nature (with podcast)
-  interval: daily
-  energize: true
 blog:
   moscow: could
   desc: Write, proof read or publish
   interval: daily
   energize: false
-hourlypushups:
-  moscow: should
-  desc: During working hours, 20 pushups per hour
-  interval: daily
-  energize: true
 photography:
   moscow: should
   desc: Practice with phone camera
   time: 3
   interval: daily
   energize: false
-handstand:
-  moscow: could
-  desc: Practice handstand
-  time: 1
-  interval: daily
-  energize: true
 
 
 drive:
   moscow: must
   interval: weekly
   energize: false
-walk:
-  moscow: should
-  interval: daily
-  energize: true
 gasstation:
   moscow: must
   energize: true
@@ -316,3 +249,114 @@ update-resume:
   energize: false
   desc: Regurally update list of activities and tools used
   moscow: should
+
+
+
+# fitness
+## Endurance
+walk:
+  moscow: could
+  desc: Walk through nature (with podcast)
+  interval: daily
+  energize: true
+pushups:
+  interval: daily
+  desc: pushups without counting
+  moscow: must
+  energize: true # physical exercise relaxes the mind
+  goals:
+    - frontlever
+hourlypushups:
+  moscow: should
+  desc: During working hours, 20 pushups per hour
+  interval: daily
+  energize: true
+core:
+  interval: daily
+  desc: 5m plank
+  moscow: should
+  energize: true
+  goals:
+  - frontlever
+run:
+  interval: weekly
+  moscow: should
+  energize: true
+  goals:
+  - marathon
+squads:
+  interval: daily
+  moscow: should
+  energize: true
+  desc: Meditate while wallsquad
+handstand:
+  moscow: could
+  desc: Practice handstand
+  time: 1
+  interval: daily
+  energize: true
+
+## Flexibility
+stretch:
+  interval: daily
+  desc: Stretching
+  moscow: could
+  energize: true
+  goals:
+  - yogateacher
+yoga:
+  moscow: could
+  energize: true
+  time: 5
+  interval: daily
+  goals:
+  - yogateacher
+
+## Strength
+hourlyexercise:
+  moscow: should
+  interval: daily
+  energize: true
+  desc: |
+    While working from home, we aim to do hourly exercise to build the body.
+    We do this with very high weight so we are close to the 1rep max.
+    This allows us to do very few reps, resulting in no sweat, but still getting results.
+    08:00 one arm pushup L
+    09:00 one arm pushup R
+    10:00 one arm pullup L
+    11:00 one arm pullup R
+    12:00 shoulder width stand deadlift for glutes
+    13:00 extended plank
+    14:00 pistol squad L
+    15:00 pistol squad R
+    16:00 front lever
+    17:00 stretching
+sprint:
+  interval: daily
+  time: 3
+  moscow: could
+  energize: true
+  desc: One minute sprint http://youtu.be/SHN-4ve81TY
+  goals:
+  - marathon
+wakeupwalk:
+  desc: |
+    Get natural daylight in your eyes.
+    Walk while reconnecting with a friend/neighbor.
+    Have calls, send voice messages etc.
+  time: 10
+  interval: daily
+  moscow: should
+  energize: true
+
+goggins:
+  desc: |
+    5:30 wakeup
+    1.5-2h run
+    eat
+    45-90min gym
+    at night;
+    2h stretching/meditation
+    spouse
+    stationary bike; 3-4days a week
+    7-8h sleep

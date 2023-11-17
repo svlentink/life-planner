@@ -325,12 +325,14 @@ hourlyexercise:
     09:00 one arm pushup R
     10:00 one arm pullup L
     11:00 one arm pullup R
-    12:00 shoulder width stand deadlift for glutes
-    13:00 extended plank
-    14:00 pistol squad L
-    15:00 pistol squad R
+    12:00 pistol squad L
+    13:00 pistol squad R
+    14:00 single leg glute bridge L
+    15:00 single leg glute bridge R
     16:00 front lever
-    17:00 stretching
+    17:00 extended plank
+    18:00 stretching
+# shoulder width stand deadlift for glutes
 sprint:
   interval: daily
   time: 3

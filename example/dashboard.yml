@@ -135,19 +135,16 @@
                 Digital nomad by motorcycle in the vicinity of his storage of belongings.
                 Thus able to switch clothes etc. from there every week.
             - $PACKLIST_DIR/digital_nomad/motorcycle/short-term.yml
-            flight:
-            - type: title
-              data: Digital nomad by flight
-            - $PACKLIST_DIR/digital_nomad/flying/carry-on.yml
+            carry-on-backpack:
+            - $PACKLIST_DIR/digital_nomad/flying/mh100.yml
+            carry-on-small-backpack:
+            - $PACKLIST_DIR/digital_nomad/flying/borealis.yml
             motorcycle old:
             - type: title
               data: Packing list digital nomad by NT650V (first trip)
             - $PACKLIST_DIR/digital_nomad/motorcycle/nt650v.yml
-            ryan-air:
-            - type: desc
-              data: |
-                40x25x20cm
-            - $PACKLIST_DIR/digital_nomad/flying/ryan-air.yml
+#            ryan-air:
+#            - $PACKLIST_DIR/digital_nomad/flying/ryan-air.yml
             car:
             - $PACKLIST_DIR/digital_nomad/car.yml
         viaje:

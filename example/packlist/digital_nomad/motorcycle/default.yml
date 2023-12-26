@@ -65,3 +65,4 @@ data:
     tank bag: $PACKLIST_DIR/sublist/motorcycle/tankbag.yml
     under saddle: $PACKLIST_DIR/sublist/motorcycle/under-saddle.yml
 
+- last-minute: $PACKLIST_DIR/sublist/motorcycle/last-minute-moto.yml

@@ -1,24 +1,23 @@
 
+- type: desc
+  data: |
+    40x25x20cm
+    quechua NH urban 100 17 liter
+    is a bag within the limitation of ryanair,
+    however the 35L MH100 also was allowed every
+    time I traveled
+    (not fully stuffed, having the gray part not visible)
 
-type: nestedlist
-data:
-- non physical items:
-  - tips:
-    - During packing, two laundry bins, one for what to wear/pack on me, one for the backpack.
-    - always put some clothing in your hand luggage for when luggage get lost
-    - everything that can leak, put it in a separate plastic bag
-    - buy things duplicate, so you can have a set of stuff ready at all times (comb etc.)
-    - Practice living out of your suitcase for a week before you leave; missed anything?
-  - $PACKLIST_DIR/sublist/up-front.yml
-  - $PACKLIST_DIR/sublist/last-minute.yml
+- type: nestedlist
+  data:
 
-- on me:
-  - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
-  - backpack (quechua NH urban 100 17 liter):
-    - FIXME
-  - running belt:
-    - phone
-    - keys
-    
-  - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+  - on me:
+    - hidden-pouch: $PACKLIST_DIR/sublist/hidden-pouch.yml
+    - backpack:
+      - FIXME
+    - running belt:
+      - phone
+      - keys
+      
+    - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
 

@@ -37,6 +37,10 @@ class PlannedActivities extends AbstractElem {
     let dataset5 = create_dataset(meta.planned_time_per_goal)
     renderGraph(graph5, dataset5, 'Planned min. for goals p/w')
 
+    let graph6 = this.render_elem('canvas')
+    let dataset6 = create_dataset(meta.maslow_ratio)
+    renderGraph(graph6, dataset6, 'Maslow Hierarchy ratio in min. for planned activities p/w', 'pie')
+
     let list = (new Lists({
       'Not planned activites': Object.keys(meta.not_planned)
     })).get_elem()
@@ -46,6 +50,7 @@ class PlannedActivities extends AbstractElem {
     cont.appendChild(graph2)
     cont.appendChild(graph3)
     cont.appendChild(graph4)
+    cont.appendChild(graph6)
     cont.appendChild(graph5)
     cont.appendChild(list)
     return cont
@@ -86,17 +91,24 @@ class PlannedActivities extends AbstractElem {
     let times = this.acts_time_per_week()
     let fuel = 0 // activities that give cognitive fuel
     let burn = 0 // acts that burn you out
-    let moscow = {
+    /*let moscow = {
       must: [],
       should: [],
       could: [],
       wont: [],
-    }
+    }*/
     let moscow_times = {
       must: 0,
       should: 0,
       could: 0,
       wont: 0,
+    }
+    let maslow_times = {
+      physiological: 0,
+      safety: 0,
+      belong: 0,
+      esteem: 0,
+      actualization: 0,
     }
     let goal_times = {}
     for (const [key,actdetails] of Object.entries(acts)){
@@ -112,12 +124,20 @@ class PlannedActivities extends AbstractElem {
 
         if ('moscow' in actdetails){
           let val = actdetails.moscow.toLowerCase()
-          if (val in moscow){
-            moscow[val].push(key)
+          if (val in moscow_times){
+            //moscow[val].push(key)
             moscow_times[val] += times[key]
           }
           else console.warn('Activity does not specify valid moscow',key)
         } else console.warn('Activity does not contain moscow',key)
+
+        if ('maslow' in actdetails){
+          let val = actdetails.maslow.toLowerCase()
+          if (val in maslow_times){
+            maslow_times[val] += times[key]
+          }
+          else console.warn('Activity does not specify valid maslow',key)
+        } else console.warn('Activity does not contain maslow',key)
 
         if ('goals' in actdetails && Array.isArray(actdetails.goals))
           for (const goal of actdetails.goals){
@@ -141,6 +161,7 @@ class PlannedActivities extends AbstractElem {
         fueling: fuel,
       },
       moscow_ratio: moscow_times,
+      maslow_ratio: maslow_times,
       planned_time_per_goal: goal_times,
     }
   }

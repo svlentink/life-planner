@@ -10,6 +10,7 @@ portfolio_management:
   desc: Finances
   moscow: should
   energize: false # costs/burns mental energy
+  maslow: safety
   goals:
   - finance
 tidy:
@@ -17,6 +18,7 @@ tidy:
   energize: true # the result makes me feel good
   desc: digitally (e.g. notes) and physically (e.g. desk)
   moscow: should
+  maslow: safety
   goals:
   - organized
 prototype:
@@ -24,6 +26,7 @@ prototype:
   moscow: should
   desc: Work out prototypes that could lead to a startup
   energize: true # hobby
+  maslow: esteem
   goals:
   - prototype
 plan:
@@ -31,6 +34,7 @@ plan:
   moscow: must
   desc: on weekdays; plan day. In weekend; update long-term planning
   energize: false # requires prefrontal cortex
+  maslow: safety
   goals:
   - organized
 shower:
@@ -38,21 +42,25 @@ shower:
   moscow: must
   desc: wc, cold shower, shave, dental
   energize: true # feeling refreshed afterward
+  maslow: physiological
 news:
   interval: daily
   moscow: could
   desc: Daily news and hackernews
   energize: false
+  maslow: belong
 dress:
   interval: daily
   desc: Prepared the day before #After stretching, put cloths on, stretching is done in underwear
   moscow: must
   energize: false
+  maslow: physiological
 meditate:
   interval: daily
   desc: headspace
   moscow: should
   energize: true
+  maslow: actualization
   goals:
   - rested
 address_power:
@@ -60,6 +68,7 @@ address_power:
   desc: See benjamin franklin diary
   moscow: should
   energize: false
+  maslow: actualization
   goals:
   - scriptures
 guitar:
@@ -67,6 +76,7 @@ guitar:
   desc: Just play
   moscow: could
   energize: true # enjoyable activity
+  maslow: esteem
   goals:
   - songs
 dental:
@@ -74,10 +84,12 @@ dental:
   desc: Brushing earlier in the evening increases the likelihood of flossing and prevents late night snacks
   moscow: must
   energize: false
+  maslow: physiological
 dishwasher:
   interval: daily
   moscow: must
   energize: false
+  maslow: physiological
   goals:
   - organized
 food2fridge:
@@ -85,6 +97,7 @@ food2fridge:
   desc: from freezer to fridge
   moscow: should
   energize: false
+  maslow: physiological
   goals:
   - organized
 read:
@@ -92,6 +105,7 @@ read:
   desc: Book, no articles/screens
   moscow: should
   energize: true # dependant on the content
+  maslow: actualization
   goals:
   - reader
 audiobook:
@@ -99,25 +113,30 @@ audiobook:
   desc: learn spanish during commute
   moscow: could
   energize: false # requires active listening
+  maslow: actualization
 day-review:
   interval: daily
   moscow: should
   desc: What did I do good? bad? stuck in loops? Helicopter overview.
   energize: false
+  maslow: esteem
 message:
   interval: daily
   desc: Email, linkedin, whatsapp, fb
   moscow: should
   energize: false
+  maslow: belong
 cook:
   interval: daily
   moscow: should
   energize: true
   desc: Food in slow cooker, quick wok or oven dish
+  maslow: physiological
 gratitude:
   interval: daily
   moscow: could
   energize: true
+  maslow: belong
   goals:
   - focus
 solarium:
@@ -125,69 +144,81 @@ solarium:
   energize: true
   moscow: could #during winter: wont
   desc: during the winter months
+  maslow: physiological
 bike:
   interval: weekly
   energize: true
   desc: bike
+  maslow: safety
 lunch:
   interval: daily
   moscow: should
   energize: true
   desc: Walking and eating
+  maslow: physiological
 work:
   interval: daily
   moscow: must
   energize: false
+  maslow: safety
 dinner:
   interval: daily
   moscow: should
   energize: true
+  maslow: physiological
 water:
   interval: daily
   moscow: must
   energize: true
+  maslow: physiological
 psychoanalysis:
   desc: self psychology
   moscow: should
   energize: false
   time: 30
   interval: weekly
+  maslow: actualization
 alarm:
   moscow: must
   desc: smartwatch, 3min later phone downstairs
   interval: daily
   energize: false
+  maslow: physiological
 wake_up:
   moscow: must
   desc: Actually wake up, drink water, urgent msgs, toilet
   interval: daily
   energize: false
+  maslow: physiological
 dream_diary:
   moscow: could
   desc: Part of lucid dreaming exercize
-  time: 2
   interval: daily
   energize: true
+  maslow: actualization
 blog:
   moscow: could
   desc: Write, proof read or publish
   interval: daily
   energize: false
+  maslow: esteem
 photography:
   moscow: should
   desc: Practice with phone camera
-  time: 3
   interval: daily
   energize: false
+  maslow: belong
 
 
 drive:
   moscow: must
   interval: weekly
   energize: false
+  maslow: physiological
 gasstation:
   moscow: must
   energize: true
+  maslow: physiological
 
 
 # Before Covid lockdown
@@ -196,6 +227,7 @@ museum:
   desc: Visit museum
   energize: true
   interval: weekly
+  maslow: belong
   goals:
   - museum
   - datenite
@@ -204,12 +236,14 @@ pack:
   desc: bag and clothing
   moscow: should
   energize: false
+  maslow: physiological
   goals:
   - organized
 to_train:
   interval: daily
   energize: true
   desc: Bike/walk from/to train
+  maslow: safety
 
 # Student days
 prepare-lecture:
@@ -217,24 +251,29 @@ prepare-lecture:
   moscow: could
   energize: false
   desc: Prepare lecture
+  maslow: esteem
 lecture:
   interval: weekly
   moscow: should
   energize: false
+  maslow: esteem
 homework:
   interval: weekly
   moscow: must
   energize: false
+  maslow: esteem
 ds:
   interval: weekly
   moscow: should
   energize: false
   desc: Data Science
+  maslow: esteem
 band_rehearsal:
   interval: weekly
   energize: true
   desc: Jamming
   moscow: must
+  maslow: esteem
 
 # Backup and restore every device once a month
 # to make sure all data is properly backed up
@@ -243,12 +282,14 @@ backup:
   energize: false
   desc: first sunday phone, second laptop, third server, fourth smart watch and ereader
   moscow: should
+  maslow: safety
 
 update-resume:
   interval: monthly
   energize: false
   desc: Regurally update list of activities and tools used
   moscow: should
+  maslow: safety
 
 
 
@@ -259,11 +300,13 @@ walk:
   desc: Walk through nature (with podcast)
   interval: daily
   energize: true
+  maslow: safety
 pushups:
   interval: daily
   desc: pushups without counting
   moscow: must
   energize: true # physical exercise relaxes the mind
+  maslow: safety
   goals:
     - frontlever
 hourlypushups:
@@ -271,30 +314,34 @@ hourlypushups:
   desc: During working hours, 20 pushups per hour
   interval: daily
   energize: true
+  maslow: safety
 core:
   interval: daily
   desc: 5m plank
   moscow: should
   energize: true
+  maslow: safety
   goals:
   - frontlever
 run:
   interval: weekly
   moscow: should
   energize: true
+  maslow: safety
   goals:
   - marathon
 squads:
   interval: daily
   moscow: should
   energize: true
+  maslow: safety
   desc: Meditate while wallsquad
 handstand:
   moscow: could
   desc: Practice handstand
-  time: 1
   interval: daily
   energize: true
+  maslow: safety
 
 ## Flexibility
 stretch:
@@ -302,13 +349,14 @@ stretch:
   desc: Stretching
   moscow: could
   energize: true
+  maslow: safety
   goals:
   - yogateacher
 yoga:
   moscow: could
   energize: true
-  time: 5
   interval: daily
+  maslow: safety
   goals:
   - yogateacher
 
@@ -317,6 +365,7 @@ hourlyexercise:
   moscow: should
   interval: daily
   energize: true
+  maslow: safety
   desc: |
     While working from home, we aim to do hourly exercise to build the body.
     We do this with very high weight so we are close to the 1rep max.
@@ -335,10 +384,10 @@ hourlyexercise:
 # shoulder width stand deadlift for glutes
 sprint:
   interval: daily
-  time: 3
   moscow: could
   energize: true
   desc: One minute sprint http://youtu.be/SHN-4ve81TY
+  maslow: safety
   goals:
   - marathon
 wakeupwalk:
@@ -346,10 +395,12 @@ wakeupwalk:
     Get natural daylight in your eyes.
     Walk while reconnecting with a friend/neighbor.
     Have calls, send voice messages etc.
-  time: 10
   interval: daily
   moscow: should
   energize: true
+  maslow: safety
+
+
 
 goggins:
   desc: |

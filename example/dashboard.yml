@@ -59,6 +59,18 @@
       data: Habits and routines
     - type: tabs
       data:
+        intro:
+        - type: desc
+          data: |
+            Use a trigger/cue/anchor action to trigger a routine.
+            cue + routine + reward = habit
+        WFH winter PT:
+        - type: desc
+          data: Working from home in rainy months in Porto
+        - type: baseurl
+          data: ROUTINES_FILE=./example/routines/2023-winter.yml
+        - ./example/tablayouts/routine.yml
+# The following is historical
         student:
         - type: baseurl
           data: ROUTINES_FILE=./example/routines/student.yml
@@ -73,17 +85,11 @@
         - type: baseurl
           data: ROUTINES_FILE=./example/routines/pre-covid.yml
         - ./example/tablayouts/routine.yml
-        WFH-winter:
+        WFH winter NL:
         - type: desc
           data: Working From Home in NL during winter
         - type: baseurl
-          data: ROUTINES_FILE=./example/routines/winter.yml
-        - ./example/tablayouts/routine.yml
-        WFH-sunny:
-        - type: desc
-          data: FIXME this is stil the student schedule
-        - type: baseurl
-          data: ROUTINES_FILE=./example/routines/student.yml
+          data: ROUTINES_FILE=./example/routines/2019-winter.yml
         - ./example/tablayouts/routine.yml
 
     life lists:

@@ -1,0 +1,241 @@
+
+shower:
+  start:
+  - days: [tu,th,sa,su]
+    time: 06:40
+    trigger: woke_up
+  - days: [mo, we, fr]
+    time: 11:45
+    trigger: ran
+  actions:
+  - 15 shower
+
+wake_up_body:
+  desc: morning ritual part 1
+  start:
+  - days: &alldays [mo,tu,we,th,fr,sa,su]
+    time: 06:30
+    trigger: alarm
+  actions:
+  - 1 snooze
+  - 1 water
+  - 1 pushups
+  - 1 dress
+  - 2 dental_care
+
+wake_up_mind:
+  desc: morning ritual part 2
+  start:
+  - days:  [mo, we, fr]
+    time: 06:40
+    trigger: woke up body
+  - days: [tu,th,sa,su]
+    time: 07:30
+    trigger: showered
+  actions:
+  - 10 address_power
+  - 5 meditate
+  #- 5 message
+  - 10 plan
+
+
+# cooking
+slow_cooker:
+  start:
+  - days: [tu]
+    time: 11:40
+    trigger: finished lunch walk
+  actions:
+  - 20 cook
+wok:
+  start:
+  - days: [mo, we]
+    time: 17:30
+    trigger: finished work
+  actions:
+  - 20 cook
+prepare_oven_dish:
+  start:
+  - days: [th]  # prepare during lunch time
+    time: 11:40 # but put in oven after work
+    trigger: finished lunch walk
+  - days: [su]
+    time: 17:30
+  actions:
+  - 20 cook
+
+dinner:
+  start:
+  - days: [mo,tu,we,th,sa,su]
+    time: 18:00
+  actions:
+  - 5 message
+  - 30 dinner
+  - 7 news
+  - 30 guitar
+  - 2 photography
+
+family-dinner:
+  start:
+  - days: [fr]
+    time: 17:00
+  actions:
+  - 15 bike
+  - 45 family
+  - 30 dinner
+  - 60 family
+
+
+lunch-walk:
+  start:
+  - days: [th]
+    time: 12:05
+    trigger: lunch time
+  actions: &lunchwalkitems
+  - 25 walk
+  - 2 handstand
+  - 5 messages
+# Walk to butcher for some slowcooker meat
+lunch-walk-butcher:
+  start:
+  - days: [tu]
+    time: 12:05
+    trigger: lunch time
+  actions: *lunchwalkitems
+
+bedtime:
+  start:
+  - days: [mo,tu,we,th,su]
+    time: 21:00
+    trigger: tired
+  - days: [fr, sa]
+    time: 22:00
+    trigger: tired
+  actions:
+  - 5 dental
+  - 15 tidy
+  - 2 pack
+  - 1 food2fridge
+  - 1 dishwasher
+  - 5 day-review
+  - 3 gratitude
+  - 20 read
+  - 8 core
+  - 1 water
+
+early-dental:
+  start:
+  - days: [mo,tu,we,th,fr,sa,su]
+    time: 20:00
+    trigger: watch alarm at 8pm
+  actions:
+  - 5 dental
+
+work1:
+  start:
+  - days: &weekdays [mo,tu,we,th,fr]
+    time: 12:00
+    trigger: lunch time over
+  - days: *weekdays
+    time: 07:00
+    trigger: finished morning ritual
+  actions:
+  - 240 work
+
+work_day_start:
+  start:
+  - days: *weekdays
+    time: 07:00
+  actions:
+  - 15 message
+  - 15 plan
+  - 1 pushups
+  - 4 break
+  - 25 work_block_managerial_tasks
+  - 1 pushups
+  - 4 break
+
+blog:
+  start:
+  - days: [mo,we]
+    time: 17:00
+  actions:
+  - 15 blog
+
+# Since lockdown life:
+# (also sitting on balancing ball behind desk
+# and an hour break instead of 30min)
+hourlyexercise:
+  start:
+  - days: *weekdays
+    time: 08:00
+  - days: *weekdays
+    time: 09:00
+  - days: *weekdays
+    time: 10:00
+  - days: *weekdays
+    time: 11:00
+  - days: *weekdays
+    time: 12:00
+  - days: *weekdays
+    time: 13:00
+  - days: *weekdays
+    time: 14:00
+  - days: *weekdays
+    time: 15:00
+  - days: *weekdays
+    time: 16:00
+  - days: *weekdays
+    time: 17:00
+  - days: *weekdays
+    time: 18:00
+  actions:
+  - 2 hourlyexercise
+
+cleanup:
+  start:
+  - time: 19:15
+    days: [mo,tu,we,th,su]
+  actions:
+  - 10 process_notes
+  - 10 email
+
+# I've tried doing High intensity runs or interval runs
+# but motivating myself for it was too hard.
+# Now I run while listening to podcasts.
+lunch-run:
+  start:
+#  - days:
+#    - tu # while slowcooker
+#    - th # while oven dish
+#    time: 17:15
+  - days:
+    - mo
+    - we
+    - fr
+    time: 11:05
+    trigger: lunch time
+  actions:
+  - 35 run
+  - 5 walk # cooling down
+  - 10 shower
+
+# one week portfolio management, the other backup (even/odd weeks) FIXME
+administrative:
+  start:
+  - days: [su]
+    time: 08:00
+  actions:
+  - 20 portfolio_management
+  - 20 backup
+  - 20 bookkeeping
+
+saturday:
+  start:
+  - days: [sa]
+    time: 9:00
+  actions:
+  - 240 prototype
+  - 25 lunch
+  - 240 friends
+

@@ -24,12 +24,12 @@ function renderCalendar(events, target='#calendar',callback) {
 */
     div.innerHTML = ''
     if (typeof events === 'string')
-      renderIcalCalendar(div, events, callback)
+      renderIcalURLCalendar(div, events, callback)
     else
       renderFullCalendar(div, events, callback)
 }
 
-function renderIcalCalendar(elem, url, callback){
+function renderIcalURLCalendar(elem, url, callback){
   let p = [timeGridPlugin, iCalendarPlugin]
   let e = {
     url: url,

@@ -67,7 +67,7 @@ prepare_oven_dish:
 dinner:
   start:
   - days: [mo,tu,we,th,sa,su]
-    time: 18:00
+    time: 19:00
   actions:
   - 5 message
   - 30 dinner
@@ -103,7 +103,7 @@ lunch-walk-butcher:
     trigger: lunch time
   actions: *lunchwalkitems
 
-bedtime:
+bedtime-routine:
   start:
   - days: [mo,tu,we,th,su]
     time: 21:00
@@ -131,7 +131,7 @@ early-dental:
   actions:
   - 5 dental
 
-work1:
+work-block:
   start:
   - days: &weekdays [mo,tu,we,th,fr]
     time: 12:00
@@ -194,11 +194,12 @@ hourlyexercise:
 
 cleanup:
   start:
-  - time: 19:15
+  - time: 20:15
     days: [mo,tu,we,th,su]
   actions:
   - 10 process_notes
-  - 10 email
+  - 10 message
+  - 10 backup
 
 # I've tried doing High intensity runs or interval runs
 # but motivating myself for it was too hard.

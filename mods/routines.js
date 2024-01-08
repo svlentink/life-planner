@@ -36,10 +36,18 @@ class Routine extends AbstractElem {
 }
 
 class Routines extends AbstractElem {
+  constructor(obj){
+    if (! (obj && obj.routines && obj.activities))
+      return console.error('keys missing: routines, activities',obj)
+    super({})
+    this.activities = this.load_obj(obj.activities)
+    this.routines = this.load_obj(obj.routines)
+    this.raw = this.routines
+  }
   container_classname(){ return "routines" }
   get_child_type(){ return Routine }
   get_events(/*activities,*/ amountofweeks = 3){
-    let routines = this.raw
+    let routines = this.routines
     var events = []
     
     var days = ['su', 'mo', 'tu', 'we', 'th', 'fr', 'sa']
@@ -72,8 +80,10 @@ class Routines extends AbstractElem {
         var title = key
   
         var desc = []
+        var actiondesc = {}
         //var acts = []
         if (routine.desc) desc.push(routine.desc)
+
         let totaltime = 0
         if (routine.actions) for (var j in routine.actions) {
           let action_line = String( routine.actions[j] || '123 example' )
@@ -82,12 +92,17 @@ class Routines extends AbstractElem {
           let action = action_arr[1]
           let act_duration = Number(action_arr[0]) || 1
 
+          actiondesc[action] = action in this.activities? this.activities[action] : "Item_not_found"
+
           var time = act_duration
           totaltime += time
           var row = time + ' '
           row += action
           desc.push(row)
         }
+        desc.push('')
+
+
 
         for (var start of routine.start){
           if (typeof start.days === 'string'){
@@ -99,9 +114,9 @@ class Routines extends AbstractElem {
               start.days = days
           }
           
+          if (start.trigger) desc.push('Trigger=' + start.trigger)
           let this_desc = desc.join('\n')
-          if (start.trigger)
-            this_desc = 'Trigger=' + start.trigger + '\n' + this_desc
+          this_desc += JSON.stringify(actiondesc, null, 2).replaceAll('\\n', '\n')
 
           let fields_ical_generator = {
             start: getFirstOccurrence(), //.toISOString().split('.')[0],
@@ -144,8 +159,9 @@ class Routines extends AbstractElem {
     return btn
   }
   get_elem(){
-    let elem = super.get_elem()
     let btn = this.get_export_btn()
+    return btn // we ignore the overview, it's redundant since you can click on calendar items
+    let elem = super.get_elem()
     elem.appendChild(btn)
     return elem
   }

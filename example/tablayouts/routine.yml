@@ -1,9 +1,9 @@
 
 - type: calendar
-  data: $ROUTINES_FILE
-- type: routines
-  data: $ROUTINES_FILE
-- type: plannedactivities
-  data:
+  data: &data
     routines: $ROUTINES_FILE
     activities: ./example/activities/acts.yml
+- type: routines
+  data: *data
+- type: plannedactivities
+  data: *data

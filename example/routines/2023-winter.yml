@@ -35,7 +35,6 @@ wake_up_mind:
   actions:
   - 10 address_power
   - 5 meditate
-  #- 5 message
   - 10 plan
 
 
@@ -94,7 +93,7 @@ lunch-walk:
   actions: &lunchwalkitems
   - 25 walk
   - 2 handstand
-  - 5 messages
+  - 30 message
 # Walk to butcher for some slowcooker meat
 lunch-walk-butcher:
   start:
@@ -147,7 +146,6 @@ work_day_start:
   - days: *weekdays
     time: 07:00
   actions:
-  - 15 message
   - 15 plan
   - 1 pushups
   - 4 break
@@ -198,7 +196,7 @@ cleanup:
     days: [mo,tu,we,th,su]
   actions:
   - 10 process_notes
-  - 10 message
+  - 20 message
   - 10 backup
 
 # I've tried doing High intensity runs or interval runs

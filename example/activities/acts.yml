@@ -122,7 +122,15 @@ day-review:
   maslow: esteem
 message:
   interval: daily
-  desc: Email, linkedin, whatsapp, fb, etc.
+  desc: >
+    Work email
+    Linkedin
+    Private email
+    Whatsapp
+    Signal
+    Telegram
+    Fb
+    Other apps.
   moscow: should
   energize: false
   maslow: belong

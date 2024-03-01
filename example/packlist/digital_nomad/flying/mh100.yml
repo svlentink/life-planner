@@ -26,12 +26,16 @@
       - paperwork?
       wallet pocket:
       - passport
+      - condoms
 
       top:
       - packing cube:
         - inflatable neck cussion
         - eye mask (for sleeping)
-        - keys
+        - carabiner:
+          - keys
+          - earplugs in keychain
+          - keys other/parents house
         - tiny plastic bag:
           - spare passport photos
           - backup credit card
@@ -56,7 +60,7 @@
     - running belt:
       - phone
 
-    - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+    - jacket / jeans: $PACKLIST_DIR/sublist/3in1jacket.yml
 
   - todo:
     - re-usable zip ties to strap jacket to bag

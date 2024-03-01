@@ -35,7 +35,7 @@ data:
       - water bottle with clip
       glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
     
-    jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+    jacket / jeans: $PACKLIST_DIR/sublist/motorcycle/jacket.yml
 
 - motorcycle (NT650V):
     clothes of that day: $PACKLIST_DIR/sublist/motorcycle/outfit.yml

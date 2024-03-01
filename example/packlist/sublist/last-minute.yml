@@ -18,11 +18,13 @@ last minute:
 - foreign currency
 - backup of data on devices
 - backup of 2FA keys
+- backup of cards in Google Wallet
+- backup of cards in Garmin Pay
+
 - charge:
   - laptops
   - ereader
   - powerbanks
-  - camera
   - phone
   - headphones
   - toothbrush
@@ -34,3 +36,4 @@ last minute:
   - online check in
   - https://portugalcleanandsafe.pt/en/passenger-locator-card
   - EU Digital COVID Certificate
+  - camera

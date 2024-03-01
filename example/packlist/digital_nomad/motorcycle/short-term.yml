@@ -21,7 +21,7 @@ data:
       - water bottle with clip
       - umbrella
       glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
-    jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+    jacket / jeans: $PACKLIST_DIR/sublist/motorcycle/jacket.yml
 
 - motorcycle (including 2x 35L givi hard cases):
     clothes of that day: $PACKLIST_DIR/sublist/motorcycle/outfit.yml

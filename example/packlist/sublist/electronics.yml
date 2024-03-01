@@ -21,6 +21,8 @@ box2 hardly ever used:
 - tin box (small items and magnetic shielding):
   - micro USB to USB C adapter
   - memory card + adaptor = USB stick
-  - extra simcard
-  - simcard pin/needle for switch
   - usb wifi adapter
+
+skipped:
+- extra simcard (esim nowadays using Airalo)
+- simcard pin/needle for switch

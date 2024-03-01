@@ -1,14 +1,17 @@
 
 # We list every card,
 # since it'll help us when robbed or losing our wallet.
-- money
-- student card for discount museums
-- health insurance card
-- maestro card
+metal card wallet (thus RFID blocking): 
+- paper currency (cash)
 - visa/mastercard
 - public transit card
 - drivers license
+- EU ID card
 - license plate registration card
-- small change money for toilet/shower
-- fuel card
 - metro card destination city !
+
+- skipped:
+  - fuel card
+  - small change money for toilet/shower
+  - student card for discount museums
+  - health insurance card

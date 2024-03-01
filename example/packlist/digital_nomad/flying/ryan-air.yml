@@ -19,5 +19,5 @@
       - phone
       - keys
       
-    - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+    - jacket / jeans: $PACKLIST_DIR/sublist/3in1jacket.yml
 

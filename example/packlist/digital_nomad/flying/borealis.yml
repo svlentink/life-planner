@@ -36,7 +36,7 @@
         - sandals or flip flops
         glasses compartment: $PACKLIST_DIR/sublist/glasses.yml
       
-    - jacket / jeans: $PACKLIST_DIR/sublist/jacket.yml
+    - jacket / jeans: $PACKLIST_DIR/sublist/3in1jacket.yml
 
   - todo:
     - re-usable zip ties to strap jacket to bag

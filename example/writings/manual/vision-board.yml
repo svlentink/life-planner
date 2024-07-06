@@ -37,5 +37,18 @@
     [Human, All Too Human](https://academyofideas.com/2017/07/psychology-of-self-deception/)
 
     We define roles/personas because this helps us associate ourself with the behavior needed to accomplish this (sankalpa).
+
+    ## Why YAML
+
+    YAML is the easiest configuration language out there, easier than JSON/XML/HCL (and support anchors).
+    We use a configuration language instead of a GUI because we want the user to feel like an admin of one's life.
+    GUIs abstract you from what is underneath and requires less grind,
+    this tool is for dedicated users, who are committed to making a change, a change in their own lives.
+    If you need a GUI, you're not the target audience, you're not willing to put in the work needed.
+
+    ### Self hosted
+    This YAML and CSV based approach allows one to totally self-host their own data sources.
+    Google sheets allows you to have sheets as CSV, with Google forms in front of it allows you to track your own data.
+    
     
 

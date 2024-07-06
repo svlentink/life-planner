@@ -32,6 +32,13 @@
         - type: roles
           data: &personas_student ./example/personas/student.yml
         working:
+        - type: desc
+          data: |
+            I want my colleagues to see me as the one that gets it done and delivers the work (Matt 5:41),
+            in a way that they feel it's safe to give it out of their hands, don't need to worry about it.
+            People remember how you made them feel, not what you delivered.
+            I want to see myself as an athlete, which motivates me to eat healthy and take care of my body.
+            I want my children to see me as someone that manages stress well by going out in nature and playing an instrument to relax.
         - type: roles
           data: &personas_work ./example/personas/work.yml
 
@@ -179,6 +186,9 @@
             small border crossings:
             - type: route
               data: ./example/roadtrips/border-crossings.yml
+            ams:
+            - type: route
+              data: ./example/roadtrips/walking-amsterdam.yml
 
     monitoring:
     - type: desc

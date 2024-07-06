@@ -41,6 +41,10 @@ class PlannedActivities extends AbstractElem {
     let dataset6 = create_dataset(meta.maslow_ratio)
     renderGraph(graph6, dataset6, 'Maslow Hierarchy ratio in min. for planned activities p/w', 'pie')
 
+    let graph7 = this.render_elem('canvas')
+    let dataset7 = create_dataset(meta.flow_state_ratio)
+    renderGraph(graph7, dataset7, 'Flow state (mindfulness) ratio in min. for planned activities p/w', 'pie')
+
     let list = (new Lists({
       'Not planned activites': Object.keys(meta.not_planned)
     })).get_elem()
@@ -51,6 +55,7 @@ class PlannedActivities extends AbstractElem {
     cont.appendChild(graph3)
     cont.appendChild(graph4)
     cont.appendChild(graph6)
+    cont.appendChild(graph7)
     cont.appendChild(graph5)
     cont.appendChild(list)
     return cont
@@ -91,12 +96,7 @@ class PlannedActivities extends AbstractElem {
     let times = this.acts_time_per_week()
     let fuel = 0 // activities that give cognitive fuel
     let burn = 0 // acts that burn you out
-    /*let moscow = {
-      must: [],
-      should: [],
-      could: [],
-      wont: [],
-    }*/
+    let flow_state_times = {} // ratio between time spend in flow state and mundane activities
     let moscow_times = {
       must: 0,
       should: 0,
@@ -139,6 +139,13 @@ class PlannedActivities extends AbstractElem {
           else console.warn('Activity does not specify valid maslow',key)
         } else console.warn('Activity does not contain maslow',key)
 
+        if ('flow' in actdetails){
+          let val = actdetails.flow
+          if (!(val in flow_state_times))
+            flow_state_times[val] = 0
+          flow_state_times[val] += times[key]
+        } else console.warn('Activity does not contain flow',key)
+
         if ('goals' in actdetails && Array.isArray(actdetails.goals))
           for (const goal of actdetails.goals){
             if (!(goal in goal_times)) goal_times[goal] = 0
@@ -157,12 +164,13 @@ class PlannedActivities extends AbstractElem {
       not_planned: not_planned,
       planned_but_not_defined: discrepancy,
       energy_ratio: {
-        burning: burn,
-        fueling: fuel,
+        '🔥burning': burn,
+        '⛽fueling': fuel,
       },
       moscow_ratio: moscow_times,
       maslow_ratio: maslow_times,
       planned_time_per_goal: goal_times,
+      flow_state_ratio: flow_state_times,
     }
   }
 }

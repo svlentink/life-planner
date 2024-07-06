@@ -268,12 +268,7 @@ function render(output_container, content, headersize=1){
 		}
 	}
 
-	let out
-	if (typeof(output_container) === 'string'){
-		out = document.querySelector(output_container)
-		if (!out) return console.error('DOM element not found')
-	} else out = output_container
-	out.appendChild(res)
+	output_container.appendChild(res)
 }
 
 export { render }

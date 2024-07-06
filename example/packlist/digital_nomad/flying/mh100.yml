@@ -8,9 +8,17 @@
     in case an airliner would check if the backpack fits in the
     maximum allowed bag tester.
 
+    In case the ground steward is checking bag sizes, we;
+    wear one vest, a second as a skirt and our jacket.
+    The jacket we fill on one side with our toiletry bag and on the other with pill container.
+    We wear our
+    [Zipplicity Neck Pack/tubular travel pillow](https://eur.shein.com/pdsearch/travel%20neck%20pillow%20filling).
+
 
 - type: nestedlist
   data:
+
+  - $PACKLIST_DIR/sublist/tubular-travel-pillow.yml
 
   - backpack:
       main:
@@ -30,13 +38,12 @@
 
       top:
       - packing cube:
-        - inflatable neck cussion
         - eye mask (for sleeping)
         - carabiner:
           - keys
           - earplugs in keychain
           - keys other/parents house
-        - tiny plastic bag:
+        - tiny zip lock bag:
           - spare passport photos
           - backup credit card
         - pen case:
@@ -66,7 +73,7 @@
     - re-usable zip ties to strap jacket to bag
     - drawstring backpack
     - elastics for leg workout
-    - empty bag for dirty laundry
+    - empty zip lock bag for dirty laundry
 
   - non physical items:
     - $PACKLIST_DIR/sublist/tips.yml

@@ -25,7 +25,7 @@
     import { render } from './main.js'
     window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
     if (! window.dataurl) {
-      window.dataurl = 'https://raw.githubusercontent.com/svlentink/life-planner/master/example/dashboard.yml'
+      window.dataurl = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'
       let nextURL = window.location.href.split('#')[0]
       if (window.location.search)
         nextURL += '&dataurl=' + window.dataurl

@@ -1,20 +1,57 @@
 /* @license GPLv3 */
-import { LoadElem, substitute_baseURLs } from './abstractelem.js'
-import { get_color, renderGraph } from './graph.js'
 
-
-class CsvGraph extends LoadElem {
+class Csv {
   valid_header_line(line){
-    return line.substr(0,5).toLocaleLowerCase() === 'date,'
+    /*
+    The first line (header) is expected to start with;
+    date, datetime or timestamp
+    */
+    let low = line.toLowerCase()
+    return low.substr(0,4) == "date" || low.substr(0,9) == "timestamp"
   }
-  parse_header(){
-    let line = this.raw.split('\n')[0]
+  parse_header(line){
+    line = line || this.raw.split('\n')[0]
     if (! this.valid_header_line(line))
-      return console.error('Invalid header line for CSV',this.csv)
+      return console.error('Invalid header line for CSV',this.path)
     for (const key of [',',';','\t','|'])
       if (line.indexOf(key) !== -1)
         return line.split(key)
-    return console.error('no valid separator',this.url)
+    return console.error('no valid separator',this.path)
+  }
+  last_line_parsed(){
+    /*
+      We take the last line since you might add more columns to a dataset later,
+      resulting in the first lines not containing all the values set.
+    */
+    return this.parse_lines().at(-1)
+  }
+  form_fields(){
+    let result = [],
+        now_str = (new Date(Date.now())).toISOString().substring(0,16),
+        lastline = this.last_line_parsed()
+    for (let h of this.header){
+      let type = "text",
+          val = "",
+          example_val = lastline[h]
+      if (["datetime", "timestamp"].includes(h.toLowerCase())){
+        type = "datetime-local"
+        val = now_str
+      }
+      if (h == "date"){
+        type = "date"
+        val = now_str.substring(0,10)
+      }
+      
+      if (typeof example_val == 'number' || /^[0-9]+(\.)?[0-9]$/.test(example_val))
+        type = "number"
+      result.push({
+        name: h,
+        type: type,
+        value: val,
+        placeholder: example_val
+      })
+    }
+    return result
   }
   parse_lines(){
     let result = [],
@@ -25,11 +62,11 @@ class CsvGraph extends LoadElem {
       else {
         if (! this.valid_header_line(val)) // header line
           if (val.length !== 0) // not printing a warning for empty lines
-            console.warn('ignoring',key,val, this.url)
+            console.warn('ignoring',key,val, this.path)
       }
     })
     result.forEach((val,key) => {
-      if (val.date < last) console.log('WARNING please verify order',key,val,this.url)
+      if (val.date < last) console.log('WARNING please verify order',key,val,this.path)
       last = val.date
     })
     return result
@@ -41,6 +78,8 @@ class CsvGraph extends LoadElem {
         foundfirst = false,
         m = '',
         d = '',
+        time = '',
+        result = {},
         sep = '' //separator
   
     for (;i < line.length;i++){ // this loop gets month
@@ -49,19 +88,31 @@ class CsvGraph extends LoadElem {
       if (ints.includes(c)) foundfirst = true
       if(foundfirst) m += c
     }
-    for (;i < line.length;){ // this loop gets day
+    for (;i < line.length;){
       i++
       var c = line[i]
-      if (ints.includes(c)) d += c
-      else {
-        sep = c
-        i++
-        break
+      if (ints.includes(c)){ // this loop gets day
+        d += c
+        continue
       }
+      if (c == "T"){ // timestamp on datetime
+        time = c
+        for (;i < line.length;){
+          i++
+          c = line[i]
+          if ((ints+":").includes(c))
+            time += c
+          else
+            break
+        }
+      }
+      sep = c
+      i++
+      break
     }
     //var date = new Date(parseInt(y),parseInt(m),parseInt(d)).toISOString().substr(0,10) // does not do what you would expect
-    let date = y + '-' + ('0'+m).substr(-2) + '-' + ('0'+d).substr(-2),
-        result = {date: date}
+    let datetime = y + '-' + ('0'+m).substr(-2) + '-' + ('0'+d).substr(-2) + time
+    result[this.header[0]] = datetime
     var vals = line.substr(i).split(sep)
     for (let j in vals){
       let item = vals[j]
@@ -75,64 +126,25 @@ class CsvGraph extends LoadElem {
           num = Number(item)
       }
       
-      let indx = this.header[parseInt(j)+1] // +1 because of date at front
+      let indx = this.header[parseInt(j)+1] // +1 because of date(time)/timestamp at front
       if (indx && num !== NaN)
         result[indx] = num
       else
-        console.warn('Ignoring', indx, vals[j], this.url)
+        console.warn('Ignoring', indx, vals[j], this.path)
     }
 
     return result
   }
-  datasets(){
-    var data = {}
-    for (const title of this.header)
-      data[title] = []
-    for (const row of this.parse_lines())
-      for (const title of this.header){
-        let val = row[title]
-        data[title].push(val)
-      }
-    let datekey = this.header[0]
-    let dates = data[datekey]
-    delete data[datekey]
-    var datasets = []
-    let i = 0
-    for (const [key,val] of Object.entries(data)){
-      let color = get_color(i)
-      datasets.push({label: key, data: val, borderColor: color})
-      i++
-    }
-    
-    return {
-      labels: dates,
-      datasets: datasets,
-    }
-  }
 
-  container_classname(){ return 'csvgraph' }
-  constructor(url){
-    super({})
-    this.url = substitute_baseURLs(url)
-    this.graph = this.render_elem('canvas')
-    this.loadURL(this.url, (data) => {
-      this.raw = data
-      this.header = this.parse_header()
-      renderGraph(this.graph, this.datasets(), this.url, 'time')
-    })
-  }
-  get_elem(){
-    return this.graph
-  }
-  elem_details(key){
-    if (key === 'canvas') return {
-      type: key,
-      attributes: {
-        style: 'max-height:500px;border:1px solid;margin:5px;'
-      }
-    }
-    return super.elem_details(key)
+  constructor(path, content, header){
+    /*
+    header is optional, if not provided,
+    it will be obtained from content
+    */
+    this.path = path
+    this.raw = content
+    this.header = this.parse_header(header)
   }
 }
 
-export { CsvGraph }
+export { Csv }

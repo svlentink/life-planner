@@ -8,7 +8,7 @@ import { Routines } from './mods/routines.js'
 import { PlannedActivities } from './mods/plannedacts.js'
 import { renderCalendar } from './mods/calendar.js'
 import { RouteDesc } from './mods/route.js'
-import { CsvGraph } from './mods/csv.js'
+import { CsvGraph } from './mods/csv-graph.js'
 import { Markdown } from './mods/markdown.js'
 
 import * as yamlhack from 'https://cdn.lent.ink/js/npm/yamljs.js'

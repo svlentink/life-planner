@@ -1,0 +1,4 @@
+
+.personasview .personas:after, .rolesview:after {
+    content:'\01F431';
+}

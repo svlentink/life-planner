@@ -28,10 +28,12 @@
   width:75%;
 }
 
-.rolesview .personas img {
+.rolesview .personas img, .rolesview .personas .emoji {
   width:75px;
   height:75px;
   border-radius: 37px;
+  font-size: 300%;
+  background-color: white;
 }
 
 .rolesoverview {

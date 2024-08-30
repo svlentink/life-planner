@@ -239,7 +239,13 @@ class AbstractElem extends ElemLogic {
           'src': this.get_val(key),
         },
       },
+      emoji: {
+        type: 'span',
+        innerHTML: this.get_val(key),
+        attributes: this.default_attributes(key),
+      },
     }
+
     if (this.key)
       elems.container = {
         type: 'fieldset',
@@ -258,7 +264,8 @@ class AbstractElem extends ElemLogic {
     let keys = {
       title: 'No_title_found',
       desc: 'No_description_found',
-      img: 'https://placeimg.com/400/400/any'
+      img: 'https://placeimg.com/400/400/any',
+      emoji: '&#10068;',
     }
     if (key in keys) return keys[key]
     return "ERROR no default value found"

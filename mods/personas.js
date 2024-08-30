@@ -3,7 +3,7 @@ import { AbstractElem, Hide } from './abstractelem.js'
 
 class Persona extends AbstractElem {
   order_of_children(){
-    return [ 'title', 'desc', 'img', 'goals' ]
+    return [ 'title', 'desc', 'emoji', 'goals' ]
   }
   get_child_type(key){
     if (key === 'goals') return Goals
@@ -46,7 +46,7 @@ class Goals extends AbstractElem {
 }
 class Goal extends AbstractElem {
   order_of_children(){
-    return [ 'title', 'desc', 'img', 'status', 'intelligences' ]
+    return [ 'title', 'desc', 'emoji', 'status', 'intelligences' ]
   }
   container_classname(){ return 'goal' }
   get_child_type(key){

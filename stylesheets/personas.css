@@ -112,16 +112,21 @@
 //  z-index: 9995;
 }
 
-.personasview .personas .persona:after {
+.personasview .personas .persona:before, .personasview .personas .persona:after {
   border-top: 2px dashed;
   content:"";
   top:50%;bottom:0;
   margin: 0 auto; /* this centers the line to the full width specified */
   position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-  right: 0;
-  left: -20px;
-  width: 420px;
   z-index: -1;
+}
+.personasview .personas .persona:before {
+  left: 0;
+  width: 400px;
+}
+.personasview .personas .persona:after {
+  right: 0;
+  width: 400px;
 }
 
 .personasview .personas .goals .goal {
@@ -135,7 +140,10 @@
   display:flex;
   flex-direction:column;
 }
-.personasview .personas img {
-  max-width:22%;
+.personasview .personas img, .personasview .personas .emoji {
+  max-width:50px;
   align-self: center;
+  font-size: 250%;
+  display: block;
+  overflow: hidden;
 }

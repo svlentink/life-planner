@@ -2,7 +2,7 @@
 .personasview .personas .persona,
 .personasview .personas:after,
 .personasview .personas .persona > div{
-  background-color: SkyBlue;
+  background-color: lightskyblue;
 }
 .personasview .personas .persona > fieldset,
 .personasview .personas .persona > fieldset > fieldset,

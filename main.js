@@ -1,7 +1,7 @@
 /* @license GPLv3 */
 import { Lists } from './mods/renderlists.js'
 import { TimeManagementMatrices } from './mods/tmm.js'
-import { load_elem_from_URL, is_yaml_url } from './mods/abstractelem.js'
+import { load_elem_from_URL, is_yaml_url, substitute_baseURLs } from './mods/abstractelem.js'
 import { Nestedlist, Foundation } from './mods/nestedlist.js'
 import { RolesView, PersonasView } from './mods/personas.js'
 import { Routines } from './mods/routines.js'
@@ -43,6 +43,10 @@ const types = {
 		if (! window.YAMLbaseURLs) window.YAMLbaseURLs = {}
 		let id = arr[0]
 		let val = arr[1]
+		if (val.indexOf('$') !== -1){
+		  val = substitute_baseURLs(val)
+		  console.debug('nested baseurl', val)
+		}
 		window.YAMLbaseURLs[id] = val
 		
 		elem.style.display = 'none'

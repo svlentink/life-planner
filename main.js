@@ -138,7 +138,7 @@ const types = {
 		cont.id = id
 		
 		let elem = document.createElement('style')
-		elem.innerHTML = '#' + id + ' { @import ' + c.data + '; }'
+		//elem.innerHTML = '#' + id + ' { @import ' + c.data + '; }'
 		cont.appendChild(elem)
 		return cont
 	},

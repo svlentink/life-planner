@@ -197,7 +197,13 @@ class Action extends AbstractElem {
     return {
       type: 'div',
       attributes: this.default_attributes(),
-      innerHTML: '<code>' + details.duration + '</code> <span>' + details.title + '</span>',
+      children: [{
+        type: 'code',
+        innerText: details.duration
+      },{
+        type: 'span',
+        innerText: details.title
+      }]
     }
   }
 }

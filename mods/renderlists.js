@@ -16,7 +16,13 @@ class ListItem extends AbstractElem {
     return {
       type: 'li',
       attributes: this.default_attributes(key),
-      innerHTML: '<span>' + key + '</span> <span>' + this.get_val(key) + '</span>'
+      children: [{
+        type: 'span',
+        innerText: key
+      },{
+        type: 'span',
+        innerText: this.get_val(key)
+      }]
     }
   }
 }

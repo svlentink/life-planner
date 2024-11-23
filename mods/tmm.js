@@ -60,7 +60,10 @@ class TimeManagementMatrixBox extends AbstractElem {
       return {
         type: 'article',
         attributes: {'class': this.key + ' ' + this.container_classname(key)},
-        innerHTML: '<h3>' + this.key + '</h3>'
+        children: [{
+          type: 'h3',
+          innerText: this.key
+        }]
       }
     return super.elem_details(key)
   }

@@ -9,7 +9,8 @@ class Markdown extends LoadElem {
     container_classname(){ return 'markdown' }
     parse_markdown(){
         let data = this.raw
-        if ( (! data.includes("<script") && ! data.includes("<iframe") ) ||
+        //FIXME this needs some more security checking
+        if ( (! data.includes("<script") && ! data.includes("<iframe") && ! data.includes("eval(") && ! data.includes("<html")) ||
             window.localStorage.getItem(window.dataurl) ||
             confirm('This page wants to load markdown which might run JS, okay?'))
             window.localStorage.setItem(window.dataurl, 'allow_markdown_loading')

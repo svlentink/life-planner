@@ -66,22 +66,22 @@ class Goal extends AbstractElem {
       }
     if (key === 'status'){
       let icons = {
-        idea: 'idea &#128161;', // ideas are hidden since they are not final, thus are not shown
-        progressing: '&#8635;', //&#10227; &#x2941;
-        maintaining: '&#128736;', //&#128679;
+        idea: 'idea 💡', //&#128161;', // ideas are hidden since they are not final, thus are not shown
+        progressing: '↻', //&#8635; &#10227; &#x2941;
+        maintaining: '🛠️', //&#128736; &#128679;
         done: 'done', // also hidden, just like idea
       }
       let val = this.get_val(key) in icons ? icons[this.get_val(key)] : this.get_val(key)
       return {
         type: 'span',
-        innerHTML: val,
+        innerText: val,
         attributes: this.default_attributes(key),
       }
     }
     return super.elem_details(key)
   }
   default_value(key){
-    if (key === 'status') return '&iquest;?'
+    if (key === 'status') return '¿?'
     return super.default_value(key)
   }
 }

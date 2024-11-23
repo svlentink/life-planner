@@ -73,17 +73,32 @@ class ElemLogic {
 //FIXME
 //    elem.setAttribute('title',JSON.stringify(obj, null, 2))
   }
-  render_elem(type='stringify'){
-    let details = this.elem_details(type)
+  render_elem(type='stringify', details=null){
+    details = details || this.elem_details(type)
     let elem = document.createElement(details.type.toString())
     delete details.type
 
+    if ('innerHTML' in details){
+      console.debug("Security prevents using innerHTML",details)
+      delete details.innerHTML
+    }
+
     if ('attributes' in details)
       for (let k in details.attributes){
+        if (k.toLowerCase().substring(0,2) == "on"){
+          console.debug("attribute starting with 'on' can be a security risk",k)
+          continue
+        }
         let v = details.attributes[k]
         elem.setAttribute(k,v)
       }
     delete details.attributes
+
+    if ('children' in details){
+      for (let c of details.children)
+        elem.appendChild(this.render_elem(null,c))
+      delete details.children
+    }
     
     for (let k in details) // set innerText
       elem[k] = details[k]
@@ -241,7 +256,7 @@ class AbstractElem extends ElemLogic {
       },
       emoji: {
         type: 'span',
-        innerHTML: this.get_val(key),
+        innerText: this.get_val(key),
         attributes: this.default_attributes(key),
       },
     }
@@ -250,7 +265,10 @@ class AbstractElem extends ElemLogic {
       elems.container = {
         type: 'fieldset',
         attributes: {'class': this.key + ' ' + this.container_classname(key)},
-        innerHTML: '<legend>' + this.key + '</legend>'
+        children: [{
+          type: 'legend',
+          innerText: this.key
+        }]
       }
     if (key in elems) return elems[key]
     return super.elem_details(key)

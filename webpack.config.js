@@ -7,23 +7,20 @@ module.exports = [
   entry: [
     './main.mjs'
   ],
+  experiments: {
+    outputModule: true,
+  },
   output: {
     filename: './main.min.mjs',
     publicPath: '',
     path: __dirname,
-/*
-  library: 'test',
-	    libraryTarget: 'window',
-	    libraryExport: 'default',
-    "library": {
-        "type": "commonjs-module",
-        "name": "render"
-      }
-*/
-  },
+    library: { // https://webpack.js.org/configuration/output/#type-module
+      type: "module",
+    }
+  },/*
   optimization: {
     minimize: true,
-  },
+  },*/
   // https://stackoverflow.com/questions/64557638/how-to-polyfill-node-core-modules-in-webpack-5
   resolve: {
     fallback: {

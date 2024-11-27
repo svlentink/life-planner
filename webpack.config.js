@@ -33,5 +33,21 @@ module.exports = [
   plugins: [
     new NodePolyfillPlugin()
   ],
+  module: {
+    rules: [
+      {
+       test: /^http.*\.js/,
+       type: 'asset/resource'
+     }
+    ],
+    parser: {
+      javascript: {
+        dynamicImportMode: 'eager',
+        dynamicImportPrefetch: true,
+        dynamicImportPreload: true,
+        url: true,
+      },
+    },
+  },
 }]
 

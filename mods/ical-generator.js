@@ -11,7 +11,10 @@ window.Buffer = Buffer
 import { ical } from 'ical-generator'
 //*/
 
-import { saveToFile } from 'https://cdn.lent.ink/js/mod/storage.js'
+const { saveToFile } = import(
+  /* webpackInclude: /^http.*\.js$/ */
+  /* webpackMode: "eager" */
+  'https://cdn.lent.ink/js/mod/storage.js')
 
 function getIcal(events, timezone) {
     var cal = ical({

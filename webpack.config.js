@@ -8,7 +8,7 @@ module.exports = [
     './main.mjs'
   ],
   output: {
-    filename: './main.min.js',
+    filename: './main.min.mjs',
     path: __dirname,
   library: 'test',
 	    libraryTarget: 'window',

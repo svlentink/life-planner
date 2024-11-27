@@ -4,17 +4,15 @@
  //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/ical-generator.js'
 const ical = window.npm['ical-generator'].default // the following additional postfix was needed before v4; .default
+
+const { saveToFile } = import('https://cdn.lent.ink/js/mod/storage.js')
 /*
 * //WEBPACK/
 import { Buffer } from 'buffer/'
 window.Buffer = Buffer
 import { ical } from 'ical-generator'
+const { saveToFile } = import('./mod/storage.js')
 //*/
-
-const { saveToFile } = import(
-  /* webpackInclude: /^http.*\.js$/ */
-  /* webpackMode: "eager" */
-  'https://cdn.lent.ink/js/mod/storage.js')
 
 function getIcal(events, timezone) {
     var cal = ical({

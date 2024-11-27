@@ -1,6 +1,16 @@
 
+//In the following block you can switch the imports by removing '\ //WEBPACK'
+ //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
 const Chart = window.npm['chart.js'].Chart
+/*
+* //WEBPACK/
+//https://www.chartjs.org/docs/latest/getting-started/integration.html
+import Chart from 'chart.js'
+import 'chartjs-adapter-moment'
+//*/
+
+
 // https://www.chartjs.org/docs/latest/getting-started/integration.html#bundlers-webpack-rollup-etc
 /*
 const BarElement = window.npm['chart.js'].BarElement

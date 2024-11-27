@@ -1,6 +1,17 @@
 /* @license GPLv3 */
+
+//In the following block you can switch the imports by removing '\ //WEBPACK'
+ //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/fullcalendar.js'
 const { Calendar, timeGridPlugin, iCalendarPlugin } = window.npm['fullcalendar']
+/*
+* //WEBPACK/
+window.ICAL = window.ICAL || {}
+import { Calendar } from '@fullcalendar/core'
+import iCalendarPlugin from '@fullcalendar/icalendar'
+import timeGridPlugin from '@fullcalendar/timegrid'
+//*/
+
 
 /**
  * The callback is triggered on clicking an item in the calendar

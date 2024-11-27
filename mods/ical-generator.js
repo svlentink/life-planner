@@ -1,6 +1,15 @@
 /* @license GPLv3 */
+
+//In the following block you can switch the imports by removing '\ //WEBPACK'
+ //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/ical-generator.js'
 const ical = window.npm['ical-generator'].default // the following additional postfix was needed before v4; .default
+/*
+* //WEBPACK/
+import { Buffer } from 'buffer/'
+window.Buffer = Buffer
+import { ical } from 'ical-generator'
+//*/
 
 import { saveToFile } from 'https://cdn.lent.ink/js/mod/storage.js'
 

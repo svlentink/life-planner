@@ -1,9 +1,16 @@
 
 import { LoadElem, substitute_baseURLs } from './abstractelem.js'
 
+//In the following block you can switch the imports by removing '\ //WEBPACK'
+ //WEBPACK/*
 import * as markedhack from 'https://cdn.lent.ink/js/npm/marked.js'
 const { parse } = window.npm['marked']
-const DOMPurify = window.npm['dompurify'].default
+const { sanitize } = window.npm['dompurify'].default
+/*
+* //WEBPACK/
+const { parse } = await import('marked')
+const { sanitize } = await import('dompurify')
+//*/
 
 class Markdown extends LoadElem {
     container_classname(){ return 'markdown' }
@@ -18,7 +25,7 @@ class Markdown extends LoadElem {
     }
     set_data(inp){
         this.raw = inp
-        this.container.innerHTML = DOMPurify.sanitize(this.parse_markdown(inp))
+        this.container.innerHTML = sanitize(this.parse_markdown(inp))
     }
     constructor(inp){
         super({})

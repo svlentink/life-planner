@@ -1,6 +1,13 @@
 
+//In the following block you can switch the imports by removing '\ //WEBPACK'
+ //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
+/*
+* //WEBPACK/
+import * as name from "yamljs";
+//*/
+
 
 /*
 import * as hack2 from 'https://cdn.lent.ink/js/npm/exif.js'

@@ -3,10 +3,11 @@
  //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
 const Chart = window.npm['chart.js'].Chart
+const registerables = window.npm['chart.js'].registerables
 /*
 * //WEBPACK/
 //https://www.chartjs.org/docs/latest/getting-started/integration.html
-import Chart from 'chart.js'
+import { Chart, registerables } from 'chart.js'
 import 'chartjs-adapter-moment'
 //*/
 
@@ -27,7 +28,7 @@ Chart.register(
   Tooltip,
   SubTitle
 )*/
-const registerables = window.npm['chart.js'].registerables
+
 Chart.register(...registerables)
 
 function get_color(i){

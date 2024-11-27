@@ -10,7 +10,7 @@ const { saveToFile } = import('https://cdn.lent.ink/js/mod/storage.js')
 * //WEBPACK/
 import { Buffer } from 'buffer/'
 window.Buffer = Buffer
-import { ical } from 'ical-generator'
+import { default as ical } from 'ical-generator'
 const { saveToFile } = import('./storage.mjs')
 //*/
 

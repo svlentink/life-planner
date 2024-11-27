@@ -11,12 +11,12 @@ import { RouteDesc } from './mods/route.mjs'
 import { CsvGraph } from './mods/csv-graph.mjs'
 import { Markdown } from './mods/markdown.mjs'
 
-//In the following block you can switch the imports by removing '\ //WEBPACK'
- //WEBPACK/*
+//In the following block you can switch the imports by removing '\'
+/*
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
 /*
-* //WEBPACK/
+*/
 import * as name from "yamljs";
 //*/
 

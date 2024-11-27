@@ -1,7 +1,7 @@
 node_modules
 package-lock.json
 package.json*
-mods/storage.js
+mods/storage.mjs
 *.LICENSE.txt
 *.min.mjs
 

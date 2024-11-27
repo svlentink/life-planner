@@ -1,5 +1,5 @@
 
-import { LoadElem, substitute_baseURLs } from './abstractelem.js'
+import { LoadElem, substitute_baseURLs } from './abstractelem.mjs'
 
 //In the following block you can switch the imports by removing '\ //WEBPACK'
  //WEBPACK/*

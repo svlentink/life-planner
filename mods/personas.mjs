@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { AbstractElem, Hide } from './abstractelem.js'
+import { AbstractElem, Hide } from './abstractelem.mjs'
 
 class Persona extends AbstractElem {
   order_of_children(){

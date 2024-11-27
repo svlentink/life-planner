@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.js'
+import { AbstractElem } from './abstractelem.mjs'
 
 class ListItem extends AbstractElem {
   container_classname(){ return 'listitem' }

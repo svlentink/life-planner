@@ -22,7 +22,7 @@
     document.querySelector('#main-page').style.display = "block"
   })*/
 
-    import { render } from './main.js'
+    import { render } from './main.mjs'
     window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
     if (! window.dataurl) {
       window.dataurl = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'

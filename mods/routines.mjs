@@ -1,6 +1,6 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.js'
-import { saveIcal2File } from './ical-generator.js'
+import { AbstractElem } from './abstractelem.mjs'
+import { saveIcal2File } from './ical-generator.mjs'
 
 
 class Routine extends AbstractElem {

@@ -1,7 +1,7 @@
 /* @license GPLv3 */
-import { LoadElem, substitute_baseURLs } from './abstractelem.js'
-import { get_color, renderGraph } from './graph.js'
-import { Csv } from './csv.js'
+import { LoadElem, substitute_baseURLs } from './abstractelem.mjs'
+import { get_color, renderGraph } from './graph.mjs'
+import { Csv } from './csv.mjs'
 
 
 class CsvGraph extends LoadElem {

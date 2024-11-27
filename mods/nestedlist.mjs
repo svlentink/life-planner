@@ -1,6 +1,6 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.js'
-import { ListItem } from './renderlists.js'
+import { AbstractElem } from './abstractelem.mjs'
+import { ListItem } from './renderlists.mjs'
 
 class Nestedlist extends AbstractElem {
   container_classname(){ return "nestedlist" }

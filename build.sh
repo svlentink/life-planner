@@ -1,9 +1,10 @@
 #!/bin/sh
 set -e
-wget https://raw.githubusercontent.com/svlentink/www/refs/heads/master/cdn.lent.ink/js/npm/package.json
+curl -O package.json https://raw.githubusercontent.com/svlentink/www/refs/heads/master/cdn.lent.ink/js/npm/package.json
+curl -O mod/storage.js https://raw.githubusercontent.com/svlentink/www/refs/heads/master/cdn.lent.ink/js/mod/storage.js
 
-for f in mods/*.js; do
-	sed -i 's_\ //WEBPACK__';
+for f in main.js mods/*.js; do
+	sed -i 's_\ //WEBPACK__' $f;
 done
 
 npm install

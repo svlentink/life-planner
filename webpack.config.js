@@ -5,15 +5,22 @@ module.exports = [
 {
   mode: "production",
   entry: [
-    './main.js'
+    './main.mjs'
   ],
   output: {
     filename: './main.min.js',
-    path: __dirname
-  },
+    path: __dirname,
+  library: 'test',
+	    libraryTarget: 'window',
+	    libraryExport: 'default',
+    "library": {
+        "type": "commonjs-module",
+        "name": "render"
+      }
+  },/*
   optimization: {
     minimize: true,
-  },
+  },*/
   // https://stackoverflow.com/questions/64557638/how-to-polyfill-node-core-modules-in-webpack-5
   resolve: {
     fallback: {
@@ -33,6 +40,7 @@ module.exports = [
   plugins: [
     new NodePolyfillPlugin()
   ],
+/*
   module: {
     rules: [
       {
@@ -48,6 +56,6 @@ module.exports = [
         url: true,
       },
     },
-  },
+  },*/
 }]
 

@@ -10,9 +10,12 @@ class PlannedActivities extends AbstractElem {
     if (! (obj && obj.routines && obj.activities))
       return console.error('keys missing: routines, activities',obj)
     super({})
-    this.raw = obj
-    this.routines = this.load_obj(obj.routines)
-    this.activities = this.load_obj(obj.activities)
+    this.routines = this.load_obj(obj.routines, true)
+    this.activities = this.load_obj(obj.activities, true)
+    this.raw = {
+      routines: this.routines,
+      activities: this.activities,
+    }
   }
   get_elem(){
     let meta = this.metadata()
@@ -50,6 +53,7 @@ class PlannedActivities extends AbstractElem {
     })).get_elem()
 
     let cont = this.render_elem('container')
+    this.set_raw(cont)
     cont.appendChild(graph1)
     cont.appendChild(graph2)
     cont.appendChild(graph3)

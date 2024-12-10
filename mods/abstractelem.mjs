@@ -24,23 +24,23 @@ function is_yaml_url(str){
     return false
   let url = substitute_baseURLs(str)
   for (let ext of ['.yml', '.yaml', '.json'])
-    if(url.endsWith(ext)) return true
+    if(url.toLocaleLowerCase().endsWith(ext)) return true
   return false
 }
 
 function substitute_baseURLs(url){
-  let result = url
-  if (window.YAMLbaseURLs && url[0] === '$')
+  if (url[0] !== '$')
+    return url
+
+  if (window.YAMLbaseURLs)
     for (let k in window.YAMLbaseURLs)
-      if (url.startsWith('$'+k))
-        result = url.replace('$'+k, window.YAMLbaseURLs[k])
-  if (result[0] === '$'){
-    if (result === url)
-      console.warn('Probably an URL with a baseurl that has no match',url)
-    else //check if we need recursive substitution
-      return substitute_baseURLs(result)
-  }
-  return result
+      if (url.startsWith('$'+k)){
+        let result = url.replace('$'+k, window.YAMLbaseURLs[k])
+        return substitute_baseURLs(result)
+      }
+
+  console.warn('Probably an URL with a baseurl that has no match',url,window.YAMLbaseURLs)
+  return url
 }
 
 function load_elem_from_URL(URL){
@@ -53,7 +53,26 @@ function load_elem_from_URL(URL){
 }
 
 class ElemLogic {
-  load_obj(inp){
+  load_obj(inp, unite_if_array=false){
+    // We allow a list of sources
+    if (Array.isArray(inp) && unite_if_array/*inp.length && is_yaml_url(inp[0])*/){
+      let result = 0
+      for (let i of inp){
+        let obj = this.load_obj(i, false)
+        if (!result){
+          result = obj
+          continue
+        }
+        if (Array.isArray(result))
+          result = result.concat(obj)
+        else if (typeof result === 'object')
+          Object.assign(result, obj)
+        else
+          result += obj
+      }
+      return result
+    }
+    // this is for an individual data source
     if (is_yaml_url(inp))
       return load_elem_from_URL(inp)
     return inp
@@ -159,6 +178,9 @@ class ElemLogic {
     }
     return this.render_elem(k)
   }
+  set_raw(elem){
+    elem.dataset.raw = JSON.stringify(this.raw)
+  }
   get_elem(){
     if (typeof this.raw !== 'object')
       return this.render_elem('stringify')
@@ -172,6 +194,7 @@ class ElemLogic {
     for (let elem of elems)
       cont.appendChild(elem)
 
+    this.set_raw(cont)
     return cont
   }
   get_val(key){

@@ -87,10 +87,12 @@ class Goal extends AbstractElem {
 }
 
 
-class PersonasView {
+class PersonasView extends AbstractElem {
   container_classname(){ return 'personasview' }
   constructor(personas){ //, foundation={}){
+    super({}) /* the parent class is only needed for this.set_raw() */
     this.personas = personas
+    this.raw = personas
 //    this.foundation = foundation
   }
   get_elem(){
@@ -98,6 +100,7 @@ class PersonasView {
 //    let f = new Foundation(this.foundation)
     
     let cont = document.createElement('div')
+    this.set_raw(cont)
     cont.setAttribute('class', this.container_classname())
     cont.appendChild(p.get_elem())
 //    cont.appendChild(f.get_elem())

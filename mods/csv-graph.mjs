@@ -44,6 +44,7 @@ class CsvGraph extends LoadElem {
       this.raw = data
       this.csv = new Csv(this.path, data)
       renderGraph(this.graph, this.datasets(), this.path, 'time')
+      this.set_raw(this.graph)
     })
   }
   get_elem(){

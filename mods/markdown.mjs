@@ -36,6 +36,7 @@ class Markdown extends LoadElem {
             this.url = substitute_baseURLs(inp)
             this.loadURL(this.url, (data) => {
                 this.set_data(data)
+                this.set_raw(this.container)
             })
         }
         else {

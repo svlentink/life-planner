@@ -40,9 +40,12 @@ class Routines extends AbstractElem {
     if (! (obj && obj.routines && obj.activities))
       return console.error('keys missing: routines, activities',obj)
     super({})
-    this.activities = this.load_obj(obj.activities)
-    this.routines = this.load_obj(obj.routines)
-    this.raw = this.routines
+    this.activities = this.load_obj(obj.activities, true)
+    this.routines = this.load_obj(obj.routines, true)
+    this.raw = {
+      routines: this.routines,
+      activities: this.activities,
+    }
   }
   container_classname(){ return "routines" }
   get_child_type(){ return Routine }
@@ -160,6 +163,7 @@ class Routines extends AbstractElem {
   }
   get_elem(){
     let btn = this.get_export_btn()
+    this.set_raw(btn)
     return btn // we ignore the overview, it's redundant since you can click on calendar items
     let elem = super.get_elem()
     elem.appendChild(btn)

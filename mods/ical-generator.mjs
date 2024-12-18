@@ -11,7 +11,7 @@ const { saveToFile } = import('https://cdn.lent.ink/js/mod/storage.js')
 import { Buffer } from 'buffer/'
 window.Buffer = Buffer
 import { default as ical } from 'ical-generator'
-const { saveToFile } = import('./storage.mjs')
+import { saveToFile } from './storage.mjs'
 //*/
 
 function getIcal(events, timezone) {

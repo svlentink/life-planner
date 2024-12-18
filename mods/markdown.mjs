@@ -8,8 +8,10 @@ const { parse } = window.npm['marked']
 const { sanitize } = window.npm['dompurify'].default
 /*
 * //WEBPACK/
-const { parse } = await import('marked')
-const { sanitize } = await import('dompurify')
+import { parse } from 'marked'
+import createDOMPurify from 'dompurify'
+const DOMPurify = createDOMPurify(window)
+const sanitize = DOMPurify.sanitize
 //*/
 
 class Markdown extends LoadElem {

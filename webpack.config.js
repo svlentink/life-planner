@@ -3,7 +3,7 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 module.exports = [
 {
-  mode: "production",
+  mode: "development",
   entry: [
     './main.mjs'
   ],

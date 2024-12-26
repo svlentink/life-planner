@@ -23,6 +23,15 @@ fieldset .skipped {
   opacity: .3;
 }
 
+fieldset.list, fieldset.nestedlist, fieldset.routelist {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 10px;
+}
+fieldset.nestedlist fieldset, fieldset.nestedlist blockquote {
+  margin-left: 10px;
+}
+
 .lists .list legend {
   font-size: 200%;
 }

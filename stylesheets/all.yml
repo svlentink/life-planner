@@ -1,4 +1,6 @@
 - type: css
+  data: https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css
+- type: css
   data: ./stylesheets/layout2.css
 - type: css
   data: ./stylesheets/lists.css

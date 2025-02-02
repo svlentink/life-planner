@@ -8,7 +8,7 @@
   margin-top:10px;
 }
 .routedesc .routesection .routelist .stringify:before {
-  content:'\23C0'; /* \1F80B \1F847\21E3 \233D \25CB \25EF \2B58 \1F9CD \1F938 \2B6D';*/
+  content:'\23C0'; /* \2316 \1F80B \1F847\21E3 \233D \25CB \25EF \2B58 \1F9CD \1F938 \2B6D';*/
   font-size: 175%;
   min-width:40px;
   display:inline-block;

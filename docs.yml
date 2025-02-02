@@ -1,0 +1,74 @@
+- type: baseurl
+  data: PERSONAL_DIR=https://dev-fs.lent.ink/gits/pp/lp
+- type: baseurl
+  data: PACKLIST_DIR=../lp-config-example/packlist
+
+- type: baseurl
+  data: REPO_DIR=https://raw.githubusercontent.com/svlentink/lp-config-example/main
+- type: baseurl
+  data: REPO_DIR=https://dev-fs.lent.ink/gits/lp-config-example
+- type: baseurl
+  data: PACKLIST_DIR=https://raw.githubusercontent.com/svlentink/lp-config-example/main/packlist
+- type: baseurl
+  data: PACKLIST_DIR=https://dev-fs.lent.ink/gits/lp-config-example/packlist
+
+- type: title
+  data: Documentation dashboard components
+- ./stylesheets/all.yml
+- type: tabs
+  data:
+    intro:
+    - type: desc
+      data: |
+        Lorem Ipsum
+
+    tabs:
+    - type: desc
+      data: |
+        - type: tabs
+          data:
+            name_first_tab:
+            - type: desc
+              data: |
+                Lorem Ipsum
+            second_tab: []
+    - type: tabs
+      data:
+        name_first_tab:
+        - type: desc
+          data: |
+            Lorem Ipsum
+        second_tab: []
+
+    calendar:
+    - type: desc
+      data: |
+        - type: calendar
+          data: $SOME_DIR/routines.ical
+
+        - type: calendar
+          data: $SOME_DIR/routines.ics
+
+        - type: calendar
+          data:
+            routines: $SOME_DIR/routines.yml
+
+        - type: calendar
+          data:
+            routines: $SOME_DIR/routines.yml
+            activities: $SOME_DIR/acts.yml
+
+        - type: calendar
+          data:
+            routines:
+            - $SOME_DIR/routines_work.yml
+            - $SOME_DIR/routines_weekend.yml
+            - $SOME_DIR/routines_private.yml
+            activities:
+            - $SOME_DIR/acts_fitness.yml
+            - $SOME_DIR/acts_travel.yml
+            - $SOME_DIR/acts_work.yml
+
+    - type: calendar
+      data:
+        routines: $STARTUP_DIR/stage0/routines.yml

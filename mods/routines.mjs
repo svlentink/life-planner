@@ -1,6 +1,5 @@
 /* @license GPLv3 */
 import { AbstractElem } from './abstractelem.mjs'
-import { saveIcal2File } from './ical-generator.mjs'
 
 
 class Routine extends AbstractElem {
@@ -37,10 +36,10 @@ class Routine extends AbstractElem {
 
 class Routines extends AbstractElem {
   constructor(obj){
-    if (! (obj && obj.routines && obj.activities))
-      return console.error('keys missing: routines, activities',obj)
+    if (! (obj && obj.routines))
+      return console.error('keys missing: routines',obj)
     super({})
-    this.activities = this.load_obj(obj.activities, true)
+    this.activities = this.load_obj(obj.activities || {}, true)
     this.routines = this.load_obj(obj.routines, true)
     this.raw = {
       routines: this.routines,
@@ -95,7 +94,7 @@ class Routines extends AbstractElem {
           let action = action_arr[1]
           let act_duration = Number(action_arr[0]) || 1
 
-          actiondesc[action] = action in this.activities? this.activities[action] : "Item_not_found"
+          actiondesc[action] = action in this.activities? this.activities[action] : "activity_details_not_provided"
 
           var time = act_duration
           totaltime += time
@@ -157,7 +156,9 @@ class Routines extends AbstractElem {
     btn.innerText = 'Export to calender (.ics)'
     btn.onclick = () => {
       let events = this.get_events()
-      saveIcal2File(events)
+      import('./ical-generator.mjs').then((mod) => {
+        mod.saveIcal2File(events)
+      })
     }
     return btn
   }

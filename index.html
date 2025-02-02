@@ -12,6 +12,32 @@ Pure CSS is perfect, we included it in ./stylesheets/all.yml
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"/>
 <!-- -->
 
+<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/yamljs.js' />
+<link rel="modulepreload" href='./mods/abstractelem.mjs' />
+
+<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/marked.js' />
+<link rel="modulepreload" href='./mods/markdown.mjs' />
+
+<link rel="modulepreload" href='./mods/renderlists.mjs' />
+<link rel="modulepreload" href='./mods/nestedlist.mjs' />
+
+<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/chart.js.js' />
+<link rel="modulepreload" href='./mods/graph.mjs' />
+<link rel="modulepreload" href='./mods/csv.mjs' />
+<link rel="modulepreload" href='./mods/csv-graph.mjs' />
+
+<link rel="modulepreload" href='./mods/routines.mjs' />
+<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/fullcalendar.js' />
+<link rel="modulepreload" href='./mods/calendar.mjs' />
+
+<link rel="modulepreload" href='./mods/route.mjs' />
+
+<link rel="modulepreload" href='./mods/personas.mjs' />
+
+<link rel="modulepreload" href='./mods/plannedacts.mjs' />
+
+<link rel="modulepreload" href='./mods/tmm.mjs' />
+
 </head>
 <body>
 
@@ -25,7 +51,7 @@ Pure CSS is perfect, we included it in ./stylesheets/all.yml
     document.querySelector('#main-page').style.display = "block"
   })*/
 
-    import { render } from './main.mjs'
+    import { render } from './main.lazy.mjs'
     window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
     if (! window.dataurl) {
       window.dataurl = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'

@@ -1,15 +1,5 @@
 /* @license GPLv3 */
-import { Lists } from './mods/renderlists.mjs'
-import { TimeManagementMatrices } from './mods/tmm.mjs'
 import { load_elem_from_URL, is_yaml_url, substitute_baseURLs } from './mods/abstractelem.mjs'
-import { Nestedlist, Foundation } from './mods/nestedlist.mjs'
-import { RolesView, PersonasView } from './mods/personas.mjs'
-import { Routines } from './mods/routines.mjs'
-import { PlannedActivities } from './mods/plannedacts.mjs'
-import { renderCalendar } from './mods/calendar.mjs'
-import { RouteDesc } from './mods/route.mjs'
-import { CsvGraph } from './mods/csv-graph.mjs'
-import { Markdown } from './mods/markdown.mjs'
 
 //import * as icalhack from 'https://cdn.lent.ink/js/npm/ical.js.js'
 
@@ -23,6 +13,17 @@ function getRandomId(){
  */
 function loadStylesheet(url){
 	console.warn('unimplemented',url)
+}
+
+function lazy_load_elem(modPath, className, data){
+	let placeholder = document.createElement('div')
+	placeholder.innerText = 'Loading . . .'
+	import(modPath)
+	.then((mod) => {
+		let elem = (new mod[className](data)).get_elem()
+		placeholder.replaceWith(elem)
+	})
+	return placeholder
 }
 
 const types = {
@@ -52,57 +53,54 @@ const types = {
 		return elem
 	},
 	route: obj => {
-		let elem = new RouteDesc(obj.data)
-		return elem.get_elem()
+		return lazy_load_elem('./mods/route.mjs','RouteDesc', obj.data)
 	},
 	calendar: obj => {
-		// FIXME this should actually be handed an .ical file not a routines file!
-		let routines = new Routines(obj.data)
-		let events = routines.get_events()
 		let cont = document.createElement('div')
 		let callback = x=>{alert(x.summary + '\n' + x.description)}
-		renderCalendar(events, cont, callback)
+		let inp = obj.data
+
+		import('./mods/routines.mjs').then((routinesmod) => {
+			if (typeof inp !== 'string') { console.log(inp)
+				let routines = new routinesmod.Routines(inp)
+				inp = routines.get_events()
+			}
+			import('./mods/calendar.mjs').then((mod) => {
+				mod.renderCalendar(inp, cont, callback)
+			})
+		})
 		return cont
 	},
 	csv: obj => {
-		let elem = new CsvGraph(obj.data)
-		return elem.get_elem()
-	},
-	timemangementmatrices: obj => {
-		let elem = new TimeManagementMatrices(obj.data)
-		return elem.get_elem()
-	},
-	personas: obj => {
-		let elem = new PersonasView(obj.data)
-		return elem.get_elem()
-	},
-	roles: obj => {
-		let elem = new RolesView(obj.data)
-		return elem.get_elem()
-	},
-	routines: obj => {
-		let elem = new Routines(obj.data)
-		return elem.get_elem()
-	},
-	plannedactivities: obj => {
-		let elem = new PlannedActivities(obj.data)
-		return elem.get_elem()
-	},
-	lists: obj => {
-		let elem = new Lists(obj.data)
-		return elem.get_elem()
-	},
-	nestedlist: obj => {
-		let elem = new Nestedlist(obj.data)
-		return elem.get_elem()
-	},
-	foundation: obj => {
-		let elem = new Foundation(obj.data)
-		return elem.get_elem()
+		return lazy_load_elem('./mods/csv-graph.mjs','CsvGraph', obj.data)
 	},
 	timemangementmatrix: obj => {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
+	},
+	timemangementmatrices: obj => {
+		return lazy_load_elem('./mods/tmm.mjs','TimeManagementMatrices', obj.data)
+	},
+	personas: obj => {
+		return lazy_load_elem('./mods/personas.mjs','PersonasView', obj.data)
+	},
+	roles: obj => {
+		return lazy_load_elem('./mods/personas.mjs','RolesView', obj.data)
+	},
+	routines: obj => {
+		return lazy_load_elem('./mods/routines.mjs','Routines', obj.data)
+	},
+	plannedactivities: obj => {
+		return lazy_load_elem('./mods/plannedacts.mjs','PlannedActivities', obj.data)
+	},
+	lists: obj => {
+		return lazy_load_elem('./mods/renderlists.mjs','Lists', obj.data)
+	},
+	nestedlist: obj => {
+		return lazy_load_elem('./mods/nestedlist.mjs','Nestedlist', obj.data)
+	},
+	foundation: obj => {
+		return lazy_load_elem('./mods/nestedlist.mjs','Foundation', obj.data)
 	},
 	blockquote: c => {
 		let elem = document.createElement('blockquote')
@@ -151,9 +149,8 @@ const types = {
 		elem.innerText = c.data
 		return elem
 	},
-	markdown: c => {
-		let elem = new Markdown(c.data)
-		return elem.get_elem()
+	markdown: obj => {
+		return lazy_load_elem('./mods/markdown.mjs','Markdown', obj.data)
 	},
 	unknown: c => {
 		let t, msg

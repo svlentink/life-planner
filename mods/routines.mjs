@@ -137,13 +137,25 @@ class Routines extends AbstractElem {
             routine_actions: routine.actions || [],
             //activities: acts,
           }
+
           let fields_fullcalendar = {
             title: title,
             daysOfWeek: Ical2FullcalendarDays(start.days),
             startRecur: getFirstOccurrence(),
             startTime: getFirstOccurrence().toTimeString().substr(0,5),
-            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5),
+            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5), /* this doesn't allow for events past midnight */
           }
+          let fields_fullcalendar_FIXME = {
+            title: title,
+            rrule: {
+              byweekday: start.days,
+              dtstart: getFirstOccurrence(),
+              freq: "weekly",
+              interval: 1, //every week
+            },
+            duration: (new Date(0,0,0,0,totaltime)).toTimeString().substring(0,5),
+          }
+
           let event = Object.assign({}, fields_fullcalendar, fields_ical_generator)
           events.push(event)
         }

@@ -61,7 +61,7 @@ const types = {
 		let inp = obj.data
 
 		import('./mods/routines.mjs').then((routinesmod) => {
-			if (typeof inp !== 'string') { console.log(inp)
+			if (typeof inp !== 'string') {
 				let routines = new routinesmod.Routines(inp)
 				inp = routines.get_events()
 			}

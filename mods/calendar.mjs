@@ -3,7 +3,7 @@
 //In the following block you can switch the imports by removing '\ //WEBPACK'
  //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/fullcalendar.js'
-const { Calendar, timeGridPlugin, iCalendarPlugin } = window.npm['fullcalendar']
+const { Calendar, timeGridPlugin, iCalendarPlugin, rrulePlugin } = window.npm['fullcalendar']
 /*
 * //WEBPACK/
 window.ICAL = window.ICAL || {}
@@ -41,7 +41,7 @@ function renderCalendar(events, target='#calendar',callback) {
 }
 
 function renderIcalURLCalendar(elem, url, callback){
-  let p = [timeGridPlugin, iCalendarPlugin]
+  let p = [timeGridPlugin, iCalendarPlugin, rrulePlugin]
   let e = {
     url: url,
     format: 'ics'
@@ -49,7 +49,8 @@ function renderIcalURLCalendar(elem, url, callback){
   renderFullCalendar(elem, e, callback, p)
 }
 
-function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.description)}, plugins=[ timeGridPlugin ]){
+function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.description)}, plugins=[ timeGridPlugin, rrulePlugin ]){
+  console.log(events)
   let params = {
     plugins: plugins,
     initialView: 'timeGridWeek',

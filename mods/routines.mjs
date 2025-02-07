@@ -138,20 +138,21 @@ class Routines extends AbstractElem {
             //activities: acts,
           }
 
-          let fields_fullcalendar = {
+          /*
+          let fields_fullcalendar_THIS_AVOID_RRULE_PLUGIN = { // we don't do this because of events past midnight
             title: title,
             daysOfWeek: Ical2FullcalendarDays(start.days),
             startRecur: getFirstOccurrence(),
             startTime: getFirstOccurrence().toTimeString().substr(0,5),
-            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5), /* this doesn't allow for events past midnight */
-          }
-          let fields_fullcalendar_FIXME = {
+            endTime: getFirstOccurrence(totaltime).toTimeString().substr(0,5), // this doesn't allow for events past midnight
+          }*/
+          let fields_fullcalendar = {
             title: title,
             rrule: {
               byweekday: start.days,
-              dtstart: getFirstOccurrence(),
+              dtstart: getFirstOccurrence().toISOString(),
               freq: "weekly",
-              interval: 1, //every week
+              //interval: 1, //every week
             },
             duration: (new Date(0,0,0,0,totaltime)).toTimeString().substring(0,5),
           }

@@ -3,9 +3,11 @@
  //WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/yamljs.js'
 const YAML = window.npm['yamljs'].default
+import { saveToFile } from 'https://cdn.lent.ink/js/mod/storage.js'
 /*
 * //WEBPACK/
 import * as name from "yamljs";
+import { saveToFile } from './storage.mjs'
 //*/
 
 
@@ -18,15 +20,7 @@ const ExifImage = window.npm['exif'].default
 */
 
 //matches './src.yml' or 'https://example.com/src.yaml'
-function is_yaml_url(str){
-  if (typeof str !== 'string' ||
-      str.indexOf(' ') !== -1)
-    return false
-  let url = substitute_baseURLs(str)
-  for (let ext of ['.yml', '.yaml', '.json'])
-    if(url.toLocaleLowerCase().endsWith(ext)) return true
-  return false
-}
+
 
 function substitute_baseURLs(url){
   if (url[0] !== '$')
@@ -43,19 +37,41 @@ function substitute_baseURLs(url){
   return url
 }
 
-function load_elem_from_URL(URL){
-  let url = substitute_baseURLs(URL)
-	//console.debug('Loading from',url)
-	let data = YAML.load(url)
-  let msg = 'Failed loading '+url
-	data = data || { type: 'blockquote', data: msg, innerText: msg  }
-	return data
-}
 
 class ElemLogic {
+  retrieve_stored_URL(url){
+    if (url in window.loaded_URLs)
+      return window.loaded_URLs[url]
+    return undefined
+  }
+  store_retrieved_URL(url, data){
+    window.loaded_URLs[url] = data
+  }
+  #is_yaml_url(str){
+    if (typeof str !== 'string' ||
+        str.indexOf(' ') !== -1)
+      return false
+    let url = substitute_baseURLs(str)
+    for (let ext of ['.yml', '.yaml', '.json'])
+      if(url.toLocaleLowerCase().endsWith(ext)) return true
+    return false
+  }
+  #load_elem_from_URL(inp){
+    if (!this.#is_yaml_url(inp)) return inp
+    let url = substitute_baseURLs(inp)
+
+    let retrieved = this.retrieve_stored_URL(url)
+    if (retrieved) return retrieved
+
+    let data = YAML.load(url)
+    let msg = 'Failed loading '+url
+    data = data || { type: 'blockquote', data: msg, innerText: msg }
+    this.store_retrieved_URL(url, data)
+    return data
+  }
   load_obj(inp, unite_if_array=false){
     // We allow a list of sources
-    if (Array.isArray(inp) && unite_if_array/*inp.length && is_yaml_url(inp[0])*/){
+    if (Array.isArray(inp) && unite_if_array/*inp.length && this.#is_yaml_url(inp[0])*/){
       let result = 0
       for (let i of inp){
         let obj = this.load_obj(i, false)
@@ -73,20 +89,15 @@ class ElemLogic {
       return result
     }
     // this is for an individual data source
-    if (is_yaml_url(inp))
-      return load_elem_from_URL(inp)
-    return inp
+    return this.#load_elem_from_URL(inp)
   }
   constructor(obj,key=undefined){
     if (! obj) return console.error('ERROR nothing provided ', obj)
     this.key = key
     this.raw = this.load_obj(obj)
   }
-  load_object(){
-    
-  }
   // everything that is a string will be added as data attribute
-  addDataAttributes(elem) {
+  #addDataAttributes(elem) {
     let obj = this.raw
     if (typeof obj === 'object' && ! Array.isArray(obj))
       for (var key in obj){
@@ -129,16 +140,16 @@ class ElemLogic {
     for (let k in details) // set innerText
       elem[k] = details[k]
 
-    this.addDataAttributes(elem)
+    this.#addDataAttributes(elem)
     return elem
   }
-  generate_from_list(){
+  #generate_from_list(){
     let result = []
     for (let i of this.raw)
-      result.push( this.gen_list_item(i) )
+      result.push( this.#gen_list_item(i) )
     return result
   }
-  gen_list_item(i){
+  #gen_list_item(i){
     return this.generate_child(i)
   }
   generate_from_dict(){
@@ -151,7 +162,7 @@ class ElemLogic {
     if (order.length) keys = order
     for (let k of keys){
       if (! k in this.raw) continue
-      let elem = this.gen_dict_item(k, this.raw[k])
+      let elem = this.#gen_dict_item(k, this.raw[k])
       result.push( elem )
       already.push(k)
     }
@@ -160,7 +171,7 @@ class ElemLogic {
     let unknowns = {}
     for (let k of objkeys){
       if (already.includes(k)) continue
-      //let elem = this.gen_dict_item(k, this.raw[k])
+      //let elem = this.#gen_dict_item(k, this.raw[k])
       unknowns[k] = this.raw[k]
     }
     if (Object.keys(unknowns).length){
@@ -169,11 +180,11 @@ class ElemLogic {
     }
     return result
   }
-  gen_dict_item(k,v){
+  #gen_dict_item(k,v){
     if (v && typeof v === 'object') // null is also an object
       return this.generate_child(v,k)
-    if (is_yaml_url(v)){
-      let loaded = load_elem_from_URL(v)
+    if (this.#is_yaml_url(v)){
+      let loaded = this.#load_elem_from_URL(v)
       return this.generate_child(loaded,k)
     }
     return this.render_elem(k)
@@ -186,7 +197,7 @@ class ElemLogic {
       return this.render_elem('stringify')
     let cont = this.render_elem('container')
     let elems
-    if (Array.isArray(this.raw)) elems = this.generate_from_list()
+    if (Array.isArray(this.raw)) elems = this.#generate_from_list()
     else {
       if (this.raw) elems = this.generate_from_dict()
       else elems = [ this.render_elem('stringify') ]
@@ -210,10 +221,10 @@ class ElemLogic {
   }
   elem_details(key){
 //    let val = this.get_val(key)
-//    if (is_yaml_url(val))
-//      return load_elem_from_URL(val)
+//    if (this.#is_yaml_url(val))
+//      return this.#load_elem_from_URL(val)
 /*
-    if (is_yaml_url(val)){
+    if (this.#is_yaml_url(val)){
       let b64 = window.btoa(val).split('=')[0]
       console.debug('Loading from URL ', val)
       YAML.load(val, (data) => {
@@ -297,7 +308,7 @@ class AbstractElem extends ElemLogic {
         attributes: {'class': this.key + ' ' + this.container_classname(key)},
         children: [{
           type: 'legend',
-          innerText: this.key
+          innerText: this.key,
         }]
       }
     if (key in elems) return elems[key]
@@ -334,23 +345,64 @@ class Hide extends AbstractElem {
           "data-this-key": this.key,
           "data-this-raw": this.raw,
           'class': 'Hide',
-          "data-value": this.get_val(key)
+          "data-value": this.get_val(key),
         },
       }
   }
 }
 
+
+class FlattenedElem extends AbstractElem {
+  container_classname(){return 'flattened'}
+  store_retrieved_URLs(obj){
+    for (const [key, val] of Object.entries(obj))
+      this.store_retrieved_URL(key, val)
+  }
+  constructor(flattened){
+    super({})
+    if (! flattened) return console.error('ERROR nothing provided ', flattened)
+    this.key = flattened.url
+    this.raw = flattened.data
+    this.store_retrieved_URLs(flattened.data)
+  }
+  static flatten(){
+    if(document.readyState !== 'complete')
+      return window.alert("Please wait until the page is fully loaded and try again")
+    const data = {
+      url: window.dataURL,
+      data: window.loaded_URLs,
+    }
+    let flatten_elem = [{
+      type: 'flattened',
+      data: data,
+    }]
+    saveToFile(JSON.stringify(flatten_elem),'flattened.yml')
+  }
+}
+if (! ('loaded_URLs' in window))
+  window.loaded_URLs = {} /* don't set directly, use FlattenedElem */
+window.flatten = FlattenedElem.flatten
+
+
 class LoadElem extends AbstractElem {
   loadURL(url,cb) {
-    var xhttp = new XMLHttpRequest()
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-       cb(this.responseText)
+    url = substitute_baseURLs(url)
+
+    let retrieved = this.retrieve_stored_URL(url)
+    if (retrieved) return cb(retrieved, url)
+
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        let data = xhr.responseText
+        this.store_retrieved_URL(url, data)
+        cb(data, url)
       }
     }
-    xhttp.open("GET", url, true)
-    xhttp.send()
+    xhr.open("GET", url, true)
+    xhr.send()
   }
 }
 
-export { AbstractElem, LoadElem, Hide, load_elem_from_URL, is_yaml_url, substitute_baseURLs }
+
+export { ElemLogic, AbstractElem, LoadElem, Hide, substitute_baseURLs, FlattenedElem }

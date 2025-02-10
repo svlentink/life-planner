@@ -50,7 +50,6 @@ function renderIcalURLCalendar(elem, url, callback){
 }
 
 function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.description)}, plugins=[ timeGridPlugin, rrulePlugin ]){
-  console.log(events)
   let params = {
     plugins: plugins,
     initialView: 'timeGridWeek',

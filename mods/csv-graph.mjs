@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { LoadElem, substitute_baseURLs } from './abstractelem.mjs'
+import { LoadElem } from './abstractelem.mjs'
 import { get_color, renderGraph } from './graph.mjs'
 import { Csv } from './csv.mjs'
 
@@ -38,10 +38,10 @@ class CsvGraph extends LoadElem {
   container_classname(){ return 'csvgraph' }
   constructor(path){
     super({})
-    this.path = substitute_baseURLs(path)
     this.graph = this.render_elem('canvas')
-    this.loadURL(this.path, (data) => {
+    this.loadURL(path, (data, substituted_url) => {
       this.raw = data
+      this.path = substituted_url
       this.csv = new Csv(this.path, data)
       renderGraph(this.graph, this.datasets(), this.path, 'time')
       this.set_raw(this.graph)

@@ -1,5 +1,5 @@
 
-import { LoadElem, substitute_baseURLs } from './abstractelem.mjs'
+import { LoadElem } from './abstractelem.mjs'
 
 //In the following block you can switch the imports by removing '\ //WEBPACK'
  //WEBPACK/*
@@ -35,8 +35,8 @@ class Markdown extends LoadElem {
         this.container = this.render_elem('div')
         
         if (inp.endsWith('.md')){
-            this.url = substitute_baseURLs(inp)
-            this.loadURL(this.url, (data) => {
+            this.loadURL(inp, (data, substituted_url) => {
+                this.url = substituted_url
                 this.set_data(data)
                 this.set_raw(this.container)
             })

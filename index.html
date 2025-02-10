@@ -52,18 +52,18 @@ Pure CSS is perfect, we included it in ./stylesheets/all.yml
   })*/
 
     import { render } from './main.lazy.mjs'
-    window.dataurl = (new URLSearchParams(window.location.search)).get('dataurl')
-    if (! window.dataurl) {
-      window.dataurl = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'
+    window.dataURL = (new URLSearchParams(window.location.search)).get('dataurl')
+    if (! window.dataURL) {
+      window.dataURL = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'
       let nextURL = window.location.href.split('#')[0]
       if (window.location.search)
-        nextURL += '&dataurl=' + window.dataurl
+        nextURL += '&dataurl=' + window.dataURL
       else
-        nextURL += '?dataurl=' + window.dataurl
+        nextURL += '?dataurl=' + window.dataURL
       let nextTitle = document.querySelector('title').innerText
       window.history.replaceState('', nextTitle, nextURL)
     }
-    render(document.querySelector('#main-page'),window.dataurl)
+    render(document.querySelector('#main-page'), window.dataURL)
     document.querySelector('#loading').style.display = "none"
     document.querySelector('#main-page').style.display = "block"
 </script>

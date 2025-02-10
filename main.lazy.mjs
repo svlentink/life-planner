@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { load_elem_from_URL, is_yaml_url, substitute_baseURLs } from './mods/abstractelem.mjs'
+import { ElemLogic, substitute_baseURLs, FlattenedElem } from './mods/abstractelem.mjs'
 
 //import * as icalhack from 'https://cdn.lent.ink/js/npm/ical.js.js'
 
@@ -74,6 +74,15 @@ const types = {
 	csv: obj => {
 		return lazy_load_elem('./mods/csv-graph.mjs','CsvGraph', obj.data)
 	},
+	flattened: c => {
+		const flattened = new FlattenedElem(c.data)
+		const key = flattened.key
+
+		let cont = document.createElement('div')
+		cont.className = 'flattened'
+		render(cont, key, c.headersize)
+		return cont
+	},
 	timemangementmatrix: obj => {
 		let elem = new Nestedlist(obj.data)
 		return elem.get_elem()
@@ -115,27 +124,8 @@ const types = {
 		elem.innerText = 'ERROR ' + msg
 		return elem
 	},
-	/** create scoped css */
 	css: c => {
-		let cont = document.createElement('div')
-		cont.class = 'stylecontainer'
-
-		let link = document.createElement('link')
-		link.rel = 'stylesheet'
-		link.type = 'text/css'
-		link.href = c.data
-		cont.append(link)
-		return cont
-		document.getElementsByTagName('HEAD')[0].appendChild(link)
-
-		let id = getRandomId()
-		
-		cont.id = id
-		
-		let elem = document.createElement('style')
-		//elem.innerHTML = '#' + id + ' { @import ' + c.data + '; }'
-		cont.appendChild(elem)
-		return cont
+		return lazy_load_elem('./mods/css.mjs','Css', c.data)
 	},
 	title: c => {
 		let size = c.headersize || 1
@@ -222,16 +212,8 @@ const types = {
 function render(output_container, content, headersize=1){
 	let res
 	if (typeof content === 'string'){
-		if (is_yaml_url(content)){
-			try {
-				let data = load_elem_from_URL(content)
-				return render(output_container, data, headersize)
-			} catch (e) {
-				res = types.error('loading ' +content,e)
-			}
-		}
-		else
-			res = types.error('an URL was expected, starting with http and pointing to YAML (or JSON)')
+		let data = (new ElemLogic(content)).raw // loads from URL
+		return render(output_container, data, headersize)
 	}
 	
 	if (Array.isArray(content)){

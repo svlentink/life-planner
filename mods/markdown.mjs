@@ -27,7 +27,11 @@ class Markdown extends LoadElem {
     }
     set_data(inp){
         this.raw = inp
-        this.container.innerHTML = sanitize(this.parse_markdown(inp))
+        this.container.innerHTML = sanitize(this.parse_markdown(inp),{
+            // https://github.com/umap-project/umap/issues/1140
+            ALLOWED_URI_REGEXP:
+            /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp|geo):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
+        })
     }
     constructor(inp){
         super({})

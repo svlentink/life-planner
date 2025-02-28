@@ -44,12 +44,25 @@ function renderIcalURLCalendar(elem, url, callback){
   let p = [timeGridPlugin, iCalendarPlugin, rrulePlugin]
   let e = {
     url: url,
-    format: 'ics'
+    format: 'ics',
   }
   renderFullCalendar(elem, e, callback, p)
 }
 
 function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.description)}, plugins=[ timeGridPlugin, rrulePlugin ]){
+  // the set interval is an ugly hack to deal with the fact
+  // that the calendar only renders when it is actively displayed
+  //window.setInterval(() => { calendar.render()}, 1000)
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    const observeable = entries[0]
+    // If intersectionRatio is 0, the target is out of view
+    // and we do not need to do anything.
+    if (observeable.intersectionRatio <= 0) return
+    if (elem.offsetHeight > 0) return intersectionObserver.disconnect();//already expanded
+    console.debug("rendering calendar",elem.offsetHeight,elem)
+    calendar.render()
+  })
+
   let params = {
     plugins: plugins,
     initialView: 'timeGridWeek',
@@ -58,15 +71,20 @@ function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.
       info.jsEvent.preventDefault()
       callback(info.event._def.extendedProps)
     },
+    eventSourceFailure(error){ console.log("HEEEE")
+      console.error(events, error)
+      const cors_proxy = 'lent.ink/cors-proxy/'
+      let url = events.url
+      if (url.includes(cors_proxy)) return
+      const new_url = url.split('//')[0] + "//" + cors_proxy + url.split('//')[1]
+      console.debug("using CORS proxy", new_url)
+      renderIcalURLCalendar(elem, new_url, callback)
+    },
+    eventSourceSuccess(rawEvents, response){
+      intersectionObserver.observe(elem)
+    }
   }
   let calendar = new Calendar(elem, params)
-  calendar.render()
-  // the set interval is an ugly hack to deal with the fact
-  // that the calendar only renders when it is actively displayed
-  window.setInterval(() => {
-    //console.debug('rendered calendar',params,calendar)
-    calendar.render()
-  }, 1000)
 }
 
 export { renderCalendar }

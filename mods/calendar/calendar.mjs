@@ -71,13 +71,13 @@ function renderFullCalendar(elem, events, callback=x=>{console.log(x.summary, x.
       info.jsEvent.preventDefault()
       callback(info.event._def.extendedProps)
     },
-    eventSourceFailure(error){ console.log("HEEEE")
-      console.error(events, error)
-      const cors_proxy = 'lent.ink/cors-proxy/'
+    eventSourceFailure(error){
+      console.debug("failed loading", events)
+      const cors_proxy = 'https://lent.ink/cors-proxy/'
       let url = events.url
       if (url.includes(cors_proxy)) return
-      const new_url = url.split('//')[0] + "//" + cors_proxy + url.split('//')[1]
-      console.debug("using CORS proxy", new_url)
+      const new_url = cors_proxy + url.split('//')[1]
+      console.debug("retry using CORS proxy (that is throttled after 1MB filesize)", url)
       renderIcalURLCalendar(elem, new_url, callback)
     },
     eventSourceSuccess(rawEvents, response){

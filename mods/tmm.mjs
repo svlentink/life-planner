@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.mjs'
+import { AbstractElem } from './core/abstractelem.mjs'
 
 class TmmRow extends AbstractElem {
   get_child_type() { return TmmBucket }

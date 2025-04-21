@@ -24,6 +24,7 @@ class Css extends LoadElem {
         attributes: {
           type: 'text/css',
           rel: 'stylesheet',
+          scoped: '',
         },
       }
   }

@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { ElemLogic, substitute_baseURLs, FlattenedElem } from './mods/abstractelem.mjs'
+import { ElemLogic, substitute_baseURLs, FlattenedElem } from './mods/core/abstractelem.mjs'
 
 //import * as icalhack from 'https://cdn.lent.ink/js/npm/ical.js.js'
 
@@ -60,19 +60,19 @@ const types = {
 		let callback = x=>{alert(x.summary + '\n' + x.description)}
 		let inp = obj.data
 
-		import('./mods/routines.mjs').then((routinesmod) => {
+		import('./mods/life-planner/routines.mjs').then((routinesmod) => {
 			if (typeof inp !== 'string') {
 				let routines = new routinesmod.Routines(inp)
 				inp = routines.get_events()
 			}
-			import('./mods/calendar.mjs').then((mod) => {
+			import('./mods/calendar/calendar.mjs').then((mod) => {
 				mod.renderCalendar(inp, cont, callback)
 			})
 		})
 		return cont
 	},
 	csv: obj => {
-		return lazy_load_elem('./mods/csv-graph.mjs','CsvGraph', obj.data)
+		return lazy_load_elem('./mods/graph/csv-graph.mjs','CsvGraph', obj.data)
 	},
 	flattened: c => {
 		const flattened = new FlattenedElem(c.data)
@@ -91,19 +91,19 @@ const types = {
 		return lazy_load_elem('./mods/tmm.mjs','TimeManagementMatrices', obj.data)
 	},
 	personas: obj => {
-		return lazy_load_elem('./mods/personas.mjs','PersonasView', obj.data)
+		return lazy_load_elem('./mods/life-planner/personas.mjs','PersonasView', obj.data)
 	},
 	roles: obj => {
-		return lazy_load_elem('./mods/personas.mjs','RolesView', obj.data)
+		return lazy_load_elem('./mods/life-planner/personas.mjs','RolesView', obj.data)
 	},
 	routines: obj => {
-		return lazy_load_elem('./mods/routines.mjs','Routines', obj.data)
+		return lazy_load_elem('./mods/life-planner/routines.mjs','Routines', obj.data)
 	},
 	plannedactivities: obj => {
-		return lazy_load_elem('./mods/plannedacts.mjs','PlannedActivities', obj.data)
+		return lazy_load_elem('./mods/life-planner/plannedacts.mjs','PlannedActivities', obj.data)
 	},
 	lists: obj => {
-		return lazy_load_elem('./mods/renderlists.mjs','Lists', obj.data)
+		return lazy_load_elem('./mods/core/renderlists.mjs','Lists', obj.data)
 	},
 	nestedlist: obj => {
 		return lazy_load_elem('./mods/nestedlist.mjs','Nestedlist', obj.data)
@@ -125,7 +125,7 @@ const types = {
 		return elem
 	},
 	css: c => {
-		return lazy_load_elem('./mods/css.mjs','Css', c.data)
+		return lazy_load_elem('./mods/core/css.mjs','Css', c.data)
 	},
 	title: c => {
 		let size = c.headersize || 1
@@ -140,7 +140,10 @@ const types = {
 		return elem
 	},
 	markdown: obj => {
-		return lazy_load_elem('./mods/markdown.mjs','Markdown', obj.data)
+		return lazy_load_elem('./mods/core/markdown.mjs','Markdown', obj.data)
+	},
+	mermaid: obj => {
+		return lazy_load_elem('./mods/graph/mermaid.mjs','Mermaid', obj.data)
 	},
 	unknown: c => {
 		let t, msg

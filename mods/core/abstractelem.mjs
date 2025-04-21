@@ -391,7 +391,7 @@ class LoadElem extends AbstractElem {
     let retrieved = this.retrieve_stored_URL(url)
     if (retrieved) return cb(retrieved, url)
 
-    const xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest() //FIXME rewrite to fetch()
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let data = xhr.responseText

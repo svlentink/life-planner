@@ -1,6 +1,6 @@
 
 //In the following block you can switch the imports by removing '\ //WEBPACK'
- //WEBPACK/*
+//WEBPACK/*
 import * as hack from 'https://cdn.lent.ink/js/npm/chart.js.js'
 const Chart = window.npm['chart.js'].Chart
 const registerables = window.npm['chart.js'].registerables

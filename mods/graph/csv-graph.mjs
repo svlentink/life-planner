@@ -1,5 +1,5 @@
 /* @license GPLv3 */
-import { LoadElem } from './abstractelem.mjs'
+import { LoadElem } from '../core/abstractelem.mjs'
 import { get_color, renderGraph } from './graph.mjs'
 import { Csv } from './csv.mjs'
 

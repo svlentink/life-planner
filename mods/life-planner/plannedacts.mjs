@@ -1,7 +1,7 @@
 /* @license GPLv3 */
-import { AbstractElem } from './abstractelem.mjs'
-import { renderGraph, create_dataset } from './graph.mjs'
-import { Lists } from './renderlists.mjs'
+import { AbstractElem } from '../core/abstractelem.mjs'
+import { renderGraph, create_dataset } from '../graph/graph.mjs'
+import { Lists } from '../core/renderlists.mjs'
 
 
 class PlannedActivities extends AbstractElem {

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Dashboard</title>
+  <head>
+    <title>Dashboard</title>
 
-<!--
+    <!--
 Bulma removes header sizes
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"/>
 Milligram messes up alignment
@@ -12,62 +12,66 @@ Pure CSS is perfect, we included it in ./stylesheets/all.yml
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"/>
 <!-- -->
 
-<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/yamljs.js' />
-<link rel="modulepreload" href='./mods/core/abstractelem.mjs' />
+    <link rel="modulepreload" href="https://cdn.lent.ink/js/npm/yamljs.js" />
+    <link rel="modulepreload" href="./mods/core/abstractelem.mjs" />
 
-<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/marked.js' />
-<link rel="modulepreload" href='./mods/core/markdown.mjs' />
+    <link rel="modulepreload" href="https://cdn.lent.ink/js/npm/marked.js" />
+    <link rel="modulepreload" href="./mods/core/markdown.mjs" />
 
-<link rel="modulepreload" href='./mods/core/css.mjs' />
+    <link rel="modulepreload" href="./mods/core/css.mjs" />
 
-<link rel="modulepreload" href='./mods/core/renderlists.mjs' />
-<link rel="modulepreload" href='./mods/nestedlist.mjs' />
+    <link rel="modulepreload" href="./mods/core/renderlists.mjs" />
+    <link rel="modulepreload" href="./mods/nestedlist.mjs" />
 
-<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/chart.js.js' />
-<link rel="modulepreload" href='./mods/graph/graph.mjs' />
-<link rel="modulepreload" href='./mods/graph/csv.mjs' />
-<link rel="modulepreload" href='./mods/graph/csv-graph.mjs' />
+    <link rel="modulepreload" href="https://cdn.lent.ink/js/npm/chart.js.js" />
+    <link rel="modulepreload" href="./mods/graph/graph.mjs" />
+    <link rel="modulepreload" href="./mods/graph/csv.mjs" />
+    <link rel="modulepreload" href="./mods/graph/csv-graph.mjs" />
 
-<link rel="modulepreload" href='./mods/life-planner/routines.mjs' />
-<link rel="modulepreload" href='https://cdn.lent.ink/js/npm/fullcalendar.js' />
-<link rel="modulepreload" href='./mods/calendar/calendar.mjs' />
+    <link rel="modulepreload" href="./mods/life-planner/routines.mjs" />
+    <link
+      rel="modulepreload"
+      href="https://cdn.lent.ink/js/npm/fullcalendar.js"
+    />
+    <link rel="modulepreload" href="./mods/calendar/calendar.mjs" />
 
-<link rel="modulepreload" href='./mods/route.mjs' />
+    <link rel="modulepreload" href="./mods/route.mjs" />
 
-<link rel="modulepreload" href='./mods/life-planner/personas.mjs' />
+    <link rel="modulepreload" href="./mods/life-planner/personas.mjs" />
 
-<link rel="modulepreload" href='./mods/life-planner/plannedacts.mjs' />
+    <link rel="modulepreload" href="./mods/life-planner/plannedacts.mjs" />
 
-<link rel="modulepreload" href='./mods/tmm.mjs' />
+    <link rel="modulepreload" href="./mods/tmm.mjs" />
+  </head>
+  <body>
+    <div id="loading" style="width: 100%; height: 100%; margin: 40%">
+      Loading . . .
+    </div>
+    <div id="main-page" style="display: none"></div>
 
-</head>
-<body>
-
-<div id="loading" style="width:100%;height:100%;margin:40%;">Loading . . .</div>
-<div id="main-page" style="display:none;"></div>
-
-<script type='module'>
-  /*
+    <script type="module">
+      /*
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#loading').style.display = "none"
     document.querySelector('#main-page').style.display = "block"
   })*/
 
-    import { render } from './main.lazy.mjs'
-    window.dataURL = (new URLSearchParams(window.location.search)).get('dataurl')
-    if (! window.dataURL) {
-      window.dataURL = 'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'
-      let nextURL = window.location.href.split('#')[0]
-      if (window.location.search)
-        nextURL += '&dataurl=' + window.dataURL
-      else
-        nextURL += '?dataurl=' + window.dataURL
-      let nextTitle = document.querySelector('title').innerText
-      window.history.replaceState('', nextTitle, nextURL)
-    }
-    render(document.querySelector('#main-page'), window.dataURL)
-    document.querySelector('#loading').style.display = "none"
-    document.querySelector('#main-page').style.display = "block"
-</script>
-</body>
+      import { render } from './main.lazy.mjs'
+      window.dataURL = new URLSearchParams(window.location.search).get(
+        'dataurl'
+      )
+      if (!window.dataURL) {
+        window.dataURL =
+          'https://raw.githubusercontent.com/svlentink/lp-config-example/main/dashboard.yml'
+        let nextURL = window.location.href.split('#')[0]
+        if (window.location.search) nextURL += '&dataurl=' + window.dataURL
+        else nextURL += '?dataurl=' + window.dataURL
+        let nextTitle = document.querySelector('title').innerText
+        window.history.replaceState('', nextTitle, nextURL)
+      }
+      render(document.querySelector('#main-page'), window.dataURL)
+      document.querySelector('#loading').style.display = 'none'
+      document.querySelector('#main-page').style.display = 'block'
+    </script>
+  </body>
 </html>

@@ -318,7 +318,7 @@ class AbstractElem extends ElemLogic {
     if (key in elems) return elems[key]
     return super.elem_details(key)
   }
-  default_attributes (key) {
+  default_attributes (key = '') {
     return {
       class: key + ' ' + this.container_classname()
     }
